@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', blog_views.globe_gazette, name="index"),
+    path("", include(blog.urls), name="blog-urls"),
 ]
