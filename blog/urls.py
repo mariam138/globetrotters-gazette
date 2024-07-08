@@ -1,4 +1,7 @@
-from django.http import HttpResponse
+from django.urls import path
+from . import views
 
-def globe_gazette(request):
-    return HttpResponse("Hello, World!")
+
+urlpatterns = [
+    path('', views.globe_gazette, name='globe_gazette'),
+]
