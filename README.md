@@ -85,4 +85,13 @@ The final project was deployed using Heroku via these steps:
 14. Ensure the *'main'* branch is selected
 15. Click *'Deploy Branch'*
 
+### Forking the repository
+
+A fork of this repository can be made to add your own changes **without** affecting the original repository. This can be done via the following steps:  
+1. Click on the repository name
+2. Click the *Fork* dropdown menu
+3. Select *Create a new fork*
+4. Rename the repository name if you wish
+5. Click on *Create fork*
+
 ## Acknowledgments
