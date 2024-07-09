@@ -14,3 +14,16 @@ Development of this blog site was done using the five planes of UX as guidance. 
 ### The Strategy Plane
 
 The goal of 'The Globetrotter's Gazette' is to create an online community for people who love to travel, allowing them to share their experiences with each other. Users can create blog posts to share with others and can also search for other blog posts of their interest.
+
+#### Business Needs
+
+- Create a website for people to share their travel stories
+- Allow travellers - novice and experienced - to get inspiration for their next trip
+
+#### User Needs
+
+- Blog about my travels to be able to store my memories online
+- Read about others' experiences to get ideas for my next holiday/ expand my knowledge
+- Engage with others and their travels by commenting on posts
+- Be able to create an account to leave comments
+- Be able to create an account to create my own posts
