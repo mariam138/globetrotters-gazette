@@ -48,7 +48,9 @@ The seven epics listed above were split down further into user stories to help w
 
 ### The Structure Plane
 
-For the structure, I briefly created a simple site map. This allowed me to make sure there was flow throughout the design of the website, and that the correct pages linked together.
+For the structure, I briefly created a simple site map. This allowed me to make sure there was flow throughout the design of the website, and that the correct pages linked together. This was created before the creating each page and was used as a template. The site map was created using **Lucidchart**.
+
+![Sitemap of Globetrotter's Gazette](static/images/globetrotter-gazette-site-map.jpeg)
 
 ### The Skeleton Plane
 
