@@ -48,6 +48,8 @@ The seven epics listed above were split down further into user stories to help w
 
 ### The Structure Plane
 
+For the structure, I briefly created a simple site map. This allowed me to make sure there was flow throughout the design of the website, and that the correct pages linked together.
+
 ### The Skeleton Plane
 
 ### The Surface Plane
