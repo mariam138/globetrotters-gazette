@@ -39,3 +39,7 @@ The goal of 'The Globetrotter's Gazette' is to create an online community for pe
 **Epic [5](https://github.com/mariam138/globetrotters-gazette/issues/6)**: Searching Travel Posts  
 **Epic [6](https://github.com/mariam138/globetrotters-gazette/issues/7)**: Admin Profile  
 **Epic [7](https://github.com/mariam138/globetrotters-gazette/issues/8)**: User Interaction  
+
+#### User Stories
+
+The seven epics listed above were split down further into user stories to help with the development of the project. User stories were labelled using **MoSCoW Prioritisation**. User stories were also labelled with story points, based on relative effort. For each iteration, a **milestone** was created to keep track of user stories. **Must have** stories were worked on first during each iteration, followed by **Should have** and finally **Could have**. User stories labelled with **Won't have** remained in the [Back log](https://github.com/mariam138/globetrotters-gazette/milestone/1) milestone.
