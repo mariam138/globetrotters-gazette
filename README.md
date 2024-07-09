@@ -27,3 +27,15 @@ The goal of 'The Globetrotter's Gazette' is to create an online community for pe
 - Engage with others and their travels by commenting on posts
 - Be able to create an account to leave comments
 - Be able to create an account to create my own posts
+
+#### Epics
+
+7 epics were generated for this project, which were further broken down into user stories before starting development. Each epic and their related user stories can be seen on my [project board](https://github.com/users/mariam138/projects/6/views/1).
+
+**Epic [1](https://github.com/mariam138/globetrotters-gazette/issues/2)**: Initial Django Setup  
+**Epic [2](https://github.com/mariam138/globetrotters-gazette/issues/3)**: User Authentication  
+**Epic [3](https://github.com/mariam138/globetrotters-gazette/issues/4)**: User Profile  
+**Epic [4](https://github.com/mariam138/globetrotters-gazette/issues/5)**: User Travel Posts  
+**Epic [5](https://github.com/mariam138/globetrotters-gazette/issues/6)**: Searching Travel Posts  
+**Epic [6](https://github.com/mariam138/globetrotters-gazette/issues/7)**: Admin Profile  
+**Epic [7](https://github.com/mariam138/globetrotters-gazette/issues/8)**: User Interaction  
