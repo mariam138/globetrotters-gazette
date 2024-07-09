@@ -13,3 +13,4 @@ Development of this blog site was done using the five planes of UX as guidance. 
 
 ### The Strategy Plane
 
+The goal of 'The Globetrotter's Gazette' is to create an online community for people who love to travel, allowing them to share their experiences with each other. Users can create blog posts to share with others and can also search for other blog posts of their interest.
