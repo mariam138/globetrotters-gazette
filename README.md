@@ -55,3 +55,34 @@ For the structure, I briefly created a simple site map. This allowed me to make 
 ### The Skeleton Plane
 
 ### The Surface Plane
+
+## Features
+
+## Future Features
+
+## Testing
+
+## Deployment
+
+The final project was deployed using Heroku via these steps:
+
+1. Sign in to Heroku
+2. Click *'Create New App'* located at the top of the dashboard
+3. Create a unique app name
+4. Choose 'Europe' as the server
+5. Click *'Create App'*
+6. On the app's dashboard, click on *'Deploy'*
+7. Click **Github** for the deployment method
+8. Search for repository and connect to it on Heroku
+9. Click on *Settings* on the app dashboard
+10. Scroll down and click on *'Reveal Config Vars'*
+11. For initial deployment, insert the following key:value pairs:
+    - DATABASE_URL : *<database_url>*
+    - SECRET_KEY : *<secret_key>*
+    - DISABLE_COLLECTSTATIC : *1*
+12. Click on *'Deploy'* to go back to the deploy tab
+13. Scroll down to *Manual deployment*
+14. Ensure the *'main'* branch is selected
+15. Click *'Deploy Branch'*
+
+## Acknowledgments
