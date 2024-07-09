@@ -28,6 +28,8 @@ The goal of 'The Globetrotter's Gazette' is to create an online community for pe
 - Be able to create an account to leave comments
 - Be able to create an account to create my own posts
 
+### The Scope Plane
+
 #### Epics
 
 7 epics were generated for this project, which were further broken down into user stories before starting development. Each epic and their related user stories can be seen on my [project board](https://github.com/users/mariam138/projects/6/views/1).
@@ -43,3 +45,9 @@ The goal of 'The Globetrotter's Gazette' is to create an online community for pe
 #### User Stories
 
 The seven epics listed above were split down further into user stories to help with the development of the project. User stories were labelled using **MoSCoW Prioritisation**. User stories were also labelled with story points, based on relative effort. For each iteration, a **milestone** was created to keep track of user stories. **Must have** stories were worked on first during each iteration, followed by **Should have** and finally **Could have**. User stories labelled with **Won't have** remained in the [Back log](https://github.com/mariam138/globetrotters-gazette/milestone/1) milestone.
+
+### The Structure Plane
+
+### The Skeleton Plane
+
+### The Surface Plane
