@@ -94,4 +94,17 @@ A fork of this repository can be made to add your own changes **without** affect
 4. Rename the repository name if you wish
 5. Click on *Create fork*
 
+### Cloning the repository
+
+You can clone this repository to create a remote copy on your local machine. This can be done via the following steps:  
+1. Navigate to the repository on Github
+2. Click the *'<> Code'* button at the top of the repository page
+3. Copy the URL for repository
+    - For HTTPS, copy the URL under the *HTTPS* section
+    - For SSH, copy the SSH Key under the *SSH* section
+    - For Github CLI, click the button next to the URL under the *Github CLI* section
+4. Open a new terminal in your coding space
+5. Type `git clone` followed by the URL that has been copied
+6. Press *'Enter'* to create your local clone
+
 ## Acknowledgments
