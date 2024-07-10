@@ -64,6 +64,31 @@ To create the skeleton of the website, I created wireframes using **Balsamiq**. 
 
 ## Testing
 
+## Technologies
+
+Several technologies were used in creating this blog site.
+
+### Planning
+
+- Balsamiq Wireframes - used to create wireframes for skeleton plane
+- Lucidchart - used to create the site map for the scope plane
+
+### Frameworks
+
+- Bootstrap - to help ease the creation of the visual design of the website
+- Django
+
+### Django Libraries
+
+- AllAuth
+- Gunicorn
+- Psycopg2
+
+### Other Python Libraries
+
+- Cloudinary - for media storage for the website
+- Dj-database-url - to parse database url's in the project settings
+
 ## Deployment
 
 The final project was deployed using Heroku via these steps:
