@@ -14,3 +14,8 @@ body {
 .nav-link:hover {
     color: #FAF9F9;
 }
+
+.footer {
+    background-color: #06585D;
+    color: #FAF9F9;
+}
