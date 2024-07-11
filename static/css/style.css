@@ -9,3 +9,8 @@ body {
 .navbar-text {
     color: #FAF9F9;
 }
+
+.nav-link:focus,
+.nav-link:hover {
+    color: #FAF9F9;
+}
