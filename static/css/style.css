@@ -5,3 +5,7 @@ body {
 .navbar-colour {
     background-color: #06585D;
 }
+
+.navbar-text {
+    color: #FAF9F9;
+}
