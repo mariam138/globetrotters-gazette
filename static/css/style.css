@@ -10,12 +10,21 @@ body {
     color: #FAF9F9;
 }
 
-.nav-link:focus,
+/* .nav-link:focus,
 .nav-link:hover {
     color: #FAF9F9;
-}
+} */
+
+/******************************** Footer */
 
 .footer {
     background-color: #06585D;
     color: #FAF9F9;
+}
+
+.social-links i {
+    color: #FAF9F9;
+    width: 32px;
+    height: 32px;
+    margin: 0;
 }
