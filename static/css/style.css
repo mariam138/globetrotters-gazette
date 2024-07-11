@@ -31,9 +31,11 @@ body {
     color: #FAF9F9;
 }
 
+/* style icons to be white colour and make bigger */
 .social-links i {
     color: #FAF9F9;
     width: 32px;
     height: 32px;
     margin: 0;
+    font-size: 2rem;
 }
