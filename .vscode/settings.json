@@ -13,6 +13,6 @@
       "**/CVS": true
    },
    "files.autoSave": "afterDelay",
-   "workbench.colorTheme": "Bearded Theme Monokai Stone",
+   "workbench.colorTheme": "Bearded Theme Light",
    "terminal.integrated.gpuAcceleration": "canvas",
 }

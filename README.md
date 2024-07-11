@@ -58,6 +58,12 @@ To create the skeleton of the website, I created wireframes using **Balsamiq**. 
 
 ### The Surface Plane
 
+#### Colour Scheme
+
+The colour I wanted to choose to be the main standout colour was a bluey-gree, akin to the rivers or seas. After picking the colour `#35797e`, I then decided to generate a colour palette appropriate for a website using [Colormind](colormind.io/bootstrap). Setting `#35797e` as the main colour, the below palette was generated.
+
+![Colour palette screenshot](static/images/colour-palette-screenshot.png)
+
 ## Features
 
 ## Future Features
