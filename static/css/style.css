@@ -10,6 +10,8 @@
 
 body {
     background-color: #FAF9F9;
+    /* pushes any content to display below the navbar */
+    margin-top: 70px;
 }
 
 /**************************************** Navbar*/
