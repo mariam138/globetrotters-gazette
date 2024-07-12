@@ -15,6 +15,10 @@ body {
     background-color: #06585D;
 }
 
+.navbar-colour button {
+    padding: 4px 6px;
+}
+
 .navbar-text {
     color: #FAF9F9;
 }
