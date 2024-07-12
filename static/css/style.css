@@ -87,6 +87,6 @@ body {
 
 /**************************************** Sign In Page */
 
-#signin-heading {
-    margin-top: 1rem;
+.auth-headings {
+    padding-top: 1rem;
 }

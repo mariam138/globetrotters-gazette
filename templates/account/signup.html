@@ -2,37 +2,56 @@
 {% load allauth i18n %}
 
 {% block head_title %}
-    {% trans "Register" %}
+{% trans "Register" %}
 {% endblock head_title %}
 
 {% block content %}
 <!-- Register heading -->
- <div class="container">
+<div class="container">
     <div class="col-lg-6 offset-lg-3">
-        <h1 class="heading">{% trans "Register" %}</h1>
+        <h1 class="heading auth-headings">{% trans "Register" %}</h1>
     </div>
     <div class="col-lg-6 offset-lg-3">
         <p class="text paragraph">
-            {% blocktranslate %}Welcome to The Globetrotter's Gazette. If you already have an account then please sign in <a
-                href="{{ login_url }}" class="link">here</a>.{% endblocktranslate %}
+            {% blocktranslate %}Welcome to The Globetrotter's Gazette. If you already have an account then please sign
+            in <a href="{{ login_url }}" class="link">here</a>.{% endblocktranslate %}
         </p>
     </div>
-    {% if not SOCIALACCOUNT_ONLY %}
-    {% url 'account_signup' as action_url %}
-    {% element form form=form method="post" action=action_url tags="entrance,signup" %}
-        {% slot body %}
+    <!-- Register form -->
+    <div class="col-lg-6 offset-lg-3">
+        <form method="post" action="/accounts/signup/">
             {% csrf_token %}
-            {% element fields form=form unlabeled=True %}
-            {% endelement %}
+            <p class="text">
+                <label for="id_username">Username:</label>
+                <input type="text" name="username" placeholder="Username" autocomplete="username" minlength="1"
+                    maxlength="150" required="" id="id_username">
+            </p>
+            <p class="text">
+                <label for="id_email">Email (optional):</label>
+                <input type="email" name="email" placeholder="Email address" autocomplete="email" maxlength="320"
+                    id="id_email">
+            </p>
+            <p class="text">
+                <label for="id_password1">Password:</label>
+                <input type="password" name="password1" placeholder="Password" autocomplete="new-password" required
+                    id="id_password1">
+
+                <span class="helptext"></span></p>
+            <p class="text">
+                <label for="id_password2">Password (again):</label>
+                <input type="password" name="password2" placeholder="Password (again)" autocomplete="new-password"
+                    required="" id="id_password2">
+            </p>
+            <ul class="text">
+                <li>Your password can’t be too similar to your other personal information.</li>
+                <li>Your password must contain at least 8 characters.</li>
+                <li>Your password can’t be a commonly used password.</li>
+                <li>Your password can’t be entirely numeric.</li>
+            </ul>
             {{ redirect_field }}
-        {% endslot %}
-        {% slot actions %}
-            {% element button tags="prominent,signup" type="submit" %}
-                {% trans "Sign Up" %}
-            {% endelement %}
-        {% endslot %}
-    {% endelement %}
-{% endif %}
- </div>
+            <button class="btn btn-text btn-colour" type="submit">Register</button>
+        </form>
+    </div>
+</div>
 
 {% endblock %}
