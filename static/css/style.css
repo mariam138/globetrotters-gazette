@@ -37,6 +37,10 @@ body {
     color: #181720;
 }
 
+.btn-margin {
+    margin: 1rem 0;
+}
+
 /**************************************** Footer */
 
 .footer {
