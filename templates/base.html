@@ -19,12 +19,12 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand navbar-text d-sm-none heading" href="#">GG</a>
-          <a class="navbar-brand navbar-text d-none d-sm-inline heading" href="#">The Globetrotter's Gazette</a>
+          <a class="navbar-brand navbar-text d-sm-none heading" href="{% url 'index' %}">GG</a>
+          <a class="navbar-brand navbar-text d-none d-sm-inline heading" href="{% url 'index' %}">The Globetrotter's Gazette</a>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav nav-underline">
               <li class="nav-item">
-                <a class="nav-link navbar-text" aria-current="page" href="#">Home</a>
+                <a class="nav-link navbar-text" aria-current="page" href="{% url 'index' %}">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link navbar-text" href="#">About</a>
