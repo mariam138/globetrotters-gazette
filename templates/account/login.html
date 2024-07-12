@@ -5,6 +5,7 @@
 
 
 {% block content %}
+<!-- Sign In heading -->
 <div class="container">
     <div class="row">
         <div class="col"></div>
@@ -20,10 +21,19 @@
         {% setvar end_link %}
     </a>
     {% endsetvar %}
-    {% element p %}
-    {% blocktranslate %}If you have not created an account yet, then please {{ link }}sign up{{ end_link }}
-    first.{% endblocktranslate %}
-    {% endelement %}
+
+    <!-- Welcome back and redirect to sign up message -->
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-lg-4">
+            <p class="text paragraph">
+                Welcome back to The Globetrotter's Gazette. If you have not created an account yet, then please {{ link }}sign up{{ end_link }}
+                first.
+            </p>
+        </div>
+        <div class="col"></div>
+    </div>
+
     {% url 'account_login' as login_url %}
     {% element form form=form method="post" action=login_url tags="entrance,login" %}
     {% slot body %}
