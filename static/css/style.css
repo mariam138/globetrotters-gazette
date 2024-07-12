@@ -43,3 +43,8 @@ body {
 .social-links li {
     padding: 0 3% 1%;
 }
+
+.btn-colour {
+    background-color: #5AAFC2;
+    color: #181720;
+}
