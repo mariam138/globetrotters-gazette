@@ -9,30 +9,25 @@
 <!-- Sign In heading -->
 <div class="container">
     <div class="row">
-        <div class="col"></div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 offset-lg-3">
             <h1 class="heading" id="signin-heading">{% trans "Sign In" %}</h1>
         </div>
-        <div class="col"></div>
     </div>
 
     <!-- Welcome back and redirect to sign up message -->
     <div class="row">
-        <div class="col"></div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 offset-lg-3">
             <p class="text paragraph">
                 {% blocktrans %}Welcome back to The Globetrotter's Gazette. If you have not created an account yet, then
                 please <a class="link" href="{{ signup_url }}">register</a>
                 first.{% endblocktrans %}
             </p>
         </div>
-        <div class="col"></div>
     </div>
 
     <!-- Username and password forms -->
     <div class="row">
-        <div class="col"></div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 offset-lg-3">
             <form class="login" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
                 <form class="login" method="POST" action="/accounts/login/">
@@ -58,7 +53,6 @@
                     <button class="btn btn-text btn-colour right" type="submit">{% trans "Sign In" %}</button>
                 </form>
         </div>
-        <div class="col"></div>
     </div>
 
 </div>
