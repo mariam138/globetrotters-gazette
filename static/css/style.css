@@ -29,6 +29,19 @@ body {
     color: #FAF9F9;
 }
 
+.heading {
+    font-family: Raleway, sans-serif;
+    font-weight: 500;
+}
+
+.text {
+    font-family: Pavanam, sans-serif;
+}
+
+.btn-text {
+    font-family: Raleway, sans-serif;
+}
+
 /* Changes the colour of the icon supplied by boostrap */
 /* Colour is changed to #FAF9F9 using rgba format */
 /* This overrides the default colour set by bootstrap in the svg */
