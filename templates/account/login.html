@@ -3,6 +3,7 @@
 {% load i18n %}
 {% load allauth account %}
 
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
 <!-- Sign In heading -->
@@ -10,56 +11,39 @@
     <div class="row">
         <div class="col"></div>
         <div class="col-lg-6">
-            <h1 class="heading">Sign In</h1>
+            <h1 class="heading">{% trans "Sign In" %}</h1>
         </div>
         <div class="col"></div>
     </div>
-    {% if not SOCIALACCOUNT_ONLY %}
-    {% setvar link %}
-    <a href="{{ signup_url }}">
-        {% endsetvar %}
-        {% setvar end_link %}
-    </a>
-    {% endsetvar %}
 
     <!-- Welcome back and redirect to sign up message -->
     <div class="row">
         <div class="col"></div>
         <div class="col-lg-6">
             <p class="text paragraph">
-                Welcome back to The Globetrotter's Gazette. If you have not created an account yet, then please {{ link }}sign up{{ end_link }}
-                first.
+                {% blocktrans %}Welcome back to The Globetrotter's Gazette. If you have not created an account yet, then
+                please <a class="link" href="{{ signup_url }}">sign up</a>
+                first.{% endblocktrans %}
             </p>
         </div>
         <div class="col"></div>
     </div>
 
-    {% url 'account_login' as login_url %}
-    {% element form form=form method="post" action=login_url tags="entrance,login" %}
-    {% slot body %}
-    {% csrf_token %}
-    {% element fields form=form unlabeled=True %}
-    {% endelement %}
-    {{ redirect_field }}
-    {% endslot %}
-    {% slot actions %}
-    {% element button type="submit" tags="prominent,login" %}
-    {% trans "Sign In" %}
-    {% endelement %}
-    {% endslot %}
-    {% endelement %}
-    {% endif %}
-    {% if LOGIN_BY_CODE_ENABLED %}
-    {% element hr %}
-    {% endelement %}
-    {% element h2 %}
-    {% element button href=request_login_code_url tags="prominent,login,secondary" %}
-    {% trans "Mail me a sign-in code" %}
-    {% endelement %}
-    {% endelement %}
-    {% endif %}
-    {% if SOCIALACCOUNT_ENABLED %}
-    {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
-    {% endif %}
+    <!-- Username and password forms -->
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-lg-6">
+            <form class="login" method="POST" action="{% url 'account_login' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
+                {% endif %}
+                <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+
 </div>
-{% endblock content %}
+{% endblock %}
