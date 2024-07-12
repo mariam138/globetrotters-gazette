@@ -3,5 +3,5 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.globe_gazette, name='globe_gazette'),
+    path('', views.index, name='index'),
 ]
