@@ -1,5 +1,6 @@
 from django.db import models
-
+# to create foreign key with django's User model
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -7,7 +8,7 @@ REGIONS = [
     ('AF', 'Africa'),
     ('AUS', 'Australasia'),
     ('EU', 'Europe / UK'),
-    ('MENA', 'Middle East')
+    ('MENA', 'Middle East'),
     ('SA', 'South /Central America'),
     ('US', 'USA / Canada'),
 
