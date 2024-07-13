@@ -17,3 +17,7 @@ class Profile(models.Model):
     instagram = models.URLField()
     twitter_x = models.URLField()
     posts = models.ForeignKey(Post, on_delete=models.CASCADE)
+
+    # shows profiles made in descending order
+    class Meta:
+        ordering = ["-created_on"]
