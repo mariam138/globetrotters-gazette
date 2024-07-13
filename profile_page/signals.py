@@ -4,6 +4,11 @@ from django.dispatch import receiver
 
 from .models import Profile
 
+
+# create signals to create a Profile instance automatically
+# upon creating a User on registration
+# code adapted from:
+# https://dev.to/earthcomfy/django-user-profile-3hik
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):
     if created:
