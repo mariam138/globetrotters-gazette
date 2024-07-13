@@ -12,4 +12,4 @@ class ProfilePageConfig(AppConfig):
         Code adapted from:
         https://dev.to/earthcomfy/django-user-profile-3hik
         """
-        import users.signals  # noqa
+        import profile_page.signals  # noqa

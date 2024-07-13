@@ -13,10 +13,10 @@ class Profile(models.Model):
     name = models.CharField()
     birthday = models.DateField()
     bio = models.TextField()
-    profile_pic = CloudinaryField('image')
-    instagram = models.URLField()
-    twitter_x = models.URLField()
-    posts = models.ForeignKey(Post, on_delete=models.CASCADE)
+    profile_pic = CloudinaryField('image', blank=True)
+    instagram = models.URLField(blank=True)
+    twitter_x = models.URLField(blank=True)
+    posts = models.ForeignKey(Post, on_delete=models.CASCADE, blank=True)
     created_on = models.DateTimeField(auto_now=True)
 
     # shows profiles made in descending order
