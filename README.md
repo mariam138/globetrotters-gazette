@@ -56,7 +56,7 @@ ERD diagrams were created to plan out the models to be used in the project. I se
 
 ![ERD's for database](static/images/gg-erd.jpeg)
 
-The ERD diagram was created using [LucidCharts](https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwi71Za796OHAxW4l1AGHabRDSwYABAAGgJkZw&ase=2&gclid=CjwKCAjwy8i0BhAkEiwAdFaeGMLKPjA8kgBCri9ZWn0MdtyPynXFhYc-ViIulIXj_9guWzffp2lPvRoCT28QAvD_BwE&ohost=www.google.com&cid=CAESV-D2IOnkpy4LCj9CsDWbfuJqDDLdsIJWlbc-1RKxJRBB9mh9QMpezKIdmDZMetyxfQ9Dw74CctQNPBBWcVYx9YGLI11953QLxgWCbZETM64k2bAxX4ZtzQ&sig=AOD64_2DDhJz07RVk1ak1fePpKkMMwNY2g&q&nis=4&adurl&ved=2ahUKEwjM35G796OHAxUMREEAHVz7AUgQ0Qx6BAgGEAE).
+The ERD diagram was created using [Lucid Charts](https://lucid.co/).
 
 ### The Skeleton Plane
 
