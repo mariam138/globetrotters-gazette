@@ -10,11 +10,15 @@ from .models import Profile
 # code adapted from:
 # https://dev.to/earthcomfy/django-user-profile-3hik
 @receiver(post_save, sender=User)
-def create_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
+def create_profile(sender, instance, created, raw, **kwargs):
+    if created and not raw:
+        Profile.objects.create(
+            user=instance,
+            email = instance.email,
+            username = instance.username)
 
 
 @receiver(post_save, sender=User)
-def save_profile(sender, instance, **kwargs):
-    instance.profile.save()
+def save_profile(sender, instance, raw, **kwargs):
+    if not raw:
+        instance.profile.save()
