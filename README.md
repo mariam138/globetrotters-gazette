@@ -52,6 +52,12 @@ For the structure, I briefly created a simple site map. This allowed me to make 
 
 ![Sitemap of Globetrotter's Gazette](static/images/globetrotter-gazette-site-map.jpeg)
 
+ERD diagrams were created to plan out the models to be used in the project. I settled on 3 models: a **Post** model, a **Comment** model and a **Profile** model. Below shows the database schema and the relationships between the models.
+
+![ERD's for database](static/images/gg-erd.jpeg)
+
+The ERD diagram was created using [LucidCharts](https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwi71Za796OHAxW4l1AGHabRDSwYABAAGgJkZw&ase=2&gclid=CjwKCAjwy8i0BhAkEiwAdFaeGMLKPjA8kgBCri9ZWn0MdtyPynXFhYc-ViIulIXj_9guWzffp2lPvRoCT28QAvD_BwE&ohost=www.google.com&cid=CAESV-D2IOnkpy4LCj9CsDWbfuJqDDLdsIJWlbc-1RKxJRBB9mh9QMpezKIdmDZMetyxfQ9Dw74CctQNPBBWcVYx9YGLI11953QLxgWCbZETM64k2bAxX4ZtzQ&sig=AOD64_2DDhJz07RVk1ak1fePpKkMMwNY2g&q&nis=4&adurl&ved=2ahUKEwjM35G796OHAxUMREEAHVz7AUgQ0Qx6BAgGEAE).
+
 ### The Skeleton Plane
 
 To create the skeleton of the website, I created wireframes using **Balsamiq**. Alternate versions were created in the application, as for some pages I wasn't entirely certain on the final layout. Listed below are the **final** versions of the wireframes used to create the layout of the website on desktop, tablet and mobile.
