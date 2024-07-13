@@ -13,9 +13,7 @@ from .models import Profile
 def create_profile(sender, instance, created, raw, **kwargs):
     if created and not raw:
         Profile.objects.create(
-            user=instance,
-            email = instance.email,
-            username = instance.username)
+            user=instance)
 
 
 @receiver(post_save, sender=User)
