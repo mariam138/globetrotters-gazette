@@ -9,6 +9,8 @@ from .models import Profile
 # upon creating a User on registration
 # code adapted from:
 # https://dev.to/earthcomfy/django-user-profile-3hik
+# addition of 'raw' keyword from
+# https://docs.djangoproject.com/en/5.0/ref/signals/#post-save
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, raw, **kwargs):
     if created and not raw:
