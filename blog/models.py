@@ -4,12 +4,13 @@ from django.db import models
 # Create your models here.
 
 REGIONS = [
-    ('US', 'USA / Canada'),
-    ('SA', 'South /Central America'),
-    ('AUS', 'Australasia'),
     ('AF', 'Africa'),
+    ('AUS', 'Australasia'),
     ('EU', 'Europe / UK'),
     ('MENA', 'Middle East')
+    ('SA', 'South /Central America'),
+    ('US', 'USA / Canada'),
+
 ]
 
 class Post(models.Model):
