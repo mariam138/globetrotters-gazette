@@ -3,6 +3,8 @@ from django.db import models
 from django.contrib.auth.models import User
 # uses cloudinary model to post images rather than django
 from cloudinary.models import CloudinaryField
+# import Post model from blog app
+from blog.models import Post
 
 # Create your models here.
 
@@ -14,4 +16,4 @@ class Profile(models.Model):
     profile_pic = CloudinaryField('image')
     instagram = models.URLField()
     twitter_x = models.URLField()
-    # posts = models.ForeignKey(Post, on_delete=models.CASCADE)
+    posts = models.ForeignKey(Post, on_delete=models.CASCADE)
