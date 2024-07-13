@@ -14,4 +14,4 @@ class Profile(models.Model):
     profile_pic = CloudinaryField('image')
     instagram = models.URLField()
     twitter_x = models.URLField()
-    posts = ForeignKey(Post, on_delete=models.CASCADE)
+    posts = models.ForeignKey(Post, on_delete=models.CASCADE)
