@@ -20,7 +20,7 @@ class Profile(models.Model):
 
     # shows profiles made in descending order
     class Meta:
-        ordering = ["-name"]
+        ordering = ["-created_on"]
 
     # displays name|username for readability
     def __str__(self):
