@@ -81,6 +81,13 @@
 
       <!-- content that changes per page will go here -->
        <main>
+        {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+          <li{% if message.SUCCESS %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
         <!-- display welcome back message when user is logged in -->
         {% if user.is_authenticated %}
         <p class="text-end m-3">Welcome back, {{ user }}.</p>
