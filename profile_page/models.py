@@ -9,6 +9,9 @@ from blog.models import Post
 # Create your models here.
 
 class Profile(models.Model):
+    """
+    Stores an instance of a Profile related to :model:`auth.User`
+    """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(null=True, blank=True)
     birthday = models.DateField(null=True, blank=True)
