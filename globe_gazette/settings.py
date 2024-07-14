@@ -160,3 +160,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # https://dev.to/gajesh/the-complete-django-allauth-guide-la3
 ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_EMAIL_VERIFICATION = None
+# redirects user to home page once registered
+ACCOUNT_SIGNUP_REDIRECT_URL = "/"
