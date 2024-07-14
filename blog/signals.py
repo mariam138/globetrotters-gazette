@@ -7,4 +7,7 @@ from django.contrib import messages
 
 @receiver(user_signed_up,)
 def reg_success_msg(request, user, **kwargs):
+    """
+    creates custom success message when registration is successful
+    """
     messages.add_message(request, messages.SUCCESS, 'Registration successful!')

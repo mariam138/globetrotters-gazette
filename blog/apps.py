@@ -6,4 +6,8 @@ class BlogConfig(AppConfig):
     name = 'blog'
 
     def ready(self):
+        """
+        Overrides ready() from app config to register signals
+        created for registration success message.
+        """
         import blog.signals 
