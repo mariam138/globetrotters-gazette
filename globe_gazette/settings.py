@@ -151,3 +151,9 @@ CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Django AllAuth custom settings
+# email not actually required for sign up but is required in form validation
+# prevents an email being sent out to verify
+ACCOUNT_EMAIL_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = None
