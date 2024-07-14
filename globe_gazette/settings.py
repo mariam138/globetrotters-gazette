@@ -163,3 +163,7 @@ ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_EMAIL_VERIFICATION = None
 # redirects user to home page once registered
 ACCOUNT_SIGNUP_REDIRECT_URL = "/"
+
+""" Django Custom Settings"""
+# redirect user to index once logged in
+LOGIN_REDIRECT_URL = "/"
