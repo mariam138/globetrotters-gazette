@@ -15,6 +15,9 @@ REGIONS = [
 ]
 
 class Post(models.Model):
+    """
+    Creates single instance of a Post model in relation to :model:`auth.User`
+    """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField()
     region = models.CharField(choices=REGIONS)
