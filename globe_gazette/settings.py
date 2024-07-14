@@ -155,5 +155,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Django AllAuth custom settings
 # email not actually required for sign up but is required in form validation
 # prevents an email being sent out to verify
+# code adapted from:
+# https://dev.to/gajesh/the-complete-django-allauth-guide-la3
 ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_EMAIL_VERIFICATION = None
