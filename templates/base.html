@@ -65,10 +65,14 @@
 
           <!-- Sign In/ Register buttons -->
           <div class="gap-2 d-md-flex justify-content-md-end">
+            {% if user.is_authenticated %}
+            <a class="btn btn-colour btn-margin btn-text text-nowrap" href="{% url 'account_logout' %}" role="button">Sign Out</a>
+            {% else %}
             <a class="btn btn-colour btn-margin btn-text text-nowrap" href="{% url 'account_login' %}" role="button">Sign In</a>
             <!-- Hide register button on smaller screens -->
             <a class="btn btn-colour btn-margin btn-text d-none d-sm-inline" href="{% url 'account_signup' %}"
               role="button">Register</a>
+            {% endif %}
           </div>
         </div>
       </nav>
