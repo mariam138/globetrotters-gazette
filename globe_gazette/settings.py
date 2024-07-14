@@ -26,7 +26,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-mariam138-globetrotters-1mhio5zxo6c.ws.codeinstitute-ide.net',
@@ -152,7 +152,8 @@ CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Django AllAuth custom settings
+
+""" Django AllAuth custom settings"""
 
 # email not actually required for sign up but is required in form validation
 # prevents an email being sent out to verify
