@@ -80,9 +80,15 @@
       </nav>
 
       <!-- content that changes per page will go here -->
+       <main>
+        <!-- display welcome back message when user is logged in -->
+        {% if user.is_authenticated %}
+        <p class="text-end m-3">Welcome back, {{ user }}.</p>
+        {% endif %}
         {% block content %}
 
         {% endblock %}
+       </main>
 
       <!-- Fixed footer -->
       <footer class="container-fluid fixed-bottom">
