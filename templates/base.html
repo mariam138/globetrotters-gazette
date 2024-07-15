@@ -81,17 +81,22 @@
 
       <!-- content that changes per page will go here -->
        <main>
-        {% if messages %}
-          {% for message in messages %}
-          <div class="alert {{ message.tags }}">
-            {{ message }}
-          </div>
-            {% endfor %}
-        {% endif %}
-        <!-- display welcome back message when user is logged in -->
-        {% if user.is_authenticated %}
-        <p class="text-end m-3">Welcome back, {{ user }}.</p>
-        {% endif %}
+         <div class="container">
+           {% if messages %}
+           {% for message in messages %}
+           <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+             {{ message }}
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+           </div>
+           {% endfor %}
+           {% endif %}
+
+           <!-- display welcome back message when user is logged in -->
+           <!-- {% if user.is_authenticated %}
+           <p class="text-end m-3">Welcome back, {{ user }}.</p>
+           {% endif %} -->
+         </div>
+
         {% block content %}
 
         {% endblock %}

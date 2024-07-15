@@ -139,6 +139,7 @@ USE_I18N = True
 
 USE_TZ = True
 
+# allow styling of django messages using bootstrap classes
 MESSAGE_TAGS = {
     messages.SUCCESS: 'alert-success',
     messages.ERROR: 'alert-danger',
