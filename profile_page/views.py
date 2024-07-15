@@ -4,4 +4,4 @@ from django.http import HttpResponse
 # Create your views here.
 
 def profile_page(request):
-    return HttpResponse('A profile page will be here.')
+    return render(request, 'profile_page/profile_page.html')
