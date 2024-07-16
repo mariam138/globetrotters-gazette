@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 import os
+import sys
 import dj_database_url
 from django.contrib.messages import constants as messages
 from pathlib import Path
@@ -29,7 +30,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-mariam138-globetrotters-1mhio5zxo6c.ws.codeinstitute-ide.net',
@@ -105,6 +106,10 @@ if os.path.isfile('env.py'):
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+# use sqlite3 database for testing
+if 'test' in sys.argv:
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
 
 # List of trusted origins
 CSRF_TRUSTED_ORIGINS = [
