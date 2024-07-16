@@ -17,6 +17,7 @@
     </div>
 
     <div class="row">
+        <!-- display user's name -->
         <div class="col">
             <span>
                 <h5 class="heading d-inline">Name:</h5>
@@ -24,5 +25,46 @@
             </span>
         </div>
     </div>
+
+    <div class="row">
+        <!-- display user's birthday -->
+        <div class="col">
+            <span>
+                <h5 class="heading d-inline">Birthday:</h5>
+                <p class="text paragraph d-inline">{{ profile.birthday }}</p>
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- display user's bio -->
+        <div class="col">
+            <span>
+                <h5 class="heading d-inline">Bio:</h5>
+                <p class="text paragraph d-inline">{{ profile.bio }}</p>
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- display user's instagram link -->
+        <div class="col">
+            <span>
+                <h5 class="heading d-inline">Instagram:</h5>
+                <p class="text paragraph d-inline">{{ profile.instagram }}</p>
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- display user's twitter/x link -->
+        <div class="col">
+            <span>
+                <h5 class="heading d-inline">X:</h5>
+                <p class="text paragraph d-inline">{{ profile.twitter_x }}</p>
+            </span>
+        </div>
+    </div>
+
 </div>
 {% endblock %}
