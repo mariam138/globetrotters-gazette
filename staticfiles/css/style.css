@@ -1,0 +1,92 @@
+/* Google Fonts Import */
+/* Raleway for headings, Pavanam for standard text */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pavanam&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #FAF9F9;
+    /* pushes any content to display below the navbar */
+    margin-top: 78px;
+}
+
+/**************************************** Navbar*/
+.navbar {
+    padding: 0;
+}
+
+.navbar-colour {
+    background-color: #06585D;
+}
+
+.navbar-colour button {
+    padding: 4px 6px;
+}
+
+.navbar-text {
+    color: #FAF9F9;
+}
+
+.heading {
+    font-family: Raleway, sans-serif;
+    font-weight: 500;
+}
+
+.text {
+    font-family: Pavanam, sans-serif;
+}
+
+.paragraph {
+    font-size: 1.2rem;
+}
+
+.btn-text {
+    font-family: Raleway, sans-serif;
+}
+
+/* Changes the colour of the icon supplied by boostrap */
+/* Colour is changed to #FAF9F9 using rgba format */
+/* This overrides the default colour set by bootstrap in the svg */
+/* Code adapted from https://stackoverflow.com/questions/47122852/change-color-of-svg-background-image-bootstrap-4-carousel */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(250, 249, 249, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.btn-colour {
+    background-color: #5AAFC2;
+    color: #181720;
+}
+
+.btn-margin {
+    margin: 1rem 0;
+}
+
+/**************************************** Footer */
+
+.footer {
+    background-color: #06585D;
+    color: #FAF9F9;
+}
+
+/* style icons to be white colour and make bigger */
+.social-links i {
+    color: #FAF9F9;
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    font-size: 2rem;
+}
+
+.social-links li {
+    padding: 0 3% 1%;
+}
+
+/**************************************** Sign In Page */
+
+.auth-headings {
+    padding-top: 1rem;
+}
