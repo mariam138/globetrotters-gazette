@@ -2,9 +2,17 @@
 
 {% block content %}
 <div class="container">
+    <!-- Display heading of [username]'s profile' -->
     <div class="row">
         <div class="col">
             <h2 class="heading text-center">{{ user }}'s profile</h2>
+        </div>
+    </div>
+
+    <!-- display user's profile picture -->
+    <div class="row">
+        <div class="col text-center">
+            <img src="" alt="{{ user }}'s profile picture" class="img-thumbnail border rounded">
         </div>
     </div>
 </div>
