@@ -21,7 +21,7 @@
         <div class="col">
             <h5 class="heading">Name:</h5>
             <!-- checks to see if p element is empty before applying the styling -->
-            <p class="text paragraph {% if profile.name %}border border-dark-subtle rounded{% endif %}">
+            <p class="paragraph {% if profile.name %}border border-dark-subtle rounded{% endif %}">
                 {{ profile.name }}</p>
         </div>
     </div>
@@ -30,7 +30,7 @@
         <!-- display user's birthday -->
         <div class="col">
             <h5 class="heading">Birthday:</h5>
-            <p class="text paragraph {% if profile.birthday %}border border-dark-subtle rounded{% endif %}">
+            <p class="paragraph {% if profile.birthday %}border border-dark-subtle rounded{% endif %}">
                 {{ profile.birthday }}</p>
         </div>
     </div>
@@ -46,13 +46,13 @@
                 aria-expanded="false" aria-controls="emailInfo"><i class="fa-solid fa-circle-info" id="email-info"></i></button>
             <!-- When button is clicked, the user is informed that their email is not visible to others -->
             <div class="collapse" id="emailInfo">
-                <div class="card border-info text paragraph">
+                <div class="card border-info paragraph">
                     * Email is not visible to others.
                 </div>
             </div>
             <!-- Add some extra bootstrap classes to grey out the field to visually indicate it is not visible to other users -->
             <p
-                class="text paragraph border border-dark-subtle rounded bg-secondary-subtle bg-gradient text-body-secondary">
+                class="paragraph border border-dark-subtle rounded bg-secondary-subtle bg-gradient text-body-secondary">
                 {{ user.email }}</p>
         </div>
     </div>
@@ -62,7 +62,7 @@
         <!-- display user's bio -->
         <div class="col">
             <h5 class="heading">Bio:</h5>
-            <p class="text paragraph {% if profile.bio %}border border-dark-subtle rounded{% endif %}">{{ profile.bio }}
+            <p class="paragraph {% if profile.bio %}border border-dark-subtle rounded{% endif %}">{{ profile.bio }}
             </p>
         </div>
     </div>
@@ -71,7 +71,7 @@
         <!-- display user's instagram link -->
         <div class="col">
             <h5 class="heading">Instagram:</h5>
-            <p class="text paragraph {% if profile.instagram %}border border-dark-subtle rounded{% endif %}">
+            <p class="paragraph {% if profile.instagram %}border border-dark-subtle rounded{% endif %}">
                 {{ profile.instagram }}</p>
         </div>
     </div>
@@ -80,7 +80,7 @@
         <!-- display user's twitter/x link -->
         <div class="col">
             <h5 class="heading">X:</h5>
-            <p class="text paragraph {% if profile.twitter_x %}border border-dark-subtle rounded{% endif %}">
+            <p class="paragraph {% if profile.twitter_x %}border border-dark-subtle rounded{% endif %}">
                 {{ profile.twitter_x }}</p>
         </div>
     </div>
