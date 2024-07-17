@@ -97,6 +97,11 @@ body {
 
 /* Change the colour of the icon to match the theme and make it larger */
 #email-info {
-    color: #181720 !important;
-    font-size: 20px !important;
+    color: #181720;
+    font-size: 20px;
+}
+
+/* Add breathing room on the left of the text in each profile section */
+.profile-text {
+    padding-left: 5px;
 }
