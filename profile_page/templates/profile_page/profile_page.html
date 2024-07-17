@@ -33,6 +33,8 @@
         </div>
     </div>
 
+    <!-- Email is only displayed to the user who is logged in -->
+    {% if request.user %}
     <div class="row">
         <!-- display user's email -->
         <div class="col">
@@ -40,6 +42,7 @@
                 <p class="text paragraph border border-dark-subtle rounded">{{ user.email }}</p>
         </div>
     </div>
+    {% endif %}
 
     <div class="row">
         <!-- display user's bio -->
