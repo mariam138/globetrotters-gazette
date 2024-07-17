@@ -97,3 +97,9 @@ body {
     padding: 5px;
     margin-bottom: 7px;
 } */
+
+/* Change the colour of the icon to match the theme and make it larger */
+#email-info {
+    color: #181720 !important;
+    font-size: 20px !important;
+}
