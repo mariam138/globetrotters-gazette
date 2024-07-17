@@ -20,7 +20,8 @@
         <!-- display user's name -->
         <div class="col">
                 <h5 class="heading">Name:</h5>
-                <p class="text paragraph border border-dark-subtle rounded">{{ profile.name }}</p>
+                <!-- checks to see if p element is empty before applying the styling -->
+                <p class="text paragraph {% if p %}border border-dark-subtle rounded{% endif %}">{{ profile.name }}</p>
         </div>
     </div>
 
@@ -28,7 +29,7 @@
         <!-- display user's birthday -->
         <div class="col">
                 <h5 class="heading">Birthday:</h5>
-                <p class="text paragraph border border-dark-subtle rounded">{{ profile.birthday }}</p>
+                <p class="text paragraph {% if p %}border border-dark-subtle rounded{% endif %}">{{ profile.birthday }}</p>
         </div>
     </div>
 
@@ -36,7 +37,7 @@
         <!-- display user's bio -->
         <div class="col">
                 <h5 class="heading">Bio:</h5>
-                <p class="text paragraph border border-dark-subtle rounded">{{ profile.bio }}</p>
+                <p class="text paragraph {% if p %}border border-dark-subtle rounded{% endif %}">{{ profile.bio }}</p>
         </div>
     </div>
 
@@ -44,7 +45,7 @@
         <!-- display user's instagram link -->
         <div class="col">
                 <h5 class="heading">Instagram:</h5>
-                <p class="text paragraph border border-dark-subtle rounded">{{ profile.instagram }}</p>
+                <p class="text paragraph {% if p %}border border-dark-subtle rounded{% endif %}">{{ profile.instagram }}</p>
         </div>
     </div>
 
@@ -52,7 +53,7 @@
         <!-- display user's twitter/x link -->
         <div class="col">
                 <h5 class="heading">X:</h5>
-                <p class="text paragraph border border-dark-subtle rounded">{{ profile.twitter_x }}</p>
+                <p class="text paragraph {% if p %}border border-dark-subtle rounded{% endif %}">{{ profile.twitter_x }}</p>
         </div>
     </div>
 
