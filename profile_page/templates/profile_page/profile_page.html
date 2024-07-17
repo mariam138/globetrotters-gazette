@@ -19,17 +19,19 @@
     <div class="row">
         <!-- display user's name -->
         <div class="col">
-                <h5 class="heading">Name:</h5>
-                <!-- checks to see if p element is empty before applying the styling -->
-                <p class="text paragraph {% if profile.name %}border border-dark-subtle rounded{% endif %}">{{ profile.name }}</p>
+            <h5 class="heading">Name:</h5>
+            <!-- checks to see if p element is empty before applying the styling -->
+            <p class="text paragraph {% if profile.name %}border border-dark-subtle rounded{% endif %}">
+                {{ profile.name }}</p>
         </div>
     </div>
 
     <div class="row">
         <!-- display user's birthday -->
         <div class="col">
-                <h5 class="heading">Birthday:</h5>
-                <p class="text paragraph {% if profile.birthday %}border border-dark-subtle rounded{% endif %}">{{ profile.birthday }}</p>
+            <h5 class="heading">Birthday:</h5>
+            <p class="text paragraph {% if profile.birthday %}border border-dark-subtle rounded{% endif %}">
+                {{ profile.birthday }}</p>
         </div>
     </div>
 
@@ -38,8 +40,12 @@
     <div class="row">
         <!-- display user's email -->
         <div class="col">
-                <h5 class="heading">Email:</h5>
-                <p class="text paragraph border border-dark-subtle rounded">{{ user.email }}</p>
+            <h5 class="heading">Email:</h5>
+            <!-- Add some extra bootstrap classes to grey out the field to visually indicate it is not visible to other users -->
+            <p
+                class="text paragraph border border-dark-subtle rounded bg-secondary-subtle bg-gradient text-body-secondary">
+                {{ user.email }}</p>
+            <p class="text paragraph"><small>* Email is not visible to others.</small></p>
         </div>
     </div>
     {% endif %}
@@ -47,30 +53,34 @@
     <div class="row">
         <!-- display user's bio -->
         <div class="col">
-                <h5 class="heading">Bio:</h5>
-                <p class="text paragraph {% if profile.bio %}border border-dark-subtle rounded{% endif %}">{{ profile.bio }}</p>
+            <h5 class="heading">Bio:</h5>
+            <p class="text paragraph {% if profile.bio %}border border-dark-subtle rounded{% endif %}">{{ profile.bio }}
+            </p>
         </div>
     </div>
 
     <div class="row">
         <!-- display user's instagram link -->
         <div class="col">
-                <h5 class="heading">Instagram:</h5>
-                <p class="text paragraph {% if profile.instagram %}border border-dark-subtle rounded{% endif %}">{{ profile.instagram }}</p>
+            <h5 class="heading">Instagram:</h5>
+            <p class="text paragraph {% if profile.instagram %}border border-dark-subtle rounded{% endif %}">
+                {{ profile.instagram }}</p>
         </div>
     </div>
 
     <div class="row">
         <!-- display user's twitter/x link -->
         <div class="col">
-                <h5 class="heading">X:</h5>
-                <p class="text paragraph {% if profile.twitter_x %}border border-dark-subtle rounded{% endif %}">{{ profile.twitter_x }}</p>
+            <h5 class="heading">X:</h5>
+            <p class="text paragraph {% if profile.twitter_x %}border border-dark-subtle rounded{% endif %}">
+                {{ profile.twitter_x }}</p>
         </div>
     </div>
 
     <div class="row">
         <!-- centre items in the column -->
         <div class="col text-center">
+            <!-- will only show the edit button to the user for their own profile -->
             {% if request.user %}
             <!-- display button to edit profile -->
             <a class="btn btn-colour btn-margin btn-text text-nowrap" href="" role="button">Edit Profile</a>
