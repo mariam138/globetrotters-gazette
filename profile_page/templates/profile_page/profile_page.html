@@ -2,7 +2,7 @@
 
 {% block content %}
 <!-- 100% width until tablet breakpoint -->
-<div class="container-sm">
+<div class="container-sm"> 
     <!-- Display heading of [username]'s profile' -->
     <div class="row">
         <div class="col">
@@ -12,14 +12,14 @@
 
     <!-- display user's profile picture -->
     <div class="row">
-        <div class="col text-center">
+        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4 text-center">
             <img src="" alt="{{ user }}'s profile picture" class="img-thumbnail border rounded">
         </div>
     </div>
 
     <div class="row">
         <!-- display user's name -->
-        <div class="col">
+        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
             <h5 class="heading">Name:</h5>
             <!-- checks to see if p element is empty before applying the styling -->
             <p class="paragraph profile-text {% if profile.name %}border border-dark-subtle rounded{% endif %}">
@@ -29,7 +29,7 @@
 
     <div class="row">
         <!-- display user's birthday -->
-        <div class="col">
+        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
             <h5 class="heading">Birthday:</h5>
             <p class="paragraph profile-text {% if profile.birthday %}border border-dark-subtle rounded{% endif %}">
                 {{ profile.birthday }}</p>
@@ -40,7 +40,7 @@
     {% if request.user %}
     <div class="row">
         <!-- display user's email -->
-        <div class="col">
+        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
             <h5 class="heading d-inline">Email:</h5>
             <!-- Info icon which can be clicked on to reveal text underneath -->
             <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#emailInfo"
@@ -61,7 +61,7 @@
 
     <div class="row">
         <!-- display user's bio -->
-        <div class="col">
+        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
             <h5 class="heading">Bio:</h5>
             <p class="paragraph profile-text {% if profile.bio %}border border-dark-subtle rounded{% endif %}">{{ profile.bio }}
             </p>
@@ -70,7 +70,7 @@
 
     <div class="row">
         <!-- display user's instagram link -->
-        <div class="col">
+        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
             <h5 class="heading">Instagram:</h5>
             <p class="paragraph profile-text {% if profile.instagram %}border border-dark-subtle rounded{% endif %}">
                 {{ profile.instagram }}</p>
@@ -79,7 +79,7 @@
 
     <div class="row">
         <!-- display user's twitter/x link -->
-        <div class="col">
+        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
             <h5 class="heading">X:</h5>
             <p class="paragraph profile-text {% if profile.twitter_x %}border border-dark-subtle rounded{% endif %}">
                 {{ profile.twitter_x }}</p>
