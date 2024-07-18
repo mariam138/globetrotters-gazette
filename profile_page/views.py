@@ -38,6 +38,19 @@ def profile_page(request, username):
     },)
 
 def edit_profile(request, username):
+    """
+    Allows editing of an individual profile from :model:`profile_page.Profile`
+
+    ** Context **
+
+    ``profile_form``
+        An instance of :model:`forms.ProfileForm`
+
+    ** Template **
+        :template:`profile_page/edit_profile.html`
+
+    """
+
     # create an instance of the ProfileForm model
     profile_form = ProfileForm()
     profile = get_object_or_404(Profile, user__username=username)
