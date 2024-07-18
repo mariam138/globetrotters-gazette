@@ -20,6 +20,7 @@ class Profile(models.Model):
     instagram = models.URLField(blank=True)
     twitter_x = models.URLField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
 
     # shows profiles made in descending order
     class Meta:
