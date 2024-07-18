@@ -54,8 +54,10 @@ INSTALLED_APPS = [
     'profile_page',
     'django_summernote',
     'crispy_forms',
+    'crispy_bootstrap5',
 
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -182,3 +184,8 @@ ACCOUNT_SIGNUP_REDIRECT_URL = "/"
 """ Django Custom Settings"""
 # redirect user to index once logged in
 LOGIN_REDIRECT_URL = "/"
+
+""" Crispy Forms """
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
