@@ -156,4 +156,8 @@ You can clone this repository to create a remote copy on your local machine. Thi
 5. Type `git clone` followed by the URL that has been copied
 6. Press *'Enter'* to create your local clone
 
+## Code Adaptations
+
+- Code to create a date picker widget when editing a user's profile is adapted from the [Django Forums](https://forum.djangoproject.com/t/cant-change-type-attribute-in-django-crispy-forms/10054)
+
 ## Acknowledgments
