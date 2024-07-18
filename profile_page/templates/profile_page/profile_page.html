@@ -22,7 +22,8 @@
         <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
             <h5 class="heading">Name:</h5>
             <!-- checks to see if p element is empty before applying the styling -->
-            <p class="paragraph profile-text {% if profile.name %}border border-dark-subtle rounded{% endif %}">
+            <p class="paragraph profile-text {% if profile.name %}border border-dark-subtle rounded bg-light-subtle
+            {% endif %}">
                 {{ profile.name }}</p>
         </div>
     </div>
@@ -31,7 +32,8 @@
         <!-- display user's birthday -->
         <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
             <h5 class="heading">Birthday:</h5>
-            <p class="paragraph profile-text {% if profile.birthday %}border border-dark-subtle rounded{% endif %}">
+            <p class="paragraph profile-text {% if profile.birthday %}border border-dark-subtle rounded bg-light-subtle
+            {% endif %}">
                 {{ profile.birthday }}</p>
         </div>
     </div>
@@ -63,7 +65,8 @@
         <!-- display user's bio -->
         <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
             <h5 class="heading">Bio:</h5>
-            <p class="paragraph profile-text {% if profile.bio %}border border-dark-subtle rounded{% endif %}">{{ profile.bio }}
+            <p class="paragraph profile-text {% if profile.bio %}border border-dark-subtle rounded bg-light-subtle
+            {% endif %}">{{ profile.bio }}
             </p>
         </div>
     </div>
@@ -72,7 +75,8 @@
         <!-- display user's instagram link -->
         <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
             <h5 class="heading">Instagram:</h5>
-            <p class="paragraph profile-text {% if profile.instagram %}border border-dark-subtle rounded{% endif %}">
+            <p class="paragraph profile-text {% if profile.instagram %}border border-dark-subtle rounded bg-light-subtle
+            {% endif %}">
                 {{ profile.instagram }}</p>
         </div>
     </div>
@@ -81,7 +85,8 @@
         <!-- display user's twitter/x link -->
         <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
             <h5 class="heading">X:</h5>
-            <p class="paragraph profile-text {% if profile.twitter_x %}border border-dark-subtle rounded{% endif %}">
+            <p class="paragraph profile-text {% if profile.twitter_x %}border border-dark-subtle rounded bg-light-subtle
+            {% endif %}">
                 {{ profile.twitter_x }}</p>
         </div>
     </div>
