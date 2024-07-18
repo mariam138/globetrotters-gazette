@@ -10,7 +10,7 @@ from .models import Profile
 # code from:
 # https://docs.djangoproject.com/en/5.0/topics/auth/default/#the-login-required-decorator
 @login_required
-def profile_page(request):
+def profile_page(request, username):
     # try:
     #     # Get the profile for the logged-in user
     #     profile = Profile.objects.get(user=request.user)
@@ -19,8 +19,7 @@ def profile_page(request):
     #     profile = None
 
     # use the get_object_or_404 method to return a 404 page if profile is not found
-    queryset = Profile.objects.get(user=request.user)
-    profile = get_object_or_404(queryset)
+    profile = get_object_or_404(Profile, user__username=username)
 
     return render(request, 'profile_page/profile_page.html',
     {

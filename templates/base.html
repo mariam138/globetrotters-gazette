@@ -58,7 +58,7 @@
               <!-- display link to profile if user is logged in -->
               {% if user.is_authenticated %}
               <li class="nav-item">
-                <a class="nav-link navbar-text" href="{% url 'profile_page' %}">My Profile</a>
+                <a class="nav-link navbar-text" href="{% url 'profile_page' user.username %}">My Profile</a>
               </li>
               {% endif %}
               <!-- Search bar form -->
