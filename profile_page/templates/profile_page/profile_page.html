@@ -95,7 +95,7 @@
         <!-- centre items in the column -->
         <div class="col text-center">
             <!-- will only show the edit button to the user for their own profile -->
-            {% if request.user %}
+            {% if request.user == profile.user %}
             <!-- display button to edit profile -->
             <a class="btn btn-colour btn-margin btn-text text-nowrap" href="{% url 'edit_profile' user.username %}" role="button">Edit Profile</a>
             {% endif %}
