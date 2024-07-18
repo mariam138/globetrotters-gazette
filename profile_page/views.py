@@ -57,7 +57,15 @@ def edit_profile(request, username):
     # create an instance of the ProfileForm model
     profile_form = ProfileForm()
     profile = get_object_or_404(
-        Profile, user__username=username).order_by('-updated_on').first()
+        Profile, user__username=username)
+
+    # save profile edit to database
+    if request.method == "POST":
+        profile_form = ProfileForm(data=request.POST)
+        if profile_form.is_valid() and profile.user == request.user:
+            profile = profile_form.save(commit=False)
+            profile.user = request.user
+            profile.save()
 
     return render(request, 'profile_page/edit_profile.html',
                   {
