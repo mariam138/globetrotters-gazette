@@ -61,11 +61,8 @@ def edit_profile(request, username):
 
     # save profile edit to database
     if request.method == "POST":
-        profile_form = ProfileForm(data=request.POST)
+        profile_form = ProfileForm(data=request.POST, instance=profile)
         if profile_form.is_valid() and profile.user == request.user:
-            profile = profile_form.save(commit=False)
-            profile.user = request.user
-            
             profile.save()
 
     return render(request, 'profile_page/edit_profile.html',
