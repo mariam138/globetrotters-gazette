@@ -13,10 +13,14 @@
 
     <div class="row">
         <div class="col">
+            <!-- Only show edit profile form if user is logged in -->
             {% if user.is_authenticated %}
             <form method="post">
                 {{ profile_form | crispy }}
                 {% csrf_token %}
+                <!-- Save/Cancel buttons -->
+                <a href="" class="btn btn-text btn-success">Save</a>
+                <a href="" class="btn btn-text btn-danger">Cancel</a>
             </form>
             {% endif %}
         </div>

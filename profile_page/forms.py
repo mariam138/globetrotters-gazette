@@ -12,6 +12,3 @@ class ProfileForm(ModelForm):
         model = Profile
         # shows all fields except the created_on field
         exclude = ["user", "created_on"]
-
-# creating an instance of the profile form model
-# profile_form = ProfileForm()
