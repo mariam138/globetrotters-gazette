@@ -84,6 +84,14 @@ As all of the shades passed with **AAA**, I settled on these colours as my final
 
 ## Future Features
 
+## Bugs
+
+1. While writing the code to edit a user's profile, I came across an *Integrity Error* when trying to save the model in the **edit_profile** view. Below is the detailed message of the Integrity error:
+
+> DETAIL: Key (user_id)=(13) already exists.
+
+I found a solution on the following [Google Groups](https://groups.google.com/g/django-users/c/Pq-3UatNP60?pli=1) post. As I had set up my **user** field in my **Profile** model as a **one to one** relationship, adding `primary_key=True` helped to fix the duplicate key value issue.
+
 ## Testing
 
 ## Technologies
