@@ -56,7 +56,8 @@ def edit_profile(request, username):
 
     # create an instance of the ProfileForm model
     profile_form = ProfileForm()
-    profile = get_object_or_404(Profile, user__username=username)
+    profile = get_object_or_404(
+        Profile, user__username=username).order_by('-updated_on').first()
 
     return render(request, 'profile_page/edit_profile.html',
                   {
