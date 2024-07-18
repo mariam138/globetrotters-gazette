@@ -1,6 +1,25 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
-<form method="post">
-    {{ profile_form|crispy }}
-</form>
+{% block content %}
+<!-- 100% width until tablet breakpoint -->
+<div class="container-sm">
+    <div class="row">
+        <div class="col">
+            <!-- Display heading indicating that user is editing their profile -->
+            <h2 class="heading text-center">Editing {{ user }}'s profile:</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            {% if user.is_authenticated %}
+            <form method="post">
+                {{ profile_form | crispy }}
+                {% csrf_token %}
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
