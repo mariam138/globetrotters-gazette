@@ -11,14 +11,24 @@ from .models import Profile
 # https://docs.djangoproject.com/en/5.0/topics/auth/default/#the-login-required-decorator
 @login_required
 def profile_page(request, username):
-    # try:
-    #     # Get the profile for the logged-in user
-    #     profile = Profile.objects.get(user=request.user)
-    # # Handle case where profile does not exist
-    # except Profile.DoesNotExist:
-    #     profile = None
+    """
+    Displays an individual profile from :model:`profile_page.Profile`
+
+    ** Context **
+
+    ``profile``
+        An instance of :model:`profile_page.Profile`
+
+    ** Template **
+        :template:`profile_page/profile_page.html`
+
+    """
 
     # use the get_object_or_404 method to return a 404 page if profile is not found
+    # using the lookup function via relationships -
+    # going into the user field from the Profile model and searching for the username
+    # code adapted from:
+    # https://docs.djangoproject.com/en/4.2/topics/db/queries/#lookups-that-span-relationships
     profile = get_object_or_404(Profile, user__username=username)
 
     return render(request, 'profile_page/profile_page.html',
