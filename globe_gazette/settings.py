@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'profile_page',
     'django_summernote',
+    'crispy_forms',
 
 ]
 
