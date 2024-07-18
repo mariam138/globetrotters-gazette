@@ -19,8 +19,10 @@
                 {{ profile_form | crispy }}
                 {% csrf_token %}
                 <!-- Save/Cancel buttons -->
-                <a href="" class="btn btn-text btn-success">Save</a>
-                <a href="" class="btn btn-text btn-danger">Cancel</a>
+                 <div class="text-center mb-3">
+                    <a href="" class="btn btn-text btn-success">Save</a>
+                    <a href="" class="btn btn-text btn-danger">Cancel</a>
+                 </div>
             </form>
             {% endif %}
         </div>
