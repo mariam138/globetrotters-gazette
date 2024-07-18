@@ -11,7 +11,7 @@ class ProfileForm(ModelForm):
     class Meta:
         model = Profile
         # shows all fields except the created_on field
-        exclude = ["created_on"]
+        exclude = ["user", "created_on"]
 
 # creating an instance of the profile form model
 # profile_form = ProfileForm()
