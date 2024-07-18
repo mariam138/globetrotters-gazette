@@ -10,6 +10,8 @@ from .forms import ProfileForm
 # can see this view. unauthorised users are redirected to login
 # code from:
 # https://docs.djangoproject.com/en/5.0/topics/auth/default/#the-login-required-decorator
+
+
 @login_required
 def profile_page(request, username):
     """
@@ -33,9 +35,10 @@ def profile_page(request, username):
     profile = get_object_or_404(Profile, user__username=username)
 
     return render(request, 'profile_page/profile_page.html',
-    {
-        'profile': profile,
-    },)
+                  {
+                      'profile': profile,
+                  },)
+
 
 def edit_profile(request, username):
     """
@@ -56,6 +59,6 @@ def edit_profile(request, username):
     profile = get_object_or_404(Profile, user__username=username)
 
     return render(request, 'profile_page/edit_profile.html',
-    {
-        'profile_form': profile_form
-    })
+                  {
+                      'profile_form': profile_form
+                  })
