@@ -14,4 +14,4 @@ class ProfileForm(ModelForm):
         exclude = ["created_on"]
 
 # creating an instance of the profile form model
-profile_form = ProfileForm()
+# profile_form = ProfileForm()
