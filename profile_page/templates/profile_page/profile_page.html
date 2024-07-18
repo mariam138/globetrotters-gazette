@@ -97,7 +97,7 @@
             <!-- will only show the edit button to the user for their own profile -->
             {% if request.user %}
             <!-- display button to edit profile -->
-            <a class="btn btn-colour btn-margin btn-text text-nowrap" href="" role="button">Edit Profile</a>
+            <a class="btn btn-colour btn-margin btn-text text-nowrap" href="{% url 'edit_profile' %}" role="button">Edit Profile</a>
             {% endif %}
         </div>
     </div>
