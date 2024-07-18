@@ -36,3 +36,13 @@ def profile_page(request, username):
     {
         'profile': profile,
     },)
+
+def edit_profile(request, username):
+    # create an instance of the ProfileForm model
+    profile_form = ProfileForm()
+    profile = get_object_or_404(Profile, user__username=username)
+
+    return render(request, 'profile_page/edit_profile.html',
+    {
+        'profile_form': profile_form
+    })
