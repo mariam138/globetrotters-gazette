@@ -4,6 +4,8 @@ from django import forms
 from django.forms import ModelForm
 # import the Profile model to create the form
 from .models import Profile
+# import the CloudinaryFileInput class to override the default widget
+from .widgets import CloudinaryFileInput
 
 class DateInput(forms.DateInput):
     """
