@@ -54,10 +54,11 @@ def edit_profile(request, username):
 
     """
 
-    # create an instance of the ProfileForm model
-    profile_form = ProfileForm()
+    # create an instance of the profile model with logged in user's info
     profile = get_object_or_404(
         Profile, user__username=username)
+    # load profile form, pre-populating fields that have already been filled by user
+    profile_form = ProfileForm(instance=profile)
 
     # save profile edit to database
     if request.method == "POST":
