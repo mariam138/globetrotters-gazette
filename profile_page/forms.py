@@ -22,6 +22,8 @@ class ProfileForm(ModelForm):
         model = Profile
         # shows all fields except the created_on field
         exclude = ["user", "created_on"]
+        # customise widgets for profile form
         widgets = {
             "birthday": DateInput(),
+            "profile_pic": CloudinaryFileInput()
         }
