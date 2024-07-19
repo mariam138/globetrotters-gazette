@@ -5,7 +5,8 @@ from django.forms import ModelForm
 # import the Profile model to create the form
 from .models import Profile
 # import the CloudinaryFileInput class to override the default widget
-from .widgets import CloudinaryFileInput
+# from .widgets import CloudinaryFileInput
+# from cloudinary.models import CloudinaryFileField
 
 class DateInput(forms.DateInput):
     """
@@ -27,5 +28,5 @@ class ProfileForm(ModelForm):
         # customise widgets for profile form
         widgets = {
             "birthday": DateInput(),
-            "profile_pic": CloudinaryFileInput()
+            # "profile_pic": CloudinaryFileInput()
         }

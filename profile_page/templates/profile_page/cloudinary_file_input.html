@@ -1,6 +1,6 @@
-<!-- Clearable file input template -->
+<!-- Clearable file input template
 <!-- Adapted from: https://github.com/django/django/blob/main/django/forms/templates/django/forms/widgets/clearable_file_input.html -->
-{% if widget.is_initial %}
+<!-- {% if widget.is_initial %}
     {{ widget.initial_text }}: 
     <a href="{{ widget.value.url }}">{{ widget.value }}</a>
     {% if not widget.required %}
@@ -12,4 +12,10 @@
     <br>
     {{ widget.input_text }}:
 {% endif %}
-<input type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
+<input type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}> -->
+
+<!-- {% if widget.is_hidden %}
+    <input type="file" name="{{ widget.name }}" id="{{ widget.attrs.id }}" style="display:none;" {{ widget.attrs }}>
+{% endif %}
+
+<button type="submit" class="btn btn-primary" id="upload_widget_btn">Choose file</button> -->
