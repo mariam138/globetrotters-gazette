@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+# allow use of the messages framework when updating profile
+from django.contrib import messages
 from .models import Profile
 from .forms import ProfileForm
 
@@ -65,6 +67,18 @@ def edit_profile(request, username):
         profile_form = ProfileForm(data=request.POST, instance=profile)
         if profile_form.is_valid() and profile.user == request.user:
             profile.save()
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                'Your profile has been updated.'
+            )
+        else:
+            messages.add_message(
+                request,
+                messages.ERROR,
+                'There was a problem updating your profile. Please try again.'
+
+            )
 
     return render(request, 'profile_page/edit_profile.html',
                   {
