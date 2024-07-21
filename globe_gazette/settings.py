@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 import sys
 import dj_database_url
+import cloudinary
 from django.contrib.messages import constants as messages
 from pathlib import Path
 
@@ -163,8 +164,16 @@ MESSAGE_TAGS = {
 
 STATIC_URL = 'static/'
 
+""" Cloudinary Settings"""
 # Cloudinary storage
 CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
+
+# Cloudinary config
+cloudinary.config(
+    cloud_name = os.environ.get("CLOUD_NAME"),
+    api_key = os.environ.get("CLOUDINARY_API_KEY"),
+    api_secret = os.environ.get("CLOUDINARY_API_SECRET")
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
