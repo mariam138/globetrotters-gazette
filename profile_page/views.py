@@ -40,7 +40,7 @@ def profile_page(request, username):
                   },)
 
 
-def edit_profile(request, username):
+def edit_save_profile(request, username):
     """
     Allows editing of an individual profile from :model:`profile_page.Profile`
 
