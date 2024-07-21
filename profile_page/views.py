@@ -40,9 +40,10 @@ def profile_page(request, username):
                   },)
 
 
+@login_required
 def edit_save_profile(request, username):
     """
-    Allows editing of an individual profile from :model:`profile_page.Profile`
+    Allows editing and saving of an individual profile from :model:`profile_page.Profile`
 
     ** Context **
 
@@ -69,6 +70,53 @@ def edit_save_profile(request, username):
                 request,
                 messages.SUCCESS,
                 'Your profile has been updated.'
+            )
+        else:
+            messages.add_message(
+                request,
+                messages.ERROR,
+                'There was a problem updating your profile. Please try again.'
+            )
+
+    return render(request, 'profile_page/edit_profile.html',
+                  {
+                      'profile_form': profile_form
+                  })
+
+
+@login_required
+def edit_cancel_profile(request, username):
+    """
+    Allows cancelling and update of an individual profile from :model:`profile_page.Profile`
+
+    ** Context **
+
+    ``profile_form``
+        An instance of :model:`forms.ProfileForm`
+
+    ** Template **
+        :template:`profile_page/edit_profile.html`
+
+    """
+
+    # create an instance of the profile model with logged in user's info
+    profile = get_object_or_404(
+        Profile, user__username=username)
+    # load profile form, pre-populating fields that have already been filled by user
+    profile_form = ProfileForm(instance=profile)
+
+    # cancel a change to the profile instance
+    if request.method == "POST":
+        profile_form = ProfileForm(data=request.POST, instance=profile)
+        if profile_form.is_valid() and profile.user == request.user:
+            # refreshes the instance with the last saved data from the database
+            # code adapted from:
+            # https://docs.djangoproject.com/en/4.2/ref/models/instances/#refreshing-objects-from-database
+            profile.refresh_from_db()
+            messages.add_message(
+                request,
+                messages.WARNING,
+                'Your changes have not been made.'
             )
         else:
             messages.add_message(
