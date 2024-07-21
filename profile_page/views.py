@@ -64,7 +64,7 @@ def edit_save_profile(request, username):
 
     # save profile edit to database
     if request.method == "POST":
-        profile_form = ProfileForm(data=request.POST, instance=profile)
+        profile_form = ProfileForm(request.POST, request.FILES, instance=profile)
         if profile_form.is_valid() and profile.user == request.user:
             profile.save()
             messages.add_message(

@@ -28,5 +28,4 @@ class ProfileForm(ModelForm):
         # customise widgets for profile form
         widgets = {
             "birthday": DateInput(),
-            # "profile_pic": CloudinaryFileInput()
         }
