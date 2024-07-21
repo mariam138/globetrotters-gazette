@@ -114,15 +114,13 @@ def edit_cancel_profile(request, username):
             # code adapted from:
             # https://docs.djangoproject.com/en/4.2/ref/models/instances/#refreshing-objects-from-database
             profile.refresh_from_db()
-            messages.add_message(
+            messages.warning(
                 request,
-                messages.WARNING,
                 'Your changes have not been made.'
             )
         else:
-            messages.add_message(
+            messages.error(
                 request,
-                messages.ERROR,
                 'There was a problem updating your profile. Please try again.'
             )
 
