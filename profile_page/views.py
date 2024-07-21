@@ -125,7 +125,7 @@ def edit_cancel_profile(request, username):
                 'There was a problem updating your profile. Please try again.'
             )
 
-    return render(request, 'profile_page/edit_profile.html',
-                  {
-                      'profile_form': profile_form
-                  })
+    # if changes are cancelled, redirect user back to the profile page
+    # code adapted from:
+    # https://docs.djangoproject.com/en/4.2/topics/http/shortcuts/#redirect
+    return redirect('profile_page')
