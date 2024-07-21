@@ -19,13 +19,18 @@
                 {{ profile_form | crispy }}
                 {% csrf_token %}
                 <!-- Save/Cancel buttons -->
-                 <div class="text-center mb-3">
+                 <div class="text-center">
                     <button class="btn btn-text btn-success" type="submit">Save</button>
                     <button class="btn btn-text btn-danger" type="button" data-bs-toggle="modal"
                         data-bs-target="#cancelChangesModal" aria-labelledby="cancelChangesModalLabel" aria-hidden="true">Cancel</button>
                  </div>
             </form>
             {% endif %}
+            <!-- Redirect user back to profile page after changes have been saved / no changes were made -->
+            <div class="text-center mb-3">
+              <a class="btn btn-colour btn-margin btn-text" href="{% url 'profile_page' user.username %}" role="button"><i
+                class="fa-solid fa-arrow-left"></i> Back</a>
+            </div>
         </div>
     </div>
 
