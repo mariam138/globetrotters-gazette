@@ -12,8 +12,6 @@ from .forms import ProfileForm
 # can see this view. unauthorised users are redirected to login
 # code from:
 # https://docs.djangoproject.com/en/5.0/topics/auth/default/#the-login-required-decorator
-
-
 @login_required
 def profile_page(request, username):
     """
@@ -77,7 +75,6 @@ def edit_profile(request, username):
                 request,
                 messages.ERROR,
                 'There was a problem updating your profile. Please try again.'
-
             )
 
     return render(request, 'profile_page/edit_profile.html',
