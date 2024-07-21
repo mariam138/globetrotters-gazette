@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 # allow use of the messages framework when updating profile
 from django.contrib import messages
+from django.urls import reverse
 from .models import Profile
 from .forms import ProfileForm
 
@@ -127,5 +128,5 @@ def edit_cancel_profile(request, username):
 
     # if changes are cancelled, redirect user back to the profile page
     # code adapted from:
-    # https://docs.djangoproject.com/en/4.2/topics/http/shortcuts/#redirect
-    return redirect('profile_page')
+    # https://docs.djangoproject.com/en/4.2/ref/urlresolvers/#django.urls.reverse
+    return HttpResponseRedirect(reverse('profile_page', args=[username]))
