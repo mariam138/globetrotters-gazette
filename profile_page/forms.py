@@ -25,8 +25,8 @@ class ProfileForm(ModelForm):
     """
     class Meta:
         model = Profile
-        # shows all fields except the created_on field
-        exclude = ["user", "created_on"]
+        # excludes the below fields in the form
+        exclude = ["user", "profile_pic", "created_on"]
         # customise widgets for profile form
         widgets = {
             # Allows a date picker for birthday instead of typing in manually
@@ -34,3 +34,5 @@ class ProfileForm(ModelForm):
             # Adds the Summernote editing widget for the bio
             "bio": SummernoteWidget(),
         }
+
+
