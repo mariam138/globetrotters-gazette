@@ -106,3 +106,9 @@ body {
     padding: 3px 5px;
     margin-bottom: 5px;
 }
+
+/* Change disabled pseudo class styling for image upload field */
+/* .button-addon1~input:disabled {
+    background-color: white !important;
+    color: #181720 !important;
+} */
