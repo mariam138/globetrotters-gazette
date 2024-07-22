@@ -3,7 +3,7 @@ from django import forms
 # allows a form to be created from a preexisting model
 from django.forms import ModelForm
 # import the Summernote widget for WYSIWYG editor
-from django_summernote.widgets import SummernoteInplaceWidget
+from django_summernote.widgets import SummernoteWidget
 # import the Profile model to create the form
 from .models import Profile
 # import the CloudinaryFileInput class to override the default widget
@@ -32,5 +32,5 @@ class ProfileForm(ModelForm):
             # Allows a date picker for birthday instead of typing in manually
             "birthday": DateInput(),
             # Adds the Summernote editing widget for the bio
-            "bio": SummernoteInplaceWidget(),
+            "bio": SummernoteWidget(),
         }
