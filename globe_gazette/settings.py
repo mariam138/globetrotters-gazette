@@ -197,5 +197,8 @@ LOGIN_REDIRECT_URL = "/"
 
 """ Crispy Forms """
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+""" Summernote Settings"""
+# Allow summernote to use Bootstrap5 theme
+SUMMERNOTE_THEME = 'bs5'
