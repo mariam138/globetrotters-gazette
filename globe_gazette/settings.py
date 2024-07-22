@@ -207,6 +207,15 @@ SUMMERNOTE_CONFIG = {
     'iframe': False,
     # Set width at 100% to stop page overflow
     'summernote': {
-        'width': '100%'
+        'width': '100%',
+        # Customise toolbar to only allow text editing
+        'toolbar': [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']]
+        ]
     }
 }
