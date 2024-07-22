@@ -88,12 +88,10 @@ def edit_save_profile(request, username):
 @login_required
 def edit_cancel_profile(request, username):
     """
-    Allows cancelling and update of an individual profile from :model:`profile_page.Profile`
-
-    ** Context **
-
-    ``profile_form``
-        An instance of :model:`forms.ProfileForm`
+    Allows cancelling and update of an individual profile from
+    :model:`profile_page.Profile`.
+    Displays message to user that changes were not saved if
+    'Cancel' is pressed.
 
     ** Template **
         :template:`profile_page/edit_profile.html`
@@ -105,25 +103,15 @@ def edit_cancel_profile(request, username):
         Profile, user__username=username)
     # load profile form, pre-populating fields that have already been filled by user
     profile_form = ProfileForm(instance=profile)
-
-    # cancel a change to the profile instance
-    if request.method == "POST":
-        profile_form = ProfileForm(data=request.POST, instance=profile)
-        if profile_form.is_valid() and profile.user == request.user:
-            # refreshes the instance with the last saved data from the database
-            # code adapted from:
-            # https://docs.djangoproject.com/en/4.2/ref/models/instances/#refreshing-objects-from-database
-            profile.refresh_from_db()
-            # bug to fix !!!
-            messages.warning(
-                request,
-                'Your changes have not been made.'
-            )
-        else:
-            messages.error(
-                request,
-                'There was a problem updating your profile. Please try again.'
-            )
+    # refreshes the instance with the last saved data from the database
+    # code adapted from:
+    # https://docs.djangoproject.com/en/4.2/ref/models/instances/#refreshing-objects-from-database
+    profile.refresh_from_db()
+    # Display message when changes were not saved
+    messages.warning(
+        request,
+        'Your changes have not been saved.'
+    )
 
     # if changes are cancelled, redirect user back to the profile page
     # code adapted from:
