@@ -4,6 +4,8 @@ from django import forms
 from django.forms import ModelForm
 # import the Summernote widget for WYSIWYG editor
 from django_summernote.widgets import SummernoteWidget
+
+from cloudinary.forms import CloudinaryFileField
 # import the Profile model to create the form
 from .models import Profile
 # import the CloudinaryFileInput class to override the default widget
@@ -23,10 +25,11 @@ class ProfileForm(ModelForm):
     """
     Create form for profile
     """
+    profile_pic = CloudinaryFileField()
     class Meta:
         model = Profile
         # excludes the below fields in the form
-        exclude = ["user", "profile_pic", "created_on"]
+        exclude = ["user", "created_on"]
         # customise widgets for profile form
         widgets = {
             # Allows a date picker for birthday instead of typing in manually
