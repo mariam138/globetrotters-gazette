@@ -1,10 +1,15 @@
 from django.contrib import admin
 from .models import Post
 
-# Prepopulates the slug field from the post's title
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    prepopulated_fields = {"slug": ("title",)}
+    # Prepopulates the slug field from the post's title
+    prepopulated_fields = {"slug": ("title",),}
+    # Allows searching by title and country
+    search_fields = ['title', 'country']
+    # Displays certain fields of model
+    list_display = ('title', 'created_on','status', 'approved',)
+    # Chooses which fields to use as filtering
+    list_filter = ('status', 'approved',)
 
 # Register your models here.
-admin.site.register(Post)
