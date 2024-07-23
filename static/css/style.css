@@ -111,3 +111,9 @@ body {
 .asteriskField {
     display: none;
 }
+
+/* Hides the 'Currently' field which displays the pic name */
+/* As the pic name is not displaying due to using urls */
+#div_id_profile_picture > label + div {
+    display: none;
+}
