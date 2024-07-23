@@ -27,12 +27,12 @@ class Post(models.Model):
     Creates single instance of a Post model in relation to :model:`auth.User`
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField()
+    title = models.CharField(unique=True)
     region = models.CharField(choices=REGIONS)
     country = models.CharField()
-    slug = models.SlugField()
+    slug = models.SlugField(unique=True)
     body = models.TextField()
-    status = models.CharField(choices=STATUS)
+    status = models.CharField(choices=STATUS, default=0)
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
