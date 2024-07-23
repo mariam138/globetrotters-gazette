@@ -18,13 +18,13 @@
             <form method="post" enctype="multipart/form-data">
               <!-- Recreate crispy forms file input form but with bootstrap button -->
                <!-- To override the default behaviour that input file type has with custom js -->
-              <div id="div_id_profile_pic" class="mb-3">
+              <!-- <div id="div_id_profile_pic" class="mb-3">
                 <label for="id_profile_pic" class="form-label">Image</label>
                 <div class="input-group">
                   <button class="btn btn-light btn-outline-secondary" type="button" id="button-addon1">Choose file</button>
                   <input type="text" class="form-control" placeholder="No file chosen" aria-label="Upload profile picture" aria-describedby="button-addon1" disabled>
                 </div>
-            </div>
+              </div> -->
                 {{ profile_form|crispy|safe }}
                 {% csrf_token %}
                 <!-- Save/Cancel buttons -->
