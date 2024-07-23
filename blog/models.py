@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 # Choice of regions for user's to set their blog post to
 REGIONS = [
     ('AF', 'Africa'),
+    ('ASIA', 'Asia'),
     ('AUS', 'Australasia'),
     ('EU', 'Europe / UK'),
     ('MENA', 'Middle East'),
