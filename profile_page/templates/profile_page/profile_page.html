@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<!-- 100% width until tablet breakpoint -->
-<div class="container-sm"> 
+<!-- 100% width until screens around 578px -->
+<div class="container-sm">
     <!-- Display heading of [username]'s profile' -->
     <div class="row">
         <div class="col">
@@ -10,91 +10,70 @@
         </div>
     </div>
 
-    <!-- display user's profile picture -->
-    <div class="row">
-        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4 text-center">
-            <img src="{{ user.profile.profile_picture.url }}" alt="{{ user }}'s profile picture" class="img-thumbnail border rounded">
-        </div>
-    </div>
+    <!-- Allow content to be in one row so that the two columns can display side by side on larger screens using bootstrap styling -->
+    <div class="row mt-2">
+        <div class="col-sm-6 col-lg-4 offset-lg-2 text-center">
+            <!-- Display user's profile picture -->
+            <img src="{{ user.profile.profile_picture.url }}" alt="{{ user }}'s profile picture"
+                class="img-thumbnail border rounded">
 
-    <div class="row">
-        <!-- display user's name -->
-        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
+            <!-- Display user's name -->
             <h5 class="heading"><i class="fa-solid fa-signature"></i> Name:</h5>
             <!-- checks to see if p element is empty before applying the styling -->
             <p class="paragraph profile-text {% if profile.name %}border border-dark-subtle rounded bg-light-subtle
-            {% endif %}">
+                {% endif %}">
                 {{ profile.name }}</p>
-        </div>
-    </div>
 
-    <div class="row">
-        <!-- display user's birthday -->
-        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
+            <!-- Display user's birthday -->
             <h5 class="heading"><i class="fa-solid fa-cake-candles"></i> Birthday:</h5>
             <p class="paragraph profile-text {% if profile.birthday %}border border-dark-subtle rounded bg-light-subtle
-            {% endif %}">
+                {% endif %}">
                 {{ profile.birthday }}</p>
-        </div>
-    </div>
 
-    <!-- Email is only displayed to the user who is logged in -->
-    {% if request.user %}
-    <div class="row">
-        <!-- Display user's email -->
-        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
-            <h5 class="heading d-inline"><i class="fa-solid fa-envelope"></i> Email:</h5>
-            <!-- Info icon which can be clicked on to reveal tooltip above -->
-            <button id="email-tooltip" class="btn" type="button" data-bs-toggle="tooltip"
-                data-bs-title="* Email is not visible to others."><i class="fa-solid fa-circle-info"
-                    id="email-info"></i></button>
-            <p
-                class="paragraph profile-text border border-dark-subtle rounded bg-light-subtle">
-                {{ user.email }}</p>
-        </div>
-    </div>
-    {% endif %}
+            <!-- Display user's email -->
+            {% if request.user %}
+                <h5 class="heading d-inline"><i class="fa-solid fa-envelope"></i> Email:</h5>
+                <!-- Info icon which can be clicked on to reveal tooltip above -->
+                <button id="email-tooltip" class="btn" type="button" data-bs-toggle="tooltip"
+                    data-bs-title="* Email is not visible to others."><i class="fa-solid fa-circle-info"
+                        id="email-info"></i></button>
+                <p class="paragraph profile-text border border-dark-subtle rounded bg-light-subtle">
+                    {{ user.email }}</p>
 
-    <div class="row">
-        <!-- display user's bio -->
-        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
+            {% endif %}
+        </div>
+
+        <!-- Display user's bio -->
+        <div class="col-sm-6 col-lg-4 text-center">
             <h5 class="heading"><i class="fa-solid fa-pencil"></i> Bio:</h5>
             <p class="paragraph profile-text {% if profile.bio %}border border-dark-subtle rounded bg-light-subtle
-            {% endif %}">{{ profile.bio }}
+                {% endif %}">{{ profile.bio }}
             </p>
-        </div>
-    </div>
 
-    <div class="row">
-        <!-- display user's instagram link -->
-        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
+            <!-- Display user's instagram link -->
             <h5 class="heading"><i class="fa-brands fa-instagram"></i> Instagram:</h5>
             <p class="paragraph profile-text {% if profile.instagram %}border border-dark-subtle rounded bg-light-subtle
-            {% endif %}">
+                {% endif %}">
                 {{ profile.instagram }}</p>
-        </div>
-    </div>
 
-    <div class="row">
-        <!-- display user's twitter/x link -->
-        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
+            <!-- Display user's twitter/x link -->
             <h5 class="heading"><i class="fa-brands fa-square-x-twitter"></i> X/Twitter:</h5>
             <p class="paragraph profile-text {% if profile.twitter_x %}border border-dark-subtle rounded bg-light-subtle
-            {% endif %}">
+                {% endif %}">
                 {{ profile.twitter_x }}</p>
         </div>
     </div>
 
     <div class="row">
-        <!-- centre items in the column -->
+        <!-- Centre items in the column -->
         <div class="col text-center">
-            <!-- will only show the edit button to the user for their own profile -->
+            <!-- Will only show the edit button to the user for their own profile -->
             {% if request.user == profile.user %}
-            <!-- display button to edit profile -->
-            <a class="btn btn-colour btn-margin btn-text text-nowrap" href="{% url 'edit_profile' user.username %}" role="button">Edit Profile</a>
+            <!-- Display button to edit profile -->
+            <a class="btn btn-colour btn-margin btn-text text-nowrap" href="{% url 'edit_profile' user.username %}"
+                role="button">Edit Profile</a>
             {% endif %}
         </div>
     </div>
-
 </div>
 {% endblock %}
