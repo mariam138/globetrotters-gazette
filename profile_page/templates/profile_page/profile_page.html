@@ -45,14 +45,14 @@
         <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
             <h5 class="heading d-inline"><i class="fa-solid fa-envelope"></i> Email:</h5>
             <!-- Info icon which can be clicked on to reveal text underneath -->
-            <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#emailInfo"
-                aria-expanded="false" aria-controls="emailInfo"><i class="fa-solid fa-circle-info" id="email-info"></i></button>
+            <button id="email-tooltip" class="btn" type="button" data-bs-toggle="tooltip" data-bs-target="#emailInfo"
+                aria-expanded="false" aria-controls="emailInfo" data-bs-title="* Email is not visible to others."><i class="fa-solid fa-circle-info" id="email-info"></i></button>
             <!-- When button is clicked, the user is informed that their email is not visible to others -->
-            <div class="collapse" id="emailInfo">
+            <!-- <div class="collapse" id="emailInfo">
                 <div class="card border-info paragraph profile-text" id="email-vis-card">
                     * Email is not visible to others.
                 </div>
-            </div>
+            </div> -->
             <!-- Add some extra bootstrap classes to grey out the field to visually indicate it is not visible to other users -->
             <p
                 class="paragraph profile-text border border-dark-subtle rounded bg-secondary-subtle bg-gradient text-body-secondary">
