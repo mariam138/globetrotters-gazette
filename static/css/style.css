@@ -107,8 +107,7 @@ body {
     margin-bottom: 5px;
 }
 
-/* Change disabled pseudo class styling for image upload field */
-/* .button-addon1~input:disabled {
-    background-color: white !important;
-    color: #181720 !important;
-} */
+/* Hide the asterisk on the profile pic field */
+.asteriskField {
+    display: none;
+}
