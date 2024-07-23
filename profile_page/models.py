@@ -13,7 +13,7 @@ class Profile(models.Model):
     Stores an instance of a Profile related to :model:`auth.User`
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    profile_pic = CloudinaryField('image', blank=True)
+    profile_picture = CloudinaryField('image', blank=True)
     name = models.CharField(null=True, blank=True)
     birthday = models.DateField(null=True, blank=True)
     bio = models.TextField(null=True, blank=True)

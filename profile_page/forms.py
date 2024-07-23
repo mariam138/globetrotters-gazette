@@ -25,7 +25,7 @@ class ProfileForm(ModelForm):
     """
     Create form for profile
     """
-    profile_pic = CloudinaryFileField()
+    profile_picture = CloudinaryFileField()
     class Meta:
         model = Profile
         # excludes the below fields in the form
@@ -43,7 +43,7 @@ class ProfileForm(ModelForm):
     # https://cloudinary.com/documentation/django_helper_methods_tutorial#adjust_the_code_forms_py_code_file
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['profile_pic'].options={
+        self.fields['profile_picture'].options={
             'aspect_ratio': '1.0',
             'width': '250',
             'crop': 'fill',
