@@ -40,7 +40,7 @@ class Post(models.Model):
 
     class Meta:
         # Latest blog post shows first
-        ordering = ["created_on"]
+        ordering = ["-created_on"]
 
     # Displays title|User(username) for readability
     def __str__(self):

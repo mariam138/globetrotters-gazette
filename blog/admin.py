@@ -8,7 +8,7 @@ class PostAdmin(admin.ModelAdmin):
     # Allows searching by title and country
     search_fields = ['title', 'country']
     # Displays certain fields of model
-    list_display = ('title', 'created_on','status', 'approved',)
+    list_display = ('title','country', 'user', 'created_on', 'status', 'approved',)
     # Chooses which fields to use as filtering
     list_filter = ('status', 'approved',)
 
