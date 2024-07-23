@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+# Choice of regions for user's to set their blog post to
 REGIONS = [
     ('AF', 'Africa'),
     ('AUS', 'Australasia'),
@@ -12,6 +13,13 @@ REGIONS = [
     ('SA', 'South /Central America'),
     ('US', 'USA / Canada'),
 
+]
+
+# Will allow user to save their post as a draft
+# Or upload it once published
+STATUS = [
+    ('0', 'Draft'),
+    ('1', 'Published'),
 ]
 
 class Post(models.Model):
