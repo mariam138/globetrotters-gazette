@@ -13,14 +13,14 @@
     <!-- display user's profile picture -->
     <div class="row">
         <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4 text-center">
-            <img src="{{ user.profile.profile_pic.url }}" alt="{{ user }}'s profile picture" class="img-thumbnail border rounded">
+            <img src="{{ user.profile.profile_picture.url }}" alt="{{ user }}'s profile picture" class="img-thumbnail border rounded">
         </div>
     </div>
 
     <div class="row">
         <!-- display user's name -->
         <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
-            <h5 class="heading">Name:</h5>
+            <h5 class="heading"><i class="fa-solid fa-signature"></i> Name:</h5>
             <!-- checks to see if p element is empty before applying the styling -->
             <p class="paragraph profile-text {% if profile.name %}border border-dark-subtle rounded bg-light-subtle
             {% endif %}">
@@ -31,7 +31,7 @@
     <div class="row">
         <!-- display user's birthday -->
         <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
-            <h5 class="heading">Birthday:</h5>
+            <h5 class="heading"><i class="fa-solid fa-cake-candles"></i> Birthday:</h5>
             <p class="paragraph profile-text {% if profile.birthday %}border border-dark-subtle rounded bg-light-subtle
             {% endif %}">
                 {{ profile.birthday }}</p>
@@ -43,7 +43,7 @@
     <div class="row">
         <!-- display user's email -->
         <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
-            <h5 class="heading d-inline">Email:</h5>
+            <h5 class="heading d-inline"><i class="fa-solid fa-envelope"></i> Email:</h5>
             <!-- Info icon which can be clicked on to reveal text underneath -->
             <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#emailInfo"
                 aria-expanded="false" aria-controls="emailInfo"><i class="fa-solid fa-circle-info" id="email-info"></i></button>
@@ -64,7 +64,7 @@
     <div class="row">
         <!-- display user's bio -->
         <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
-            <h5 class="heading">Bio:</h5>
+            <h5 class="heading"><i class="fa-solid fa-pencil"></i> Bio:</h5>
             <p class="paragraph profile-text {% if profile.bio %}border border-dark-subtle rounded bg-light-subtle
             {% endif %}">{{ profile.bio }}
             </p>
@@ -74,7 +74,7 @@
     <div class="row">
         <!-- display user's instagram link -->
         <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
-            <h5 class="heading">Instagram:</h5>
+            <h5 class="heading"><i class="fa-brands fa-instagram"></i> Instagram:</h5>
             <p class="paragraph profile-text {% if profile.instagram %}border border-dark-subtle rounded bg-light-subtle
             {% endif %}">
                 {{ profile.instagram }}</p>
@@ -84,7 +84,7 @@
     <div class="row">
         <!-- display user's twitter/x link -->
         <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
-            <h5 class="heading">X:</h5>
+            <h5 class="heading"><i class="fa-brands fa-x-twitter"></i> X/Twitter:</h5>
             <p class="paragraph profile-text {% if profile.twitter_x %}border border-dark-subtle rounded bg-light-subtle
             {% endif %}">
                 {{ profile.twitter_x }}</p>
