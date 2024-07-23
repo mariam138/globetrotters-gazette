@@ -36,3 +36,7 @@ class Post(models.Model):
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True, null=True)
+
+    class Meta:
+        # Latest blog post shows first
+        ordering = ["created_on"]
