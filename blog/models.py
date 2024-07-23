@@ -32,6 +32,7 @@ class Post(models.Model):
     country = models.CharField()
     slug = models.SlugField()
     body = models.TextField()
+    status = models.CharField(choices=STATUS)
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
