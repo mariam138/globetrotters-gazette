@@ -133,6 +133,7 @@ Several technologies were used in creating this blog site.
 
 - Balsamiq Wireframes - used to create wireframes for skeleton plane
 - Lucidchart - used to create the site map for the scope plane
+- (Mockaroo)[mockaroo.com] - used to create my own mock data to use as django fixtures for blog posts
 
 ### Frameworks
 
