@@ -6,7 +6,7 @@
     {% if object_list %}
     <!-- sets the var region to the region of the first post in the object_list -->
     {% with region=object_list.0.region %}
-    <h1 class="heading"><i class="fa-solid fa-earth-asia"></i> {{ region }}</h1>
+    <h1 class="heading"><i class="fa-solid fa-earth-asia"></i> {{ region.1 }}</h1>
     {% endwith %}
     {% endif %}
 

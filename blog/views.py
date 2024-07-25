@@ -22,4 +22,3 @@ class AsiaPostList(generic.ListView):
 
 class AfricaPostList(AsiaPostList):
     queryset = Post.objects.filter(region='AF')
-    template_name = "africa_post_list.html"
