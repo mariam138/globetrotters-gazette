@@ -10,17 +10,17 @@
     <p class="paragraph">Posted: {{ post.created_on }}</p>
     {% endfor %}
 
-    <!-- Displays next button if there are more posts than the paginated_by setting -->
-    {% if page_obj.has_next %}
-    <a href="?page={{ page_obj.next_page_number }}" class="btn btn-text btn-colour">Next <i
-            class="fa-solid fa-arrow-right"></i></a>
-    {% endif %}
-
     <!-- Displays previous button when there is >1 page displaying posts -->
     {% if page_obj.has_previous %}
     <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-text btn-colour"><i
             class="fa-solid fa-arrow-left"></i>
         Previous</i></a>
+    {% endif %}
+
+    <!-- Displays next button if there are more posts than the paginated_by setting -->
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}" class="btn btn-text btn-colour">Next <i
+            class="fa-solid fa-arrow-right"></i></a>
     {% endif %}
 
 
