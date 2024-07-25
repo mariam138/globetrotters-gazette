@@ -14,6 +14,7 @@ def index(request):
 
 
 class PostsList(generic.ListView):
+    model = Post
     # Displays posts which have been categorised in the USA/ Canada region
     queryset = Post.objects.filter(region='US')
     template_name = "posts_list.html"
