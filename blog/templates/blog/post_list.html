@@ -2,36 +2,43 @@
 {% load blog_filters %}
 
 {% block content %}
-
-    <!-- Checks to see if the object_list context exists and is True -->
-    {% if object_list %}
-    <!-- sets the var region to the region of the first post in the object_list -->
-    {% with region=object_list.0.region %}
-    <h1 class="heading"><i class="fa-solid fa-earth-asia"></i> {{ region|get_region_name }}</h1>
-    {% endwith %}
-    {% endif %}
+<div class="row text-center">
+    <div class="col">
+        <!-- Checks to see if the object_list context exists and is True -->
+        {% if object_list %}
+        <!-- sets the var region to the region of the first post in the object_list -->
+        {% with region=object_list.0.region %}
+        <h1 class="heading"><i class="fa-solid fa-earth-asia"></i> {{ region|get_region_name }}</h1>
+        {% endwith %}
+        {% endif %}
+    </div>
+</div>
 
     {% for post in object_list %}
-    <h3 class="heading">{{ post.title }}</h3>
-    <h5 class="heading">{{ post.country }}</h5>
-    <p class="paragraph">Posted by: {{ post.user }}</p>
-    <p class="paragraph">Posted: {{ post.created_on }}</p>
+    <div class="card">
+        <h3 class="heading">{{ post.title }}</h3>
+        <h5 class="heading">{{ post.country }}</h5>
+        <p class="paragraph">Posted by: {{ post.user }}</p>
+        <p class="paragraph">Posted: {{ post.created_on }}</p>
+    </div>
     {% endfor %}
 
-    <!-- Link to next/previous page adapted from: -->
-    <!-- https://docs.djangoproject.com/en/4.2/topics/pagination/#paginating-a-listview -->
-    <!-- Displays previous button when there is >1 page displaying posts -->
-    {% if page_obj.has_previous %}
-    <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-text btn-colour"><i
-            class="fa-solid fa-arrow-left"></i>
-        Previous</i></a>
-    {% endif %}
 
-    <!-- Displays next button if there are more posts than the paginated_by setting -->
-    {% if page_obj.has_next %}
-    <a href="?page={{ page_obj.next_page_number }}" class="btn btn-text btn-colour">Next <i
-            class="fa-solid fa-arrow-right"></i></a>
-    {% endif %}
+
+<!-- Link to next/previous page adapted from: -->
+<!-- https://docs.djangoproject.com/en/4.2/topics/pagination/#paginating-a-listview -->
+<!-- Displays previous button when there is >1 page displaying posts -->
+{% if page_obj.has_previous %}
+<a href="?page={{ page_obj.previous_page_number }}" class="btn btn-text btn-colour"><i
+        class="fa-solid fa-arrow-left"></i>
+    Previous</i></a>
+{% endif %}
+
+<!-- Displays next button if there are more posts than the paginated_by setting -->
+{% if page_obj.has_next %}
+<a href="?page={{ page_obj.next_page_number }}" class="btn btn-text btn-colour">Next <i
+        class="fa-solid fa-arrow-right"></i></a>
+{% endif %}
 
 
 </body>
