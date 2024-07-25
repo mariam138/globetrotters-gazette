@@ -18,3 +18,4 @@ class PostList(generic.ListView):
     # Displays posts which have been categorised in the Asia region
     queryset = Post.objects.filter(region='ASIA')
     template_name = "post_list.html"
+    paginate_by = 6
