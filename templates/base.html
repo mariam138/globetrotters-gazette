@@ -98,9 +98,12 @@
            {% endif %}
          </div>
 
-        {% block content %}
+        <!-- Main content is inserted between these tags -->
+        <div class="container-sm">
+          {% block content %}
 
-        {% endblock %}
+          {% endblock %}
+        </div>
        </main>
 
       <!-- Fixed footer -->
