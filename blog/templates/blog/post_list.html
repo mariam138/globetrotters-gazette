@@ -2,11 +2,11 @@
 
 {% block content %}
 <body>
-    <h1>Posts list</h1>
+    <h1 class="heading">Asia Posts</h1>
     {% for post in object_list %}
-    <h2>{{ post.title }}</h2>
-    <p>Posted by: {{ post.user }}</p>
-    <p>Posted: {{ post.created_on }}</p>
+    <h2 class="heading">{{ post.title }}</h2>
+    <p class="paragraph">Posted by: {{ post.user }}</p>
+    <p class="paragraph">Posted: {{ post.created_on }}</p>
     {% endfor %}
 </body>
 
