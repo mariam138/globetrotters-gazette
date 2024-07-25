@@ -7,6 +7,13 @@ from .models import Post
 
 # Create your views here.
 def index(request):
+    """
+    Displays the index page as the home page
+
+    ** Template **
+        :template:`blog/index.html`
+    
+    """
     return render(request, 'blog/index.html')
 
     # display success message when user has registered
