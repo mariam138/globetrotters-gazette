@@ -18,3 +18,8 @@ class AsiaPostList(generic.ListView):
     queryset = Post.objects.filter(region='ASIA')
     template_name = "post_list.html"
     paginate_by = 6
+
+
+class AfricaPostList(AsiaPostList):
+    queryset = Post.objects.filter(region='AF')
+    template_name = "africa_post_list.html"

@@ -3,7 +3,9 @@
 {% block content %}
 
 <body>
+    {% block heading %}
     <h1 class="heading"><i class="fa-solid fa-earth-asia"></i> Asia</h1>
+    {% endblock %}
 
     {% for post in object_list %}
     <h3 class="heading">{{ post.title }}</h3>
