@@ -13,8 +13,8 @@ def index(request):
     messages.add_message(request, messages.SUCCESS, 'Registration successful!')
 
 
-class PostsList(generic.ListView):
+class PostList(generic.ListView):
     model = Post
     # Displays posts which have been categorised in the USA/ Canada region
     queryset = Post.objects.filter(region='US')
-    template_name = "posts_list.html"
+    template_name = "post_list.html"
