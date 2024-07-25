@@ -25,3 +25,7 @@ class AfricaPostList(AsiaPostList):
 
 class AusPostList(AsiaPostList):
     queryset = Post.objects.filter(region='AUS')
+
+
+class EuropePostList(AsiaPostList):
+    queryset = Post.objects.filter(region='EU')
