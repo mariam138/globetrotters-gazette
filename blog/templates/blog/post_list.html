@@ -17,7 +17,7 @@
 <div class="row">
     {% for post in object_list %}
     <div class="col-md-6 col-lg-4">
-        <div class="card mt-2">
+        <div class="card my-2">
             <h3 class="heading card-title pt-2 ps-2">{{ post.title }}</h3>
             <h5 class="heading card-subtitle ps-2">{{ post.country }}</h5>
             <div class="card-body">
@@ -34,19 +34,24 @@
 
 <!-- Link to next/previous page adapted from: -->
 <!-- https://docs.djangoproject.com/en/4.2/topics/pagination/#paginating-a-listview -->
-<!-- Displays previous button when there is >1 page displaying posts -->
-{% if page_obj.has_previous %}
-<a href="?page={{ page_obj.previous_page_number }}" class="btn btn-text btn-colour"><i
-        class="fa-solid fa-arrow-left"></i>
-    Previous</i></a>
-{% endif %}
 
-<!-- Displays next button if there are more posts than the paginated_by setting -->
-{% if page_obj.has_next %}
-<a href="?page={{ page_obj.next_page_number }}" class="btn btn-text btn-colour">Next <i
-        class="fa-solid fa-arrow-right"></i></a>
-{% endif %}
+<div class="row justify-content-center my-3">
+    <div class="col text-center">
+        <!-- Displays previous button when there is >1 page displaying posts -->
+        {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-text btn-colour"><i
+                class="fa-solid fa-arrow-left"></i>
+            Previous</i></a>
+        {% endif %}
 
+        <!-- Displays next button if there are more posts than the paginated_by setting -->
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}" class="btn btn-text btn-colour">Next <i
+                class="fa-solid fa-arrow-right"></i></a>
+        {% endif %}
+
+    </div>
+</div>
 
 </body>
 {% endblock %}
