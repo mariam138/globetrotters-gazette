@@ -22,3 +22,6 @@ class AsiaPostList(generic.ListView):
 
 class AfricaPostList(AsiaPostList):
     queryset = Post.objects.filter(region='AF')
+
+class AusPostList(AsiaPostList):
+    queryset = Post.objects.filter(region='AUS')
