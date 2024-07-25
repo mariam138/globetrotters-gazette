@@ -4,8 +4,10 @@
 from django import template
 from ..models import REGIONS
 
+# Create a library instance as register
 register = template.Library()
 
+# Decorator to register the filter
 @register.filter
 def get_region_name(region_code, is_safe=True):
     # Create a dictionary from the REGIONS choices list in models.py
