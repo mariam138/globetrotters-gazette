@@ -15,11 +15,14 @@
 </div>
 
     {% for post in object_list %}
-    <div class="card">
-        <h3 class="heading">{{ post.title }}</h3>
-        <h5 class="heading">{{ post.country }}</h5>
-        <p class="paragraph">Posted by: {{ post.user }}</p>
-        <p class="paragraph">Posted: {{ post.created_on }}</p>
+    <div class="card mt-2">
+        <h3 class="heading card-title pt-2 ps-2">{{ post.title }}</h3>
+        <h5 class="heading card-subtitle ps-2">{{ post.country }}</h5>
+        <div class="card-body">
+            <p class="paragraph card-text">Posted by: {{ post.user }}</p>
+            <p class="paragraph card-text">Posted: {{ post.created_on }}</p>
+        </div>
+        <img src="#" class="card-img-bottom" alt="Picture of {{ post.country }}">
     </div>
     {% endfor %}
 
