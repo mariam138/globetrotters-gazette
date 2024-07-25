@@ -13,6 +13,7 @@
 
     {% for post in object_list %}
     <h3 class="heading">{{ post.title }}</h3>
+    <h5 class="heading">{{ post.country }}</h5>
     <p class="paragraph">Posted by: {{ post.user }}</p>
     <p class="paragraph">Posted: {{ post.created_on }}</p>
     {% endfor %}
