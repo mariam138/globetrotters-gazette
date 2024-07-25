@@ -11,7 +11,7 @@ REGIONS = [
     ('AUS', 'Australasia'),
     ('EU', 'Europe / UK'),
     ('MENA', 'Middle East'),
-    ('SA', 'South /Central America'),
+    ('SA', 'South / Central America'),
     ('US', 'USA / Canada'),
 
 ]
