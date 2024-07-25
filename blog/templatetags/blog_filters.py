@@ -1,3 +1,6 @@
+# Code to create custom filter is adapted from the Django docs
+# https://docs.djangoproject.com/en/4.2/howto/custom-template-tags/#how-to-create-custom-template-tags-and-filters
+
 from django import template
 from ..models import REGIONS
 
