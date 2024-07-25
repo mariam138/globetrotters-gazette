@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <body>
     <h1 class="heading">Asia Posts</h1>
     {% for post in object_list %}
@@ -11,7 +12,16 @@
 
     <!-- Displays next button if there are more posts than the paginated_by setting -->
     {% if page_obj.has_next %}
-    <button type="button" class="btn btn-text btn-colour btn-margin">Next <i class="fa-solid fa-arrow-right"></i></button>
+    <button type="button" class="btn btn-text btn-colour btn-margin">Next <i
+            class="fa-solid fa-arrow-right"></i></button>
     {% endif %}
+
+    <!-- Displays previous button when there is >1 page displaying posts -->
+    {% if page_obj.has_previous %}
+    <button type="button" class="btn btn-text btn-colour btn-margin"><i class="fa-solid fa-arrow-left"></i>
+        Previous</i></button>
+    {% endif %}
+
+
 </body>
 {% endblock %}
