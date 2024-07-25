@@ -10,6 +10,8 @@
     <p class="paragraph">Posted: {{ post.created_on }}</p>
     {% endfor %}
 
+    <!-- Link to next/previous page adapted from: -->
+    <!-- https://docs.djangoproject.com/en/4.2/topics/pagination/#paginating-a-listview -->
     <!-- Displays previous button when there is >1 page displaying posts -->
     {% if page_obj.has_previous %}
     <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-text btn-colour"><i
