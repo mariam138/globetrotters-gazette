@@ -9,5 +9,7 @@ urlpatterns = [
     path("australasia/", views.AusPostList.as_view(), name="australasia_posts"),
     path("europe-uk/", views.EuropePostList.as_view(), name="europe_posts"),
     path("middle-east/", views.MenaPostList.as_view(), name="mena_posts"),
+    path("south-america/", views.SAmericaPostList.as_view(), name="sa_posts"),
+
 
 ]
