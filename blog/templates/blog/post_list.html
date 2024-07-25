@@ -8,7 +8,10 @@
     <p class="paragraph">Posted by: {{ post.user }}</p>
     <p class="paragraph">Posted: {{ post.created_on }}</p>
     {% endfor %}
+
+    <!-- Displays next button if there are more posts than the paginated_by setting -->
+    {% if page_obj.has_next %}
+    <button type="button" class="btn btn-text btn-colour btn-margin">Next <i class="fa-solid fa-arrow-right"></i></button>
+    {% endif %}
 </body>
-
-
 {% endblock %}
