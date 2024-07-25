@@ -13,9 +13,8 @@ def index(request):
     messages.add_message(request, messages.SUCCESS, 'Registration successful!')
 
 
-class PostList(generic.ListView):
+class AsiaPostList(generic.ListView):
     model = Post
-    # Displays posts which have been categorised in the Asia region
     queryset = Post.objects.filter(region='ASIA')
     template_name = "post_list.html"
     paginate_by = 6
