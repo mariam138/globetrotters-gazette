@@ -2,10 +2,13 @@
 
 {% block content %}
 
-<body>
-    {% block heading %}
-    <h1 class="heading"><i class="fa-solid fa-earth-asia"></i> Asia</h1>
-    {% endblock %}
+    <!-- Checks to see if the object_list context exists and is True -->
+    {% if object_list %}
+    <!-- sets the var region to the region of the first post in the object_list -->
+    {% with region=object_list.0.region %}
+    <h1 class="heading"><i class="fa-solid fa-earth-asia"></i> {{ region }}</h1>
+    {% endwith %}
+    {% endif %}
 
     {% for post in object_list %}
     <h3 class="heading">{{ post.title }}</h3>
