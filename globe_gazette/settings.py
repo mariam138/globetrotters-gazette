@@ -43,15 +43,18 @@ ADMINS = [('Mariam', 'mar.ayoub98@gmail.com')]
 # Allows smtp to send emails
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # Set gmail as the email host
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.mail.yahoo.com'
 # Allow secure connection with smtp
-EMAIL_USE_TLS = True
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
 # Set the email port to match the above var
-EMAIL_PORT = 587
+EMAIL_PORT = 465
 # Username for SMTP server
-EMAIL_HOST_USER = 'mar.ayoub98@gmail.com'
+EMAIL_HOST_USER = 'mariam.ayoub13@yahoo.co.uk'
 # Password for email host
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+# Override default email sender
+# SERVER_EMAIL = 'mar.ayoub98@gmail.com'
 
 
 ALLOWED_HOSTS = [
