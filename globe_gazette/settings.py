@@ -54,7 +54,8 @@ EMAIL_HOST_USER = 'mariam.ayoub13@yahoo.co.uk'
 # Password for email host
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 # Override default email sender
-# SERVER_EMAIL = 'mar.ayoub98@gmail.com'
+SERVER_EMAIL = 'mariam.ayoub13@yahoo.co.uk'
+DEFAULT_FROM_EMAIL = 'mariam.ayoub13@yahoo.co.uk'
 
 
 ALLOWED_HOSTS = [
