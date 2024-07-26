@@ -40,6 +40,8 @@ ADMINS = [('Mariam', 'mar.ayoub98@gmail.com')]
 # Code adapted from Django docs and from:
 #https://stackoverflow.com/questions/73008500/how-can-i-send-emails-with-django-to-my-gmail-account
 
+# Allows smtp to send emails
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # Set gmail as the email host
 EMAIL_HOST = 'smtp.gmail.com'
 # Allow secure connection with smtp
