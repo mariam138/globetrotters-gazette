@@ -11,5 +11,4 @@ urlpatterns = [
     path("middle-east/", views.MenaPostList.as_view(), name="mena_posts"),
     path("south-america/", views.SAmericaPostList.as_view(), name="sa_posts"),
     path("north-america/", views.NAmericaPostList.as_view(), name="us_posts"),
-    # path("search/",)
 ]
