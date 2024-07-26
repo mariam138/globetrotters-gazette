@@ -36,6 +36,22 @@ DEBUG = False
 # Set an e-mail to be sent error logs for deployed version
 ADMINS = [('Mariam', 'mar.ayoub98@gmail.com')]
 
+""" Email settings for sending error logs """
+# Code adapted from Django docs and from:
+#https://stackoverflow.com/questions/73008500/how-can-i-send-emails-with-django-to-my-gmail-account
+
+# Set gmail as the email host
+EMAIL_HOST = 'smtp.gmail.com'
+# Allow secure connection with smtp
+EMAIL_USE_TLS = True
+# Set the email port to match the above var
+EMAIL_PORT = 587
+# Username for SMTP server
+EMAIL_HOST_USER = 'mar.ayoub98@gmail.com'
+# Password for email host
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+
+
 ALLOWED_HOSTS = [
     '8000-mariam138-globetrotters-1mhio5zxo6c.ws.codeinstitute-ide.net',
     '.herokuapp.com',
