@@ -36,6 +36,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 # Initialisation of Sentry SDK
+# Adapted from the Sentry docs:
+# https://docs.sentry.io/platforms/python/integrations/django/
 sentry_sdk.init(
     dsn=os.environ.get("SENTRY_DSN"),
     integrations=[DjangoIntegration()],
@@ -46,31 +48,6 @@ sentry_sdk.init(
     # of sampled transactions.
     profiles_sample_rate=1.0,
 )
-
-# # Set an e-mail to be sent error logs for deployed version
-# ADMINS = [('Mariam', 'mar.ayoub98@gmail.com')]
-
-# """ Email settings for sending error logs """
-# # Code adapted from Django docs and from:
-# #https://stackoverflow.com/questions/73008500/how-can-i-send-emails-with-django-to-my-gmail-account
-
-# # Allows smtp to send emails
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# # Set gmail as the email host
-# EMAIL_HOST = 'smtp.mail.yahoo.com'
-# # Allow secure connection with smtp
-# EMAIL_USE_TLS = False
-# EMAIL_USE_SSL = True
-# # Set the email port to match the above var
-# EMAIL_PORT = 465
-# # Username for SMTP server
-# EMAIL_HOST_USER = 'mariam.ayoub13@yahoo.co.uk'
-# # Password for email host
-# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-# # Override default email sender
-# SERVER_EMAIL = 'mariam.ayoub13@yahoo.co.uk'
-# DEFAULT_FROM_EMAIL = 'mariam.ayoub13@yahoo.co.uk'
-
 
 ALLOWED_HOSTS = [
     '8000-mariam138-globetrotters-1mhio5zxo6c.ws.codeinstitute-ide.net',
