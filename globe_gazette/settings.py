@@ -14,6 +14,8 @@ import os
 import sys
 import dj_database_url
 import cloudinary
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 from django.contrib.messages import constants as messages
 from pathlib import Path
 
@@ -32,6 +34,18 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+
+# Initialisation of Sentry SDK
+sentry_sdk.init(
+    dsn=os.environ.get("SENTRY_DSN"),
+    integrations=[DjangoIntegration()],
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    traces_sample_rate=1.0,
+    # Set profiles_sample_rate to 1.0 to profile 100%
+    # of sampled transactions.
+    profiles_sample_rate=1.0,
+)
 
 # # Set an e-mail to be sent error logs for deployed version
 # ADMINS = [('Mariam', 'mar.ayoub98@gmail.com')]
