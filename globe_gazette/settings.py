@@ -33,6 +33,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+# Set an e-mail to be sent error logs for deployed version
+ADMINS = [('Mariam', 'mar.ayoub98@gmail.com')]
+
 ALLOWED_HOSTS = [
     '8000-mariam138-globetrotters-1mhio5zxo6c.ws.codeinstitute-ide.net',
     '.herokuapp.com',
