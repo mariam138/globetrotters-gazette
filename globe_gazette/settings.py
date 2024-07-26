@@ -33,7 +33,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # Initialisation of Sentry SDK
 sentry_sdk.init(
@@ -207,12 +207,15 @@ STATIC_URL = 'static/'
 # Cloudinary storage
 CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
 
-# Cloudinary config
-cloudinary.config(
-    cloud_name = os.environ.get("CLOUD_NAME"),
-    api_key = os.environ.get("CLOUDINARY_API_KEY"),
-    api_secret = os.environ.get("CLOUDINARY_API_SECRET")
-)
+import cloudinary.uploader
+import cloudinary.api
+# # Cloudinary config
+# cloudinary.config(
+#     cloud_name = os.environ.get("CLOUD_NAME"),
+#     api_key = os.environ.get("CLOUDINARY_API_KEY"),
+#     api_secret = os.environ.get("CLOUDINARY_API_SECRET"),
+#     secure = True,
+# )
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
