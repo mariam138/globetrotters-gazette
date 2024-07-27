@@ -11,7 +11,7 @@
 <!-- Displays the title of the blog post -->
 <div class="row">
     <div class="col">
-        <h2 class="heading text-center">{{ object.title }}</h2>
+        <h2 class="heading text-center post-heading">{{ object.title }}</h2>
     </div>
 </div>
 
@@ -19,7 +19,7 @@
 <div class="row">
     <div class="col">
         <!-- Displays username -->
-        <p class="paragraph">Written by {{ object.user }}</p>
+        <h4 class="heading">Written by <strong>{{ object.user }}</strong></h4>
         <p class="paragraph">{{ object.body }}</p>
     </div>
 </div>
