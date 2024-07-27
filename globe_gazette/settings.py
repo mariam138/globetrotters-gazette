@@ -223,7 +223,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 SUMMERNOTE_THEME = 'bs5'
 # Customisation of Summernote widget
 SUMMERNOTE_CONFIG = {
-    'iframe': False,
+    'iframe': True,
     # Set width at 100% to stop page overflow
     'summernote': {
         'width': '100%',
