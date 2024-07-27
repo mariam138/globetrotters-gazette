@@ -58,6 +58,9 @@
               <!-- display link to profile if user is logged in -->
               {% if user.is_authenticated %}
               <li class="nav-item">
+                <a class="nav-link navbar-text" href="#">Create Post</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link navbar-text" href="{% url 'profile_page' user.username %}">My Profile</a>
               </li>
               {% endif %}
@@ -137,7 +140,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- Fontawesome CDN link -->
     <script src="https://kit.fontawesome.com/dc26e02520.js" crossorigin="anonymous"></script>
-    <!-- Email Tooltip Custom JS -->
+    <!-- Custom JS -->
     <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
