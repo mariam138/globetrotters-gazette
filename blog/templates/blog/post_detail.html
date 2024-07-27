@@ -18,6 +18,8 @@
 <!-- Display the body of the blog post -->
 <div class="row">
     <div class="col">
+        <!-- Displays username -->
+        <p class="paragraph">Written by {{ object.user }}</p>
         <p class="paragraph">{{ object.body }}</p>
     </div>
 </div>
