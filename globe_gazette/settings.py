@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import cloudinary.api
+import cloudinary.uploader
 import os
 import sys
 import dj_database_url
@@ -33,7 +35,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+
 # Initialisation of Sentry SDK
 # Adapted from the Sentry docs:
 # https://docs.sentry.io/platforms/python/integrations/django/
@@ -183,8 +186,6 @@ STATIC_URL = 'static/'
 # Cloudinary storage
 CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
 
-import cloudinary.uploader
-import cloudinary.api
 # # Cloudinary config
 # cloudinary.config(
 #     cloud_name = os.environ.get("CLOUD_NAME"),
