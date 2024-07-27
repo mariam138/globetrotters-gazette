@@ -2,7 +2,7 @@ from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
 from .models import Post
 
-# @admin.register(Post)
+
 class PostAdmin(SummernoteModelAdmin):
     # Prepopulates the slug field from the post's title
     prepopulated_fields = {"slug": ("title",),}
@@ -15,10 +15,5 @@ class PostAdmin(SummernoteModelAdmin):
     summernote_fields = '__all__'
 
 
-# Register the Summernote editor for the admin console
-# class PostSummernoteAdmin(SummernoteModelAdmin):
-#     summernote_fields = ('body',)
-
 # Register your models here.
 admin.site.register(Post, PostAdmin)
-# admin.site.register(PostSummernoteAdmin)
