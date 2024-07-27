@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django_summernote.admin import SummernoteModelAdmin
 from .models import Post
 
 @admin.register(Post)
@@ -11,5 +12,10 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ('title','country', 'user', 'created_on', 'status', 'approved',)
     # Chooses which fields to use as filtering
     list_filter = ('status', 'approved',)
+
+# Register the Summernote editor for the admin console
+@admin.register(PostAdmin)
+class PostAdmin(SummernoteModelAdmin):
+    summernote_fields = '__all__'
 
 # Register your models here.
