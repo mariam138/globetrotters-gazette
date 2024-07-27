@@ -20,6 +20,7 @@
         <div class="card my-2">
             <h3 class="heading card-title pt-2 ps-2">{{ post.title }}</h3>
             <h5 class="heading card-subtitle ps-2">{{ post.country }}</h5>
+            <a href="{% url 'post-detail' post.slug %}" class="card-link">Read here</a>
             <div class="card-body">
                 <p class="paragraph card-text">Posted by: {{ post.user }}</p>
                 <p class="paragraph card-text">Posted: {{ post.created_on }}</p>
