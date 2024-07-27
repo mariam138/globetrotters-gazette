@@ -1,5 +1,7 @@
 # Allows a form to be created from existing model in db
 from django.forms import ModelForm
+# Import Summernote widgets
+from django_summernote.widgets import SummernoteInplaceWidget, SummernoteWidget
 # Import the Post model
 from .models import Post
 
@@ -12,3 +14,7 @@ class PostForm(ModelForm):
         model = Post
         # Excludes the below fields from the form
         exclude = ["user", "slug", "approved", "created_on", "updated_on",]
+        # Specify specific widgets
+        widgets = {
+            "body": SummernoteWidget(),
+        }
