@@ -14,7 +14,7 @@ body {
     margin-top: 78px;
 }
 
-/**************************************** Navbar*/
+/*******************************************************************************Navbar*/
 .navbar {
     padding: 0;
 }
@@ -36,11 +36,8 @@ body {
     font-weight: 500;
 }
 
-.text {
-    font-family: Pavanam, sans-serif;
-}
-
 .paragraph {
+    font-family: Pavanam, sans-serif;
     font-size: 1.2rem;
 }
 
@@ -65,7 +62,7 @@ body {
     margin: 1rem 0;
 }
 
-/**************************************** Footer */
+/******************************************************************************* Footer */
 
 .footer {
     background-color: #06585D;
@@ -85,8 +82,38 @@ body {
     padding: 0 3% 1%;
 }
 
-/**************************************** Sign In Page */
+/******************************************************************************* Sign In Page */
 
 .auth-headings {
     padding-top: 1rem;
+}
+
+/******************************************************************************* Profile Page */
+
+/* Add breathing room on the left of the text in each profile section */
+.profile-text {
+    padding-left: 5px;
+}
+
+/* Custom padding for email visibility card */
+#email-vis-card {
+    padding: 3px 5px;
+    margin-bottom: 5px;
+}
+
+/* Hide the asterisk on the profile pic field */
+.asteriskField {
+    display: none;
+}
+
+/* Hides the 'Currently' field which displays the pic name */
+/* As the pic name is not displaying due to using urls */
+/* #div_id_profile_picture > label + div {
+    display: none;
+} */
+
+/******************************************************************************* Detailed Post Page */
+/* Make the weight of the heading bigger for more distinction */
+.post-heading {
+    font-weight: 600;
 }
