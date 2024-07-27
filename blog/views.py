@@ -12,7 +12,6 @@ def index(request):
 
     ** Template **
         :template:`blog/index.html`
-    
     """
     return render(request, 'blog/index.html')
 
@@ -49,3 +48,8 @@ class SAmericaPostList(AsiaPostList):
 
 class NAmericaPostList(AsiaPostList):
     queryset = Post.objects.filter(region='US')
+
+
+# Use of Django's generic Detail View to view each post in a separate view
+class PostDetailView(detail.DetailView):
+    model = Post
