@@ -21,4 +21,15 @@
         <p class="paragraph">{{ object.body }}</p>
     </div>
 </div>
+
+<!-- Displays the date the post was uploaded -->
+<div class="row">
+    <div class="col">
+        <p class="paragraph">Posted on: {{ object.created_on }}</p>
+        <!-- If the post has been updated then this field will also be displayed -->
+        {% if object.updated_on %}
+        <p class="paragraph">Updated on: {{ object.updated_on }}</p>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}
