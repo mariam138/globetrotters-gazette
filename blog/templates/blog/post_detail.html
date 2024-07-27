@@ -27,10 +27,11 @@
 <!-- Displays the date the post was uploaded -->
 <div class="row">
     <div class="col">
-        <p class="paragraph">Posted on: {{ object.created_on }}</p>
+        <hr>
+        <p class="paragraph"><strong>Posted on:</strong> {{ object.created_on|date:"j N Y, H:i" }}</p>
         <!-- If the post has been updated then this field will also be displayed -->
         {% if object.updated_on %}
-        <p class="paragraph">Updated on: {{ object.updated_on }}</p>
+        <p class="paragraph"><strong>Updated on:</strong> {{ object.updated_on|date:"j N Y, H:i" }}</p>
         {% endif %}
     </div>
 </div>
