@@ -10,23 +10,23 @@
 
 <!-- Displays the title of the blog post -->
 <div class="row">
-    <div class="col">
+    <div class="offset-md-2 col-md-8 ">
         <h2 class="heading text-center post-heading">{{ object.title }}</h2>
     </div>
 </div>
 
 <!-- Display the body of the blog post -->
 <div class="row">
-    <div class="col">
+    <div class="offset-md-2 col-md-8 mt-3">
         <!-- Displays username -->
-        <h4 class="heading">Written by <strong>{{ object.user }}</strong></h4>
+        <h4 class="heading mb-3">Written by <strong>{{ object.user }}</strong></h4>
         <p class="paragraph">{{ object.body }}</p>
     </div>
 </div>
 
 <!-- Displays the date the post was uploaded -->
 <div class="row">
-    <div class="col">
+    <div class="offset-md-2 col-md-8 ">
         <hr>
         <p class="paragraph"><strong>Posted on:</strong> {{ object.created_on|date:"j N Y, H:i" }}</p>
         <!-- If the post has been updated then this field will also be displayed -->
