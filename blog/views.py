@@ -51,5 +51,5 @@ class NAmericaPostList(AsiaPostList):
 
 
 # Use of Django's generic Detail View to view each post in a separate view
-class PostDetailView(detail.DetailView):
+class PostDetailView(generic.DetailView):
     model = Post
