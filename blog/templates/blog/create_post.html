@@ -9,6 +9,12 @@
         <form action="" method="post">
             {{ post_form|crispy|safe }}
             {% csrf_token %}
+            <!-- Save/Cancel buttons -->
+            <div class="text-center">
+                <button class="btn btn-text btn-success" type="submit">Save</button>
+                <button class="btn btn-text btn-danger" type="button" data-bs-toggle="modal"
+                    data-bs-target="" aria-labelledby="" aria-hidden="true">Cancel</button>
+             </div>
         </form>
         {% endif %}
     </div>
