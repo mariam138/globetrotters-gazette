@@ -17,8 +17,6 @@
 <div class="row">
     <!-- Creates a card for each post by looping through each post in the queryset -->
     {% for post in post_list %}
-    <!-- Hides any posts that have a 'draft' status -->
-    {% if post.status == '1' %}
     <div class="col-md-6 col-lg-4">
         <div class="card my-2">
             <h3 class="heading card-title pt-2 ps-2">{{ post.title }}</h3>
@@ -31,7 +29,6 @@
             <img src="#" class="card-img-bottom" alt="Picture of {{ post.country }}">
         </div>
     </div>
-    {% endif %}
     {% endfor %}
 </div>
 
