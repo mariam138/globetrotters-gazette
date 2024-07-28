@@ -82,6 +82,12 @@ def create_post(request):
                 post = post_form.save(commit=False)
                 post.user = request.user
                 post.save()
+                if post.status == "0":
+                    messages.warning(request, 'Your post has been saved as a draft.')
+                elif post.status == "1":
+                    messages.success(request, 'Your post has been published and is awaiting approval.')
+                else:
+                    messages.error(request, 'There was an error saving your post. Please try again.')
 
     return render(request, 'blog/create_post.html',
                   {
