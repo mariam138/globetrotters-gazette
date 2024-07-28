@@ -23,33 +23,33 @@ def index(request):
 
 class AsiaPostList(generic.ListView):
     model = Post
-    queryset = Post.objects.filter(region='ASIA', status='1')
+    queryset = Post.objects.filter(region='ASIA', status='1', approved=True)
     template_name = "post_list.html"
     paginate_by = 6
     context_object_name = "post_list"
 
 
 class AfricaPostList(AsiaPostList):
-    queryset = Post.objects.filter(region='AF', status='1')
+    queryset = Post.objects.filter(region='AF', status='1', approved=True)
 
 class AusPostList(AsiaPostList):
-    queryset = Post.objects.filter(region='AUS', status='1')
+    queryset = Post.objects.filter(region='AUS', status='1', approved=True)
 
 
 class EuropePostList(AsiaPostList):
-    queryset = Post.objects.filter(region='EU', status='1')
+    queryset = Post.objects.filter(region='EU', status='1', approved=True)
 
 
 class MenaPostList(AsiaPostList):
-    queryset = Post.objects.filter(region='MENA', status='1')
+    queryset = Post.objects.filter(region='MENA', status='1', approved=True)
 
 
 class SAmericaPostList(AsiaPostList):
-    queryset = Post.objects.filter(region='SA', status='1')
+    queryset = Post.objects.filter(region='SA', status='1', approved=True)
 
 
 class NAmericaPostList(AsiaPostList):
-    queryset = Post.objects.filter(region='US', status='1')
+    queryset = Post.objects.filter(region='US', status='1', approved=True)
 
 
 # Use of Django's generic Detail View to view each post in a separate view
