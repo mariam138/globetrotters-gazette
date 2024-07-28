@@ -12,6 +12,7 @@ class PostAdmin(SummernoteModelAdmin):
     list_display = ('title','country', 'user', 'created_on', 'status', 'approved',)
     # Chooses which fields to use as filtering
     list_filter = ('status', 'approved',)
+    # Applies summernote editor to all Textfields
     summernote_fields = '__all__'
 
 
