@@ -100,6 +100,9 @@ def create_post(request):
                 else:
                     messages.error(request, 'There was an error saving your post. Please try again.')
 
+    # When post is saved, create blank instance of PostForm()
+    post_form = PostForm()
+
     return render(request, 'blog/create_post.html',
                   {
                       'post_form': post_form
