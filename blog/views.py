@@ -69,7 +69,8 @@ def create_post(request):
 
     ** Context **
 
-    ---
+    ``post_form``
+        An instance of :model:`forms.PostForm`
 
     ** Template **
         :template:`blog/create_post.html`
