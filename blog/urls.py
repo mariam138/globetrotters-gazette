@@ -12,5 +12,5 @@ urlpatterns = [
     path("south-america/", views.SAmericaPostList.as_view(), name="sa_posts"),
     path("north-america/", views.NAmericaPostList.as_view(), name="us_posts"),
     path("post/<slug:slug>/", views.PostDetailView.as_view(), name="post-detail"),
-    # path("create-post/", views.create_post, name="create_post"),
+    path("create-post/", views.create_post, name="create_post"),
 ]
