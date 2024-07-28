@@ -62,12 +62,17 @@ The seven epics listed above were split down further into user stories to help w
 ##### **Epic [3](https://github.com/mariam138/globetrotters-gazette/issues/4)**: User Profile
 - [#16](https://github.com/mariam138/globetrotters-gazette/issues/16#issue-2388393796) Create User Profile
 - [#17](https://github.com/mariam138/globetrotters-gazette/issues/17#issue-2388393796) View User Profile
+- [#18](https://github.com/mariam138/globetrotters-gazette/issues/18#issue-2388393796) Edit User Profile
+- [#63](https://github.com/mariam138/globetrotters-gazette/issues/63#issue-2388393796) Upload Profile Picture
 
 
 ##### **Epic [4](https://github.com/mariam138/globetrotters-gazette/issues/5)**: User Travel Posts
+- [#23](https://github.com/mariam138/globetrotters-gazette/issues/23#issue-2388393796) Read Blog Posts
 
 
 ##### **Epic [5](https://github.com/mariam138/globetrotters-gazette/issues/6)**: Searching Travel Posts
+- [#29](https://github.com/mariam138/globetrotters-gazette/issues/29#issue-2388393796) View Paginated List of Posts
+- [#28](https://github.com/mariam138/globetrotters-gazette/issues/28#issue-2388393796) Group Posts by Country/Region
 
 
 ##### **Epic [6](https://github.com/mariam138/globetrotters-gazette/issues/7)**: Admin Profile
