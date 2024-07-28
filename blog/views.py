@@ -77,6 +77,8 @@ def create_post(request):
     if request.method == "POST":
         post_form = PostForm(request.POST)
         if post_form.is_valid():
+                # Creates an instance of the Post object from the form
+                # model = Post defined in the Meta class for PostForm
                 post = post_form.save(commit=False)
                 post.user = request.user
                 post.save()
