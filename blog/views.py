@@ -77,9 +77,9 @@ def create_post(request):
     if request.method == "POST":
         post_form = PostForm(request.POST)
         if post_form.is_valid():
-                post_form.save(commit=False)
-                post_form.user = request.user
-                post_form.save()
+                post = post_form.save(commit=False)
+                post.user = request.user
+                post.save()
 
     return render(request, 'blog/create_post.html',
                   {
