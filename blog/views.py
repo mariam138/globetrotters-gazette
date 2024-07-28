@@ -3,7 +3,9 @@ from django.shortcuts import render
 from django.views import generic
 from django.http import HttpResponse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .models import Post
+from .forms import PostForm
 
 # Create your views here.
 def index(request):
@@ -53,3 +55,25 @@ class NAmericaPostList(AsiaPostList):
 # Use of Django's generic Detail View to view each post in a separate view
 class PostDetailView(generic.DetailView):
     model = Post
+
+
+@login_required
+def create_post(request):
+    """
+    Allows registered user to create a post using :model:`blog.Post`
+
+    ** Context **
+
+    ---
+
+    ** Template **
+        :template:`blog/create_post.html`
+    """
+
+    # Create new instance of a blog form
+    post_form = PostForm()
+
+    return render(request, 'blog/create_post.html',
+                  {
+                      'post_form': post_form
+                  })
