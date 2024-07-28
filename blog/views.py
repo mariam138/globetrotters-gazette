@@ -4,6 +4,8 @@ from django.views import generic
 from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+# Allows prepopulating of slug field
+from django.template.defaultfilters import slugify
 from .models import Post
 from .forms import PostForm
 
@@ -23,6 +25,9 @@ def index(request):
 
 class AsiaPostList(generic.ListView):
     model = Post
+    # Shows posts for related region
+    # Only shows posts with a 'published' status
+    # and when post has been approved by admin
     queryset = Post.objects.filter(region='ASIA', status='1', approved=True)
     template_name = "post_list.html"
     paginate_by = 6
@@ -80,7 +85,12 @@ def create_post(request):
                 # Creates an instance of the Post object from the form
                 # model = Post defined in the Meta class for PostForm
                 post = post_form.save(commit=False)
+                # Ensure the post's user matches the user currently logged in
                 post.user = request.user
+                # Prepopulate the slug field from the title using Django's slugify
+                # Method adapted from:
+                # https://stackoverflow.com/questions/55314246/pre-populate-slug-field-into-a-form-field-of-a-django-site
+                post.slug = slugify(post.title)
                 post.save()
                 if post.status == "0":
                     messages.warning(request, 'Your post has been saved as a draft.')
