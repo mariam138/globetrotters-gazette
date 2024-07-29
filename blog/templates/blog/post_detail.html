@@ -20,7 +20,8 @@
     <div class="offset-md-2 col-md-8 mt-3">
         <!-- Displays username -->
         <h4 class="heading mb-3">Written by <strong>{{ object.user }}</strong></h4>
-        <p class="paragraph">{{ object.body }}</p>
+        <!-- Mark content as safe to prevent HTML escaping -->
+        <p class="paragraph">{{ object.body|safe }}</p>
     </div>
 </div>
 
