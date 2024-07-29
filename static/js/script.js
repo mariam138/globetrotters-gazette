@@ -14,3 +14,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 // Get the button to generate the tooltip
 let emailInfoButton = document.getElementById('email-tooltip');
 let emailTooltip = new bootstrap.Tooltip(emailInfoButton);
+
+// Cloudinary Uploader Widget
+// Initialises and creates widget
+let cloudinaryWidget = cloudinary.createUploadWidget({ 
+    cloudName: "dy1xfelbe", uploadPreset: "blog_image" }, (error, result) => { });
+  widget.open();
