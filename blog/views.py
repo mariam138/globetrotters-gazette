@@ -1,11 +1,12 @@
 from django.shortcuts import render
 # Allows use of built in generic views that Django supplies
 from django.views import generic
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 # Allows prepopulating of slug field
 from django.template.defaultfilters import slugify
+from django.urls import reverse
 from .models import Post
 from .forms import PostForm
 
@@ -121,7 +122,7 @@ def cancel_create_post(request):
     """
 
     # Display message to user that there post was not saved
-    message.warning(
+    messages.warning(
         request,
         'Your post has not been saved.'
     )
