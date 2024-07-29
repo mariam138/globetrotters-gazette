@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class="row">
-    <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+    <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4 mb-3">
         {% if user.is_authenticated %}
         <form action="" method="post">
           <!-- Bootstrap input group for photo upload -->
@@ -12,6 +12,8 @@
             <button class="btn btn-colour btn-text btn-outline-secondary" type="button" id="upload-img">Upload photo</button>
             <input type="input" class="form-control" placeholder="No file selected" aria-label="" aria-describedby="upload-img" disabled>
           </div>
+          <!-- Hidden input field to store image url from Cloudinary -->
+          <input type="hidden" id="id_image_url" name="image_url">
             {{ post_form|crispy|safe }}
             {% csrf_token %}
             <!-- Save/Cancel buttons -->
