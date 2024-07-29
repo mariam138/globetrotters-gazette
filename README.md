@@ -117,6 +117,12 @@ I checked the accessibility of the white and black colours against the blue shad
 
 As all of the shades passed with **AAA**, I settled on these colours as my final colour palette.
 
+#### Typography
+
+For fonts, I started out choosing a font for headings. I used [Fontjoy](https://fontjoy.com/) to generate random fonts at first. I came across the font **Raleway** and liked that it was simple and clean, so decided on that for my headings. Then I searched up the **Raleway** font on [typ.io](https://typ.io/) to get suggestions for a font I could use for my paragraphs that pair well with **Raleway**. After looking at a few options, I decided on using **Cabin**. I chose it for it's similarity to **Raleway** in that it was also clean and easy to read, as I was also taking accessibility into consideration with my fonts. Below is a picture of the two fonts side by side, with the image taken from **Fontjoy**.
+
+![Font pairing image](static/images/font-parings-image.png)
+
 ## Features
 
 ## Future Features
