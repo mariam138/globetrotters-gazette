@@ -17,6 +17,10 @@ let emailTooltip = new bootstrap.Tooltip(emailInfoButton);
 
 // Cloudinary Uploader Widget
 // Initialises and creates widget
-let cloudinaryWidget = cloudinary.createUploadWidget({ 
-    cloudName: "dy1xfelbe", uploadPreset: "blog_image" }, (error, result) => { });
+let cloudinaryWidget = cloudinary.createUploadWidget(
+    {cloudName: "dy1xfelbe", uploadPreset: "blog_image" },
+    function (error, result) {
+        if (!error && result && result.event === "success") { 
+            console.log(result.info.secure_url); 
+     }});
   widget.open();
