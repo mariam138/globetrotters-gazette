@@ -23,9 +23,10 @@
             <h5 class="heading card-subtitle ps-2">{{ post.country }}</h5>
             <a href="{% url 'post-detail' post.slug %}" class="card-link ps-2">Read here</a>
             <div class="card-body">
-                <p class="paragraph card-text">Posted by: {{ post.user }}</p>
-                <p class="paragraph card-text">Posted: {{ post.created_on }}</p>
+                <p class="paragraph card-text">By: {{ post.user }}</p>
+                <p class="paragraph card-text">Posted on: {{ post.created_on }}</p>
             </div>
+            <!-- Displays image at bottom of the card -->
             <img src=" {{ post.image_url }}" class="card-img-bottom" alt="Picture of {{ post.country }}">
         </div>
     </div>
