@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         function (error, result) {
             if (!error && result && result.event === "success") { 
                 console.log(result.info.secure_url); 
+                console.log(result.info.public_id);
          }});
 
     // Gets upload button from post creation page
