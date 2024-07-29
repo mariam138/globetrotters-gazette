@@ -58,6 +58,12 @@ body {
     color: #181720;
 }
 
+/* Specify own hover colours when used with buttons */
+.btn-colour:hover {
+    background-color: #181720;
+    color: #FAF9F9;
+}
+
 .btn-margin {
     margin: 1rem 0;
 }
@@ -120,7 +126,7 @@ body {
 
 /******************************************************************************* Create Post Page */
 /* Change colour of the input field that displays the name
-to override the default 'disabled' styling
+to override the default 'disabled' styling.
 As it's originally a text field but users should not be able to interact with it */
 #image-name {
     background-color: white;
