@@ -13,7 +13,7 @@ class PostForm(ModelForm):
     class Meta:
         model = Post
         # Excludes the below fields from the form
-        exclude = ["user", "slug", "approved", "created_on", "updated_on",]
+        exclude = ["user", "slug", "image_url", "approved", "created_on", "updated_on",]
         # Specify specific widgets
         widgets = {
             "body": SummernoteWidget(),
