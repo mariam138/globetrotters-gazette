@@ -107,3 +107,24 @@ def create_post(request):
                   {
                       'post_form': post_form
                   })
+
+def cancel_create_post(request):
+    """
+    Allows cancelling of creating a post from :model:`blog.Post`
+    without saving it as a draft. Will display a message to the
+    user that their post was not saved when 'Yes cancel' is
+    clicked in the warning modal.
+
+    ** Template **
+        :template:`blog/create_post.html`
+
+    """
+
+    # Display message to user that there post was not saved
+    message.warning(
+        request,
+        'Your post has not been saved.'
+    )
+
+    # Redirect user back to homepage when Cancel is clicked
+    return HttpResponseRedirect(reverse('index'))
