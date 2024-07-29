@@ -20,7 +20,7 @@ REGIONS = [
 # Or upload it once published
 STATUS = [
     ('0', 'Draft'),
-    ('1', 'Published'),
+    ('1', 'Publish'),
 ]
 
 class Post(models.Model):
