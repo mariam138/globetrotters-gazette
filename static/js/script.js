@@ -13,7 +13,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     let cloudinaryWidget = cloudinary.createUploadWidget({
             cloudName: "dy1xfelbe",
-            uploadPreset: "blog_image"
+            uploadPreset: "blog_image",
+            // Allow only one picture to be uploaded to be used as the hero image for the post
+            multiple: false,
+            // Allow the user to crop their pictures
+            cropping: true,
+            // Enforces a 16:9 cropping ratio so the image is suitable to be displayed as a hero image
+            croppingAspectRatio: 1.78,
+            // Only allows images to be uploaded
+            resourceType: "image",
+            // Specifies image formats allowed to client
+            clientAllowedFormats: ["jpg", "jpeg", "webp", "png",],
+            // Only allows images of 5MB to be uploaded, performs validation
+            maxImageFileSize: 5000000,
+            // Prevents widget from automatically closing after one file upload
+            singleUploadAutoClose: false,
+            // Displays completed button after img upload for user to click
+            showCompletedButton: true,
+
         },
         function (error, result) {
             if (!error && result && result.event === "success") {
