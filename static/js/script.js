@@ -36,6 +36,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 let imageUrl = document.getElementById('image_url');
                 // Sets the value of the hidden input form as the url of the picture uploaded
                 imageUrl.value = result.info.secure_url;
+
+                // Gets input field after upload button
+                let imageName = document.getElementById('image-name');
+                // Sets the placeholder text to the name of the image uploaded
+                imageName.placeholder = result.info.public_id;
             }
         });
 
