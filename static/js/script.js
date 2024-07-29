@@ -16,7 +16,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
         function (error, result) {
             if (!error && result && result.event === "success") {
                 console.log(result.info.secure_url); 
-                console.log(result.info.public_id);
+                // console.log(result.info.public_id);
+
+                // Gets the hidden input field from the create post form
+                let imageUrl = document.getElementById('image_url');
+                // Sets the value of the hidden input form as the url of the picture uploaded
+                imageUrl.value = result.info.secure_url;
          }});
 
     // Gets upload button from post creation page

@@ -14,7 +14,7 @@
             <input type="input" class="form-control" placeholder="No file selected" aria-label="" aria-describedby="upload-img" disabled>
           </div>
           <!-- Hidden input field to store image url from Cloudinary -->
-          <input type="hidden" id="id_image_url" name="image_url">
+          <input type="hidden" id="image_url" name="image_url">
             {{ post_form|crispy|safe }}
             {% csrf_token %}
             <!-- Save/Cancel buttons -->
