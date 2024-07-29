@@ -28,8 +28,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             maxImageFileSize: 5000000,
             // Prevents widget from automatically closing after one file upload
             singleUploadAutoClose: false,
-            // Displays completed button after img upload for user to click
-            showCompletedButton: true,
 
         },
         function (error, result) {
