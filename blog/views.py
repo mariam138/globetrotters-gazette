@@ -89,6 +89,8 @@ def create_post(request):
                 post = post_form.save(commit=False)
                 # Ensure the post's user matches the user currently logged in
                 post.user = request.user
+                # Get the url value from the hidden input field
+                post.image_url = request.POST.get('image_url')
                 # Prepopulate the slug field from the title using Django's slugify
                 # Method adapted from:
                 # https://stackoverflow.com/questions/55314246/pre-populate-slug-field-into-a-form-field-of-a-django-site
