@@ -32,6 +32,7 @@ class Post(models.Model):
     region = models.CharField(choices=REGIONS, null=True)
     country = models.CharField()
     slug = models.SlugField(unique=True, null=True)
+    image_url = models.URLField(null=True)
     body = models.TextField()
     status = models.CharField(choices=STATUS, default=0)
     approved = models.BooleanField(default=False)
