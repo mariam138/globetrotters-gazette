@@ -6,6 +6,7 @@
 <div class="row">
     <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4">
         {% if user.is_authenticated %}
+        <button class="btn" id="upload-img">Upload Photo</button>
         <form action="" method="post">
             {{ post_form|crispy|safe }}
             {% csrf_token %}

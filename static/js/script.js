@@ -23,4 +23,6 @@ let cloudinaryWidget = cloudinary.createUploadWidget(
         if (!error && result && result.event === "success") { 
             console.log(result.info.secure_url); 
      }});
+
+
   widget.open();
