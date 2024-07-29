@@ -162,7 +162,7 @@ Several technologies were used in creating this blog site.
 
 ### Planning
 
-- Balsamiq Wireframes - used to create wireframes for skeleton plane
+- Balsamiq Wireframes - used to create wireframes for the skeleton plane
 - Lucidchart - used to create the site map for the scope plane
 - (Mockaroo)[mockaroo.com] - used to create my own mock data to use as django fixtures for blog posts
 
@@ -228,6 +228,15 @@ You can clone this repository to create a remote copy on your local machine. Thi
 6. Press *'Enter'* to create your local clone
 
 ## Code Adaptations
+
+### Documentation
+
+- Throughout the creation of this project, I referred to the [Django documentation](https://docs.djangoproject.com/en/4.2/) with regards to **models**, **views**, **forms** and **signals**. These have been referenced throughout the code.
+- I referred to the [Cloudinary documentation](https://cloudinary.com/documentation/django_integration) throughout the project also, especially in creating the **photo upload widget** and it's parameters. This code has been referenced throughout.
+- In my forms, I used the **Django Summernote** WYSIWYG editor for text fields to allow for custom editing. Installation and use was adapted from the [Django Summernote documentation](https://github.com/summernote/django-summernote)
+- For styling, I used **Bootstrap 5** as my framework, using the [documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/) for any adaptations of code.
+
+### Other adaptations
 
 - Code to create a date picker widget when editing a user's profile is adapted from the [Django Forums](https://forum.djangoproject.com/t/cant-change-type-attribute-in-django-crispy-forms/10054)
 
