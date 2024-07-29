@@ -24,5 +24,8 @@ let cloudinaryWidget = cloudinary.createUploadWidget(
             console.log(result.info.secure_url); 
      }});
 
+// Gets upload button from post creation page
+let uploadBlogImg = document.getElementById('upload-img');
+
 
   widget.open();
