@@ -27,5 +27,6 @@ let cloudinaryWidget = cloudinary.createUploadWidget(
 // Gets upload button from post creation page
 let uploadBlogImg = document.getElementById('upload-img');
 
-
-  widget.open();
+// Open widget when button is clicked
+uploadBlogImg.addEventListener('click', () => cloudinaryWidget.open());
+//   widget.open();
