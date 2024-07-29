@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let cloudinaryWidget = cloudinary.createUploadWidget(
         {cloudName: "dy1xfelbe", uploadPreset: "blog_image"},
         function (error, result) {
-            if (!error && result && result.event === "success") { 
+            if (!error && result && result.event === "success") {
                 console.log(result.info.secure_url); 
                 console.log(result.info.public_id);
          }});
