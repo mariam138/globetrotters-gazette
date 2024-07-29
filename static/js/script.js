@@ -9,24 +9,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
             history.back();
         });
     }
+
+
+    let cloudinaryWidget = cloudinary.createUploadWidget(
+        {cloudName: "dy1xfelbe", uploadPreset: "blog_image"},
+        function (error, result) {
+            if (!error && result && result.event === "success") { 
+                console.log(result.info.secure_url); 
+         }});
+
+    // Gets upload button from post creation page
+    let uploadBlogImg = document.getElementById('upload-img');
+    uploadBlogImg.addEventListener('click', () => {
+        cloudinaryWidget.open();
+    }, false);
 });
 
 // Get the button to generate the tooltip
 let emailInfoButton = document.getElementById('email-tooltip');
 let emailTooltip = new bootstrap.Tooltip(emailInfoButton);
-
-// Cloudinary Uploader Widget
-// Initialises and creates widget
-let cloudinaryWidget = cloudinary.createUploadWidget(
-    {cloudName: "dy1xfelbe", uploadPreset: "blog_image" },
-    function (error, result) {
-        if (!error && result && result.event === "success") { 
-            console.log(result.info.secure_url); 
-     }});
-
-// Gets upload button from post creation page
-let uploadBlogImg = document.getElementById('upload-img');
-
-// Open widget when button is clicked
-uploadBlogImg.addEventListener('click', () => cloudinaryWidget.open());
-//   widget.open();
