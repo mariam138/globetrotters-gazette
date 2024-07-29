@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }
 
-
+    // Code adapted from Cloudinary docs
+    // https://cloudinary.com/documentation/upload_widget_reference#initialization_methods
     let cloudinaryWidget = cloudinary.createUploadWidget({
             cloudName: "dy1xfelbe",
             uploadPreset: "blog_image",
@@ -31,6 +32,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         },
         function (error, result) {
+            // Getting the image url from the uploaded photo from the widget is adapted from:
+            // https://stackoverflow.com/questions/61153317/how-to-get-the-cloudinary-widget-image-info-on-upload
             if (!error && result && result.event === "success") {
                 // Gets the hidden input field from the create post form
                 let imageUrl = document.getElementById('image_url');
