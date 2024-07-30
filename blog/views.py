@@ -153,12 +153,31 @@ def edit_post(request, slug):
     # Creates a post instance using the slug parameter
     # passed through the view function
     post = get_object_or_404(Post, slug=slug)
+
     # Create a post form instance using the post instance
     # To prepopulate the form with the post data for editing
-
     post_form = PostForm(instance=post)
 
+    if request.method == "POST" and post.user == request.user:
+        if post_form.is_valid():
+            post = post_form.save(commit=False)
+            # Set post back to unapproved after edit to maintain quality
+            post.approved = False
+            post.save()
+
+            # Display messages to user
+            messages.success = (
+                request,
+                'Your post has been updated and is awaiting approval.'
+            )
+        else:
+            messages.error = (
+                request,
+                'There was a problem updating your post. Please try again.'
+            )
+
+
     return render(request, 'blog/create_post.html',
-                {
-                    'post_form': post_form
-                })
+                  {
+                      'post_form': post_form
+                  })
