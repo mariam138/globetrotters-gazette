@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 # Allows use of built in generic views that Django supplies
 from django.views import generic
 from django.http import HttpResponse, HttpResponseRedirect
@@ -111,6 +111,8 @@ def create_post(request):
                       'post_form': post_form
                   })
 
+
+@login_required
 def cancel_create_post(request):
     """
     Allows cancelling of creating a post from :model:`blog.Post`
@@ -131,3 +133,22 @@ def cancel_create_post(request):
 
     # Redirect user back to homepage when Cancel is clicked
     return HttpResponseRedirect(reverse('index'))
+
+
+@login_required
+def edit_post(request, slug):
+    """
+    Allows user to edit their post from :model:`blog.Post`.
+
+    ** Template **
+        :template:``
+
+    """
+
+    post = get_object_or_404(Post, slug=slug)
+    post_form = PostForm(instance=post)
+
+     return render(request, 'blog/create_post.html',
+                  {
+                      'post_form': post_form
+                  })
