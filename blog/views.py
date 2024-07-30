@@ -140,12 +140,22 @@ def edit_post(request, slug):
     """
     Allows user to edit their post from :model:`blog.Post`.
 
+    ** Context **
+
+    ``post_form``
+        An instance of :model:`forms.PostForm`
+
     ** Template **
-        :template:``
+        :template:`blog/create_post.html`
 
     """
 
+    # Creates a post instance using the slug parameter
+    # passed through the view function
     post = get_object_or_404(Post, slug=slug)
+    # Create a post form instance using the post instance
+    # To prepopulate the form with the post data for editing
+
     post_form = PostForm(instance=post)
 
     return render(request, 'blog/create_post.html',
