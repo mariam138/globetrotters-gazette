@@ -176,7 +176,7 @@ def edit_post(request, slug):
                 'There was a problem updating your post. Please try again.'
             )
 
-
+    # bug!: this allows the form to be populated again with the post but doesnt let it be saved
     return render(request, 'blog/create_post.html',
                   {
                       'post_form': post_form
