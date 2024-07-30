@@ -14,4 +14,6 @@ urlpatterns = [
     path("post/<slug:slug>/", views.PostDetailView.as_view(), name="post-detail"),
     path("create-post/", views.create_post, name="create_post"),
     path("create-post/cancel", views.cancel_create_post, name="cancel_post"),
+    path("post/<slug:slug>/edit", views.edit_post, name="edit_post"),
+
 ]

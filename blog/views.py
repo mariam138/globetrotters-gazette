@@ -148,7 +148,7 @@ def edit_post(request, slug):
     post = get_object_or_404(Post, slug=slug)
     post_form = PostForm(instance=post)
 
-     return render(request, 'blog/create_post.html',
-                  {
-                      'post_form': post_form
-                  })
+    return render(request, 'blog/create_post.html',
+                {
+                    'post_form': post_form
+                })
