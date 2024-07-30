@@ -27,7 +27,7 @@ class Post(models.Model):
     """
     Creates single instance of a Post model in relation to :model:`auth.User`
     """
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     title = models.CharField(unique=True)
     region = models.CharField(choices=REGIONS, null=True)
     country = models.CharField()
