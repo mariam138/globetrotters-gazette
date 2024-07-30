@@ -41,6 +41,10 @@
 <div class="row mb-3">
     <div class="offset-md-2 col-md-8 text-center">
         <button class="btn btn-colour btn-text" id="back-btn"><i class="fa-solid fa-arrow-left"></i> Back</button>
+        <!-- Display edit button to user if they are the ones who created the post -->
+        {% if object.user == request.user %}
+        <button class="btn btn-text btn-warning"><i class="fa-solid fa-pen-to-square"></i> Edit Post</button>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
