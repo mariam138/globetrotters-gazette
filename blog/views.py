@@ -144,6 +144,8 @@ def edit_post(request, slug):
 
     ``post_form``
         An instance of :model:`forms.PostForm`
+    ``post``
+        An instance of :model:`blog.Post`
 
     ** Template **
         :template:`blog/create_post.html`
@@ -179,7 +181,6 @@ def edit_post(request, slug):
                 'There was a problem updating your post. Please try again.'
             )
 
-    # bug!: this allows the form to be populated again with the post but doesnt let it be saved
     return render(request, 'blog/edit_post.html',
                   {'post_form': post_form,
                   'post': post})
