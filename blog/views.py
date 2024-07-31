@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 # Allows use of built in generic views that Django supplies
 from django.views import generic
 from django.http import HttpResponse, HttpResponseRedirect
@@ -167,20 +167,19 @@ def edit_post(request, slug):
             # Set post back to unapproved after edit to maintain quality
             post.approved = False
             post.save()
-
             # Display messages to user
-            messages.success = (
+            messages.success(
                 request,
                 'Your post has been updated and is awaiting approval.'
             )
+            return redirect(reverse('post_detail', args=[slug]))
         else:
-            messages.error = (
+            messages.error(
                 request,
                 'There was a problem updating your post. Please try again.'
             )
 
     # bug!: this allows the form to be populated again with the post but doesnt let it be saved
     return render(request, 'blog/create_post.html',
-                  {
-                      'post_form': post_form
-                  })
+                  {'post_form': post_form})
+
