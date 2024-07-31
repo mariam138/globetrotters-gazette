@@ -206,3 +206,15 @@ def cancel_edit_post(request, slug):
 
     # Redirect user back to post detail page when changes are cancelled
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+@login_required
+def delete_post(request):
+    """
+    Allows user to permanently delete their post from the database.
+    Post instance from :model:`blog.Post`. This view is only triggered
+    when the user clicks the 'Yes, delete post' button in the warning
+    modal.
+
+    ** Template **
+        :template:`blog/edit_post.html`
+    """
