@@ -183,3 +183,24 @@ def edit_post(request, slug):
     return render(request, 'blog/edit_post.html',
                   {'post_form': post_form})
 
+@login_required
+def cancel_edit_post(request):
+    """
+    Allows cancelling changes when updating a post from :model:`blog.Post`
+    without saving it as a draft. Will display a message to the
+    user that their changes were not saved when 'Yes cancel' is
+    clicked in the warning modal.
+
+    ** Template **
+        :template:`blog/edit_post.html`
+
+    """
+
+    # Display message to user that there post was not saved
+    messages.warning(
+        request,
+        'Your post has not been updated.'
+    )
+
+    # Redirect user back to post detail page when changes are cancelled
+    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
