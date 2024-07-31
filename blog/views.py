@@ -243,3 +243,15 @@ def delete_post(request, slug):
 
     # Redirects user back to homepage after deletion
     return HttpResponseRedirect(reverse('index'))
+
+
+# View to get user's blog posts
+class UserPostList(generic.ListView):
+    model = Post
+    # Shows posts for related region
+    # Only shows posts with a 'published' status
+    # and when post has been approved by admin
+    queryset = user.blog_posts.all()
+    template_name = "view_user_posts.html"
+    paginate_by = 6
+    context_object_name = "post_list"
