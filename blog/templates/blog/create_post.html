@@ -35,7 +35,7 @@
     </div>
 </div>
 
-
+{% block modal %}
 <!-- Bootstrap modal appears if user presses cancel as defensive programming -->
 <div class="modal fade" id="cancelPostModal" tabindex="-1">
     <div class="modal-dialog">
@@ -56,4 +56,5 @@
       </div>
     </div>
   </div>
-{% endblock %}
+{% endblock modal %}
+{% endblock content%}
