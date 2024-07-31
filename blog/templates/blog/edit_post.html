@@ -1,6 +1,15 @@
 {# uses template from create_post.html but just changes the modal text#}
 {% extends './create_post.html' %}
 
+{% block heading %}
+<div class="row">
+  <div class="col">
+      <!-- Display heading indicating that user is editing their post -->
+      <h2 class="heading text-center">Update your post:</h2>
+  </div>
+</div>
+{% endblock heading %}
+
 {% block modal %}
 <!-- Bootstrap modal appears if user presses cancel as defensive programming -->
 <div class="modal fade" id="cancelPostModal" tabindex="-1">
