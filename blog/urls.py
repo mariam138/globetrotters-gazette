@@ -13,10 +13,10 @@ urlpatterns = [
     path("north-america/", views.NAmericaPostList.as_view(), name="us_posts"),
     path("post/<slug:slug>/", views.PostDetailView.as_view(), name="post_detail"),
     path("create-post/", views.create_post, name="create_post"),
-    path("create-post/cancel", views.cancel_create_post, name="cancel_post"),
-    path("post/<slug:slug>/edit", views.edit_post, name="edit_post"),
-    path("post/<slug:slug>/cancel-edit", views.cancel_edit_post, name="cancel_post_edit"),
-    path("post/<slug:slug>/delete", views.delete_post, name="delete_post"),
+    path("create-post/cancel/", views.cancel_create_post, name="cancel_post"),
+    path("post/<slug:slug>/edit/", views.edit_post, name="edit_post"),
+    path("post/<slug:slug>/cancel-edit/", views.cancel_edit_post, name="cancel_post_edit"),
+    path("post/<slug:slug>/delete/", views.delete_post, name="delete_post"),
     path("<str:username>/posts/", views.UserPostList.as_view(), name="users_posts"),
 
 ]
