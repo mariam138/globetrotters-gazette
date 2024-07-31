@@ -208,7 +208,7 @@ def cancel_edit_post(request, slug):
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 @login_required
-def delete_post(request):
+def delete_post(request, slug):
     """
     Allows user to permanently delete their post from the database.
     Post instance from :model:`blog.Post`. This view is only triggered
@@ -218,3 +218,25 @@ def delete_post(request):
     ** Template **
         :template:`blog/edit_post.html`
     """
+
+    # Creates a post instance using the slug parameter
+    # passed through the view function
+    post = get_object_or_404(Post, slug=slug)
+
+    # Create a post form instance using the post instance
+    # To prepopulate the form with the post data for editing
+    post_form = PostForm(instance=post)
+
+    # Checks that the logged in user is the user who wrote the post
+    # So that only the creator can delete their post
+    if post.user == request.user:
+        post.delete()
+        messages.succes(
+            request,
+            'Your post has been deleted.'
+        )
+    else:
+        messages.error(
+            request,
+            'You are not permitted to delete this post.'
+        )
