@@ -251,7 +251,12 @@ class UserPostList(generic.ListView):
     # Shows posts for related region
     # Only shows posts with a 'published' status
     # and when post has been approved by admin
-    queryset = user.blog_posts.all()
+    queryset = Post.objects.all()
     template_name = "view_user_posts.html"
     paginate_by = 6
     context_object_name = "post_list"
+
+    # Gets the username from the url to pass through the queryset
+    # To return all posts from that user
+    def get_queryset(self):
+        return Post.objects.filter(username=self.kwargs['username'])
