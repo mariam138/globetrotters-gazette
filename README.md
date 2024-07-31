@@ -252,6 +252,7 @@ You can clone this repository to create a remote copy on your local machine. Thi
 - Code to use signals to create a **Profile** model when a **User** model has also been created is adapted from [this post](https://dev.to/earthcomfy/django-user-profile-3hik) on **dev.to**.
 - Code to prepopulate a slug field from the client side was adapted from [this post](https://stackoverflow.com/questions/55314246/pre-populate-slug-field-into-a-form-field-of-a-django-site) on Stack Overflow
 - Code to add Cloudinary's image URL to the Post model from the upload widget was adapted from [this post](https://stackoverflow.com/questions/61153317/how-to-get-the-cloudinary-widget-image-info-on-upload) on Stack Overflow
+- Code to define the `get_queryset()` method for my **UserPostList** view was adapted from [this post](https://stackoverflow.com/questions/66511758/can-you-pass-an-argument-to-listview-in-django) on Stack Overflow, with help from the Django documentation for dynamic filtering
 
 
 ## Acknowledgments
