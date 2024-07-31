@@ -26,12 +26,15 @@
           <input type="hidden" id="image_url" name="image_url">
             {{ post_form|crispy|safe }}
             {% csrf_token %}
+
+            {% block formbuttons %}
             <!-- Save/Cancel buttons -->
             <div class="text-center">
                 <button class="btn btn-text btn-success" type="submit">Save</button>
                 <button class="btn btn-text btn-danger" type="button" data-bs-toggle="modal"
                     data-bs-target="#cancelPostModal" aria-labelledby="cancelPostModalLabel" aria-hidden="true">Cancel</button>
              </div>
+            {% endblock formbuttons %}
         </form>
         {% endif %}
     </div>
