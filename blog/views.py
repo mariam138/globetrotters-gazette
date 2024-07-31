@@ -258,6 +258,9 @@ class UserPostList(generic.ListView):
 
     # Gets the username from the url to pass through the queryset
     # To return all posts from that user
+    # Code adapted from:
+    # 1. https://docs.djangoproject.com/en/4.2/topics/class-based-views/generic-display/#dynamic-filtering
+    # 2. https://stackoverflow.com/questions/66511758/can-you-pass-an-argument-to-listview-in-django
     def get_queryset(self):
         # Username key used to capture the username parameter from the url
         # kwargs must match exactly with what is defined in the url path
