@@ -269,8 +269,11 @@ class UserPostList(generic.ListView):
         # Gets a single user object using the username value
         user = User.objects.get(username=username)
 
+        # If the current logged in user matches the user object
+        # Show all posts
         if self.request.user == user:
             return Post.objects.filter(user=user)
+        # Otherwise, show only approved and published posts
         else:
             return Post.objects.filter(user=user, status='1', approved=True)
 
