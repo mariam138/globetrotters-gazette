@@ -2,6 +2,8 @@
 {% load blog_filters %}
 
 {% block content %}
+
+{% block heading %}
 <div class="row text-center">
     <div class="col">
         <!-- Checks to see if the post_list context exists and is True -->
@@ -13,6 +15,7 @@
         {% endif %}
     </div>
 </div>
+{% endblock heading %}
 
 <div class="row">
     <!-- Creates a card for each post by looping through each post in the queryset -->
