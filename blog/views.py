@@ -231,7 +231,7 @@ def delete_post(request, slug):
     # So that only the creator can delete their post
     if post.user == request.user:
         post.delete()
-        messages.succes(
+        messages.success(
             request,
             'Your post has been deleted.'
         )

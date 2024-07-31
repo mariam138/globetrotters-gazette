@@ -61,7 +61,7 @@
       </div>
       <div class="modal-footer">
         <!-- Redirect user back to homepage if they choose to cancel their changes -->
-        <a class="btn btn-danger btn-margin btn-text" href="#" role="button">Yes, delete post</a>
+        <a class="btn btn-danger btn-margin btn-text" href="{% url 'delete_post' post.slug %}" role="button">Yes, delete post</a>
         <button type="button" class="btn btn-light" data-bs-dismiss="modal">No, go back</button>
       </div>
     </div>
