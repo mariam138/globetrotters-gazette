@@ -1,0 +1,12 @@
+{% extends '../blog/templates/blog/post_list.html' %}
+
+{% block heading %}
+<div class="row text-center">
+    <div class="col">
+        <!-- Checks to see if the post_list context exists and is True -->
+        {% if post_list %}
+        <h1 class="heading"><i class="fa-solid fa-earth-asia"></i> <strong>{{ post_list.user }}</strong>'s posts</h1>
+        {% endif %}
+    </div>
+</div>
+{% endblock heading %}
