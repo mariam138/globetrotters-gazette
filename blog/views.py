@@ -259,4 +259,10 @@ class UserPostList(generic.ListView):
     # Gets the username from the url to pass through the queryset
     # To return all posts from that user
     def get_queryset(self):
-        return Post.objects.filter(username=self.kwargs['username'])
+        # Username key used to capture the username parameter from the url
+        # kwargs must match exactly with what is defined in the url path
+        # in this case, <str:username> therefore username
+        username = self.kwargs['username']
+        # Filters all objects of post using the username value defined above
+        # user FK field has a username attribute which matches value of username
+        return Post.objects.filter(user__username=username)
