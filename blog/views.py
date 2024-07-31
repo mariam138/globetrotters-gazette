@@ -266,6 +266,11 @@ class UserPostList(generic.ListView):
         # kwargs must match exactly with what is defined in the url path
         # in this case, <str:username> therefore username
         username = self.kwargs['username']
-        # Filters all objects of post using the username value defined above
-        # user FK field has a username attribute which matches value of username
-        return Post.objects.filter(user__username=username)
+        # Gets a single user object using the username value
+        user = User.objects.get(username=username)
+
+        if self.request.user == user:
+            return Post.objects.filter(user=user)
+        else:
+            return Post.objects.filter(user=user, status='1', approved=True)
+
