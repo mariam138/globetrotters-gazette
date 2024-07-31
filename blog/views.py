@@ -4,6 +4,7 @@ from django.views import generic
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 # Allows prepopulating of slug field
 from django.template.defaultfilters import slugify
 from django.urls import reverse
