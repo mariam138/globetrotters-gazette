@@ -10,6 +10,15 @@
 </div>
 {% endblock heading %}
 
+{% block formbuttons %}
+<!-- Save/Cancel/Delete Post buttons -->
+<div class="text-center">
+  <button class="btn btn-text btn-success" type="submit">Save</button>
+  <button class="btn btn-text btn-warning" type="button" data-bs-toggle="modal"
+      data-bs-target="#cancelPostModal" aria-labelledby="cancelPostModalLabel" aria-hidden="true">Cancel</button>
+</div>
+{% endblock formbuttons %}
+
 {% block modal %}
 <!-- Bootstrap modal appears if user presses cancel as defensive programming -->
 <div class="modal fade" id="cancelPostModal" tabindex="-1">
