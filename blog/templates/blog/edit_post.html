@@ -11,13 +11,14 @@
 {% endblock heading %}
 
 {% block formbuttons %}
-<!-- Save/Cancel/Delete Post buttons -->
+<!-- Save/Cancel buttons -->
 <div class="text-center">
   <button class="btn btn-text btn-success" type="submit">Save</button>
   <button class="btn btn-text btn-warning" type="button" data-bs-toggle="modal"
       data-bs-target="#cancelPostEditModal" aria-labelledby="cancelPostEditModalLabel" aria-hidden="true">Cancel</button>
 </div>
-<div class="text-center">
+<!-- Delete post button -->
+<div class="text-center mt-3">
   <button class="btn btn-text btn-danger" type="button" data-bs-toggle="modal"
       data-bs-target="#deletePostModal" aria-labelledby="deletePostModalLabel" aria-hidden="true">Delete Post</button>
 </div>
@@ -60,7 +61,7 @@
       </div>
       <div class="modal-footer">
         <!-- Redirect user back to homepage if they choose to cancel their changes -->
-        <a class="btn btn-danger btn-margin btn-text" href="{% url 'cancel_post_edit' post.slug %}" role="button">Yes, delete post</a>
+        <a class="btn btn-danger btn-margin btn-text" href="#" role="button">Yes, delete post</a>
         <button type="button" class="btn btn-light" data-bs-dismiss="modal">No, go back</button>
       </div>
     </div>
