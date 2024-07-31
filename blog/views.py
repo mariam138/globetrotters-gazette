@@ -159,6 +159,9 @@ def edit_post(request, slug):
     post_form = PostForm(instance=post)
 
     if request.method == "POST" and post.user == request.user:
+        # Creates the post form instance with the post instance
+        # and the data being sent from the POST request
+        post_form = PostForm(request.POST, instance=post)
         if post_form.is_valid():
             post = post_form.save(commit=False)
             # Set post back to unapproved after edit to maintain quality
