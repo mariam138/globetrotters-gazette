@@ -240,3 +240,6 @@ def delete_post(request, slug):
             request,
             'You are not permitted to delete this post.'
         )
+
+    # Redirects user back to homepage after deletion
+    return HttpResponseRedirect(reverse('index'))
