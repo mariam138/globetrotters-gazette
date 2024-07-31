@@ -17,5 +17,4 @@ urlpatterns = [
     path("post/<slug:slug>/edit", views.edit_post, name="edit_post"),
     path("post/<slug:slug>/cancel-edit", views.cancel_edit_post, name="cancel_post_edit"),
 
-
 ]
