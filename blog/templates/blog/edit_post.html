@@ -15,13 +15,17 @@
 <div class="text-center">
   <button class="btn btn-text btn-success" type="submit">Save</button>
   <button class="btn btn-text btn-warning" type="button" data-bs-toggle="modal"
-      data-bs-target="#cancelPostModal" aria-labelledby="cancelPostModalLabel" aria-hidden="true">Cancel</button>
+      data-bs-target="#cancelPostEditModal" aria-labelledby="cancelPostEditModalLabel" aria-hidden="true">Cancel</button>
+</div>
+<div class="text-center">
+  <button class="btn btn-text btn-danger" type="button" data-bs-toggle="modal"
+      data-bs-target="#deletePostModal" aria-labelledby="deletePostModalLabel" aria-hidden="true">Delete Post</button>
 </div>
 {% endblock formbuttons %}
 
 {% block modal %}
 <!-- Bootstrap modal appears if user presses cancel as defensive programming -->
-<div class="modal fade" id="cancelPostModal" tabindex="-1">
+<div class="modal fade" id="cancelPostEditModal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
