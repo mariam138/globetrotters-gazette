@@ -4,22 +4,23 @@
 {% block modal %}
 <!-- Bootstrap modal appears if user presses cancel as defensive programming -->
 <div class="modal fade" id="cancelPostModal" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title heading">Cancel Post</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="paragraph">Are you sure you want to cancel editing your post?</p>
-          <p class="paragraph">Your changes will <strong>not</strong> be saved.</p>
-        </div>
-        <div class="modal-footer">
-            <!-- Redirect user back to homepage if they choose to cancel their changes -->
-          <a class="btn btn-danger btn-margin btn-text" href="{% url 'cancel_post' %}" role="button">Yes cancel</a>
-          <button type="button" class="btn btn-light" data-bs-dismiss="modal">No, go back</button>
-        </div>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title heading">Cancel Post</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="paragraph">Are you sure you want to cancel editing your post?</p>
+        <p class="paragraph">Your changes will <strong>not</strong> be saved.</p>
+      </div>
+      <div class="modal-footer">
+        <!-- Redirect user back to homepage if they choose to cancel their changes -->
+        <a class="btn btn-danger btn-margin btn-text" href="{% url 'cancel_post_edit' post.slug %}" role="button">Yes
+          cancel</a>
+        <button type="button" class="btn btn-light" data-bs-dismiss="modal">No, go back</button>
       </div>
     </div>
   </div>
+</div>
 {% endblock modal %}

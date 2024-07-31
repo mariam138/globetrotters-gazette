@@ -181,10 +181,11 @@ def edit_post(request, slug):
 
     # bug!: this allows the form to be populated again with the post but doesnt let it be saved
     return render(request, 'blog/edit_post.html',
-                  {'post_form': post_form})
+                  {'post_form': post_form,
+                  'post': post})
 
 @login_required
-def cancel_edit_post(request):
+def cancel_edit_post(request, slug):
     """
     Allows cancelling changes when updating a post from :model:`blog.Post`
     without saving it as a draft. Will display a message to the
