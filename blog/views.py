@@ -248,14 +248,14 @@ def delete_post(request, slug):
 
 # View to get user's blog posts
 class UserPostList(generic.ListView):
-    model = Post
+    # model = Post
     # Shows posts for related region
     # Only shows posts with a 'published' status
     # and when post has been approved by admin
     queryset = Post.objects.all()
     template_name = "view_user_posts.html"
     paginate_by = 6
-    context_object_name = "userpost_list"
+    context_object_name = "user_post_list"
 
     # Gets the username from the url to pass through the queryset
     # To return all posts from that user

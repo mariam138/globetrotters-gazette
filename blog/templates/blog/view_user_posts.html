@@ -1,12 +1,57 @@
-{% extends './post_list.html' %}
+{% extends 'base.html' %}
 
-{% block heading %}
+{% block content %}
+
 <div class="row text-center">
     <div class="col">
         <!-- Checks to see if the post_list context exists and is True -->
+        {% if post_list %}
+        <h1 class="heading"><strong>{{ user_post_list.0.user.username }}</strong>'s posts</h1>
+        {% endif %}
+    </div>
+</div>
 
-        <h1 class="heading"><strong>{{ userpost_list.0.user.username }}</strong>'s posts</h1>
+<div class="row">
+    <!-- Creates a card for each post by looping through each post in the queryset -->
+    {% for post in user_post_list %}
+    <div class="col-md-6 col-lg-4">
+        <div class="card my-2">
+            <!-- Displays image at top of card -->
+            <img src=" {{ post.image_url }}" class="card-img-top" alt="Picture of {{ post.country }}">
+            <h3 class="heading card-title pt-2 ps-2">{{ post.title }}</h3>
+            <h5 class="heading card-subtitle ps-2">{{ post.country }}</h5>
+            <a href="{% url 'post_detail' post.slug %}" class="card-link ps-2">Read here</a>
+            <div class="card-body">
+                <p class="paragraph card-text">By: {{ post.user }}</p>
+                <p class="paragraph card-text">Posted on: {{ post.created_on }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+<!-- Link to next/previous page adapted from: -->
+<!-- https://docs.djangoproject.com/en/4.2/topics/pagination/#paginating-a-listview -->
+
+<div class="row justify-content-center my-3">
+    <div class="col text-center">
+        <!-- Displays previous button when there is >1 page displaying posts -->
+        {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-text btn-colour"><i
+                class="fa-solid fa-arrow-left"></i>
+            Previous</i></a>
+        {% endif %}
+
+        <!-- Displays next button if there are more posts than the paginated_by setting -->
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}" class="btn btn-text btn-colour">Next <i
+                class="fa-solid fa-arrow-right"></i></a>
+        {% endif %}
 
     </div>
 </div>
-{% endblock heading %}
+
+</body>
+{% endblock %}
