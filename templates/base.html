@@ -84,6 +84,8 @@
           <div class="gap-2 d-md-flex align-items-center justify-content-md-end">
             <!-- If the user is logged in, show the sign out button only -->
             {% if user.is_authenticated %}
+            <!-- Show username when user is logged in -->
+            <p class="paragraph navbar-text">Logged in as {{ user }}</p>
             <a class="btn btn-colour btn-margin btn-text text-nowrap" href="{% url 'account_logout' %}" role="button">Sign Out</a>
             <!-- otherwise show the signin and register buttons -->
             {% else %}
