@@ -278,7 +278,10 @@ class UserPostList(generic.ListView):
         else:
             posts = Post.objects.filter(user=user, status='1', approved=True)
 
-        print(posts)  # Debugging: Print the queryset to the console
-
         return posts
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        print(context)  # Debugging: Print the context to the console
+        return context
 
