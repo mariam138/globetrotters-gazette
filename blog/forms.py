@@ -16,5 +16,5 @@ class PostForm(ModelForm):
         exclude = ["user", "slug", "image_url", "approved", "created_on", "updated_on",]
         # Specify specific widgets
         widgets = {
-            "body": SummernoteInplaceWidget(),
+            "body": SummernoteWidget(),
         }
