@@ -253,32 +253,34 @@ class UserPostList(generic.ListView):
     # Only shows posts with a 'published' status
     # and when post has been approved by admin
     queryset = Post.objects.all()
-    template_name = "view_user_posts.html"
+    template_name = "blog/view_user_posts.html"
     paginate_by = 6
-    # context_object_name = "user_post_list"
+    context_object_name = "user_post_list"
 
     # Gets the username from the url to pass through the queryset
     # To return all posts from that user
     # Code adapted from:
     # 1. https://docs.djangoproject.com/en/4.2/topics/class-based-views/generic-display/#dynamic-filtering
     # 2. https://stackoverflow.com/questions/66511758/can-you-pass-an-argument-to-listview-in-django
-    # def get_queryset(self):
-    #     # Username key used to capture the username parameter from the url
-    #     # kwargs must match exactly with what is defined in the url path
-    #     # in this case, <str:username> therefore username
-    #     username = self.kwargs['username']
-    #     # Gets a single user object using the username value
-    #     user = User.objects.get(username=username)
+    def get_queryset(self):
+        # Username key used to capture the username parameter from the url
+        # kwargs must match exactly with what is defined in the url path
+        # in this case, <str:username> therefore username
+        posts = None
 
-    #     # If the current logged in user matches the user object
-    #     # Show all posts
-    #     if self.request.user == user:
-    #         posts = Post.objects.filter(user=user)
-    #     # Otherwise, show only approved and published posts
-    #     else:
-    #         posts = Post.objects.filter(user=user, status='1', approved=True)
+        username = self.kwargs['username']
 
-    #     return posts
+        # Gets a single user object using the username value
+        user = User.objects.get(username=username)
+        # If the current logged in user matches the user object
+        # Show all posts
+        if self.request.user == user:
+            posts = Post.objects.filter(user__username=user.username)
+        # Otherwise, show only approved and published posts
+        else:
+            posts = Post.objects.filter(user__username=user.username, status='1', approved=True)
+
+        return posts
 
     # def get_context_data(self, **kwargs):
     #     context = super().get_context_data(**kwargs)
