@@ -16,6 +16,12 @@
             <span class="badge text-bg-secondary">Draft</span>
             {% endif %}
         </h2>
+        <!-- Message to tell user their post is awaiting approval if user has published it -->
+        {% if object.user == request.user and object.approved == False and object.status == '1' %}
+        <div class="alert alert-info paragraph text-center" role="alert">
+            This post is awaiting approval.
+          </div>
+        {% endif %}
     </div>
 </div>
 
