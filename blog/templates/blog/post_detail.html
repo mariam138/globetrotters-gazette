@@ -11,7 +11,11 @@
 <!-- Displays the title of the blog post -->
 <div class="row">
     <div class="offset-md-2 col-md-8 ">
-        <h2 class="heading text-center post-heading">{{ object.title }}</h2>
+        <h2 class="heading text-center post-heading">{{ object.title }} 
+            {% if object.user == request.user and object.status == '0' %}
+            <span class="badge text-bg-secondary">Draft</span>
+            {% endif %}
+        </h2>
     </div>
 </div>
 
