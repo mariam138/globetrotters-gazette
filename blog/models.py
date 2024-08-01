@@ -29,15 +29,15 @@ class Post(models.Model):
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     title = models.CharField(unique=True, max_length=250)
-    region = models.CharField(choices=REGIONS, null=True, max_length=100)
+    region = models.CharField(choices=REGIONS, blank=True, max_length=100, default='')
     country = models.CharField(max_length=100)
-    slug = models.SlugField(unique=True, null=True)
-    image_url = models.URLField(null=True)
+    slug = models.SlugField(unique=True, blank=True, max_length=250)
+    image_url = models.URLField(blank=True, default='')
     body = models.TextField()
     status = models.CharField(choices=STATUS, default='0', max_length=10)
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True, null=True)
+    updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
         # Latest blog post shows first
