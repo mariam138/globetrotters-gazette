@@ -14,3 +14,4 @@ class TestPostForm(TestCase):
             'body': 'This is a test form',
             'status': 0,
         })
+        self.assertTrue(post_form.is_valid())

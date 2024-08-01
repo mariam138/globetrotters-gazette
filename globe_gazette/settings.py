@@ -125,8 +125,15 @@ DATABASES = {
 }
 
 # use sqlite3 database for testing
+# if 'test' in sys.argv:
+#     DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
+
+# use sqlite3 database for testing
 if 'test' in sys.argv:
-    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 
 # List of trusted origins
 CSRF_TRUSTED_ORIGINS = [
