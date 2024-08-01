@@ -255,7 +255,7 @@ class UserPostList(generic.ListView):
     queryset = Post.objects.all()
     template_name = "view_user_posts.html"
     paginate_by = 6
-    context_object_name = "post_list"
+    context_object_name = "userpost_list"
 
     # Gets the username from the url to pass through the queryset
     # To return all posts from that user
