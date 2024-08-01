@@ -248,7 +248,7 @@ def delete_post(request, slug):
 
 # View to get user's blog posts
 class UserPostList(generic.ListView):
-    # model = Post
+    model = Post
     # Shows posts for related region
     # Only shows posts with a 'published' status
     # and when post has been approved by admin
@@ -273,8 +273,12 @@ class UserPostList(generic.ListView):
         # If the current logged in user matches the user object
         # Show all posts
         if self.request.user == user:
-            return Post.objects.filter(user=user)
+            posts = Post.objects.filter(user=user)
         # Otherwise, show only approved and published posts
         else:
-            return Post.objects.filter(user=user, status='1', approved=True)
+            posts = Post.objects.filter(user=user, status='1', approved=True)
+
+        print(posts)  # Debugging: Print the queryset to the console
+
+        return posts
 
