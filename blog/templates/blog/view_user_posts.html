@@ -5,11 +5,8 @@
 <div class="row text-center">
     <div class="col">
         <!-- Checks to see if the post_list context exists and is True -->
-        {% if user_post_list %}
         <h1 class="heading"><strong>{{ user_post_list.0.user.username }}</strong>'s posts</h1>
-        {% else %}
         <p>No posts found for this user.</p>
-        {% endif %}
     </div>
 </div>
 
@@ -31,8 +28,6 @@
     </div>
     {% endfor %}
 </div>
-
-
 
 <!-- Link to next/previous page adapted from: -->
 <!-- https://docs.djangoproject.com/en/4.2/topics/pagination/#paginating-a-listview -->
