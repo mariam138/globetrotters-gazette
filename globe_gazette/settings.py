@@ -226,9 +226,11 @@ SUMMERNOTE_CONFIG = {
         ],
     'css_for_inplace': (
         '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
+        '//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.css',
     ),
     'js_for_inplace': (
         '//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js',
+        '//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.js'
     ),
     }
 }
