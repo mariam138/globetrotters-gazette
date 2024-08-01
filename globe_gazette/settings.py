@@ -211,7 +211,7 @@ SUMMERNOTE_THEME = 'bs5'
 # Customisation of Summernote widget
 SUMMERNOTE_CONFIG = {
     # Allow iframe to show in admin and on website
-    'iframe': True,
+    'iframe': False,
     # Set width at 100% to stop page overflow
     'summernote': {
         'width': '100%',
