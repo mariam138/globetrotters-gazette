@@ -35,7 +35,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # Initialisation of Sentry SDK
 # Adapted from the Sentry docs:
@@ -218,7 +218,7 @@ SUMMERNOTE_THEME = 'bs5'
 # Customisation of Summernote widget
 SUMMERNOTE_CONFIG = {
     # Allow iframe to show in admin and on website
-    'iframe': True,
+    'iframe': False,
     # Set width at 100% to stop page overflow
     'summernote': {
         'width': '100%',
@@ -231,13 +231,14 @@ SUMMERNOTE_CONFIG = {
             ['para', ['ul', 'ol', 'paragraph']],
             ['height', ['height']]
         ],
-    'css_for_inplace': (
-        '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
-        '//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.css',
-    ),
-    'js_for_inplace': (
-        '//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js',
-        '//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.js'
-    ),
+        'disable_attachment': False,
+    # 'css_for_inplace': (
+    #     '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
+    #     '//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.css',
+    # ),
+    # 'js_for_inplace': (
+    #     '//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js',
+    #     '//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.js'
+    # ),
     }
 }
