@@ -91,7 +91,9 @@ def post_detail(request, slug):
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
+            # Fills in user field with the logged in user
             comment.user = request.user
+            # Fills post field with the current post instance
             comment.post = post
             comment.save()
 
