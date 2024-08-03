@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.contrib.auth import get_user
 # allow use of the messages framework when updating profile
 from django.contrib import messages
 from django.urls import reverse
@@ -127,5 +129,7 @@ def delete_account(request, username):
         :template:`profile_page/profile_page.html`
     """
 
-    user = User.objects.get(user__username=username)
+    user = request.user
     print(user)
+
+    return HttpResponseRedirect(reverse('index'))
