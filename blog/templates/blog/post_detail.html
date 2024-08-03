@@ -60,13 +60,13 @@
         {% for comment in comments %}
         <div class="{% if not comment.approved and request.user == comment.user %}
         text-body-tertiary {% elif not comment.approved %} d-none {% endif %}">
-            <h5 class="heading">{{ comment.user }}</h5>
+            <h5 class="heading"><i class="fa-regular fa-comment"></i> {{ comment.user }}</h5>
             <p class="paragraph">{{ comment.body }}</p>
             <p class="paragraph fs-6">{{ comment.created_on|date:"d/m/Y" }}</p>
-            {% if request.user == comment.user and not comment.approved %}
-            <p class="paragraph fs-6 ">This comment is waiting for approval.</p>
-            {% endif %}
         </div>
+        {% if request.user == comment.user and not comment.approved %}
+        <p class="paragraph fs-6 text-info-emphasis">This comment is waiting for approval.</p>
+        {% endif %}
         {% endfor %}
     </div>
 </div>
