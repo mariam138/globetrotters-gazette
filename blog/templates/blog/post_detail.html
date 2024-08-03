@@ -26,7 +26,7 @@
         {% if post.user == request.user and post.status == '1' and post.approved == True %}
         <div class="alert alert-success paragraph text-center" role="alert">
             Your post has been approved and is now published!
-          </div>
+        </div>
         {% endif %}
     </div>
 </div>
@@ -56,29 +56,19 @@
 <!-- Displaying comments underneath post -->
 <div class="row mt-2">
     <div class="offset-md-2 col-md-8">
-            <h3 class="heading fw-bold">Comments:</h3>
-            {% for comment in comments %}
-            <div class="{% if not comment.approved and request.user == comment.user %}
-                faded{% elif not comment.approved %} d-none {% endif %}">
-                <h5 class="heading">{{ comment.user }}</h5>
-                <p class="paragraph">{{ comment.body }}</p>
-                <p class="paragraph fs-6">{{ comment.created_on|date:"d/m/Y" }}</p>
-                {% if request.user == comment.user and not comment.approved %}
-                <p class="paragraph fs-6 ">This comment is waiting for approval.</p>
-                {% endif %}
-                {% endfor %}
-            </div>
+        <h3 class="heading fw-bold">Comments:</h3>
+        {% for comment in comments %}
+        <div class="{% if not comment.approved and request.user == comment.user %}
+        text-body-tertiary {% elif not comment.approved %} d-none {% endif %}">
+            <h5 class="heading">{{ comment.user }}</h5>
+            <p class="paragraph">{{ comment.body }}</p>
+            <p class="paragraph fs-6">{{ comment.created_on|date:"d/m/Y" }}</p>
+            {% if request.user == comment.user and not comment.approved %}
+            <p class="paragraph fs-6 ">This comment is waiting for approval.</p>
+            {% endif %}
+        </div>
+        {% endfor %}
     </div>
-
-    <!-- Display unapproved comments to logged in user -->
-    <!-- {% if request.user == comment.user and comment.approved == False %}
-    {% for comment in comments %}
-        <h5 class="heading text-body-tertiary">{{ comment.user }}</h5>
-        <p class="paragraph text-body-tertiary">{{ comment.body }}</p>
-        <p class="paragraph fs-6 text-body-tertiary">{{ comment.created_on|date:"d/m/Y" }}</p>
-        <p class="paragraph fs-6 ">This comment is waiting for approval.</p>
-    {% endfor %}
-    {% endif %} -->
 </div>
 
 <!-- Comment form -->
@@ -95,9 +85,9 @@
             {% csrf_token %}
 
             <!-- Submit button -->
-             <div class="text-center mb-4">
+            <div class="text-center mb-4">
                 <button class="btn btn-text btn-colour" type="submit">Submit</button>
-             </div>
+            </div>
         </form>
         {% endif %}
     </div>
@@ -109,7 +99,8 @@
         <button class="btn btn-colour btn-text" id="back-btn"><i class="fa-solid fa-arrow-left"></i> Back</button>
         <!-- Display edit button to user if they are the ones who created the post -->
         {% if post.user == request.user %}
-        <a href="{% url 'edit_post' post.slug %}" class="btn btn-text btn-warning"><i class="fa-solid fa-pen-to-square"></i> Edit Post</a>
+        <a href="{% url 'edit_post' post.slug %}" class="btn btn-text btn-warning"><i
+                class="fa-solid fa-pen-to-square"></i> Edit Post</a>
         {% endif %}
     </div>
 </div>

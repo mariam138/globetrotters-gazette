@@ -84,8 +84,8 @@ def post_detail(request, slug):
     # Gets specified post object using the queryset and slug arg
     post = get_object_or_404(queryset, slug=slug)
     # Reverse look up for comments related to specific post
-    # Only shows comments that have been approved
-    comments = post.comments.filter(approved=True)
+    # Show all comments from newest to oldest
+    comments = post.comments.all().order_by("-created_on")
 
     # Create instance of a comment form
     comment_form = CommentForm()
