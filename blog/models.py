@@ -58,3 +58,7 @@ class Comment(models.Model):
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
+
+    # Displays post that user commented on and the comment itself
+    def __str__(self):
+        return f"{self.user} on {self.post}: {self.body}"
