@@ -126,3 +126,6 @@ def delete_account(request, username):
     ** Template **
         :template:`profile_page/profile_page.html`
     """
+
+    user = User.objects.get(user__username=username)
+    print(user)
