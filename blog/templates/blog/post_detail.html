@@ -11,17 +11,17 @@
 <!-- Displays the title of the blog post -->
 <div class="row">
     <div class="offset-md-2 col-md-8 ">
-        <h2 class="heading text-center post-heading">{{ post.title }} 
+        <h2 class="heading text-center post-heading">{{ post.title }}
+            <!-- Tells user post is a draft using a badge -->
             {% if post.user == request.user and post.status == '0' %}
             <span class="badge text-bg-secondary">Draft</span>
+            <!-- Badge to tell user post is awaiting approval -->
+            {% elif post.user == request.user and post.approved == False and post.status == '1' %}
+            <span class="badge text-bg-info">Awaiting approval</span>
             {% endif %}
         </h2>
-        <!-- Message to tell user their post is awaiting approval if user has published it -->
-        {% if post.user == request.user and post.approved == False and post.status == '1' %}
-        <div class="alert alert-info paragraph text-center" role="alert">
-            This post is awaiting approval.
-          </div>
-        {% elif post.user == request.user and post.status == '1' and post.approved == True %}
+        <!-- Message to tell user their post has been published -->
+        {% if post.user == request.user and post.status == '1' and post.approved == True %}
         <div class="alert alert-success paragraph text-center" role="alert">
             Your post has been approved and is now published!
           </div>

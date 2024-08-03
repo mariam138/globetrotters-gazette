@@ -76,6 +76,7 @@ def post_detail(request, slug):
     :template:`blog/post_detail.html`
     """
 
+    # Queryset only contains post that have a 'Publish' status
     queryset = Post.objects.filter(status=1)
     # Gets specified post object using the queryset and slug arg
     post = get_object_or_404(queryset, slug=slug)
