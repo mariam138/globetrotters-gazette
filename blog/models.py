@@ -46,3 +46,15 @@ class Post(models.Model):
     # Displays title|User(username) for readability
     def __str__(self):
         return f"{self.title} | User {self.user}"
+
+
+class Comment(models.Model):
+    """
+    Creates single instance of a Comment model in relation to
+    :model:`auth.User` and :model:`blog.Post`
+    """
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
+    body = models.TextField()
+    approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
