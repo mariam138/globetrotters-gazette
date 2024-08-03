@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from django.urls import reverse
 from .models import Post, Comment
-from .forms import PostForm
+from .forms import PostForm, CommentForm
 
 # Create your views here.
 def index(request):
@@ -311,3 +311,20 @@ class UserPostList(generic.ListView):
 
         return posts
 
+
+@login_required
+def create_comment(request):
+    """
+    Allows registered user to leave a comment on a post
+    using :model:`blog.Comment`
+
+    ** Context **
+    ``comment_form``
+        An instance of :model:`forms.CommentForm`
+
+    ** Template **
+        :template:`blog.post_detail.html`
+    """
+
+    # Creates blank instance of a comment form
+    comment_form = CommentForm()
