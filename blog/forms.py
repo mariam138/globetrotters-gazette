@@ -27,7 +27,7 @@ class CommentForm(ModelForm):
     class Meta:
         model = Comment
         # Only show the text field in the comment form
-        exclude = ["user", "post", "approved", "created_on"]
+        exclude = ["user", "post", "approved", "created_on",]
         # Use Summernote for editor
         widgets = {
             "body": SummernoteInplaceWidget(),

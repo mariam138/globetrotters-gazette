@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="row">
@@ -63,14 +64,23 @@
     </div>
 </div>
 
+<!-- Comment form -->
 <div class="row">
     <div class="offset-md-2 col-md-8">
         {% if not user.is_authenticated %}
         <p class="paragraph">
             To leave a comment, please <a href="{% url 'account_login' %}">sign in</a>.
         </p>
-        {% else %}
-        <p>Comment form here.</p>
+        {% elif user.is_authenticated %}
+        <form action="" method="post">
+            {{ comment_form|crispy|safe }}
+            {% csrf_token %}
+
+            <!-- Submit button -->
+             <div class="text-center">
+                <button class="btn btn-text btn-colour" type="submit">Submit</button>
+             </div>
+        </form>
         {% endif %}
     </div>
 </div>

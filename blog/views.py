@@ -100,7 +100,6 @@ def create_post(request):
     Allows registered user to create a post using :model:`blog.Post`
 
     ** Context **
-
     ``post_form``
         An instance of :model:`forms.PostForm`
 
