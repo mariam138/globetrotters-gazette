@@ -84,12 +84,16 @@ def post_detail(request, slug):
     # Only shows comments that have been approved
     comments = post.comments.filter(approved=True)
 
+    # Create instance of a comment form
+    comment_form = CommentForm()
+
     return render(
         request,
         "blog/post_detail.html",
         {
             "post": post,
             "comments": comments,
+            "comment_form": comment_form,
         },
     )
 

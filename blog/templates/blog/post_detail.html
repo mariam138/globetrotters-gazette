@@ -73,7 +73,7 @@
         </p>
         {% elif user.is_authenticated %}
         <form action="" method="post">
-            {{ comment_form|crispy|safe }}
+            {{ comment_form|crispy }}
             {% csrf_token %}
 
             <!-- Submit button -->
