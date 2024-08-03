@@ -4,24 +4,24 @@
 <div class="row">
     <div class="col">
         <!-- Bootstrap responsive image to be displayed at top of screen -->
-        <img src="{{ object.image_url}}" class="img-fluid" alt="Picture of {{ object.country }}">
+        <img src="{{ post.image_url}}" class="img-fluid" alt="Picture of {{ post.country }}">
     </div>
 </div>
 
 <!-- Displays the title of the blog post -->
 <div class="row">
     <div class="offset-md-2 col-md-8 ">
-        <h2 class="heading text-center post-heading">{{ object.title }} 
-            {% if object.user == request.user and object.status == '0' %}
+        <h2 class="heading text-center post-heading">{{ post.title }} 
+            {% if post.user == request.user and post.status == '0' %}
             <span class="badge text-bg-secondary">Draft</span>
             {% endif %}
         </h2>
         <!-- Message to tell user their post is awaiting approval if user has published it -->
-        {% if object.user == request.user and object.approved == False and object.status == '1' %}
+        {% if post.user == request.user and post.approved == False and post.status == '1' %}
         <div class="alert alert-info paragraph text-center" role="alert">
             This post is awaiting approval.
           </div>
-        {% elif object.user == request.user and object.status == '1' and object.approved == True %}
+        {% elif post.user == request.user and post.status == '1' and post.approved == True %}
         <div class="alert alert-success paragraph text-center" role="alert">
             Your post has been approved and is now published!
           </div>
@@ -33,9 +33,9 @@
 <div class="row">
     <div class="offset-md-2 col-md-8 mt-3">
         <!-- Displays username -->
-        <h4 class="heading mb-3">Written by <strong>{{ object.user }}</strong></h4>
+        <h4 class="heading mb-3">Written by <strong>{{ post.user }}</strong></h4>
         <!-- Mark content as safe to prevent HTML escaping -->
-        <p class="paragraph">{{ object.body|safe }}</p>
+        <p class="paragraph">{{ post.body|safe }}</p>
     </div>
 </div>
 
@@ -43,10 +43,10 @@
 <div class="row">
     <div class="offset-md-2 col-md-8 ">
         <hr>
-        <p class="paragraph"><strong>Posted on:</strong> {{ object.created_on|date:"j N Y, H:i" }}</p>
+        <p class="paragraph"><strong>Posted on:</strong> {{ post.created_on|date:"j N Y, H:i" }}</p>
         <!-- If the post has been updated then this field will also be displayed -->
-        {% if object.updated_on %}
-        <p class="paragraph"><strong>Updated on:</strong> {{ object.updated_on|date:"j N Y, H:i" }}</p>
+        {% if post.updated_on %}
+        <p class="paragraph"><strong>Updated on:</strong> {{ post.updated_on|date:"j N Y, H:i" }}</p>
         {% endif %}
     </div>
 </div>
@@ -67,8 +67,8 @@
     <div class="offset-md-2 col-md-8 text-center">
         <button class="btn btn-colour btn-text" id="back-btn"><i class="fa-solid fa-arrow-left"></i> Back</button>
         <!-- Display edit button to user if they are the ones who created the post -->
-        {% if object.user == request.user %}
-        <a href="{% url 'edit_post' object.slug %}" class="btn btn-text btn-warning"><i class="fa-solid fa-pen-to-square"></i> Edit Post</a>
+        {% if post.user == request.user %}
+        <a href="{% url 'edit_post' post.slug %}" class="btn btn-text btn-warning"><i class="fa-solid fa-pen-to-square"></i> Edit Post</a>
         {% endif %}
     </div>
 </div>
