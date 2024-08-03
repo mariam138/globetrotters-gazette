@@ -124,6 +124,11 @@ body {
     font-weight: 600;
 }
 
+/* Hides the label from the comment form */
+#comment-form label {
+    display: none;
+}
+
 /******************************************************************************* Create Post Page */
 /* Change colour of the input field that displays the name
 to override the default 'disabled' styling.

@@ -34,10 +34,10 @@ class CommentForm(ModelForm):
     # As only field from form that displays is the body
     # Code adapted from:
     # https://github.com/django-crispy-forms/django-crispy-forms/issues/248
-    def __init__(self, *args, **kwargs):
-        super(CommentForm, self).__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        # Sets id of the form
-        self.helper.form_id = 'commentForm'
-        # Hides form labels
-        self.helper.form_show_labels = False
+    # def __init__(self, *args, **kwargs):
+    #     super(CommentForm, self).__init__(*args, **kwargs)
+    #     self.helper = FormHelper()
+    #     # Sets id of the form
+    #     self.helper.form_id = 'commentForm'
+    #     # Hides form labels
+    #     self.helper.form_show_labels = False
