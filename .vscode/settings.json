@@ -13,6 +13,6 @@
       "**/CVS": true
    },
    "files.autoSave": "afterDelay",
-   "workbench.colorTheme": "Bearded Theme Milkshake Mango",
+   "workbench.colorTheme": "Catppuccin Mocha",
    "terminal.integrated.gpuAcceleration": "canvas",
 }
