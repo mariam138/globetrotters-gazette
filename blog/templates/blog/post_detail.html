@@ -52,12 +52,13 @@
 </div>
 
 <!-- Displaying comments underneath post -->
-<div class="row">
+<div class="row mt-2">
     <div class="offset-md-2 col-md-8">
+        <h3 class="heading fw-bold">Comments:</h3>
         {% for comment in comments %}
-        <h4 class="heading">{{ comment.user }}</h4>
+        <h5 class="heading">{{ comment.user }}</h5>
         <p class="paragraph">{{ comment.body }}</p>
-        <p class="paragraph">{{ comment.created_on|date:"j N Y" }}</p>
+        <p class="paragraph fs-6">{{ comment.created_on|date:"d/m/Y" }}</p>
         {% endfor %}
     </div>
 </div>
