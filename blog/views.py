@@ -88,6 +88,7 @@ def post_detail(request, slug):
     comment_form = CommentForm()
 
     if request.method == "POST":
+        comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
             comment.user = request.user
@@ -101,11 +102,13 @@ def post_detail(request, slug):
         else:
             messages.error(
                 request,
-                'There was a problem submitting your comment.'
+                'There was a problem submitting your comment. '
                 'Please try again'
             )
+
     # Create another blank comment form after submission
     comment_form = CommentForm()
+
     return render(
         request,
         "blog/post_detail.html",
