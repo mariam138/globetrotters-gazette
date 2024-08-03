@@ -59,18 +59,6 @@ class NAmericaPostList(AsiaPostList):
     queryset = Post.objects.filter(region='US', status='1', approved=True)
 
 
-# # Use of Django's generic Detail View to view each post in a separate view
-# class PostDetailView(generic.DetailView):
-#     model = Post
-
-#     def get_context_data(self, **kwargs):
-#         # Call the base implementation first to get a context
-#         context = super().get_context_data(**kwargs)
-#         # Add in a QuerySet of all related comments
-#         context["comments"] = Comment.objects.all().order_by("-created_on")
-#         return context
-
-
 def post_detail(request, slug):
     """
     Display an individual :model:`blog.Post`.
@@ -86,13 +74,19 @@ def post_detail(request, slug):
     """
 
     queryset = Post.objects.filter(status=1, approved=True)
+    # Gets specified post object using the queryset and slug arg
     post = get_object_or_404(queryset, slug=slug)
+    comments = post.comments.all()
 
     return render(
         request,
         "blog/post_detail.html",
-        {"post": post},
+        {
+            "post": post,
+            "comments": comments,
+        },
     )
+
 
 @login_required
 def create_post(request):
