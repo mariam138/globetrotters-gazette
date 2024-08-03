@@ -76,7 +76,9 @@ def post_detail(request, slug):
     queryset = Post.objects.filter(status=1, approved=True)
     # Gets specified post object using the queryset and slug arg
     post = get_object_or_404(queryset, slug=slug)
-    comments = post.comments.all()
+    # Reverse look up for comments related to specific post
+    # Only shows comments that have been approved
+    comments = post.comments.filter(approved=True)
 
     return render(
         request,
