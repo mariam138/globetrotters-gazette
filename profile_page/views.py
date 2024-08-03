@@ -129,7 +129,19 @@ def delete_account(request, username):
         :template:`profile_page/profile_page.html`
     """
 
+    # Gets current logged in user and it's instance in the db
     user = request.user
-    print(user)
+    try:
+    # Deletes user from the db
+        user.delete()
+        messages.success(
+            request,
+            'Your account has been deleted.'
+        )
+    except:
+        messages.error(
+            request,
+            "We couldn't handle your request. Please try again later."
+        )
 
     return HttpResponseRedirect(reverse('index'))
