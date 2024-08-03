@@ -65,6 +65,8 @@ The seven epics listed above were split down further into user stories to help w
 - [#18](https://github.com/mariam138/globetrotters-gazette/issues/18#issue-2388393796) Edit User Profile
 - [#63](https://github.com/mariam138/globetrotters-gazette/issues/63#issue-2388393796) Upload Profile Picture
 - [#59](https://github.com/mariam138/globetrotters-gazette/issues/59#issue-2388393796) View Own Posts
+- [#19](https://github.com/mariam138/globetrotters-gazette/issues/19#issue-2388393796) Delete User Account
+
 
 
 
