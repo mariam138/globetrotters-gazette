@@ -91,6 +91,9 @@ The seven epics listed above were split down further into user stories to help w
 
 
 ##### **Epic [7](https://github.com/mariam138/globetrotters-gazette/issues/8)**: User Interaction
+- [#43](https://github.com/mariam138/globetrotters-gazette/issues/43#issue-2388393796) Create Comments
+- [#44](https://github.com/mariam138/globetrotters-gazette/issues/44#issue-2388393796) View Comments
+
 
 
 ### The Structure Plane
