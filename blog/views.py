@@ -76,7 +76,7 @@ def post_detail(request, slug):
     :template:`blog/post_detail.html`
     """
 
-    queryset = Post.objects.filter(status=1, approved=True)
+    queryset = Post.objects.filter(status=1)
     # Gets specified post object using the queryset and slug arg
     post = get_object_or_404(queryset, slug=slug)
     # Reverse look up for comments related to specific post
