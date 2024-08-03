@@ -101,14 +101,18 @@
       <!-- content that changes per page will go here -->
        <main class="min-vh-100">
          <div class="container">
-           {% if messages %}
-           {% for message in messages %}
-           <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
-             {{ message }}
-             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-           </div>
-           {% endfor %}
-           {% endif %}
+          <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+              {% if messages %}
+              {% for message in messages %}
+              <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              {% endfor %}
+              {% endif %}
+            </div>
+          </div>
          </div>
 
         <!-- Display username in top right corner of page -->
