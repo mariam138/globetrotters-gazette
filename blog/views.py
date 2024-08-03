@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 # Allows prepopulating of slug field
 from django.template.defaultfilters import slugify
 from django.urls import reverse
-from .models import Post
+from .models import Post, Comment
 from .forms import PostForm
 
 # Create your views here.
@@ -62,6 +62,13 @@ class NAmericaPostList(AsiaPostList):
 # Use of Django's generic Detail View to view each post in a separate view
 class PostDetailView(generic.DetailView):
     model = Post
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        # Add in a QuerySet of all related comments
+        context["comments"] = Comment.objects.all().order_by("-created_on")
+        return context
 
 
 @login_required
