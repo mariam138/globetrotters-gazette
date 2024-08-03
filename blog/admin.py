@@ -16,9 +16,6 @@ class PostAdmin(SummernoteModelAdmin):
     summernote_fields = '__all__'
 
 
-class CommentAdmin(SummernoteModelAdmin):
-    summernote_fields = '__all__'
-
 # Register your models here.
 admin.site.register(Post, PostAdmin)
-admin.site.register(Comment, CommentAdmin)
+admin.site.register(Comment)
