@@ -86,7 +86,6 @@
             <!-- If the user is logged in, show the sign out button only -->
             {% if user.is_authenticated %}
             <!-- Show username when user is logged in -->
-            <p class="paragraph navbar-text">Logged in as {{ user }}</p>
             <a class="btn btn-colour btn-margin btn-text text-nowrap" href="{% url 'account_logout' %}" role="button">Sign Out</a>
             <!-- otherwise show the signin and register buttons -->
             {% else %}
@@ -111,6 +110,12 @@
            {% endfor %}
            {% endif %}
          </div>
+
+        <!-- Display username in top right corner of page -->
+         {% if user.is_authenticated %}
+         <p class="paragraph text-end pe-2 fs-6">Logged in as <strong>{{ user }}</strong></p>
+         {% endif %}
+
         <!-- 100% width until screens around 578px -->
         <div class="container-sm">
         <!-- Main content is inserted between these tags -->
