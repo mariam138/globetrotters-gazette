@@ -6,17 +6,19 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-    <!-- Display Form Errors Here -->
-     <div class="container">
+<!-- Display Form Errors Here -->
+<div class="row">
+    <div class="col-lg-6 offset-lg-3">
         {% if form.non_field_errors %}
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                {% for error in form.non_field_errors %}
-                    <p class="paragraph mb-0">{{ error }}</p>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                {% endfor %}
+            {% for error in form.non_field_errors %}
+            <p class="paragraph mb-0">{{ error }}</p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            {% endfor %}
         </div>
         {% endif %}
-     </div>
+    </div>
+</div>
 
 <!-- Sign In heading -->
 <div class="container">
