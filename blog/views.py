@@ -62,6 +62,7 @@ class NAmericaPostList(AsiaPostList):
 def post_detail(request, slug):
     """
     Display an individual :model:`blog.Post`.
+    Allows a user to submit an individual comment :model:`blog.Comment`
 
     **Context**
 
@@ -70,6 +71,8 @@ def post_detail(request, slug):
     ``comments``
         An instance of :model:`blog.Comment`
         Only shows comments related to the post instance
+    ``comment_form``
+        An instance of :model:`forms.CommentForm`
 
     **Template:**
 
