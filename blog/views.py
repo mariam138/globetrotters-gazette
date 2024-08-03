@@ -87,6 +87,25 @@ def post_detail(request, slug):
     # Create instance of a comment form
     comment_form = CommentForm()
 
+    if request.method == "POST":
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.user = request.user
+            comment.post = post
+            comment.save()
+
+            messages.success(
+                request,
+                'Your comment has been submitted and is awaiting approval.'
+            )
+        else:
+            messages.error(
+                request,
+                'There was a problem submitting your comment.'
+                'Please try again'
+            )
+    # Create another blank comment form after submission
+    comment_form = CommentForm()
     return render(
         request,
         "blog/post_detail.html",
@@ -350,7 +369,7 @@ def create_comment(request, slug):
         else:
             messages.error(
                 request,
-                'There was a problem submitting your comment.'
+                'There was a problem submitting your comment. '
                 'Please try again'
             )
 
