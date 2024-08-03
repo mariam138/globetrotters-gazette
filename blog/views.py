@@ -59,17 +59,40 @@ class NAmericaPostList(AsiaPostList):
     queryset = Post.objects.filter(region='US', status='1', approved=True)
 
 
-# Use of Django's generic Detail View to view each post in a separate view
-class PostDetailView(generic.DetailView):
-    model = Post
+# # Use of Django's generic Detail View to view each post in a separate view
+# class PostDetailView(generic.DetailView):
+#     model = Post
 
-    def get_context_data(self, **kwargs):
-        # Call the base implementation first to get a context
-        context = super().get_context_data(**kwargs)
-        # Add in a QuerySet of all related comments
-        context["comments"] = Comment.objects.all().order_by("-created_on")
-        return context
+#     def get_context_data(self, **kwargs):
+#         # Call the base implementation first to get a context
+#         context = super().get_context_data(**kwargs)
+#         # Add in a QuerySet of all related comments
+#         context["comments"] = Comment.objects.all().order_by("-created_on")
+#         return context
 
+
+def post_detail(request, slug):
+    """
+    Display an individual :model:`blog.Post`.
+
+    **Context**
+
+    ``post``
+        An instance of :model:`blog.Post`.
+
+    **Template:**
+
+    :template:`blog/post_detail.html`
+    """
+
+    queryset = Post.objects.filter(status=1, approved=True)
+    post = get_object_or_404(queryset, slug=slug)
+
+    return render(
+        request,
+        "blog/post_detail.html",
+        {"post": post},
+    )
 
 @login_required
 def create_post(request):
@@ -288,9 +311,4 @@ class UserPostList(generic.ListView):
             posts = Post.objects.filter(user__username=user.username, status='1', approved=True)
 
         return posts
-
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     print(context)  # Debugging: Print the context to the console
-    #     return context
 
