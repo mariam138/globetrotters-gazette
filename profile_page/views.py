@@ -117,3 +117,12 @@ def edit_cancel_profile(request, username):
     # code adapted from:
     # https://docs.djangoproject.com/en/4.2/ref/urlresolvers/#django.urls.reverse
     return HttpResponseRedirect(reverse('profile_page', args=[username]))
+
+@login_required
+def delete_account(request, username):
+    """
+    Allows user to permanently delete their account from the database.
+
+    ** Template **
+        :template:`profile_page/profile_page.html`
+    """
