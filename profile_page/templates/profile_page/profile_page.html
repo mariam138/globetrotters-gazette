@@ -1,87 +1,112 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <!-- Display heading of [username]'s profile' -->
-    <div class="row">
-        <div class="col">
-            <h2 class="heading text-center">{{ user }}'s profile</h2>
-        </div>
+<!-- Display heading of [username]'s profile' -->
+<div class="row">
+    <div class="col">
+        <h2 class="heading text-center">{{ user }}'s profile</h2>
+    </div>
+</div>
+
+<!-- Allow content to be in one row so that the two columns can display side by side on larger screens using bootstrap styling -->
+<div class="row mt-2">
+    <div class="col-sm-6 col-lg-4 offset-lg-2 text-center">
+        <!-- Display user's profile picture -->
+        <img src="{{ user.profile.profile_picture.url }}" alt="{{ user }}'s profile picture"
+            class="img-thumbnail border rounded">
+
+        <!-- Display user's name -->
+        <h5 class="heading"><i class="fa-solid fa-signature"></i> Name:</h5>
+        <!-- checks to see if p element is empty before applying the styling -->
+        <p class="paragraph profile-text {% if profile.name %}border border-dark-subtle rounded bg-light-subtle
+                {% endif %}">
+            {{ profile.name }}</p>
+
+        <!-- Display user's birthday -->
+        <h5 class="heading"><i class="fa-solid fa-cake-candles"></i> Birthday:</h5>
+        <p class="paragraph profile-text {% if profile.birthday %}border border-dark-subtle rounded bg-light-subtle
+                {% endif %}">
+            {{ profile.birthday }}</p>
+
+        <!-- Display user's email -->
+        {% if request.user %}
+        <h5 class="heading d-inline"><i class="fa-solid fa-envelope"></i> Email:</h5>
+        <!-- Info icon which can be clicked on to reveal tooltip above -->
+        <button id="email-tooltip" class="btn" type="button" data-bs-toggle="tooltip"
+            data-bs-title="* Email is not visible to others."><i class="fa-solid fa-circle-info"
+                id="email-info"></i></button>
+        <p class="paragraph profile-text border border-dark-subtle rounded bg-light-subtle">
+            {{ user.email }}</p>
+
+        {% endif %}
     </div>
 
-    <!-- Allow content to be in one row so that the two columns can display side by side on larger screens using bootstrap styling -->
-    <div class="row mt-2">
-        <div class="col-sm-6 col-lg-4 offset-lg-2 text-center">
-            <!-- Display user's profile picture -->
-            <img src="{{ user.profile.profile_picture.url }}" alt="{{ user }}'s profile picture"
-                class="img-thumbnail border rounded">
-
-            <!-- Display user's name -->
-            <h5 class="heading"><i class="fa-solid fa-signature"></i> Name:</h5>
-            <!-- checks to see if p element is empty before applying the styling -->
-            <p class="paragraph profile-text {% if profile.name %}border border-dark-subtle rounded bg-light-subtle
-                {% endif %}">
-                {{ profile.name }}</p>
-
-            <!-- Display user's birthday -->
-            <h5 class="heading"><i class="fa-solid fa-cake-candles"></i> Birthday:</h5>
-            <p class="paragraph profile-text {% if profile.birthday %}border border-dark-subtle rounded bg-light-subtle
-                {% endif %}">
-                {{ profile.birthday }}</p>
-
-            <!-- Display user's email -->
-            {% if request.user %}
-                <h5 class="heading d-inline"><i class="fa-solid fa-envelope"></i> Email:</h5>
-                <!-- Info icon which can be clicked on to reveal tooltip above -->
-                <button id="email-tooltip" class="btn" type="button" data-bs-toggle="tooltip"
-                    data-bs-title="* Email is not visible to others."><i class="fa-solid fa-circle-info"
-                        id="email-info"></i></button>
-                <p class="paragraph profile-text border border-dark-subtle rounded bg-light-subtle">
-                    {{ user.email }}</p>
-
-            {% endif %}
-        </div>
-
-        <!-- Display user's bio -->
-        <div class="col-sm-6 col-lg-4 text-center">
-            <h5 class="heading"><i class="fa-solid fa-pencil"></i> Bio:</h5>
-            <p class="paragraph profile-text {% if profile.bio %}border border-dark-subtle rounded bg-light-subtle
+    <!-- Display user's bio -->
+    <div class="col-sm-6 col-lg-4 text-center">
+        <h5 class="heading"><i class="fa-solid fa-pencil"></i> Bio:</h5>
+        <p class="paragraph profile-text {% if profile.bio %}border border-dark-subtle rounded bg-light-subtle
                 {% endif %}">{{ profile.bio }}
-            </p>
+        </p>
 
-            <!-- Display user's instagram link -->
-            <h5 class="heading"><i class="fa-brands fa-instagram"></i> Instagram:</h5>
-            <p class="paragraph profile-text {% if profile.instagram %}border border-dark-subtle rounded bg-light-subtle
+        <!-- Display user's instagram link -->
+        <h5 class="heading"><i class="fa-brands fa-instagram"></i> Instagram:</h5>
+        <p class="paragraph profile-text {% if profile.instagram %}border border-dark-subtle rounded bg-light-subtle
                 {% endif %}">
-                {{ profile.instagram }}</p>
+            {{ profile.instagram }}</p>
 
-            <!-- Display user's twitter/x link -->
-            <h5 class="heading"><i class="fa-brands fa-square-x-twitter"></i> X/Twitter:</h5>
-            <p class="paragraph profile-text {% if profile.twitter_x %}border border-dark-subtle rounded bg-light-subtle
+        <!-- Display user's twitter/x link -->
+        <h5 class="heading"><i class="fa-brands fa-square-x-twitter"></i> X/Twitter:</h5>
+        <p class="paragraph profile-text {% if profile.twitter_x %}border border-dark-subtle rounded bg-light-subtle
                 {% endif %}">
-                {{ profile.twitter_x }}</p>
-        </div>
+            {{ profile.twitter_x }}</p>
     </div>
+</div>
 
-    <div class="row">
-        <!-- Centre items in the column -->
-        <div class="col text-center">
-            <!-- Will only show the edit button to the user for their own profile -->
-            {% if request.user == profile.user %}
-            <!-- Display button to edit profile -->
-            <a class="btn btn-colour btn-margin btn-text text-nowrap" href="{% url 'edit_profile' user.username %}"
-                role="button">Edit Profile</a>
-            {% endif %}
-            <!-- Display button to view user's posts -->
-            <a class="btn btn-colour btn-margin btn-text text-nowrap" href="{% url 'users_posts' user.username %}"
+<div class="row">
+    <!-- Centre items in the column -->
+    <div class="col text-center">
+        <!-- Will only show the edit button to the user for their own profile -->
+        {% if request.user == profile.user %}
+        <!-- Display button to edit profile -->
+        <a class="btn btn-colour btn-margin btn-text text-nowrap" href="{% url 'edit_profile' user.username %}"
+            role="button">Edit Profile</a>
+        {% endif %}
+        <!-- Display button to view user's posts -->
+        <a class="btn btn-colour btn-margin btn-text text-nowrap" href="{% url 'users_posts' user.username %}"
             role="button">View Posts</a>
+    </div>
+</div>
+
+<!-- Button for user to delete their profile -->
+<div class="row">
+    <div class="col text-center">
+        <!-- Only displays to logged in user on their own profile -->
+        <button class="btn btn-text text-nowrap btn-danger" type="button" data-bs-toggle="modal"
+            data-bs-target="#deleteAccountModal" aria-labelledby="deleteAccountModalLabel" aria-hidden="true">Delete
+            Account</button>
+    </div>
+</div>
+
+<!-- Modal warning user that deletion of their post is permanent -->
+<div class="modal fade" id="deleteAccountModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title heading">Delete Account</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="paragraph">Are you sure you want to delete your account?</p>
+                <p class="paragraph"><strong>All of your posts will also be deleted. This action cannot be
+                        undone.</strong></p>
+            </div>
+            <div class="modal-footer">
+                <!-- Redirect user back to homepage if they choose to cancel their changes -->
+                <a class="btn btn-danger btn-margin btn-text" href="#"
+                    role="button">Yes, delete account</a>
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">No, go back</button>
+            </div>
         </div>
     </div>
-
-    <!-- Button for user to delete their profile -->
-     <div class="row">
-        <div class="col text-center">
-            <!-- Only displays to logged in user on their own profile -->
-             <button class="btn btn-text text-nowrap btn-danger">Delete Profile</button>
-        </div>
-     </div>
+</div>
 {% endblock %}
