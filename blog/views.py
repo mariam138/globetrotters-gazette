@@ -67,6 +67,9 @@ def post_detail(request, slug):
 
     ``post``
         An instance of :model:`blog.Post`.
+    ``comments``
+        An instance of :model:`blog.Comment`
+        Only shows comments related to the post instance
 
     **Template:**
 
