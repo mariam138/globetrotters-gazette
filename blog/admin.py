@@ -3,7 +3,6 @@ from django_summernote.admin import SummernoteModelAdmin
 from .models import Post, Comment
 
 
-
 #  Code to create own admin actions adopted from the Django docs
 # https://docs.djangoproject.com/en/4.2/ref/contrib/admin/actions/
 @admin.action(description="Approve selected posts")
@@ -14,6 +13,7 @@ def approve_posts(modeladmin, request, queryset):
             post.approved = True
             # Saves object in database
             post.save()
+
 
 class PostAdmin(SummernoteModelAdmin):
     # Prepopulates the slug field from the post's title
