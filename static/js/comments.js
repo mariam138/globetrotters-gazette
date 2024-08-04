@@ -18,16 +18,15 @@ let commentForm = document.getElementById('comment-form');
 // Gets comment form's submit button
 let submitButton = document.getElementById('submit-btn');
 
+let url = document.getElementById('url').getAttribute('data-url');
 
 for (let button of editButtons){
     button.addEventListener('click', (e) => {
         let commentId = e.target.getAttribute('comment_id');
         let commentContent = document.getElementById(`comment-${commentId}`).innerText;
-        // let commentBody = commentContent.getElementById('comment-body').innerText;
         commentText.value = commentContent;
         submitButton.innerText = 'Update';
-        // Gets the current url for the page
-        // let url = window.location.href;
-        commentForm.setAttribute('action', `/post/${postSlug}/edit_comment/${commentId}/`);
+        // Set form action to url set for edit comment view
+        commentForm.setAttribute('action', `${url}/edit_comment/${commentId}/`);
     })
 }
