@@ -177,6 +177,16 @@ For fonts, I started out choosing a font for headings. I used [Fontjoy](https://
 
 ## Testing
 
+### Code Validation
+
+#### Javascript
+
+All Javascript files were validated using [JSHint](https://jshint.com/), adjusting the configuration for ES6 Javascript.
+
+- Validation for `comments.js`:
+![Screenshot of comments.js validation](static/images/comments-js-validation.png)
+    I chose to ignore the comment about `bootstrap` being an undefined variable due to using Bootstrap's Javascript in my `base.html` template. No other errors were found.
+
 ## Technologies
 
 Several technologies were used in creating this blog site.
