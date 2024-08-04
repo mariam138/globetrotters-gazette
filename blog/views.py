@@ -385,3 +385,16 @@ def edit_comment(request, slug, comment_id):
 
     # Refresh page that user was on once comment is edited
     return(HttpResponseRedirect(reverse('post_detail', args=[slug])))
+
+
+def cancel_edit_comment(request):
+    """
+    Allows user to cancel updating their comment without updating db.
+    """
+
+    messages.warning(
+        request,
+        'Your comment was not updated.'
+    )
+
+    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
