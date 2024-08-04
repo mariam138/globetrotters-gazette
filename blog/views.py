@@ -342,3 +342,44 @@ class UserPostList(generic.ListView):
 
         return posts
 
+
+@login_required
+def edit_comment(request, slug, comment_id):
+    """
+    Allows user to edit their own comments based on
+    :model:`blog.Comment`.
+
+    **Context**
+
+
+    **Template**
+        :template:`blog/post_detail.html`
+
+    """
+
+    if request.method == "POST":
+        # Get post instance which comment is related to
+        post = get_object_or_404(Post, slug=slug)
+        # Get the comment instance with the comment id
+        comment = get_object_or_404(Comment, pk=comment_id)
+        # Pass the POST data and comment instance into the comment form
+        comment_form = CommentForm(request.POST, instance=comment)
+
+        # Checks form is valid and only the user who made the comment is editing it
+        if comment_form.is_valid() and request.user == comment.user:
+            comment = comment_form.save(commit=False)
+            # Change approved back to false for quality
+            comment.approved = False
+            comment.save()
+            messages.success(
+                request,
+                'Your comment has been updated and is awaiting approval.'
+            )
+        else:
+            messages.error(
+                request,
+                'There was a problem updating your comment. Please try again.'
+            )
+
+    # Refresh page that user was on once comment is edited
+    return(HttpResponseRedirect('post_detail', args=[slug]))
