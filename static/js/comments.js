@@ -9,6 +9,8 @@ let submitButton = document.getElementById('submit-btn');
 
 let url = document.getElementById('url').getAttribute('data-url');
 let cancelCommentUrl = document.getElementById('cancel-comment-url').getAttribute('data-url');
+// Gets all delete buttons by class name
+let deleteButtons = document.getElementsByClassName('delete-btn');
 
 /**
 * Initializes edit functionality for the provided edit buttons.
@@ -40,3 +42,4 @@ for (let button of editButtons){
         submitButton.after(cancelEditBtn);
     })
 }
+
