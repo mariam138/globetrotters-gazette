@@ -67,6 +67,10 @@
         {% if request.user == comment.user and not comment.approved %}
         <p class="paragraph fs-6 text-info-emphasis">This comment is waiting for approval.</p>
         {% endif %}
+        <!-- Edit comment button which only shows to logged in user on their own comments -->
+        {% if request.user == comment.user %}
+        <button type="button" class="btn btn-secondary btn-sm mb-1">Edit</button>
+        {% endif %}
         {% endfor %}
     </div>
 
