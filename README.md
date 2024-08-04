@@ -88,6 +88,10 @@ The seven epics listed above were split down further into user stories to help w
 
 ##### **Epic [6](https://github.com/mariam138/globetrotters-gazette/issues/7)**: Admin Profile
 - [#33](https://github.com/mariam138/globetrotters-gazette/issues/33#issue-2388393796) Create Admin Profile
+- [#34](https://github.com/mariam138/globetrotters-gazette/issues/34#issue-2388393796) View Admin Profile
+- [#35](https://github.com/mariam138/globetrotters-gazette/issues/35#issue-2388393796) Edit Admin Profile
+
+
 
 
 ##### **Epic [7](https://github.com/mariam138/globetrotters-gazette/issues/8)**: User Interaction
