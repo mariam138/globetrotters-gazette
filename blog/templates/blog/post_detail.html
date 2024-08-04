@@ -68,9 +68,11 @@
         {% if request.user == comment.user and not comment.approved %}
         <p class="paragraph fs-6 text-info-emphasis">This comment is waiting for approval.</p>
         {% endif %}
-        <!-- Edit comment button which only shows to logged in user on their own comments -->
+        <!-- Edit/Delete comment buttons which only show to logged in user on their own comments -->
         {% if request.user == comment.user %}
         <button type="button" class="btn btn-secondary btn-sm mb-1 edit-btn" comment_id="{{ comment.id }}">Edit</button>
+        <button type="button" class="btn btn-danger btn-sm mb-1 delete-btn" data-bs-toggle="modal"
+        data-bs-target="#deleteCommentModal" aria-labelledby="deleteCommentModalLabel" aria-hidden="true"">Delete</button>
         {% endif %}
         {% endfor %}
     </div>
