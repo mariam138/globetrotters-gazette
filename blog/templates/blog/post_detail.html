@@ -59,7 +59,7 @@
         <h3 class="heading fw-bold">Comments:</h3>
         {% for comment in comments %}
         <div class="{% if not comment.approved and request.user == comment.user %}
-        text-body-tertiary {% elif not comment.approved %} d-none {% endif %}" id="comment {{ comment.id }}">
+        text-body-tertiary {% elif not comment.approved %} d-none {% endif %}" id="comment-{{ comment.id }}">
             <h5 class="heading"><i class="fa-regular fa-comment"></i> {{ comment.user }}</h5>
             <p class="paragraph" id="comment-text">{{ comment.body }}</p>
             <p class="paragraph fs-6">{{ comment.created_on|date:"d/m/Y" }}</p>
