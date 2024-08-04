@@ -72,7 +72,7 @@
         {% if request.user == comment.user %}
         <button type="button" class="btn btn-secondary btn-sm mb-1 edit-btn" comment_id="{{ comment.id }}">Edit</button>
         <button type="button" class="btn btn-danger btn-sm mb-1" data-bs-toggle="modal"
-        data-bs-target="#deleteCommentModal" aria-labelledby="deleteCommentModalLabel" aria-hidden="true"">Delete</button>
+        data-bs-target="#deleteCommentModal" aria-labelledby="deleteCommentModalLabel" aria-hidden="true" comment_id="{{ comment.id }}">Delete</button>
         {% endif %}
         {% endfor %}
     </div>
@@ -129,7 +129,7 @@
         </div>
         <div class="modal-footer">
           <!-- Redirect user back to homepage if they choose to cancel their changes -->
-          <a class="btn btn-danger btn-margin btn-text delete-btn" href="#" role="button" comment_id="{{ comment.id }}">Yes, delete comment</a>
+          <a class="btn btn-danger btn-margin btn-text delete-btn" href="#" role="button">Yes, delete comment</a>
           <button type="button" class="btn btn-light" data-bs-dismiss="modal">No, go back</button>
         </div>
       </div>

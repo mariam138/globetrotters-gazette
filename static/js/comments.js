@@ -23,7 +23,7 @@ let deleteButtons = document.getElementsByClassName('delete-btn');
 * - Sets the form's action attribute to the `edit_comment/{commentId}` endpoint.
 * Code adapted from https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSD101_WTS+4/courseware/713441aba05441dfb3a7cf04f3268b3f/21a16093c0084895a6073422447c3f7d/
 */
-for (let button of editButtons){
+for (let button of editButtons) {
     button.addEventListener('click', (e) => {
         let commentId = e.target.getAttribute('comment_id');
         let commentContent = document.getElementById(`comment-${commentId}`).innerText;
@@ -43,3 +43,13 @@ for (let button of editButtons){
     })
 }
 
+
+
+
+for (let button of deleteButtons) {
+    button.addEventListener('click', (e) => {
+        let commentId = e.target.getAttribute('comment_id');
+        console.log(commentId);
+        // button.href = `${url}delete_comment/${commentId}/`;
+    })
+}
