@@ -54,6 +54,7 @@ for (let button of deleteButtons) {
         let commentId = e.target.getAttribute('comment_id');
         // Opens modal when button is clicked
         delCommentModal.show();
-        // button.href = `${url}delete_comment/${commentId}/`;
+        // Set href of modal delete button
+        confirmDelete.href = `${url}delete_comment/${commentId}/`
     })
 }
