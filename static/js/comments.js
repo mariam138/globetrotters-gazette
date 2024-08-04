@@ -11,6 +11,8 @@ let url = document.getElementById('url').getAttribute('data-url');
 let cancelCommentUrl = document.getElementById('cancel-comment-url').getAttribute('data-url');
 // Gets all delete buttons by class name
 let deleteButtons = document.getElementsByClassName('delete-btn');
+// Get delete button from modal by id name
+let confirmDelete = document.getElementById('confirm-delete');
 
 /**
 * Initializes edit functionality for the provided edit buttons.
