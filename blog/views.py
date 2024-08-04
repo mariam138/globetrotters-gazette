@@ -412,25 +412,23 @@ def delete_comment(request, slug, comment_id):
 
     ** Template **
     """
+    # Get post instance using the slug from the request
+    post = get_object_or_404(Post, slug=slug)
+    # Get the comment instance to be deleted using the comment id
+    comment = get_object_or_404(Comment, pk=comment_id)
 
-    if request.method == "POST":
-        # Get post instance using the slug from the request
-        post = get_object_or_404(Post, slug=slug)
-        # Get the comment instance to be deleted using the comment id
-        comment = get_object_or_404(Comment, pk=comment_id)
-
-        # If logged in user is the creator of the comment, allow deletion
-        if request.user == comment.user:
-            comment.delete()
-            messages.success(
-                request,
-                'Your comment has been deleted.'
-            )
-        else:
-            messages.error(
-                request,
-                'You are not permitted to delete this comment.'
-            )
+    # If logged in user is the creator of the comment, allow deletion
+    if request.user == comment.user:
+        comment.delete()
+        messages.success(
+            request,
+            'Your comment has been deleted.'
+        )
+    else:
+        messages.error(
+            request,
+            'You are not permitted to delete this comment.'
+        )
 
     # Refresh post detail page
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
