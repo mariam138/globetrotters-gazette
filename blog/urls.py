@@ -19,5 +19,6 @@ urlpatterns = [
     path("post/<slug:slug>/delete/", views.delete_post, name="delete_post"),
     path("<str:username>/posts/", views.UserPostList.as_view(), name="users_posts"),
     path("post/<slug:slug>/edit_comment/<int:comment_id>/", views.edit_comment, name="edit_comment"),
+    path("post/<slug:slug>/edit_comment/<int:comment_id>/cancel/", views.cancel_edit_comment, name="cancel_comment"),
 
 ]
