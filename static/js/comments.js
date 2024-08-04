@@ -15,7 +15,7 @@ let deleteButtons = document.getElementsByClassName('delete-btn');
 // Get delete button from modal by id name
 let confirmDelete = document.getElementById('confirm-delete');
 // Create modal using javascript
-const delCommentModal = new bootstrap.Modal(document.getElementById('deleteCommentModal'))
+const delCommentModal = new bootstrap.Modal(document.getElementById('deleteCommentModal'));
 
 /**
 * Initializes edit functionality for the provided edit buttons.
@@ -28,24 +28,27 @@ const delCommentModal = new bootstrap.Modal(document.getElementById('deleteComme
 * - Sets the form's action attribute to the `edit_comment/{commentId}` endpoint.
 * Code adapted from https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSD101_WTS+4/courseware/713441aba05441dfb3a7cf04f3268b3f/21a16093c0084895a6073422447c3f7d/
 */
-for (let button of editButtons) {
-    button.addEventListener('click', (e) => {
-        let commentId = e.target.getAttribute('comment_id');
-        let commentContent = document.getElementById(`comment-${commentId}`).innerText;
-        commentText.value = commentContent;
-        submitButton.innerText = 'Update';
-        // Set form action to url set for edit comment view
-        commentForm.setAttribute('action', `${url}edit_comment/${commentId}/`);
 
-        // Creates a cancel button which appears next to the 'Update' button
-        let cancelEditBtn = document.createElement('a');
-        // Sets html for link
-        cancelEditBtn.innerHTML = `<a class="btn btn-danger btn-text ms-1" href="${cancelCommentUrl}" role="button">Cancel</a>`;
-        // Appends anchor element after the submit/update button
-        // After method adapted from:
-        // https://developer.mozilla.org/en-US/docs/Web/API/Element/after
-        submitButton.after(cancelEditBtn);
-    })
+function editButton(event) {
+    let commentId = event.target.getAttribute('comment_id');
+    let commentContent = document.getElementById(`comment-${commentId}`).innerText;
+    commentText.value = commentContent;
+    submitButton.innerText = 'Update';
+    // Set form action to url set for edit comment view
+    commentForm.setAttribute('action', `${url}edit_comment/${commentId}/`);
+
+    // Creates a cancel button which appears next to the 'Update' button
+    let cancelEditBtn = document.createElement('a');
+    // Sets html for link
+    cancelEditBtn.innerHTML = `<a class="btn btn-danger btn-text ms-1" href="${cancelCommentUrl}" role="button">Cancel</a>`;
+    // Appends anchor element after the submit/update button
+    // After method adapted from:
+    // https://developer.mozilla.org/en-US/docs/Web/API/Element/after
+    submitButton.after(cancelEditBtn);
+}
+
+for (let button of editButtons) {
+    button.addEventListener('click', editButton );
 }
 
 /*
@@ -61,6 +64,6 @@ for (let button of deleteButtons) {
         // Opens modal when button is clicked
         delCommentModal.show();
         // Set href of modal delete button
-        confirmDelete.href = `${url}delete_comment/${commentId}/`
-    })
+        confirmDelete.href = `${url}delete_comment/${commentId}/`;
+    });
 }
