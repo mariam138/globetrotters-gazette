@@ -382,4 +382,4 @@ def edit_comment(request, slug, comment_id):
             )
 
     # Refresh page that user was on once comment is edited
-    return(HttpResponseRedirect('post_detail', args=[slug]))
+    return(HttpResponseRedirect(reverse('post_detail', args=[slug])))

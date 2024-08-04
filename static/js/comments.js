@@ -22,8 +22,11 @@ for (let button of editButtons){
     button.addEventListener('click', (e) => {
         let commentId = e.target.getAttribute('comment_id');
         let commentContent = document.getElementById(`comment-${commentId}`).innerText;
+        // let commentBody = commentContent.getElementById('comment-body').innerText;
         commentText.value = commentContent;
         submitButton.innerText = 'Update';
-        commentForm.setAttribute('action', `edit_comment/${commentId}`);
+        // Gets the current url for the page
+        let url = window.location.href;
+        commentForm.setAttribute('action', `${url}/edit_comment/${commentId}/`);
     })
 }
