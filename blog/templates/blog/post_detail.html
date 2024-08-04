@@ -61,7 +61,7 @@
         <div class="{% if not comment.approved and request.user == comment.user %}
         text-body-tertiary {% elif not comment.approved %} d-none {% endif %}" id="comment {{ comment.id }}">
             <h5 class="heading"><i class="fa-regular fa-comment"></i> {{ comment.user }}</h5>
-            <p class="paragraph">{{ comment.body }}</p>
+            <p class="paragraph" id="comment-text">{{ comment.body }}</p>
             <p class="paragraph fs-6">{{ comment.created_on|date:"d/m/Y" }}</p>
         </div>
         {% if request.user == comment.user and not comment.approved %}
@@ -69,7 +69,7 @@
         {% endif %}
         <!-- Edit comment button which only shows to logged in user on their own comments -->
         {% if request.user == comment.user %}
-        <button type="button" class="btn btn-secondary btn-sm mb-1" comment_id="{{ comment.id }}>Edit</button>
+        <button type="button" class="btn btn-secondary btn-sm mb-1" comment_id="{{ comment.id }}" id="edit-btn">Edit</button>
         {% endif %}
         {% endfor %}
     </div>
@@ -88,7 +88,7 @@
 
             <!-- Submit button -->
             <div class="text-center mb-4">
-                <button class="btn btn-text btn-colour" type="submit">Submit</button>
+                <button class="btn btn-text btn-colour" type="submit" id="submit-btn">Submit</button>
             </div>
         </form>
         {% endif %}
