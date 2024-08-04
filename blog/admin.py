@@ -15,7 +15,12 @@ class PostAdmin(SummernoteModelAdmin):
     # Applies summernote editor to all Textfields
     summernote_fields = '__all__'
 
+class CommentAdmin(admin.ModelAdmin):
+    # Displays fields in admin panel
+    list_display = ('user', 'post', 'body', 'approved',)
+    # Chooses to filter comments by approval status
+    list_filter = ('approved',)
 
 # Register your models here.
 admin.site.register(Post, PostAdmin)
-admin.site.register(Comment)
+admin.site.register(Comment, CommentAdmin)

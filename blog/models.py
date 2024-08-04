@@ -61,4 +61,4 @@ class Comment(models.Model):
 
     # Displays post that user commented on and the comment itself
     def __str__(self):
-        return f"{self.user} on {self.post}: {self.body}"
+        return f"{self.body}"
