@@ -20,5 +20,4 @@ urlpatterns = [
     path("<str:username>/posts/", views.UserPostList.as_view(), name="users_posts"),
     path("post/<slug:slug>/edit_comment/<int:comment_id>/", views.edit_comment, name="edit_comment"),
 
-
 ]
