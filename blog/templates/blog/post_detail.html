@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% load crispy_forms_tags %}
 {% crispy comment_form %}
 
@@ -106,4 +107,9 @@
         {% endif %}
     </div>
 </div>
-{% endblock %}
+{% endblock content %}
+
+<!-- Load the comments script for updating comments -->
+{% block scripts %}
+<script src="{% static 'js/comments.js' %}"></script>
+{% endblock scripts %}
