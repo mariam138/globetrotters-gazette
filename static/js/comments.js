@@ -43,7 +43,8 @@ for (let button of editButtons) {
     })
 }
 
-
+// Create modal using javascript
+const myModal = new bootstrap.Modal(document.getElementById('deleteCommentModal'))
 
 
 for (let button of deleteButtons) {
