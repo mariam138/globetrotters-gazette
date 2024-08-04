@@ -387,7 +387,7 @@ def edit_comment(request, slug, comment_id):
     return(HttpResponseRedirect(reverse('post_detail', args=[slug])))
 
 
-def cancel_edit_comment(request):
+def cancel_edit_comment(request, slug):
     """
     Allows user to cancel updating their comment without updating db.
     """
