@@ -28,5 +28,14 @@ for (let button of editButtons){
         submitButton.innerText = 'Update';
         // Set form action to url set for edit comment view
         commentForm.setAttribute('action', `${url}edit_comment/${commentId}/`);
+
+        // Creates a cancel button which appears next to the 'Update' button
+        let cancelEditBtn = document.createElement('a');
+        // Sets html for link
+        cancelEditBtn.innerHTML = `<a class="btn btn-danger btn-text ms-1" href="{% url 'cancel_comment' %} role="button">Cancel</a>`;
+        // Appends anchor element after the submit/update button
+        // After method adapted from:
+        // https://developer.mozilla.org/en-US/docs/Web/API/Element/after
+        submitButton.after(cancelEditBtn);
     })
 }
