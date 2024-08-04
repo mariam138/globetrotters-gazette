@@ -73,9 +73,6 @@
         <button type="button" class="btn btn-secondary btn-sm mb-1 edit-btn" comment_id="{{ comment.id }}">Edit</button>
         {% endif %}
         {% endfor %}
-
-        <!-- Allows access to URL in javascript for form action -->
-        <input type="hidden" id="url" data-url="{% url 'post_detail' post.slug %}">
     </div>
 
     <!-- Comment Form -->
@@ -110,6 +107,12 @@
         {% endif %}
     </div>
 </div>
+
+<!-- Allows access to URL in javascript for form action -->
+<input type="hidden" id="url" data-url="{% url 'post_detail' post.slug %}">
+<!-- Allows access to cancel edit comment url for javascript -->
+<input type="hidden" id="cancel-comment-url" data-url="{% url 'cancel_comment' %}">
+
 {% endblock content %}
 
 <!-- Load the comments script for updating comments -->
