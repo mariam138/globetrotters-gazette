@@ -44,13 +44,14 @@ for (let button of editButtons) {
 }
 
 // Create modal using javascript
-const myModal = new bootstrap.Modal(document.getElementById('deleteCommentModal'))
+const delCommentModal = new bootstrap.Modal(document.getElementById('deleteCommentModal'))
 
 
 for (let button of deleteButtons) {
     button.addEventListener('click', (e) => {
         let commentId = e.target.getAttribute('comment_id');
-        console.log(commentId);
+        // Opens modal when button is clicked
+        delCommentModal.show();
         // button.href = `${url}delete_comment/${commentId}/`;
     })
 }
