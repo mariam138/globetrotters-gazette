@@ -86,7 +86,7 @@
         </p>
         {% elif user.is_authenticated %}
         <h5 class="heading">Leave a comment:</h5>
-        <form id="comment-form" method="post">
+        <form id="comment-form" method="post" action="">
             {{ comment_form|crispy }}
             {% csrf_token %}
 

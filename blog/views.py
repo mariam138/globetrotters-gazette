@@ -362,14 +362,16 @@ def edit_comment(request, slug, comment_id):
         post = get_object_or_404(Post, slug=slug)
         # Get the comment instance with the comment id
         comment = get_object_or_404(Comment, pk=comment_id)
+        print(comment.post)
         # Pass the POST data and comment instance into the comment form
-        comment_form = CommentForm(request.POST, instance=comment)
+        comment_form = CommentForm(data=request.POST, instance=comment)
 
         # Checks form is valid and only the user who made the comment is editing it
         if comment_form.is_valid() and request.user == comment.user:
             comment = comment_form.save(commit=False)
             # Change approved back to false for quality
             comment.approved = False
+            comment.post = post
             comment.save()
             messages.success(
                 request,

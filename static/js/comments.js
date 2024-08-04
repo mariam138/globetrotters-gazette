@@ -27,6 +27,6 @@ for (let button of editButtons){
         commentText.value = commentContent;
         submitButton.innerText = 'Update';
         // Set form action to url set for edit comment view
-        commentForm.setAttribute('action', `${url}/edit_comment/${commentId}/`);
+        commentForm.setAttribute('action', `${url}edit_comment/${commentId}/`);
     })
 }
