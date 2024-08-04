@@ -29,7 +29,7 @@ const delCommentModal = new bootstrap.Modal(document.getElementById('deleteComme
 * Code adapted from https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSD101_WTS+4/courseware/713441aba05441dfb3a7cf04f3268b3f/21a16093c0084895a6073422447c3f7d/
 */
 
-function editButton(event) {
+function editComment(event) {
     let commentId = event.target.getAttribute('comment_id');
     let commentContent = document.getElementById(`comment-${commentId}`).innerText;
     commentText.value = commentContent;
@@ -47,10 +47,6 @@ function editButton(event) {
     submitButton.after(cancelEditBtn);
 }
 
-for (let button of editButtons) {
-    button.addEventListener('click', editButton );
-}
-
 /*
 * - Gets comment id when delete button under comment is clicked
 * - Displays modal asking user to confirm their action when button is clicked
@@ -58,12 +54,19 @@ for (let button of editButtons) {
 * Code adapted from:
 * https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSD101_WTS+4/courseware/713441aba05441dfb3a7cf04f3268b3f/21a16093c0084895a6073422447c3f7d/
 */
+
+function deleteComment(event) {
+    let commentId = event.target.getAttribute('comment_id');
+    // Opens modal when button is clicked
+    delCommentModal.show();
+    // Set href of modal delete button
+    confirmDelete.href = `${url}delete_comment/${commentId}/`;
+}
+
+for (let button of editButtons) {
+    button.addEventListener('click', editComment );
+}
+
 for (let button of deleteButtons) {
-    button.addEventListener('click', (e) => {
-        let commentId = e.target.getAttribute('comment_id');
-        // Opens modal when button is clicked
-        delCommentModal.show();
-        // Set href of modal delete button
-        confirmDelete.href = `${url}delete_comment/${commentId}/`;
-    });
+    button.addEventListener('click', deleteComment);
 }
