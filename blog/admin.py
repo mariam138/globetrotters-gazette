@@ -15,11 +15,17 @@ class PostAdmin(SummernoteModelAdmin):
     # Applies summernote editor to all Textfields
     summernote_fields = '__all__'
 
+@admin.action(description="Mark selected comments approved")
+def approve_comments(modeladmin, request, queryset):
+    queryset.update(approved=True)
+
 class CommentAdmin(admin.ModelAdmin):
     # Displays fields in admin panel
     list_display = ('user', 'post', 'body', 'approved',)
     # Chooses to filter comments by approval status
     list_filter = ('approved',)
+    # Registers custom actions defined above
+    actions = [approve_comments]
 
 # Register your models here.
 admin.site.register(Post, PostAdmin)
