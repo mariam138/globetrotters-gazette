@@ -386,7 +386,7 @@ def edit_comment(request, slug, comment_id):
     # Refresh page that user was on once comment is edited
     return(HttpResponseRedirect(reverse('post_detail', args=[slug])))
 
-
+@login_required
 def cancel_edit_comment(request, slug):
     """
     Allows user to cancel updating their comment without updating db.
