@@ -74,7 +74,7 @@
               </li>
               {% endif %}
               <!-- Search bar form -->
-              <form class="d-flex" role="search" method="get" action="#">
+              <form class="d-flex" role="search" method="get" action="{% url 'search' %}">
                 <input class="form-control me-2" type="search" placeholder="Search for..." aria-label="Search">
                 <button class="btn btn-colour btn-text" type="submit">Search</button>
               </form>
