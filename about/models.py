@@ -8,7 +8,7 @@ class About(models.Model):
     Creates single instance of an About model in relation to
     :model:`profile_page.Profile`
     """
-    name = models.OneToOneField(Profile, on_delete=models.CASCADE, related_name="admin_name")
+    title = models.CharField(max_length=250)
     profile_pic = models.OneToOneField(Profile, on_delete=models.CASCADE, related_name="admin_pic")
     content = models.TextField()
     updated_on = models.DateTimeField(auto_now=True)
