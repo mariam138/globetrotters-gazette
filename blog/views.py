@@ -5,6 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.db.models import Q
 # Allows prepopulating of slug field
 from django.template.defaultfilters import slugify
 from django.urls import reverse
@@ -439,3 +440,10 @@ class SearchPostList(generic.ListView):
     template_name = "blog/search_list.html"
     paginate_by = 6
     context_object_name = 'search_list'
+
+    def get_queryset(self):
+        search_post = self.request.GET.get('search')
+        return Post.objects.filter(
+            Q(title__icontains=search_post) | Q(
+                country__icontains=search_post) | Q(body__icontains=search_post)
+        )
