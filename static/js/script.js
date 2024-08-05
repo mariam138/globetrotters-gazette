@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', (event) => {
 
     // Get back button on post detail page
-    let backButton = document.getElementById('back-btn');
+    let backButton = document.getElementsByClassName('back-btn');
 
     if (backButton) {
         backButton.addEventListener('click', () => {
