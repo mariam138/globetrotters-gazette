@@ -3,5 +3,6 @@
 const indexCarousel = document.querySelector('#indexCarousel')
 
 const carousel = new bootstrap.Carousel(indexCarousel, {
-  ride: true
+    interval: 3000,
+    ride: true
 })
