@@ -1,5 +1,13 @@
-{% extends 'base.html' %}
+{% extends './post_list.html' %}
 
-{% block content %}
-
+{% block heading %}
+<div class="row text-center">
+    <div class="col">
+        <!-- Checks to see if the search_list context exists and is True -->
+        {% if search_list %}
+        <!-- sets the var region to the region of the first post in the post_list -->
+        <h1 class="heading">Search Results:</h1>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}
