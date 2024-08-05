@@ -289,5 +289,10 @@ You can clone this repository to create a remote copy on your local machine. Thi
 ## Media Credits
 
 - Main index image of Helsinki Cathedral is from [Vish Pix](https://www.pexels.com/photo/cathedral-over-buildings-in-helsinki-23227693/) on Pexels
+- Carousel images on index page are all from **Pexels**:
+    - **Dubai**: Photo by Nextvoyage: https://www.pexels.com/photo/city-buildings-during-sunset-1470502/
+    - **Cairo**: Photo by Dimitra M.K: https://www.pexels.com/photo/cityscape-of-cairo-with-the-nile-in-the-center-20840204/
+    - **Osaka**: Photo by Amy Chandra: https://www.pexels.com/photo/low-angle-photography-japan-buildings-1020769/
+- FAVICON
 
 ## Acknowledgments
