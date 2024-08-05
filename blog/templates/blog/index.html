@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 
 {% block indeximage %}
@@ -54,4 +55,8 @@
     </button>
   </div>
 
-{% endblock %}
+{% endblock content %}
+
+{% block scripts %}
+<script src="{% static 'js/carousel.js' %}"></script>
+{% endblock scripts %}
