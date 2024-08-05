@@ -432,3 +432,10 @@ def delete_comment(request, slug, comment_id):
 
     # Refresh post detail page
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+class SearchPostList(generic.ListView):
+    model = Post
+    template_name = "blog/search_list.html"
+    paginate_by = 6
+    context_object_name = 'search_list'
