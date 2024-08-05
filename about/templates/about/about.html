@@ -1,1 +1,22 @@
-{% extends 'base/html' %}
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col">
+        <h1 class="heading">{{ about.title }}</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <img src="{{ about.profile_pic }}" alt="Me">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <p class="paragraph">{{ about.content }}</p>
+        <p class="paragraph">{{ about.updated_on }}</p>
+    </div>
+</div>
+{% endblock content %}
