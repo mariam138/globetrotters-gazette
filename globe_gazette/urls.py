@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 # from blog import views
 urlpatterns = [
+    path('about/', include("about.urls"), name="about-urls"),
     path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
     path('profile/', include("profile_page.urls"), name="profile-urls"),
