@@ -21,6 +21,7 @@ urlpatterns = [
     path("post/<slug:slug>/edit_comment/<int:comment_id>/", views.edit_comment, name="edit_comment"),
     path("post/<slug:slug>/cancel_edit_comment/", views.cancel_edit_comment, name="cancel_comment"),
     path("post/<slug:slug>/delete_comment/<int:comment_id>/", views.delete_comment, name="delete_comment"),
+    path("search", views.SearchPostList.as_view(), name="search"),
 
 
 ]
