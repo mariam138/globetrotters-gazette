@@ -26,19 +26,32 @@
     </div>
 </div>
 
-<!-- Image gallery -->
-<div class="row">
-    <!-- Osaka image -->
-    <div class="col-sm-8 offset-sm-2">
-        <img src="https://res.cloudinary.com/dy1xfelbe/image/upload/v1722877207/osaka-gallery_bzc4js.webp" alt="Osaka" class="img-thumbnail">
+<!-- Bootstrap carousel to slide between images -->
+<div id="indexCarousel" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#indexCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#indexCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#indexCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <!-- Dubai image -->
-    <div class="col-sm-8 offset-sm-2">
-        <img src="https://res.cloudinary.com/dy1xfelbe/image/upload/v1722877207/dubai-gallery_jpl0tr.webp" alt="Dubai" class="img-thumbnail">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://res.cloudinary.com/dy1xfelbe/image/upload/v1722877207/osaka-gallery_bzc4js.webp" class="d-block w-100" alt="Osaka">
+      </div>
+      <div class="carousel-item">
+        <img src="https://res.cloudinary.com/dy1xfelbe/image/upload/v1722877207/dubai-gallery_jpl0tr.webp" class="d-block w-100" alt="Dubai">
+      </div>
+      <div class="carousel-item">
+        <img src="https://res.cloudinary.com/dy1xfelbe/image/upload/v1722877207/cairo-gallery_fcrq94.webp" class="d-block w-100" alt="Cairo">
+      </div>
     </div>
-    <!-- Cairo image -->
-    <div class="col-sm-8 offset-sm-2">
-        <img src="https://res.cloudinary.com/dy1xfelbe/image/upload/v1722877207/cairo-gallery_fcrq94.webp" alt="Cairo" class="img-thumbnail">
-    </div>
-</div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#indexCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#indexCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
 {% endblock %}
