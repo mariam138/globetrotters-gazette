@@ -4,16 +4,14 @@
 {% block heading %}
 <div class="row text-center">
     <div class="col">
-        <!-- Checks to see if the search_list context exists and is True -->
-        {% if search_list %}
-        <!-- sets the var region to the region of the first post in the post_list -->
         <h1 class="heading">Search Results:</h1>
-        {% endif %}
     </div>
 </div>
 {% endblock heading %}
 
 <div class="row">
+    <!-- Checks to see if there are any results in the search list -->
+    {% if search_list %}
     <!-- Creates a card for each post by looping through each post in the queryset -->
     {% for post in search_list %}
     <div class="col-md-6 col-lg-4">
@@ -30,6 +28,11 @@
         </div>
     </div>
     {% endfor %}
+    {% else %}
+    <div class="col-md-6 col-lg-4">
+        <p class="paragraph">No results found.</p>
+    </div>
+    {% endif %}
 </div>
 
 {% endblock content %}
