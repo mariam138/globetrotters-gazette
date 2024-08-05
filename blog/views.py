@@ -436,6 +436,12 @@ def delete_comment(request, slug, comment_id):
 
 
 class SearchPostList(generic.ListView):
+    """
+    Uses query searches based off user input to show posts.
+    Code adapted from:
+    https://learndjango.com/tutorials/django-search-tutorial
+    https://stackpython.medium.com/django-search-with-q-objects-tutorial-9c701db74e0e
+    """
     model = Post
     template_name = "blog/search_list.html"
     paginate_by = 6
