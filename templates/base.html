@@ -120,6 +120,12 @@
          <p class="paragraph text-end pe-2 fs-6">Logged in as <strong>{{ user }}</strong></p>
          {% endif %}
 
+        <!-- Allows image to be full width of screen separate to the content block -->
+        <div class="container-fluid">
+          {% block indeximage %}
+
+          {% endblock indeximage %}
+        </div>
         <!-- 100% width until screens around 578px -->
         <div class="container-sm">
         <!-- Main content is inserted between these tags -->
