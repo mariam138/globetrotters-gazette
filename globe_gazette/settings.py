@@ -205,6 +205,8 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
 # redirects user to home page once registered
 ACCOUNT_SIGNUP_REDIRECT_URL = "/"
+# Allow same email to be used for different accounts for test purposes
+ACCOUNT_UNIQUE_EMAIL = False
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 """ Django Custom Settings"""
