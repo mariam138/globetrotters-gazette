@@ -1,6 +1,8 @@
 from django.db import models
 # takes information from User model in custom models
 from django.contrib.auth.models import User
+# Uses Quill fields for WYSIWYG editor
+from django_quill.fields import QuillField
 # uses cloudinary model to post images rather than django
 from cloudinary.models import CloudinaryField
 # import Post model from blog app
@@ -16,7 +18,7 @@ class Profile(models.Model):
     profile_picture = CloudinaryField('image', blank=True)
     name = models.CharField(null=True, blank=True)
     birthday = models.DateField(null=True, blank=True)
-    bio = models.TextField(null=True, blank=True)
+    bio = QuillField(default="")
     instagram = models.URLField(blank=True)
     twitter_x = models.URLField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
