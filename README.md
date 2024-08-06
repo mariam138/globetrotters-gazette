@@ -52,12 +52,10 @@ The seven epics listed above were split down further into user stories to help w
 - [#11](https://github.com/mariam138/globetrotters-gazette/issues/11#issue-2388393796) Create Environment Variables
 - [#56](https://github.com/mariam138/globetrotters-gazette/issues/56#issue-2388393796) Deployment of Blog
 
-
 ##### **Epic [2](https://github.com/mariam138/globetrotters-gazette/issues/3)**: User Authentication
 - [#13](https://github.com/mariam138/globetrotters-gazette/issues/13#issue-2388393796) Log into Site
 - [#61](https://github.com/mariam138/globetrotters-gazette/issues/61#issue-2388393796) Register for Site
 - [#14](https://github.com/mariam138/globetrotters-gazette/issues/14#issue-2388393796) Log Out of Site
-
 
 ##### **Epic [3](https://github.com/mariam138/globetrotters-gazette/issues/4)**: User Profile
 - [#16](https://github.com/mariam138/globetrotters-gazette/issues/16#issue-2388393796) Create User Profile
@@ -67,19 +65,12 @@ The seven epics listed above were split down further into user stories to help w
 - [#59](https://github.com/mariam138/globetrotters-gazette/issues/59#issue-2388393796) View Own Posts
 - [#19](https://github.com/mariam138/globetrotters-gazette/issues/19#issue-2388393796) Delete User Account
 
-
-
-
 ##### **Epic [4](https://github.com/mariam138/globetrotters-gazette/issues/5)**: User Travel Posts
 - [#23](https://github.com/mariam138/globetrotters-gazette/issues/23#issue-2388393796) Read Blog Posts
 - [#22](https://github.com/mariam138/globetrotters-gazette/issues/22#issue-2388393796) Create Travel Posts
 - [#57](https://github.com/mariam138/globetrotters-gazette/issues/57#issue-2388393796) Upload Pictures to Blog Posts
 - [#24](https://github.com/mariam138/globetrotters-gazette/issues/24#issue-2388393796) Edit User Posts
 - [#25](https://github.com/mariam138/globetrotters-gazette/issues/25#issue-2388393796) Delete User Posts
-
-
-
-
 
 ##### **Epic [5](https://github.com/mariam138/globetrotters-gazette/issues/6)**: Searching Travel Posts
 - [#29](https://github.com/mariam138/globetrotters-gazette/issues/29#issue-2388393796) View Paginated List of Posts
@@ -88,10 +79,6 @@ The seven epics listed above were split down further into user stories to help w
 - [#55](https://github.com/mariam138/globetrotters-gazette/issues/55#issue-2388393796) Display Travel Pictures on Home Page
 - [#67](https://github.com/mariam138/globetrotters-gazette/issues/67#issue-2388393796) Create 404 Page
 
-
-
-
-
 ##### **Epic [6](https://github.com/mariam138/globetrotters-gazette/issues/7)**: Admin Profile
 - [#33](https://github.com/mariam138/globetrotters-gazette/issues/33#issue-2388393796) Create Admin Profile
 - [#34](https://github.com/mariam138/globetrotters-gazette/issues/34#issue-2388393796) View Admin Profile
@@ -99,21 +86,13 @@ The seven epics listed above were split down further into user stories to help w
 - [#42](https://github.com/mariam138/globetrotters-gazette/issues/42#issue-2388393796) Moderate Comments
 - [#39](https://github.com/mariam138/globetrotters-gazette/issues/39#issue-2388393796) View About Page
 - [#38](https://github.com/mariam138/globetrotters-gazette/issues/38#issue-2388393796) Create About Page
-
-
-
-
-
+- [#40](https://github.com/mariam138/globetrotters-gazette/issues/40#issue-2388393796) Update About Page
 
 ##### **Epic [7](https://github.com/mariam138/globetrotters-gazette/issues/8)**: User Interaction
 - [#43](https://github.com/mariam138/globetrotters-gazette/issues/43#issue-2388393796) Create Comments
 - [#44](https://github.com/mariam138/globetrotters-gazette/issues/44#issue-2388393796) View Comments
 - [#45](https://github.com/mariam138/globetrotters-gazette/issues/45#issue-2388393796) Edit Comments
 - [#46](https://github.com/mariam138/globetrotters-gazette/issues/46#issue-2388393796) Delete Comments
-
-
-
-
 
 ### The Structure Plane
 
