@@ -57,6 +57,9 @@ class NAmericaPostList(AsiaPostList):
     queryset = Post.objects.filter(region='US', status='1', approved=True)
 
 
+class AllPostList(AsiaPostList):
+    queryset = Post.objects.filter(status='1', approved=True).order_by("-created_on")
+
 def post_detail(request, slug):
     """
     Display an individual :model:`blog.Post`.
