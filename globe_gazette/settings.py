@@ -35,7 +35,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
+
 # Initialisation of Sentry SDK
 # Adapted from the Sentry docs:
 # https://docs.sentry.io/platforms/python/integrations/django/
@@ -200,8 +201,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # prevents an email being sent out to verify
 # code adapted from:
 # https://dev.to/gajesh/the-complete-django-allauth-guide-la3
-ACCOUNT_EMAIL_REQUIRED = False
-ACCOUNT_EMAIL_VERIFICATION = None
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = True
 # redirects user to home page once registered
 ACCOUNT_SIGNUP_REDIRECT_URL = "/"
 
