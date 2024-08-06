@@ -98,6 +98,8 @@ The seven epics listed above were split down further into user stories to help w
 - [#35](https://github.com/mariam138/globetrotters-gazette/issues/35#issue-2388393796) Edit Admin Profile
 - [#42](https://github.com/mariam138/globetrotters-gazette/issues/42#issue-2388393796) Moderate Comments
 - [#39](https://github.com/mariam138/globetrotters-gazette/issues/39#issue-2388393796) View About Page
+- [#38](https://github.com/mariam138/globetrotters-gazette/issues/38#issue-2388393796) Create About Page
+
 
 
 
