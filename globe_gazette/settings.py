@@ -35,7 +35,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 # Initialisation of Sentry SDK
 # Adapted from the Sentry docs:
 # https://docs.sentry.io/platforms/python/integrations/django/
