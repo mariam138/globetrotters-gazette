@@ -1,20 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<!-- Displays title of the page -->
 <div class="row">
     <div class="col">
         <h1 class="heading">{{ about.title }}</h1>
     </div>
 </div>
 
+<!-- Displays profile picture from profile instance -->
 <div class="row">
     <div class="col">
         <img src="{{ about.profile_picture.url }}" alt="Me">
     </div>
 </div>
 
+<!-- Displays bio and date content was updated on -->
 <div class="row">
     <div class="col">
+        <!-- .html to render text from django quill editor
+         Adapted from: https://stackoverflow.com/questions/65029744/django-quill-editor-display-saved-field -->
         <p class="paragraph">{{ about.content.html|safe }}</p>
         <p class="paragraph">{{ about.updated_on }}</p>
     </div>
