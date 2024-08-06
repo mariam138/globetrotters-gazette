@@ -35,7 +35,7 @@ class ProfileForm(ModelForm):
             # Allows a date picker for birthday instead of typing in manually
             "birthday": DateInput(),
             # Adds the Summernote editing widget for the bio
-            "bio": SummernoteWidget(),
+            # "bio": SummernoteWidget(),
         }
 
     # Apply cropping transformations to uploaded profile pic when uploaded

@@ -83,7 +83,7 @@ def edit_save_profile(request, username):
 
     return render(request, 'profile_page/edit_profile.html',
                   {
-                      'profile_form': profile_form
+                      'profile_form': ProfileForm()
                   })
 
 
