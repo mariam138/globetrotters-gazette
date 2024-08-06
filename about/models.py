@@ -21,5 +21,7 @@ class About(models.Model):
         """
         Gets the profile picture from the Profile model rather than create
         a new field in the About model. This uses the @property decorator.
+        Method adapted from:
+        https://stackoverflow.com/questions/60987626/django-how-to-use-one-field-from-one-model-to-another-model
         """
         return self.profile.profile_picture
