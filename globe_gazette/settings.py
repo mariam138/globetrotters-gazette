@@ -202,9 +202,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # code adapted from:
 # https://dev.to/gajesh/the-complete-django-allauth-guide-la3
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = True
+ACCOUNT_EMAIL_VERIFICATION = 'optional'
 # redirects user to home page once registered
 ACCOUNT_SIGNUP_REDIRECT_URL = "/"
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 """ Django Custom Settings"""
 # redirect user to index once logged in
