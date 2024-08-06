@@ -198,8 +198,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 """ Django AllAuth custom settings"""
-# email not actually required for sign up but is required in form validation
-# prevents an email being sent out to verify
+# Email required for sign up but verification is optional
 # code adapted from:
 # https://dev.to/gajesh/the-complete-django-allauth-guide-la3
 ACCOUNT_EMAIL_REQUIRED = True
@@ -208,7 +207,15 @@ ACCOUNT_EMAIL_VERIFICATION = 'optional'
 ACCOUNT_SIGNUP_REDIRECT_URL = "/"
 # Allow same email to be used for different accounts for test purposes
 ACCOUNT_UNIQUE_EMAIL = False
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# Settings adapted from:
+# https://medium.com/@dorianszafranski17/email-register-confirmation-django-django-allauth-299c4427726f
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 """ Django Custom Settings"""
 # redirect user to index once logged in
