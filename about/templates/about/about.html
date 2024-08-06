@@ -34,8 +34,15 @@
 
  <!-- Link for latest post by admin -->
   <div class="row">
-    <div class="col-md-8 offset-md-2 text-center">
+    <div class="col-md-8 offset-md-2 text-center mb-2">
         <a href="{% url 'post_detail' post.slug %}" class="btn btn-info btn-text">Click here to read my latest post!</a>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-8 offset-md-2 text-center mb-3">
+        <a href="{% url 'index' %}" class="btn btn-colour btn-text"><i class="fa-solid fa-house"></i> Home</a>
+    </div>
+  </div>
+
 {% endblock content %}
