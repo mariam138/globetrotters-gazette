@@ -1,10 +1,14 @@
 from django.contrib import admin
-from django_summernote.admin import SummernoteModelAdmin
+# from django_summernote.admin import SummernoteModelAdmin
 from .models import About
 
 
-class AboutAdmin(SummernoteModelAdmin):
-    summernote_fields = '__all__'
+# class AboutAdmin(SummernoteModelAdmin):
+#     summernote_fields = '__all__'
+
+@admin.register(About)
+class AboutAdmin(admin.ModelAdmin):
+    pass
 
 # Register your models here.
-admin.site.register(About, AboutAdmin)
+# admin.site.register(About, AboutAdmin)
