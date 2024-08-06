@@ -1,4 +1,5 @@
 from django.db import models
+from django_quill.fields import QuillField
 from profile_page.models import Profile
 
 # Create your models here.
@@ -10,7 +11,7 @@ class About(models.Model):
     """
     profile = models.OneToOneField(Profile, on_delete=models.CASCADE, related_name="admin_profile")
     title = models.CharField(max_length=250)
-    content = models.TextField()
+    content = QuillField()
     updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
