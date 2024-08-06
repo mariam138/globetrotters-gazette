@@ -26,8 +26,8 @@
 
 <!-- Displays when content was last updated -->
  <div class="row">
-    <div class="col">
-        <p class="paragraph">{{ about.updated_on }}</p>
+    <div class="col-md-8 offset-md-2">
+        <p class="paragraph fs-6">Updated on: {{ about.updated_on|date:"j N Y, H:i" }}</p>
     </div>
  </div>
 {% endblock content %}
