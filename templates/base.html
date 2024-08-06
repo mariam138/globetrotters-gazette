@@ -69,18 +69,6 @@
               <li><a class="dropdown-item" href="{% url 'us_posts' %}">USA / Canada</a></li>
             </ul>
           </li>
-          <!-- Travel tips drop down link -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle navbar-text" href="#" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Travel Tips
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Accommodation / Stays</a></li>
-              <li><a class="dropdown-item" href="#">Restaurants</a></li>
-              <li><a class="dropdown-item" href="#">Solo Travel</a></li>
-            </ul>
-          </li>
           <!-- display link to profile if user is logged in -->
           {% if user.is_authenticated %}
           <li class="nav-item">
