@@ -55,11 +55,12 @@
           </li>
           <!-- Regions dropdown link -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle navbar-text" href="#" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link dropdown-toggle navbar-text" href="" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
               Regions
             </a>
             <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'all_posts' %}">All Posts</a></li>
               <li><a class="dropdown-item" href="{% url 'africa_posts' %}">Africa</a></li>
               <li><a class="dropdown-item" href="{% url 'asia_posts' %}">Asia</a></li>
               <li><a class="dropdown-item" href="{% url 'australasia_posts' %}">Australasia</a></li>
