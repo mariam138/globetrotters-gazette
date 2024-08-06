@@ -15,3 +15,11 @@ class About(models.Model):
 
     def __str__(self):
         return f"{self.title}"
+
+    @property
+    def profile_picture(self):
+        """
+        Gets the profile picture from the Profile model rather than create
+        a new field in the About model. This uses the @property decorator.
+        """
+        return self.profile.profile_picture
