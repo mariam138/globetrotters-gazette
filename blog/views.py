@@ -22,9 +22,6 @@ def index(request):
     """
     return render(request, 'blog/index.html')
 
-    # display success message when user has registered
-    messages.add_message(request, messages.SUCCESS, 'Registration successful!')
-
 
 class AsiaPostList(generic.ListView):
     model = Post
