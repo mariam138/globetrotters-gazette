@@ -291,6 +291,8 @@ You can clone this repository to create a remote copy on your local machine. Thi
 - Code to dynamically create a sibling element in Javascript was adapted from the [MDN Webdocs](https://developer.mozilla.org/en-US/docs/Web/API/Element/after)
 - Code to call Django URLs using Javascript was adapted from [this post](https://stackoverflow.com/questions/37311042/call-django-urls-inside-javascript-on-click-event) on Stack Overflow
 - Code to allow user to search for posts using Django's Q filter was adapted from [LearnDjango](https://learndjango.com/tutorials/django-search-tutorial) and [this post](https://stackpython.medium.com/django-search-with-q-objects-tutorial-9c701db74e0e) on Medium
+- Code to get the profile picture from the Profile model and use it in the About model was adapted from [this post](https://stackoverflow.com/questions/60987626/django-how-to-use-one-field-from-one-model-to-another-model
+) on Stack Overflow
 
 ## Media Credits
 
