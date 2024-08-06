@@ -10,7 +10,6 @@ class About(models.Model):
     """
     profile = models.OneToOneField(Profile, on_delete=models.CASCADE, related_name="admin_profile")
     title = models.CharField(max_length=250)
-    profile_pic = models.URLField(blank=True)
     content = models.TextField()
     updated_on = models.DateTimeField(auto_now=True)
 
