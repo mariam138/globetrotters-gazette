@@ -15,7 +15,7 @@
 
 <div class="row">
     <div class="col">
-        <p class="paragraph">{{ about.content }}</p>
+        <p class="paragraph">{{ about.content.html|safe }}</p>
         <p class="paragraph">{{ about.updated_on }}</p>
     </div>
 </div>
