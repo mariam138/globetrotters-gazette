@@ -73,7 +73,6 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     # Crispy forms + Quill apps
-    'django_summernote',
     'crispy_forms',
     'crispy_bootstrap5',
     'django_quill',
@@ -183,9 +182,6 @@ MESSAGE_TAGS = {
 # Cloudinary storage
 CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
 
-# cloudinary.config(
-#     cloudinary_url=os.environ.get('CLOUDINARY_URL')
-# )
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -229,25 +225,3 @@ LOGIN_REDIRECT_URL = "/"
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
-""" Summernote Settings"""
-# Allow summernote to use Bootstrap5 theme
-SUMMERNOTE_THEME = 'bs5'
-# Customisation of Summernote widget
-SUMMERNOTE_CONFIG = {
-    # Allow iframe to show in admin and on website
-    'iframe': False,
-    # Set width at 100% to stop page overflow
-    'summernote': {
-        'width': '100%',
-        # Customise toolbar to only allow text editing
-        'toolbar': [
-            ['style', ['bold', 'italic', 'underline', 'clear']],
-            ['font', ['strikethrough', 'superscript', 'subscript']],
-            ['fontsize', ['fontsize']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['height', ['height']]
-        ],
-        'disable_attachment': False,
-    }
-}
