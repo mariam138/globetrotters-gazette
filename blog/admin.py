@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django_summernote.admin import SummernoteModelAdmin
+# from django_summernote.admin import SummernoteModelAdmin
 from .models import Post, Comment
 
 
@@ -15,7 +15,7 @@ def approve_posts(modeladmin, request, queryset):
             post.save()
 
 
-class PostAdmin(SummernoteModelAdmin):
+class PostAdmin(admin.ModelAdmin):
     # Prepopulates the slug field from the post's title
     prepopulated_fields = {"slug": ("title",), }
     # Allows searching by title and country
@@ -26,7 +26,7 @@ class PostAdmin(SummernoteModelAdmin):
     # Chooses which fields to use as filtering
     list_filter = ('status', 'approved',)
     # Applies summernote editor to all Textfields
-    summernote_fields = '__all__'
+    # summernote_fields = '__all__'
     # Register custom actions defined above
     actions = [approve_posts]
 
