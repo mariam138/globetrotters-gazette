@@ -8,5 +8,4 @@ node_modules/
 .github/
 cloudinary_python.txt
 blog/fixtures/
-full_db.json
-hell 3.12.2
+full_db.json/
