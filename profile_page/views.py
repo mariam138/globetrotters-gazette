@@ -74,6 +74,8 @@ def edit_save_profile(request, username):
                 messages.SUCCESS,
                 'Your profile has been updated.'
             )
+            # Redirect user back to profile page after editing
+            return HttpResponseRedirect(reverse('profile_page', args=[username]))
         else:
             messages.add_message(
                 request,
@@ -85,7 +87,7 @@ def edit_save_profile(request, username):
                   {
                       'profile_form': profile_form,
                   })
-
+    # return HttpResponseRedirect(reverse('profile_page', args=[username]))
 
 @login_required
 def edit_cancel_profile(request, username):
