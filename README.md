@@ -172,6 +172,12 @@ For fonts, I started out choosing a font for headings. I used [Fontjoy](https://
 
     It turns out that the issue was because in my local settings, I had set up `EMAIL_HOST_USER` and `EMAIL_HOST_PASSWORD` using environment variables set in my **env.py**, but I hadn't set these same variables in Herko's *Config Vars.* After adding them to the Config Vars and attempting registration again on the deployed site, I was redirected back to the home page as expected with messages appearing to say registration was successful and an e-mail had been sent. I also checked the inbox of my test account and had received the email.
 
+6. Another bug I came across during development was when I was attempting to run my automated tests. My tests wouldn't run as I would continuously come across this error:
+
+    ![Testing Error](static/images/testing-error.png)
+
+    Researching what the error meant was difficult but I understood that it could have been an issue with my database models. I had already tried to fix these errors by ensuring any model field which had a `CharField` had a `max_length` set. But this still didn't solve the issue and I kept coming across the same error. After talking to tutor support, we found that it was because my initial migrations of my models did not have the `max_length` attribute set which causes errors in SQLite3, but not PostgreSQL. It was decided that we would reset the migrations to have the initial 0001 migration as the current models I had created, but there still seemed to be a mismatch between the two databases. In the end, I had to resort to moving my data to a new database by creating a `.json` file to dump the data into and then reload it into the new database. This worked, allowing both the PostgreSQL database to work as expected, and the SQLite3 testing database to also work without throwing the error above.
+
 ## Testing
 
 ### Code Validation
