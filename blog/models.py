@@ -23,13 +23,16 @@ STATUS = [
     ('1', 'Publish'),
 ]
 
+
 class Post(models.Model):
     """
     Creates single instance of a Post model in relation to :model:`auth.User`
     """
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="blog_posts")
     title = models.CharField(unique=True, max_length=250)
-    region = models.CharField(choices=REGIONS, blank=True, max_length=100, default='')
+    region = models.CharField(
+        choices=REGIONS, blank=True, max_length=100, default='')
     country = models.CharField(max_length=100)
     slug = models.SlugField(unique=True, blank=True, max_length=250)
     image_url = models.URLField(blank=True, default='')
@@ -53,8 +56,10 @@ class Comment(models.Model):
     Creates single instance of a Comment model in relation to
     :model:`auth.User` and :model:`blog.Post`
     """
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="commenter")
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="comments")
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
