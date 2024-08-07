@@ -82,7 +82,8 @@
         <p class="paragraph">
             To leave a comment, please <a href="{% url 'account_login' %}">sign in</a>.
         </p>
-        {% elif user.is_authenticated %}
+        <!-- Only show comment form to logged in users on published posts -->
+        {% elif user.is_authenticated and post.status == '1' %}
         <h5 class="heading">Leave a comment:</h5>
         <form id="comment-form" method="post" action="">
             {{ comment_form|crispy }}
