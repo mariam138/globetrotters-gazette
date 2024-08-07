@@ -31,9 +31,15 @@ body {
     color: #FAF9F9;
 }
 
+/* Override bootstrap's default hover styling */
+.nav-link:focus,
+.nav-link:hover {
+    color: #FAF9F9;
+}
+
 .heading {
     font-family: Raleway, sans-serif;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .paragraph {
