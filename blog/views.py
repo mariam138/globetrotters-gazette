@@ -81,7 +81,7 @@ def post_detail(request, slug):
     """
 
     # Queryset only contains post that have a 'Publish' status
-    queryset = Post.objects.filter(status=1)
+    queryset = Post.objects.all()
     # Gets specified post object using the queryset and slug arg
     post = get_object_or_404(queryset, slug=slug)
     # Reverse look up for comments related to specific post
