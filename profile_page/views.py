@@ -87,7 +87,6 @@ def edit_save_profile(request, username):
                   {
                       'profile_form': profile_form,
                   })
-    # return HttpResponseRedirect(reverse('profile_page', args=[username]))
 
 @login_required
 def edit_cancel_profile(request, username):
