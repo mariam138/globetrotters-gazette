@@ -61,7 +61,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     # Overrides Django's static file handling in development
-    'whitenoise.runserver_nostatic',
+    # 'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -182,15 +182,21 @@ MESSAGE_TAGS = {
     messages.INFO: 'alert-info',
 }
 
+""" Cloudinary Settings"""
+# Cloudinary storage
+CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
+
+# cloudinary.config(
+#     cloudinary_url=os.environ.get('CLOUDINARY_URL')
+# )
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
-""" Cloudinary Settings"""
-# Cloudinary storage
-CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
+# MEDIA_URL = '/media/' 
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
