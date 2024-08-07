@@ -1,6 +1,8 @@
 from django.db import models
 # to create foreign key with django's User model
 from django.contrib.auth.models import User
+# Use Quill editor
+from django_quill.fields import QuillField
 
 # Create your models here.
 
@@ -36,7 +38,7 @@ class Post(models.Model):
     country = models.CharField(max_length=100)
     slug = models.SlugField(unique=True, blank=True, max_length=250)
     image_url = models.URLField(blank=True, default='')
-    body = models.TextField()
+    body = QuillField()
     status = models.CharField(choices=STATUS, default='0', max_length=10)
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
