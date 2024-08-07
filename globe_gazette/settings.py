@@ -126,17 +126,17 @@ WSGI_APPLICATION = 'globe_gazette.wsgi.application'
 if os.path.isfile('env.py'):
     import env
 
-# DATABASES = {
-#     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
-print('DATABASES', DATABASES)
+# print('DATABASES', DATABASES)
 
 # use sqlite3 database for testing
 # if 'test' in sys.argv:
