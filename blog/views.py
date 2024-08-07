@@ -13,6 +13,8 @@ from .models import Post, Comment
 from .forms import PostForm, CommentForm
 
 # Create your views here.
+
+
 def index(request):
     """
     Displays the index page as the home page
@@ -37,6 +39,7 @@ class AsiaPostList(generic.ListView):
 class AfricaPostList(AsiaPostList):
     queryset = Post.objects.filter(region='AF', status='1', approved=True)
 
+
 class AusPostList(AsiaPostList):
     queryset = Post.objects.filter(region='AUS', status='1', approved=True)
 
@@ -58,7 +61,9 @@ class NAmericaPostList(AsiaPostList):
 
 
 class AllPostList(AsiaPostList):
-    queryset = Post.objects.filter(status='1', approved=True).order_by("-created_on")
+    queryset = Post.objects.filter(
+        status='1', approved=True).order_by("-created_on")
+
 
 def post_detail(request, slug):
     """
@@ -146,24 +151,27 @@ def create_post(request):
     if request.method == "POST":
         post_form = PostForm(request.POST)
         if post_form.is_valid():
-                # Creates an instance of the Post object from the form
-                # model = Post defined in the Meta class for PostForm
-                post = post_form.save(commit=False)
-                # Ensure the post's user matches the user currently logged in
-                post.user = request.user
-                # Get the url value from the hidden input field
-                post.image_url = request.POST.get('image_url')
-                # Prepopulate the slug field from the title using Django's slugify
-                # Method adapted from:
-                # https://stackoverflow.com/questions/55314246/pre-populate-slug-field-into-a-form-field-of-a-django-site
-                post.slug = slugify(post.title)
-                post.save()
-                if post.status == "0":
-                    messages.warning(request, 'Your post has been saved as a draft.')
-                elif post.status == "1":
-                    messages.success(request, 'Your post has been published and is awaiting approval.')
-                else:
-                    messages.error(request, 'There was an error saving your post. Please try again.')
+            # Creates an instance of the Post object from the form
+            # model = Post defined in the Meta class for PostForm
+            post = post_form.save(commit=False)
+            # Ensure the post's user matches the user currently logged in
+            post.user = request.user
+            # Get the url value from the hidden input field
+            post.image_url = request.POST.get('image_url')
+             # Prepopulate the slug field from the title using Django's slugify
+             # Method adapted from:
+             # https://stackoverflow.com/questions/55314246/pre-populate-slug-field-into-a-form-field-of-a-django-site
+            post.slug = slugify(post.title)
+            post.save()
+            if post.status == "0":
+                messages.warning(
+                    request, 'Your post has been saved as a draft.')
+            elif post.status == "1":
+                messages.success(
+                    request, 'Your post has been published and is awaiting approval.')
+            else:
+                messages.error(
+                    request, 'There was an error saving your post. Please try again.')
 
     # When post is saved, create blank instance of PostForm()
     post_form = PostForm()
@@ -245,7 +253,8 @@ def edit_post(request, slug):
 
     return render(request, 'blog/edit_post.html',
                   {'post_form': post_form,
-                  'post': post})
+                   'post': post})
+
 
 @login_required
 def cancel_edit_post(request, slug):
@@ -268,6 +277,7 @@ def cancel_edit_post(request, slug):
 
     # Redirect user back to post detail page when changes are cancelled
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
 
 @login_required
 def delete_post(request, slug):
@@ -339,7 +349,8 @@ class UserPostList(generic.ListView):
             posts = Post.objects.filter(user__username=user.username)
         # Otherwise, show only approved and published posts
         else:
-            posts = Post.objects.filter(user__username=user.username, status='1', approved=True)
+            posts = Post.objects.filter(
+                user__username=user.username, status='1', approved=True)
 
         return posts
 
@@ -385,7 +396,8 @@ def edit_comment(request, slug, comment_id):
             )
 
     # Refresh page that user was on once comment is edited
-    return(HttpResponseRedirect(reverse('post_detail', args=[slug])))
+    return (HttpResponseRedirect(reverse('post_detail', args=[slug])))
+
 
 @login_required
 def cancel_edit_comment(request, slug):
