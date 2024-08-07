@@ -1,5 +1,4 @@
 from django.contrib import admin
-# from django_summernote.admin import SummernoteModelAdmin
 from .models import Post, Comment
 
 
@@ -25,8 +24,6 @@ class PostAdmin(admin.ModelAdmin):
                     'created_on', 'status', 'approved',)
     # Chooses which fields to use as filtering
     list_filter = ('status', 'approved',)
-    # Applies summernote editor to all Textfields
-    # summernote_fields = '__all__'
     # Register custom actions defined above
     actions = [approve_posts]
 

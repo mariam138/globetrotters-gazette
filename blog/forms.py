@@ -1,8 +1,6 @@
 from crispy_forms.helper import FormHelper
 # Allows a form to be created from existing model in db
 from django.forms import ModelForm
-# Import Summernote widgets
-from django_summernote.widgets import SummernoteInplaceWidget, SummernoteWidget
 # Import the Post and Comment model
 from .models import Post, Comment
 
@@ -15,10 +13,6 @@ class PostForm(ModelForm):
         model = Post
         # Excludes the below fields from the form
         exclude = ["user", "slug", "image_url", "approved", "created_on", "updated_on",]
-        # Specify specific widgets
-        widgets = {
-            "body": SummernoteInplaceWidget(),
-        }
 
 
 class CommentForm(ModelForm):
