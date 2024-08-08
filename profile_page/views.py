@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user
@@ -58,11 +58,17 @@ def edit_save_profile(request, username):
 
     """
 
-    # create an instance of the profile model with logged in user's info
-    profile = get_object_or_404(
-        Profile, user__username=username)
-    # load profile form, pre-populating fields that have already been filled by user
-    profile_form = ProfileForm(instance=profile)
+    # Checks first that the username of the currently logged in user
+    # matches the username passed into the edit request
+    # If it doesn't, the 404 page is returned
+    if request.user.username == username:
+        # create an instance of the profile model with logged in user's info
+        profile = get_object_or_404(
+            Profile, user__username=username)
+        # load profile form, pre-populating fields that have already been filled by user
+        profile_form = ProfileForm(instance=profile)
+    else:
+        raise Http404()
 
     # save profile edit to database
     if request.method == "POST":
