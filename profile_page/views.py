@@ -15,7 +15,7 @@ from .forms import ProfileForm
 # can see this view. unauthorised users are redirected to login
 # code from:
 # https://docs.djangoproject.com/en/5.0/topics/auth/default/#the-login-required-decorator
-@login_required
+# @login_required
 def profile_page(request, username):
     """
     Displays an individual profile from :model:`profile_page.Profile`
