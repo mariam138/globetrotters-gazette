@@ -94,11 +94,12 @@
     </div>
   </nav>
 
-      <!-- Display username in top right corner of page -->
-      {% if user.is_authenticated %}
-      <!-- On the index page the text looks as if it is part of the navbar using navbar styling -->
-      <p class="paragraph text-end pe-2 fs-6 {% if request.path == index %}navbar-colour navbar-text mb-0{% endif %}">Logged in as <strong>{{ user }}</strong></p>
-      {% endif %}
+  <!-- Display username in top right corner of page -->
+  {% if user.is_authenticated %}
+  <!-- On the index page the text looks as if it is part of the navbar using navbar styling -->
+  <p class="paragraph text-end pe-2 fs-6 {% if request.path == index %}navbar-colour navbar-text mb-0{% endif %}">Logged
+    in as <strong>{{ user }}</strong></p>
+  {% endif %}
   <!-- content that changes per page will go here -->
   <main class="min-vh-100">
     <div class="container">
@@ -169,7 +170,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
   </script>
 
-<!-- Custom JS goes between these blocks -->
+  <!-- Custom JS goes between these blocks -->
   {% block scripts %}
 
   {% endblock scripts %}

@@ -16,7 +16,7 @@ class Profile(models.Model):
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     profile_picture = CloudinaryField('image', blank=True)
-    name = models.CharField(null=True, blank=True, max_length=250)
+    name = models.CharField(blank=True, max_length=250)
     birthday = models.DateField(null=True, blank=True)
     bio = QuillField(default="")
     instagram = models.URLField(blank=True)
