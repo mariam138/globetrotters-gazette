@@ -1,14 +1,6 @@
 {% extends 'base.html' %}
-<!-- user_post_list.0.user.username -->
-{% block content %}
 
-<!-- {# for post in user_post_list #}
-{% if user_post_list %}
-<p>Post</p>
-{% else %}
-<p>No posts</p>
-{% endif %}
-{# endfor #} -->
+{% block content %}
 
 <div class="row text-center">
     <div class="col">
@@ -17,9 +9,10 @@
 </div>
 
 <div class="row">
+    {% if posts %}
     <!-- Creates a card for each post by looping through each post in the queryset -->
-    {% for post in user_post_list %}
     <div class="col-md-6 col-lg-4">
+        {% for post in posts %}
         <div class="card my-2">
             <!-- Displays image at top of card -->
             <img src=" {{ post.image_url }}" class="card-img-top" alt="Picture of {{ post.country }}">
@@ -42,8 +35,13 @@
                 <p class="paragraph card-text">Posted on: {{ post.created_on }}</p>
             </div>
         </div>
+        {% endfor %}
+
+        <!-- Displays message that no posts are available -->
+        {% else %}
+        <p class="paragraph">No posts available.</p>
+        {% endif %}
     </div>
-    {% endfor %}
 </div>
 
 <!-- Link to next/previous page adapted from: -->
