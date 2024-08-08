@@ -27,19 +27,12 @@ body {
     padding: 4px 6px;
 }
 
-.navbar-text {
-    color: #FAF9F9;
-}
-
-/* Override bootstrap's default hover styling */
+/* Override bootstrap's default hover, focus and active styling */
+.navbar-text,
 .nav-link:focus,
-.nav-link:hover {
+.nav-link:hover,
+.navbar-nav .nav-link.active {
     color: #FAF9F9;
-}
-
-/* Overrides bootstrap active link styling */
-.navbar-nav .nav-link.active{
-    color:#FAF9F9;
 }
 
 .heading {
