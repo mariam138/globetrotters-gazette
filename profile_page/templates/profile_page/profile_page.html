@@ -29,8 +29,8 @@
                 {% endif %}">
             {{ profile.birthday }}</p>
 
-        <!-- Display user's email -->
-        {% if request.user %}
+        <!-- Display user's email only when that user is logged in -->
+        {% if request.user == profile.user %}
         <h5 class="heading d-inline"><i class="fa-solid fa-envelope"></i> Email:</h5>
         <!-- Info icon which can be clicked on to reveal tooltip above -->
         <button id="email-tooltip" class="btn" type="button" data-bs-toggle="tooltip"
@@ -38,7 +38,6 @@
                 id="email-info"></i></button>
         <p class="paragraph profile-text border border-dark-subtle rounded bg-light-subtle">
             {{ user.email }}</p>
-
         {% endif %}
     </div>
 
