@@ -342,7 +342,7 @@ class UserPostList(generic.ListView):
         username = self.kwargs['username']
 
         # Gets a single user object using the username value
-        user = User.objects.get(user__username=username)
+        user = User.objects.get(username=username)
         # If the current logged in user matches the user object
         # Show all posts
         if self.request.user == user:

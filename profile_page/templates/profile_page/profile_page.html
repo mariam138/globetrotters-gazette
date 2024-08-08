@@ -72,7 +72,7 @@
             role="button">Edit Profile</a>
         {% endif %}
         <!-- Display button to view user's posts -->
-        <a class="btn btn-colour btn-margin btn-text text-nowrap" href="{% url 'users_posts' profile.user %}"
+        <a class="btn btn-colour btn-margin btn-text text-nowrap" href="{% url 'users_posts' profile.user.username %}"
             role="button">View Posts</a>
     </div>
 </div>
