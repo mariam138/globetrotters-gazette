@@ -1,7 +1,15 @@
 {% load static %}
-{# assigns url path to variable called index #}
+{# assigns url paths to variables #}
 {% url 'index' as index %}
 {% url 'about_page' as about %}
+{% url 'all_posts' as all_posts %}
+{% url 'africa_posts' as africa %}
+{% url 'asia_posts' as asia %}
+{% url 'australasia_posts' as oceania %}
+{% url 'europe_posts' as europe %}
+{% url 'mena_posts' as mena %}
+{% url 'sa_posts' as sa %}
+{% url 'us_posts' as us %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,14 +56,14 @@
               Regions
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{% url 'all_posts' %}">All Posts</a></li>
-              <li><a class="dropdown-item" href="{% url 'africa_posts' %}">Africa</a></li>
-              <li><a class="dropdown-item" href="{% url 'asia_posts' %}">Asia</a></li>
-              <li><a class="dropdown-item" href="{% url 'australasia_posts' %}">Australasia</a></li>
-              <li><a class="dropdown-item" href="{% url 'europe_posts' %}">Europe / UK</a></li>
-              <li><a class="dropdown-item" href="{% url 'mena_posts' %}">Middle East</a></li>
-              <li><a class="dropdown-item" href="{% url 'sa_posts' %}">South America</a></li>
-              <li><a class="dropdown-item" href="{% url 'us_posts' %}">USA / Canada</a></li>
+              <li><a class="dropdown-item {% if request.path == all_posts %}active{% endif %}" {% if request.path == all_posts %}aria-current="page"{% endif %} href="{% url 'all_posts' %}">All Posts</a></li>
+              <li><a class="dropdown-item {% if request.path == africa %}active{% endif %}" {% if request.path == africa %}aria-current="page"{% endif %} href="{% url 'africa_posts' %}">Africa</a></li>
+              <li><a class="dropdown-item {% if request.path == asia %}active{% endif %}" {% if request.path == asia %}aria-current="page"{% endif %} href="{% url 'asia_posts' %}">Asia</a></li>
+              <li><a class="dropdown-item {% if request.path == oceania %}active{% endif %}" {% if request.path == oceania %}aria-current="page"{% endif %} href="{% url 'australasia_posts' %}">Australasia</a></li>
+              <li><a class="dropdown-item {% if request.path == europe %}active{% endif %}" {% if request.path == europe %}aria-current="page"{% endif %} href="{% url 'europe_posts' %}">Europe / UK</a></li>
+              <li><a class="dropdown-item {% if request.path == mena %}active{% endif %}" {% if request.path == mena %}aria-current="page"{% endif %} href="{% url 'mena_posts' %}">Middle East</a></li>
+              <li><a class="dropdown-item {% if request.path == sa %}active{% endif %}" {% if request.path == sa %}aria-current="page"{% endif %} href="{% url 'sa_posts' %}">South America</a></li>
+              <li><a class="dropdown-item {% if request.path == us %}active{% endif %}"{% if request.path == us %}aria-current="page"{% endif %}  href="{% url 'us_posts' %}">USA / Canada</a></li>
             </ul>
           </li>
           <!-- display link to profile if user is logged in -->
