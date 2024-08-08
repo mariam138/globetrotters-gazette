@@ -29,9 +29,10 @@ def profile_page(request, username):
     # going into the user field from the Profile model and searching for the username
     # code adapted from:
     # https://docs.djangoproject.com/en/4.2/topics/db/queries/#lookups-that-span-relationships
+
+    # user = User.objects.get(username=username)
     profile = get_object_or_404(Profile, user__username=username)
-    # print(profile.user)
-    print(isinstance(profile.user.username, str))
+
 
     return render(request, 'profile_page/profile_page.html',
                   {

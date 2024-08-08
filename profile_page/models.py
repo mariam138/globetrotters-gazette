@@ -23,7 +23,7 @@ class Profile(models.Model):
     twitter_x = models.URLField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    # posts = models.ForeignKey(Post, on_delete=models.CASCADE)
+
 
     # Latest created profile will show first
     class Meta:

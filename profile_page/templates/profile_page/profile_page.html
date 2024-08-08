@@ -2,7 +2,11 @@
 {% load static %}
 
 {% block content %}
-<pre>{{ profile }}</pre>
+{% if profile %}
+<p>Profile object exists</p>
+{% else %}
+<p>Profile does not exist</p>
+{% endif %}
 <!-- Display heading of [username]'s profile' -->
 <div class="row">
     <div class="col">
