@@ -1,4 +1,6 @@
 {% load static %}
+{# assigns url path to variable called index #}
+{% url 'index' as index %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -94,7 +96,8 @@
 
       <!-- Display username in top right corner of page -->
       {% if user.is_authenticated %}
-      <p class="paragraph text-end pe-2 fs-6">Logged in as <strong>{{ user }}</strong></p>
+      <!-- On the index page the text looks as if it is part of the navbar using navbar styling -->
+      <p class="paragraph text-end pe-2 fs-6 {% if request.path == index %}navbar-colour navbar-text mb-0{% endif %}">Logged in as <strong>{{ user }}</strong></p>
       {% endif %}
   <!-- content that changes per page will go here -->
   <main class="min-vh-100">
