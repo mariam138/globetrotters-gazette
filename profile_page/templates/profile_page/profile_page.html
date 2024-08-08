@@ -2,10 +2,11 @@
 {% load static %}
 
 {% block content %}
+<pre>{{ profile }}</pre>
 <!-- Display heading of [username]'s profile' -->
 <div class="row">
     <div class="col">
-        <h2 class="heading text-center">{{ profile.user }}'s profile</h2>
+        <h2 class="heading text-center">{{ profile.user.username }}'s profile</h2>
     </div>
 </div>
 
@@ -72,7 +73,7 @@
             role="button">Edit Profile</a>
         {% endif %}
         <!-- Display button to view user's posts -->
-        <a class="btn btn-colour btn-margin btn-text text-nowrap" href="{% url 'users_posts' profile.user.username %}"
+        <a class="btn btn-colour btn-margin btn-text text-nowrap" href="{% url 'users_posts' user.username %}"
             role="button">View Posts</a>
     </div>
 </div>
@@ -104,7 +105,7 @@
             </div>
             <div class="modal-footer">
                 <!-- Redirect user back to homepage if they choose to cancel their changes -->
-                <a class="btn btn-danger btn-margin btn-text" href="{% url 'delete_account' profile.user %}"
+                <a class="btn btn-danger btn-margin btn-text" href="{% url 'delete_account' user.username %}"
                     role="button">Yes, delete account</a>
                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">No, go back</button>
             </div>

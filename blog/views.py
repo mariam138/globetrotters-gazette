@@ -25,6 +25,7 @@ def index(request):
     ** Template **
         :template:`blog/index.html`
     """
+
     return render(request, 'blog/index.html')
 
 
