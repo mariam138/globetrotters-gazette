@@ -38,7 +38,7 @@
         <!-- Displays username -->
         <h4 class="heading mb-3">Written by <strong>{{ post.user }}</strong></h4>
         <!-- Mark content as safe to prevent HTML escaping -->
-        <p class="paragraph">{{ post.body|safe }}</p>
+        <p class="paragraph">{{ post.body.html|safe }}</p>
     </div>
 </div>
 
