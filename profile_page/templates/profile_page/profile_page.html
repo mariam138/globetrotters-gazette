@@ -78,6 +78,7 @@
 </div>
 
 <!-- Button for user to delete their profile -->
+ {% if request.user == profile.user %}
 <div class="row">
     <div class="col text-center">
         <!-- Only displays to logged in user on their own profile -->
@@ -86,6 +87,7 @@
             Account</button>
     </div>
 </div>
+{% endif %}
 
 <!-- Modal warning user that deletion of their post is permanent -->
 <div class="modal fade" id="deleteAccountModal" tabindex="-1">
