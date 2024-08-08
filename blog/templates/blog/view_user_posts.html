@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
-
+<!-- user_post_list.0.user.username -->
 {% block content %}
+
+<!-- {# for post in user_post_list #}
+{% if user_post_list %}
+<p>Post</p>
+{% else %}
+<p>No posts</p>
+{% endif %}
+{# endfor #} -->
 
 <div class="row text-center">
     <div class="col">
-        <!-- Checks to see if the post_list context exists and is True -->
-        <h1 class="heading"><strong>{{ user_post_list.0.user.username }}</strong>'s posts</h1>
+        <h1 class="heading"><strong>{{ user }}</strong>'s posts</h1>
     </div>
 </div>
 

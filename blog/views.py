@@ -9,6 +9,7 @@ from django.db.models import Q
 # Allows prepopulating of slug field
 from django.template.defaultfilters import slugify
 from django.urls import reverse
+from profile_page.models import Profile
 from .models import Post, Comment
 from .forms import PostForm, CommentForm
 
@@ -320,41 +321,77 @@ def delete_post(request, slug):
 
 
 # View to get user's blog posts
-class UserPostList(generic.ListView):
-    model = Post
-    # Shows posts for related region
-    # Only shows posts with a 'published' status
-    # and when post has been approved by admin
-    queryset = Post.objects.all()
-    template_name = "blog/view_user_posts.html"
-    paginate_by = 6
-    context_object_name = "user_post_list"
+# class UserPostList(generic.ListView):
+#     model = Post
+#     # Shows posts for related region
+#     # Only shows posts with a 'published' status
+#     # and when post has been approved by admin
+#     queryset = Post.objects.all()
+#     template_name = "blog/view_user_posts.html"
+#     paginate_by = 6
+#     context_object_name = "user_post_list"
 
-    # Gets the username from the url to pass through the queryset
-    # To return all posts from that user
-    # Code adapted from:
-    # 1. https://docs.djangoproject.com/en/4.2/topics/class-based-views/generic-display/#dynamic-filtering
-    # 2. https://stackoverflow.com/questions/66511758/can-you-pass-an-argument-to-listview-in-django
-    def get_queryset(self):
-        # Username key used to capture the username parameter from the url
-        # kwargs must match exactly with what is defined in the url path
-        # in this case, <str:username> therefore username
-        posts = None
+#     # Gets the username from the url to pass through the queryset
+#     # To return all posts from that user
+#     # Code adapted from:
+#     # 1. https://docs.djangoproject.com/en/4.2/topics/class-based-views/generic-display/#dynamic-filtering
+#     # 2. https://stackoverflow.com/questions/66511758/can-you-pass-an-argument-to-listview-in-django
+#     def get_queryset(self):
+#         # Username key used to capture the username parameter from the url
+#         # kwargs must match exactly with what is defined in the url path
+#         # in this case, <str:username> therefore username
+#         posts = None
 
-        username = self.kwargs['username']
+#         username = self.kwargs['username']
 
-        # Gets a single user object using the username value
-        user = User.objects.get(username=username)
-        # If the current logged in user matches the user object
-        # Show all posts
-        if self.request.user == user:
-            posts = Post.objects.filter(user__username=user.username)
-        # Otherwise, show only approved and published posts
-        else:
-            posts = Post.objects.filter(
-                user__username=user.username, status='1', approved=True)
+#         # Gets a single user object using the username value
+#         user = User.objects.get(username=username)
+#         print(user)
+#         # queryset = Profile.objects.all()
+#         # user = get_object_or_404(queryset, user=)
+#         # user = get_object_or_404(Profile, user=username)
+#         # If the current logged in user matches the user object
+#         # Show all posts
+#         if self.request.user == user:
+#             posts = Post.objects.filter(user__username=user.username)
+#         # Otherwise, show only approved and published posts
+#         else:
+#             posts = Post.objects.filter(
+#                 user__username=user.username, status='1', approved=True)
 
-        return posts
+#         return posts
+
+
+def user_post_list(request, username):
+    """
+    Returns a list of posts that the user has created.
+    This is accessed through the user's profile.
+
+    Context:
+    - user: an instance of the User model
+    - posts: a queryset based on the Post model
+
+    Template:
+    - blog/view_user_posts.html
+    """
+    # Gets a user instance where it matches the username in the db
+    # With the username passed through with the request
+    user = User.objects.get(username=username)
+
+    # If the logged in user matches the user from the above instance
+    # All posts are displayed
+    # Otherwise only approved and published posts can be seen
+    if request.user == user:
+        posts = Post.objects.filter(user__username=user.username)
+    else:
+        posts = Post.objects.filter(
+            user__username=user.username, status='1', approved=True
+        )
+
+    return render(request, 'blog/view_user_posts.html', {
+        "user": user,
+        "posts": posts
+    })
 
 
 @login_required
