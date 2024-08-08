@@ -82,6 +82,7 @@ def edit_save_profile(request, username):
                 messages.ERROR,
                 'There was a problem updating your profile. Please try again.'
             )
+            print(profile_form.errors)
 
     return render(request, 'profile_page/edit_profile.html',
                   {

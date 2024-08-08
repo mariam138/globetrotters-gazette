@@ -18,7 +18,7 @@ class Profile(models.Model):
     profile_picture = CloudinaryField('image', blank=True)
     name = models.CharField(blank=True, max_length=250)
     birthday = models.DateField(null=True, blank=True)
-    bio = QuillField(default="")
+    bio = QuillField(default="", blank=True)
     instagram = models.URLField(blank=True)
     twitter_x = models.URLField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
