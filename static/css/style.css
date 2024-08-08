@@ -27,12 +27,19 @@ body {
     padding: 4px 6px;
 }
 
-/* Override bootstrap's default hover, focus and active styling */
+/* Override bootstrap's default hover, focus, active and show styling */
 .navbar-text,
 .nav-link:focus,
 .nav-link:hover,
-.navbar-nav .nav-link.active {
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
     color: #FAF9F9;
+}
+
+/* Override bootstrap's dropdown nav link active class */
+.dropdown-item.active {
+    color: #181720;
+    background-color: #5AAFC2;
 }
 
 .heading {
