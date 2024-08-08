@@ -5,7 +5,7 @@
 <!-- Display heading of [username]'s profile' -->
 <div class="row">
     <div class="col">
-        <h2 class="heading text-center">{{ user }}'s profile</h2>
+        <h2 class="heading text-center">{{ profile.user }}'s profile</h2>
     </div>
 </div>
 
@@ -13,7 +13,7 @@
 <div class="row mt-2">
     <div class="col-sm-6 col-lg-4 offset-lg-2 text-center">
         <!-- Display user's profile picture -->
-        <img src="{{ user.profile.profile_picture.url }}" alt="{{ user }}'s profile picture"
+        <img src="{{ user.profile.profile_picture.url }}" alt="{{ profile.user }}'s profile picture"
             class="img-thumbnail border rounded">
 
         <!-- Display user's name -->
