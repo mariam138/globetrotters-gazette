@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 # Allows use of built in generic views that Django supplies
 from django.views import generic
 from django.http import HttpResponse, HttpResponseRedirect
+# Use paginator in function views
+from django.core.paginator import Paginator
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -347,9 +349,17 @@ def user_post_list(request, username):
             user__username=username.username, status='1', approved=True
         )
 
+    # Applying pagination to a function view
+    # Splits posts queryset into subqueries of 6 posts each
+    # Adapted from: https://docs.djangoproject.com/en/4.2/topics/pagination/#using-paginator-in-a-view-function
+    paginator = Paginator(posts, 6)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
+
     return render(request, 'blog/view_user_posts.html', {
         "username": username,
-        "posts": posts
+        "page_obj":page_obj
     })
 
 

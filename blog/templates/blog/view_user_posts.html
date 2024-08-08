@@ -9,9 +9,9 @@
 </div>
 
 <div class="row">
-    {% if posts %}
-    <!-- Creates a card for each post by looping through each post in the queryset -->
-    {% for post in posts %}
+    {% if page_obj %}
+    <!-- Creates a card for each post by looping through each post in the page_obj queryset -->
+    {% for post in page_obj %}
     <div class="col-md-6 col-lg-4">
         <div class="card my-2">
             <!-- Displays image at top of card -->
