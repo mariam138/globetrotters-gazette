@@ -93,29 +93,31 @@ def post_detail(request, slug):
     # Show all comments from newest to oldest
     comments = post.comments.all().order_by("-created_on")
 
+    # Checks if user is logged in before allowing comment form to be created
+    if request.user.is_authenticated:
     # Create instance of a comment form
-    comment_form = CommentForm()
+        comment_form = CommentForm()
 
-    if request.method == "POST":
-        comment_form = CommentForm(request.POST)
-        if comment_form.is_valid():
-            comment = comment_form.save(commit=False)
-            # Fills in user field with the logged in user
-            comment.user = request.user
-            # Fills post field with the current post instance
-            comment.post = post
-            comment.save()
+        if request.method == "POST":
+            comment_form = CommentForm(request.POST)
+            if comment_form.is_valid():
+                comment = comment_form.save(commit=False)
+                # Fills in user field with the logged in user
+                comment.user = request.user
+                # Fills post field with the current post instance
+                comment.post = post
+                comment.save()
 
-            messages.success(
-                request,
-                'Your comment has been submitted and is awaiting approval.'
-            )
-        else:
-            messages.error(
-                request,
-                'There was a problem submitting your comment. '
-                'Please try again'
-            )
+                messages.success(
+                    request,
+                    'Your comment has been submitted and is awaiting approval.'
+                )
+            else:
+                messages.error(
+                    request,
+                    'There was a problem submitting your comment. '
+                    'Please try again'
+                )
 
     # Create another blank comment form after submission
     comment_form = CommentForm()
