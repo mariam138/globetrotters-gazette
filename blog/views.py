@@ -334,20 +334,21 @@ def user_post_list(request, username):
     """
     # Gets a user instance where it matches the username in the db
     # With the username passed through with the request
-    user = User.objects.get(username=username)
+    # 'username' used as the variable to not get confused with 'user' in base.html
+    username = User.objects.get(username=username)
 
     # If the logged in user matches the user from the above instance
     # All posts are displayed
     # Otherwise only approved and published posts can be seen
-    if request.user == user:
-        posts = Post.objects.filter(user__username=user.username)
+    if request.user == username:
+        posts = Post.objects.filter(user__username=username.username)
     else:
         posts = Post.objects.filter(
-            user__username=user.username, status='1', approved=True
+            user__username=username.username, status='1', approved=True
         )
 
     return render(request, 'blog/view_user_posts.html', {
-        "user": user,
+        "username": username,
         "posts": posts
     })
 
