@@ -10,6 +10,10 @@
 {% url 'mena_posts' as mena %}
 {% url 'sa_posts' as sa %}
 {% url 'us_posts' as us %}
+{% url 'create_post' as create %}
+{% url 'profile_page' as profile %}
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -69,10 +73,10 @@
           <!-- display link to profile if user is logged in -->
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link navbar-text" href="{% url 'create_post' %}">Create Post</a>
+            <a class="nav-link navbar-text {% if request.path == create %}active{% endif %}" {% if request.path == create %}aria-current="page"{% endif %} href="{% url 'create_post' %}">Create Post</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link navbar-text" href="{% url 'profile_page' user.username %}">My Profile</a>
+            <a class="nav-link navbar-text {% if request.path == profile %}active{% endif %}" {% if request.path == profile %}aria-current="page"{% endif %} href="{% url 'profile_page' user.username %}">My Profile</a>
           </li>
           {% endif %}
           <!-- Search bar form -->
