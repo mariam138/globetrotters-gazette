@@ -1,6 +1,7 @@
 {% load static %}
 {# assigns url path to variable called index #}
 {% url 'index' as index %}
+{% url 'about_page' as about %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,10 +36,10 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav nav-underline">
           <li class="nav-item">
-            <a class="nav-link navbar-text active" aria-current="page" href="{% url 'index' %}">Home</a>
+            <a class="nav-link navbar-text {% if request.path == index %}active{% endif %}" {% if request.path == index %}aria-current="page"{% endif %} href="{% url 'index' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link navbar-text" href="{% url 'about_page' %}">About</a>
+            <a class="nav-link navbar-text {% if request.path == about %}active{% endif %}" {% if request.path == about %}aria-current="page"{% endif %} href="{% url 'about_page' %}">About</a>
           </li>
           <!-- Regions dropdown link -->
           <li class="nav-item dropdown">
