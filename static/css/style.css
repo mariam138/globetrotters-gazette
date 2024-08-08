@@ -37,6 +37,11 @@ body {
     color: #FAF9F9;
 }
 
+/* Overrides bootstrap active link styling */
+.navbar-nav .nav-link.active{
+    color:#FAF9F9;
+}
+
 .heading {
     font-family: Raleway, sans-serif;
     font-weight: 600;
