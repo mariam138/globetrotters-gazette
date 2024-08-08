@@ -92,6 +92,10 @@
     </div>
   </nav>
 
+      <!-- Display username in top right corner of page -->
+      {% if user.is_authenticated %}
+      <p class="paragraph text-end pe-2 fs-6">Logged in as <strong>{{ user }}</strong></p>
+      {% endif %}
   <!-- content that changes per page will go here -->
   <main class="min-vh-100">
     <div class="container">
@@ -118,11 +122,6 @@
     {% block indeximage %}
 
     {% endblock indeximage %}
-
-    <!-- Display username in top right corner of page -->
-    {% if user.is_authenticated %}
-    <p class="paragraph text-end pe-2 fs-6">Logged in as <strong>{{ user }}</strong></p>
-    {% endif %}
 
     <!-- 100% width until screens around 578px -->
     <div class="container-sm">
