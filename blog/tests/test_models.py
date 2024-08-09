@@ -1,11 +1,11 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
-from blog.models import Post
+from blog.models import Post, Comment
 import json
 
 # Create your tests here.
 
-class TestPostModel(TestCase):
+class TestModels(TestCase):
     def setUp(self):
         #Code to parse correct json into body field adapted from:
         #https://github.com/LeeHanYeong/django-quill-editor/issues/69
@@ -27,6 +27,22 @@ class TestPostModel(TestCase):
         )
         self.post.save()
 
+        self.comment = Comment(
+            user=self.user,
+            post = self.post,
+            body="This is a test comment",
+            approved=True
+        )
+        self.comment.save()
+
     def test_post_model_creation(self):
         """ Check post is an instance of the Post model"""
         self.assertTrue(isinstance(self.post, Post))
+
+    def test_post_str(self):
+        """ Checks __str__ method od Post model"""
+        self.assertEqual(str(self.post), "Blog title | User test1")
+
+    def test_comment_model_creation(self):
+        """ Check comment is instance of Comment mode"""
+        self.assertTrue(isinstance(self.comment, Comment))

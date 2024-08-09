@@ -35,6 +35,8 @@ def profile_page(request, username):
     print('REQUEST USER: ', request.user)
     print('PROFILE: ', profile)
 
+    working
+
     context = {
         'working': True,
         'profile': profile

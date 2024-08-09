@@ -7,6 +7,12 @@
 {% else %}
 <p>Profile does not exist</p>
 {% endif %}
+
+{% for p in profile %}
+<h1>Profile: {{ p }}</h1>
+{% endfor %}
+
+<h1>TEMPLATE IS WORKING</h1>
 <!-- Display heading of [username]'s profile' -->
 <div class="row">
     <div class="col">
