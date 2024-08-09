@@ -1,5 +1,6 @@
 {# uses template from create_post.html but just changes the modal text#}
 {% extends './create_post.html' %}
+{% load static %}
 
 {% block heading %}
 <div class="row">
@@ -72,4 +73,6 @@
 {% block scripts %}
 <!-- Cloudinary Widget -->
 <script src="https://upload-widget.cloudinary.com/latest/global/all.js" type="text/javascript"></script>
+<!-- Cloudinary custom JS -->
+ <script src="{% static 'js/cloudinary.js' %}"></script>
 {% endblock scripts %}

@@ -30,14 +30,13 @@ def profile_page(request, username):
     # code adapted from:
     # https://docs.djangoproject.com/en/4.2/topics/db/queries/#lookups-that-span-relationships
 
-    # user = User.objects.get(username=username)
-    profile = get_object_or_404(Profile, user__username=username)
 
+    profile = get_object_or_404(Profile, user__username=username)
 
     return render(request, 'profile_page/profile_page.html',
                   {
-                      'profile': profile,
-                  },)
+                      'profile': profile
+                  })
 
 
 
