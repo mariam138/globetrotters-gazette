@@ -17,3 +17,13 @@ class TestPostForm(TestCase):
             'status': 0,
         })
         self.assertTrue(post_form.is_valid())
+
+    def test_form_is_not_valid(self):
+        post_form = PostForm({
+            'title': '',
+            'region': 'SA',
+            'country': 'Colombia',
+            'body': json.dumps({"delta": {"ops": [{"insert": "This is a test form\n"}]}}),
+            'status': 0, 
+        })
+        self.assertFalse(post_form.is_valid())
