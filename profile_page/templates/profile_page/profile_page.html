@@ -2,17 +2,7 @@
 {% load static %}
 
 {% block content %}
-{% if profile %}
-<p>Profile object exists</p>
-{% else %}
-<p>Profile does not exist</p>
-{% endif %}
 
-{% for p in profile %}
-<h1>Profile: {{ p }}</h1>
-{% endfor %}
-
-<h1>From the view: {{ working }}</h1>
 <!-- Display heading of [username]'s profile' -->
 <div class="row">
     <div class="col">
@@ -24,24 +14,24 @@
 <div class="row mt-2">
     <div class="col-sm-6 col-lg-4 offset-lg-2 text-center">
         <!-- Display user's profile picture -->
-        <img src="{{ profile.profile_picture.url }}" alt="{{ profile.user }}'s profile picture"
+        <img src="{{ user.profile.profile_picture.url }}" alt="{{ profile.user }}'s profile picture"
             class="img-thumbnail border rounded">
 
         <!-- Display user's name -->
         <h5 class="heading"><i class="fa-solid fa-signature"></i> Name:</h5>
         <!-- checks to see if p element is empty before applying the styling -->
-        <p class="paragraph profile-text {% if profile.name %}border border-dark-subtle rounded bg-light-subtle
+        <p class="paragraph profile-text {% if user.profile.name %}border border-dark-subtle rounded bg-light-subtle
                 {% endif %}">
-            {{ profile.name }}</p>
+            {{ user.profile.name }}</p>
 
         <!-- Display user's birthday -->
         <h5 class="heading"><i class="fa-solid fa-cake-candles"></i> Birthday:</h5>
-        <p class="paragraph profile-text {% if profile.birthday %}border border-dark-subtle rounded bg-light-subtle
+        <p class="paragraph profile-text {% if user.profile.birthday %}border border-dark-subtle rounded bg-light-subtle
                 {% endif %}">
-            {{ profile.birthday }}</p>
+            {{ user.profile.birthday }}</p>
 
         <!-- Display user's email only when that user is logged in -->
-        {% if request.user == profile.user %}
+        {% if request.user == user.profile.user %}
         <h5 class="heading d-inline"><i class="fa-solid fa-envelope"></i> Email:</h5>
         <!-- Info icon which can be clicked on to reveal tooltip above -->
         <button id="email-tooltip" class="btn" type="button" data-bs-toggle="tooltip"
@@ -55,21 +45,21 @@
     <!-- Display user's bio -->
     <div class="col-sm-6 col-lg-4 text-center">
         <h5 class="heading"><i class="fa-solid fa-pencil"></i> Bio:</h5>
-        <p class="paragraph profile-text {% if profile.bio %}border border-dark-subtle rounded bg-light-subtle
-                {% endif %}">{{ profile.bio.html|safe }}
+        <p class="paragraph profile-text {% if user.profile.bio %}border border-dark-subtle rounded bg-light-subtle
+                {% endif %}">{{ user.profile.bio.plain|safe }}
         </p>
 
         <!-- Display user's instagram link -->
         <h5 class="heading"><i class="fa-brands fa-instagram"></i> Instagram:</h5>
-        <p class="paragraph profile-text {% if profile.instagram %}border border-dark-subtle rounded bg-light-subtle
+        <p class="paragraph profile-text {% if user.profile.instagram %}border border-dark-subtle rounded bg-light-subtle
                 {% endif %}">
-            {{ profile.instagram }}</p>
+            {{ user.profile.instagram }}</p>
 
         <!-- Display user's twitter/x link -->
         <h5 class="heading"><i class="fa-brands fa-square-x-twitter"></i> X/Twitter:</h5>
-        <p class="paragraph profile-text {% if profile.twitter_x %}border border-dark-subtle rounded bg-light-subtle
+        <p class="paragraph profile-text {% if user.profile.twitter_x %}border border-dark-subtle rounded bg-light-subtle
                 {% endif %}">
-            {{ profile.twitter_x }}</p>
+            {{ user.profile.twitter_x }}</p>
     </div>
 </div>
 
@@ -77,7 +67,7 @@
     <!-- Centre items in the column -->
     <div class="col text-center">
         <!-- Will only show the edit button to the user for their own profile -->
-        {% if request.user == profile.user %}
+        {% if request.user == user.profile.user %}
         <!-- Display button to edit profile -->
         <a class="btn btn-colour btn-margin btn-text text-nowrap" href="{% url 'edit_profile' user.username %}"
             role="button">Edit Profile</a>
@@ -89,7 +79,7 @@
 </div>
 
 <!-- Button for user to delete their profile -->
- {% if request.user == profile.user %}
+ {% if request.user == user.profile.user %}
 <div class="row">
     <div class="col text-center">
         <!-- Only displays to logged in user on their own profile -->

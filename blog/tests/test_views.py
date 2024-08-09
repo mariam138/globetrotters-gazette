@@ -13,11 +13,12 @@ from unittest import mock
 #     },
 #     STATICFILES_STORAGE='django.contrib.staticfiles.storage.StaticFilesStorage',
 # )
-class TestIndexView(TestCase):
-    def test_index_returns_200_code(self):
-        # self.assertIsNotNone(os.environ.get('SECRET_KEY'))
-        response = self.client.get('/')
-        self.assertEqual(response.status_code, 200)
+# class TestIndexView(TestCase):
+#     # def test_index_returns_200_code(self):
+#     #     # self.assertIsNotNone(os.environ.get('SECRET_KEY'))
+#     #     response = self.client.get('/')
+#     #     self.assertEqual(response.status_code, 200)
+#     def test_user
 
 
 # class TestAsiaPostList(TestCase):

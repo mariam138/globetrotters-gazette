@@ -77,7 +77,7 @@
             <a class="nav-link navbar-text {% if request.path == create %}active{% endif %}" {% if request.path == create %}aria-current="page"{% endif %} href="{% url 'create_post' %}">Create Post</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link navbar-text" href="{% url 'profile_page' request.user %}">My Profile</a>
+            <a class="nav-link navbar-text" href="{% url 'profile_page' %}">My Profile</a>
           </li>
           {% endif %}
           <!-- Search bar form -->
