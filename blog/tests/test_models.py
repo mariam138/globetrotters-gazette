@@ -43,7 +43,7 @@ class TestModels(TestCase):
         self.assertTrue(isinstance(self.post, Post))
 
     def test_post_str(self):
-        """ Checks __str__ method od Post model"""
+        """ Checks __str__ method of Post model"""
         self.assertEqual(str(self.post), "Blog title | User test1")
 
     def test_slug_creation(self):
@@ -53,3 +53,7 @@ class TestModels(TestCase):
     def test_comment_model_creation(self):
         """ Check comment is instance of Comment mode"""
         self.assertTrue(isinstance(self.comment, Comment))
+
+    def test_comment_str(self):
+        """ Check __str__ method of Comment model """
+        self.assertEqual(str(self.comment), "This is a test comment")
