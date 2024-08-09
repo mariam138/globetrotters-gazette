@@ -1,0 +1,14 @@
+{% extends "./post_list.html" %}
+{# changes title to display all posts #}
+
+
+{% block heading %}
+<div class="row text-center">
+    <div class="col">
+        <!-- Checks to see if the post_list context exists and is True -->
+        {% if post_list %}
+        <h1 class="heading"><i class="fa-solid fa-earth-asia"></i>All Posts</h1>
+        {% endif %}
+    </div>
+</div>
+{% endblock heading %}

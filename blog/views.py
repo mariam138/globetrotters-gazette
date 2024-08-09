@@ -67,6 +67,7 @@ class NAmericaPostList(AsiaPostList):
 class AllPostList(AsiaPostList):
     queryset = Post.objects.filter(
         status='1', approved=True).order_by("-created_on")
+    template_name = "blog/all_posts_list.html"
 
 
 def post_detail(request, slug):
