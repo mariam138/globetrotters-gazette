@@ -11,7 +11,7 @@ from .forms import ProfileForm
 
 # Create your views here.
 
-def profile_page(request, username):
+def profile_page(request):
     """
     Displays an individual profile from :model:`profile_page.Profile`
 
@@ -35,10 +35,10 @@ def profile_page(request, username):
     print('REQUEST USER: ', request.user)
     print('PROFILE: ', profile)
 
-    working
+    working = "Template is working"
 
     context = {
-        'working': True,
+        'working': working,
         'profile': profile
     }
 

@@ -1,5 +1,6 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
+from django.template.defaultfilters import slugify
 from blog.models import Post, Comment
 import json
 
@@ -7,6 +8,8 @@ import json
 
 class TestModels(TestCase):
     def setUp(self):
+        # Create title beforehand to test slugify
+        title = "Blog title"
         #Code to parse correct json into body field adapted from:
         #https://github.com/LeeHanYeong/django-quill-editor/issues/69
         self.user = User.objects.create_superuser(
@@ -16,10 +19,10 @@ class TestModels(TestCase):
         )
         self.post = Post(
             user = self.user,
-            title = "Blog title",
+            title = title,
             region = "AF",
             country = "Egypt",
-            slug = "blog-title",
+            slug = slugify(title),
             image_url="",
             body=json.dumps({"delta": {"ops": [{"insert": "Hello, world!\n"}]}}),
             status='1',
@@ -42,6 +45,10 @@ class TestModels(TestCase):
     def test_post_str(self):
         """ Checks __str__ method od Post model"""
         self.assertEqual(str(self.post), "Blog title | User test1")
+
+    def test_slug_creation(self):
+        """ Checks slug is automatically created with slugify """
+        self.assertEqual(self.post.slug, "blog-title")
 
     def test_comment_model_creation(self):
         """ Check comment is instance of Comment mode"""
