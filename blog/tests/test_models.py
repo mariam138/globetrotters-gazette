@@ -7,6 +7,8 @@ import json
 
 class TestPostModel(TestCase):
     def setUp(self):
+        #Code to parse correct json into body field adapted from:
+        #https://github.com/LeeHanYeong/django-quill-editor/issues/69
         self.user = User.objects.create_superuser(
             username="test1",
             password="testpassword",

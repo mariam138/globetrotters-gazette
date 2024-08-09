@@ -31,4 +31,4 @@ class Profile(models.Model):
 
     # displays name|username for readability
     def __str__(self):
-        return f"{self.name} | {self.user}"
+        return self.user.username
