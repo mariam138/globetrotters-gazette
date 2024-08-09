@@ -470,7 +470,10 @@ class SearchPostList(generic.ListView):
 
     def get_queryset(self):
         search_post = self.request.GET.get('search')
+        # Returns posts which contain the search term in either the title or country
+        # Filters posts by showing only approved and published posts
         return Post.objects.filter(
             Q(title__icontains=search_post) | Q(
-                country__icontains=search_post) | Q(body__icontains=search_post)
+                country__icontains=search_post) | Q(body__icontains=search_post),
+                status='1', approved=True
         )
