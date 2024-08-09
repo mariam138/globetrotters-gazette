@@ -1,5 +1,5 @@
 from django.test import TestCase
-from blog.forms import PostForm
+from blog.forms import PostForm, CommentForm
 import json
 # Create your tests here.
 
@@ -27,3 +27,20 @@ class TestPostForm(TestCase):
             'status': 0, 
         })
         self.assertFalse(post_form.is_valid())
+
+
+class TestCommentForm(TestCase):
+    """
+    Includes tests on the :model:`blog.CommentForm` model
+    """
+    def test_form_is_valid(self):
+        comment_form = CommentForm({
+            'body': "Test comment",
+        })
+        self.assertTrue(comment_form.is_valid())
+
+    def test_form_is_invalid(self):
+        comment_form = CommentForm({
+            'body': '',
+        })
+        self.assertFalse(comment_form.is_valid())
