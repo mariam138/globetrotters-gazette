@@ -23,7 +23,7 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'country', 'user',
                     'created_on', 'status', 'approved',)
     # Chooses which fields to use as filtering
-    list_filter = ('status', 'approved',)
+    list_filter = ('status', 'approved', 'created_on',)
     # Register custom actions defined above
     actions = [approve_posts]
 
