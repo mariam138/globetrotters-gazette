@@ -11,7 +11,7 @@ from .forms import ProfileForm
 
 # Create your views here.
 
-def profile_page(request):
+def profile_page(request, username):
     """
     Displays an individual profile from :model:`profile_page.Profile`
 
@@ -31,10 +31,10 @@ def profile_page(request):
     # https://docs.djangoproject.com/en/4.2/topics/db/queries/#lookups-that-span-relationships
 
 
-    profile = get_object_or_404(Profile, user=request.user)
+    profile_detail = get_object_or_404(Profile, user__username=username)
 
     context = {
-        'profile': profile
+        'profile_detail': profile_detail
     }
 
     return render(request, 'profile_page/profile_page.html', context)
