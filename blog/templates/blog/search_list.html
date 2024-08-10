@@ -35,4 +35,23 @@
     {% endif %}
 </div>
 
+<div class="row justify-content-center my-3">
+    <div class="col text-center">
+        <!-- Displays previous button when there is >1 page displaying posts -->
+        {% if page_obj.has_previous %}
+        <a href="?search={{ request.GET.search }}&page={{ page_obj.previous_page_number }}" class="btn btn-text btn-colour"><i
+                class="fa-solid fa-arrow-left"></i>
+            Previous</i></a>
+        {% endif %}
+
+        <!-- Displays next button if there are more posts than the paginated_by setting -->
+        {% if page_obj.has_next %}
+        <a href="?search={{ request.GET.search }}&page={{ page_obj.next_page_number }}" class="btn btn-text btn-colour">Next <i
+                class="fa-solid fa-arrow-right"></i></a>
+        {% endif %}
+
+    </div>
+</div>
+
+
 {% endblock content %}
