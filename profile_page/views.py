@@ -32,6 +32,8 @@ def profile_page(request, username):
 
 
     profile_detail = get_object_or_404(Profile, user__username=username)
+    print(profile_detail)
+    print(profile_detail.user)
 
     context = {
         'profile_detail': profile_detail
