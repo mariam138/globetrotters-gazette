@@ -32,13 +32,8 @@ def profile_page(request):
 
 
     profile = get_object_or_404(Profile, user=request.user)
-    print('REQUEST USER: ', request.user)
-    print('PROFILE: ', profile)
-
-    working = "Template is working"
 
     context = {
-        'working': working,
         'profile': profile
     }
 
