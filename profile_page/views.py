@@ -29,11 +29,7 @@ def profile_page(request, username):
     # going into the user field from the Profile model and searching for the username
     # code adapted from:
     # https://docs.djangoproject.com/en/4.2/topics/db/queries/#lookups-that-span-relationships
-
-
     profile_detail = get_object_or_404(Profile, user__username=username)
-    print(profile_detail)
-    print(profile_detail.user)
 
     context = {
         'profile_detail': profile_detail
