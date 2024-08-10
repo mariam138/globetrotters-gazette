@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{{about}}
-{{about.title}}
+{{about_detail}}
+
 <!-- Displays title of the page -->
 <div class="row">
     <div class="col">
-        <h1 class="heading fw-semibold text-center">{{ about.title }}</h1>
+        <h1 class="heading fw-semibold text-center">{{ about_detail.title }}</h1>
     </div>
 </div>
 
 <!-- Displays profile picture from profile instance -->
 <div class="row">
     <div class="col-md-4 offset-md-4 text-center">
-        <img src="{{ about.profile_picture.url }}" alt="Mariam in Sydney" class="img-thumbnail">
+        <img src="{{ about_detail.profile_picture.url }}" alt="Mariam in Sydney" class="img-thumbnail">
     </div>
 </div>
 
@@ -22,14 +22,14 @@
     <div class="col-md-8 offset-md-2">
         <!-- .html to render text from django quill editor
          Adapted from: https://stackoverflow.com/questions/65029744/django-quill-editor-display-saved-field -->
-        <p class="paragraph">{{ about.content.html|safe }}</p>
+        <p class="paragraph">{{ about_detail.content.html|safe }}</p>
     </div>
 </div>
 
 <!-- Displays when content was last updated -->
  <div class="row">
     <div class="col-md-8 offset-md-2">
-        <p class="paragraph fs-6">Updated on: {{ about.updated_on|date:"j N Y, H:i" }}</p>
+        <p class="paragraph fs-6">Updated on: {{ about_detail.updated_on|date:"j N Y, H:i" }}</p>
         <hr>
     </div>
  </div>

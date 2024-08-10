@@ -14,7 +14,7 @@ def about_detail(request):
     admin = User.objects.get(id=1)
     # Orders all about objects from most recently updated
     # Then grabs the first instance only to be displayed
-    about = About.objects.all().order_by("-updated_on").first()
+    about_detail = About.objects.all().order_by("-updated_on").first()
 
     # Create a queryset of all post objects that are published, approved
     # and written by the admin
@@ -26,6 +26,6 @@ def about_detail(request):
     return render(
         request,
         "about/about.html",
-        {"about":about,
+        {"about_detail":about_detail,
         "post": post},
     )
