@@ -28,7 +28,8 @@
             <h5 class="heading card-subtitle ps-2">{{ post.country }}</h5>
             <a href="{% url 'post_detail' post.slug %}" class="card-link ps-2">Read here</a>
             <div class="card-body">
-                <p class="paragraph card-text">By: {{ post.user }}</p>
+                <!-- Link user's profile from post card -->
+                <p class="paragraph card-text">By: <a href="{% url 'profile_page' post.user.username %}" class="link-dark">{{ post.user }}</a></p>
                 <p class="paragraph card-text">Posted on: {{ post.created_on }}</p>
             </div>
         </div>
