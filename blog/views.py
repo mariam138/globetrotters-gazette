@@ -90,10 +90,9 @@ def post_detail(request, slug):
     :template:`blog/post_detail.html`
     """
 
-    # Queryset only contains post that have a 'Publish' status
-    queryset = Post.objects.all()
-    # Gets specified post object using the queryset and slug arg
-    post = get_object_or_404(queryset, slug=slug)
+    # Gets post using the slug and retrieves the latest version of that post if edited
+    queryset = Post.objects.filter(slug=slug).order_by('-updated_on')
+    post = get_object_or_404(queryset)
     # Reverse look up for comments related to specific post
     # Show all comments from newest to oldest
     comments = post.comments.all().order_by("-created_on")
