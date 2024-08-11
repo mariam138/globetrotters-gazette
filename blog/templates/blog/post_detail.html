@@ -4,140 +4,145 @@
 {% crispy comment_form %}
 
 {% block content %}
-<div class="row">
-    <div class="col">
-        <!-- Bootstrap responsive image to be displayed at top of screen -->
-        <img src="{{ post.image_url}}" class="img-fluid" alt="Picture of {{ post.country }}">
-    </div>
-</div>
-
-<!-- Displays the title of the blog post -->
-<div class="row">
-    <div class="offset-md-2 col-md-8 ">
-        <h2 class="heading text-center post-heading">{{ post.title }}
-            <!-- Tells user post is a draft using a badge -->
-            {% if post.user == request.user and post.status == '0' %}
-            <span class="badge text-bg-secondary">Draft</span>
-            <!-- Badge to tell user post is awaiting approval -->
-            {% elif post.user == request.user and post.approved == False and post.status == '1' %}
-            <span class="badge text-bg-info">Awaiting approval</span>
-            {% endif %}
-        </h2>
-        <!-- Message to tell user their post has been published -->
-        {% if post.user == request.user and post.status == '1' and post.approved == True %}
-        <div class="alert alert-success paragraph text-center" role="alert">
-            Your post has been approved and is now published!
+<article>
+    <div class="row">
+        <div class="col">
+            <!-- Bootstrap responsive image to be displayed at top of screen -->
+            <img src="{{ post.image_url}}" class="img-fluid" alt="Picture of {{ post.country }}">
         </div>
-        {% endif %}
-    </div>
-</div>
-
-<!-- Display the body of the blog post -->
-<div class="row">
-    <div class="offset-md-2 col-md-8 mt-3">
-        <!-- Displays username -->
-        <h4 class="heading mb-3">Written by <strong><a href="{% url 'profile_page' post.user.username %}" class="link-dark">{{ post.user }}</a></strong></h4>
-        <!-- Mark content as safe to prevent HTML escaping -->
-        <p class="paragraph">{{ post.body.html|safe }}</p>
-    </div>
-</div>
-
-<!-- Displays the date the post was uploaded -->
-<div class="row">
-    <div class="offset-md-2 col-md-8 ">
-        <hr>
-        <p class="paragraph"><strong>Posted on:</strong> {{ post.created_on|date:"j N Y, H:i" }}</p>
-        <!-- If the post has been updated then this field will also be displayed -->
-        {% if post.updated_on %}
-        <p class="paragraph"><strong>Updated on:</strong> {{ post.updated_on|date:"j N Y, H:i" }}</p>
-        {% endif %}
-    </div>
-</div>
-
-<!-- Displaying comments underneath post -->
-<div class="row mt-2">
-    <div class="offset-md-2 col-md-8 col-lg-4">
-        <h3 class="heading fw-bold">Comments:</h3>
-        {% for comment in comments %}
-        <div class="{% if not comment.approved and request.user == comment.user %}
-        text-body-tertiary {% elif not comment.approved %} d-none {% endif %}">
-            <h5 class="heading"><i class="fa-regular fa-comment"></i> {{ comment.user }}</h5>
-            <p class="paragraph" id="comment-{{ comment.id }}">{{ comment.body }}</p>
-            <p class="paragraph fs-6">{{ comment.created_on|date:"d/m/Y" }}</p>
-        </div>
-        {% if request.user == comment.user and not comment.approved %}
-        <p class="paragraph fs-6 text-info-emphasis">This comment is waiting for approval.</p>
-        {% endif %}
-        <!-- Edit/Delete comment buttons which only show to logged in user on their own comments -->
-        {% if request.user == comment.user %}
-        <button type="button" class="btn btn-secondary btn-sm mb-1 edit-btn" comment_id="{{ comment.id }}">Edit</button>
-        <button type="button" class="btn btn-danger btn-sm mb-1 delete-btn" comment_id="{{ comment.id }}">Delete</button>
-        {% endif %}
-        {% endfor %}
     </div>
 
-    <!-- Comment Form -->
-    <div class="offset-md-2 offset-lg-0 col-md-8 col-lg-4">
-        {% if not user.is_authenticated %}
-        <p class="paragraph">
-            To leave a comment, please <a href="{% url 'account_login' %}">sign in</a>.
-        </p>
-        <!-- Only show comment form to logged in users on published posts -->
-        <!-- Checks that comment form exists before displaying it -->
-        {% elif user.is_authenticated and post.status == '1' and comment_form %}
-        <h5 class="heading">Leave a comment:</h5>
-        <form id="comment-form" method="post" action="">
-            {{ comment_form|crispy }}
-            {% csrf_token %}
-
-            <!-- Submit button -->
-            <div class="text-center mb-4">
-                <button class="btn btn-text btn-colour" type="submit" id="submit-btn">Submit</button>
+    <!-- Displays the title of the blog post -->
+    <div class="row">
+        <div class="offset-md-2 col-md-8 ">
+            <h2 class="heading text-center post-heading">{{ post.title }}
+                <!-- Tells user post is a draft using a badge -->
+                {% if post.user == request.user and post.status == '0' %}
+                <span class="badge text-bg-secondary">Draft</span>
+                <!-- Badge to tell user post is awaiting approval -->
+                {% elif post.user == request.user and post.approved == False and post.status == '1' %}
+                <span class="badge text-bg-info">Awaiting approval</span>
+                {% endif %}
+            </h2>
+            <!-- Message to tell user their post has been published -->
+            {% if post.user == request.user and post.status == '1' and post.approved == True %}
+            <div class="alert alert-success paragraph text-center" role="alert">
+                Your post has been approved and is now published!
             </div>
-        </form>
-        {% endif %}
-    </div>
-</div>
-
-<!-- Display back button -->
-<div class="row mb-3">
-    <div class="offset-md-2 col-md-8 text-center">
-        <button class="btn btn-colour btn-text back-btn"><i class="fa-solid fa-arrow-left"></i> Back</button>
-        <!-- Display edit button to user if they are the ones who created the post -->
-        {% if post.user == request.user %}
-        <a href="{% url 'edit_post' post.slug %}" class="btn btn-text btn-warning"><i
-                class="fa-solid fa-pen-to-square"></i> Edit Post</a>
-        {% endif %}
-    </div>
-</div>
-
-<!-- Allows access to URL in javascript for form action -->
- <!-- Code adapted from: https://stackoverflow.com/questions/37311042/call-django-urls-inside-javascript-on-click-event -->
-<input type="hidden" id="url" data-url="{% url 'post_detail' post.slug %}">
-<!-- Allows access to cancel edit comment url for javascript -->
-<input type="hidden" id="cancel-comment-url" data-url="{% url 'cancel_comment' post.slug %}">
-
-<!-- Modal warning user that deletion of their comment is permanent -->
-<div class="modal fade" id="deleteCommentModal" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title heading">Delete Comment</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            {% endif %}
         </div>
-        <div class="modal-body">
-          <p class="paragraph">Are you sure you want to delete this comment?</p>
-          <p class="paragraph"><strong>This action cannot be undone.</strong></p>
-        </div>
-        <div class="modal-footer">
-          <!-- Redirect user back to homepage if they choose to cancel their changes -->
-          <a class="btn btn-danger btn-margin btn-text" href="#" role="button" id="confirm-delete">Yes, delete comment</a>
-          <button type="button" class="btn btn-light" data-bs-dismiss="modal">No, go back</button>
-        </div>
-      </div>
     </div>
-  </div>
 
+    <!-- Display the body of the blog post -->
+    <div class="row">
+        <div class="offset-md-2 col-md-8 mt-3">
+            <!-- Displays username -->
+            <h4 class="heading mb-3">Written by <strong><a href="{% url 'profile_page' post.user.username %}"
+                        class="link-dark">{{ post.user }}</a></strong></h4>
+            <!-- Mark content as safe to prevent HTML escaping -->
+            <p class="paragraph">{{ post.body.html|safe }}</p>
+        </div>
+    </div>
+
+    <!-- Displays the date the post was uploaded -->
+    <div class="row">
+        <div class="offset-md-2 col-md-8 ">
+            <hr>
+            <p class="paragraph"><strong>Posted on:</strong> {{ post.created_on|date:"j N Y, H:i" }}</p>
+            <!-- If the post has been updated then this field will also be displayed -->
+            {% if post.updated_on %}
+            <p class="paragraph"><strong>Updated on:</strong> {{ post.updated_on|date:"j N Y, H:i" }}</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Displaying comments underneath post -->
+    <div class="row mt-2">
+        <div class="offset-md-2 col-md-8 col-lg-4">
+            <h3 class="heading fw-bold">Comments:</h3>
+            {% for comment in comments %}
+            <div class="{% if not comment.approved and request.user == comment.user %}
+        text-body-tertiary {% elif not comment.approved %} d-none {% endif %}">
+                <h5 class="heading"><i class="fa-regular fa-comment"></i> {{ comment.user }}</h5>
+                <p class="paragraph" id="comment-{{ comment.id }}">{{ comment.body }}</p>
+                <p class="paragraph fs-6">{{ comment.created_on|date:"d/m/Y" }}</p>
+            </div>
+            {% if request.user == comment.user and not comment.approved %}
+            <p class="paragraph fs-6 text-info-emphasis">This comment is waiting for approval.</p>
+            {% endif %}
+            <!-- Edit/Delete comment buttons which only show to logged in user on their own comments -->
+            {% if request.user == comment.user %}
+            <button type="button" class="btn btn-secondary btn-sm mb-1 edit-btn"
+                comment_id="{{ comment.id }}">Edit</button>
+            <button type="button" class="btn btn-danger btn-sm mb-1 delete-btn"
+                comment_id="{{ comment.id }}">Delete</button>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <!-- Comment Form -->
+        <div class="offset-md-2 offset-lg-0 col-md-8 col-lg-4">
+            {% if not user.is_authenticated %}
+            <p class="paragraph">
+                To leave a comment, please <a href="{% url 'account_login' %}">sign in</a>.
+            </p>
+            <!-- Only show comment form to logged in users on published posts -->
+            <!-- Checks that comment form exists before displaying it -->
+            {% elif user.is_authenticated and post.status == '1' and comment_form %}
+            <h5 class="heading">Leave a comment:</h5>
+            <form id="comment-form" method="post" action="">
+                {{ comment_form|crispy }}
+                {% csrf_token %}
+
+                <!-- Submit button -->
+                <div class="text-center mb-4">
+                    <button class="btn btn-text btn-colour" type="submit" id="submit-btn">Submit</button>
+                </div>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Display back button -->
+    <div class="row mb-3">
+        <div class="offset-md-2 col-md-8 text-center">
+            <button class="btn btn-colour btn-text back-btn"><i class="fa-solid fa-arrow-left"></i> Back</button>
+            <!-- Display edit button to user if they are the ones who created the post -->
+            {% if post.user == request.user %}
+            <a href="{% url 'edit_post' post.slug %}" class="btn btn-text btn-warning"><i
+                    class="fa-solid fa-pen-to-square"></i> Edit Post</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Allows access to URL in javascript for form action -->
+    <!-- Code adapted from: https://stackoverflow.com/questions/37311042/call-django-urls-inside-javascript-on-click-event -->
+    <input type="hidden" id="url" data-url="{% url 'post_detail' post.slug %}">
+    <!-- Allows access to cancel edit comment url for javascript -->
+    <input type="hidden" id="cancel-comment-url" data-url="{% url 'cancel_comment' post.slug %}">
+
+    <!-- Modal warning user that deletion of their comment is permanent -->
+    <div class="modal fade" id="deleteCommentModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title heading">Delete Comment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="paragraph">Are you sure you want to delete this comment?</p>
+                    <p class="paragraph"><strong>This action cannot be undone.</strong></p>
+                </div>
+                <div class="modal-footer">
+                    <!-- Redirect user back to homepage if they choose to cancel their changes -->
+                    <a class="btn btn-danger btn-margin btn-text" href="#" role="button" id="confirm-delete">Yes, delete
+                        comment</a>
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">No, go back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
 {% endblock content %}
 
 <!-- Load the comments script for updating comments -->
