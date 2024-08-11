@@ -242,6 +242,11 @@ def edit_post(request, slug):
         post_form = PostForm(request.POST, instance=post)
         if post_form.is_valid():
             post = post_form.save(commit=False)
+            # If a new image is uploaded, saves that url in a new var
+            # Then this var is checked if it exists before overriding the original url
+            new_image_url = request.POST.get('image_url')
+            if new_image_url:
+                post.image_url = new_image_url
             # Set post back to unapproved after edit to maintain quality
             post.approved = False
             post.save()
