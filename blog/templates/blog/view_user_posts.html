@@ -16,7 +16,7 @@
         <div class="card my-2">
             <!-- Displays image at top of card -->
             <img src=" {{ post.image_url }}" class="card-img-top" alt="Picture of {{ post.country }}">
-            <h3 class="heading card-title pt-2 ps-2">{{ post.title }} 
+            <h3 class="heading card-title pt-2 ps-2">{{ post.title|title }} 
                 <!-- Only displayed to user if viewing their own posts -->
                 {% if request.user == post.user %}
                 <!-- Displays to user whether a post is a draft or not -->
