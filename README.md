@@ -304,5 +304,16 @@ You can clone this repository to create a remote copy on your local machine. Thi
     - **Cairo**: Photo by Dimitra M.K: https://www.pexels.com/photo/cityscape-of-cairo-with-the-nile-in-the-center-20840204/
     - **Osaka**: Photo by Amy Chandra: https://www.pexels.com/photo/low-angle-photography-japan-buildings-1020769/
 - FAVICON
+- Blog post pictures are taken from Pexels
+    - **Paris** photo - Photo by Elina Sazonova: https://www.pexels.com/photo/eiffel-tower-behind-buildings-1850619/
+    - **Stockholm** photo - Photo by Eleanore Stohner: https://www.pexels.com/photo/baroque-buildings-in-stockholm-old-town-square-17555989/
+    - **Manila** photo - Photo by jon manosca: https://www.pexels.com/photo/skyline-of-makati-city-in-manila-philip-11076203/
+    - **Indonesia** photo - Photo by Nuh Rizqi: https://www.pexels.com/photo/man-standing-beside-black-motorcycle-1237087/
+    - **Shanghai** photo - Photo by Manuel Joseph: https://www.pexels.com/photo/city-with-skyscrapers-19885/
+    - **Amethysts in Lapland** photo taken from: https://youngadventuress.com/2017/03/amethyst-finland.html
+    - **Toronto** photo - Photo by Vincent Albos: https://www.pexels.com/photo/people-gathered-in-front-of-toronto-freestanding-signage-1750754/
+    - **Buenos Aires** photo - Photo by Vinicius Garcia: https://www.pexels.com/photo/crowd-in-a-theater-bookstore-7858378/
+    - **South Africa** photo - Photo by Kiekie & Kie: https://www.pexels.com/photo/brown-bird-perched-on-green-plant-8207371/
+    - All other photos are either mine or the author of the post
 
 ## Acknowledgments
