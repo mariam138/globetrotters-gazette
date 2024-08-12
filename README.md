@@ -314,6 +314,12 @@ On the full post page, if the logged in user is viewing their own post then they
 
 ### Code Validation
 
+#### HTML
+
+#### CSS
+
+The CSS file was validated using the W3C CSS Validator. No errors were found both with direct upload and URL link. Validation can be found [here](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fglobe-gazette-28c6be72f0db.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
+
 #### Javascript
 
 All Javascript files were validated using [JSHint](https://jshint.com/), adjusting the configuration for ES6 Javascript.
