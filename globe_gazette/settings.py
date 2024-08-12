@@ -178,7 +178,7 @@ MESSAGE_TAGS = {
     messages.INFO: 'alert-info',
 }
 
-""" Cloudinary Settings"""
+# Cloudinary Settings
 # Cloudinary storage
 CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
 
@@ -187,7 +187,6 @@ CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-# MEDIA_URL = '/media/' 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
@@ -197,7 +196,7 @@ STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-""" Django AllAuth custom settings"""
+# Django AllAuth custom settings
 # Email required for sign up but verification is optional
 # code adapted from:
 # https://dev.to/gajesh/the-complete-django-allauth-guide-la3
@@ -217,10 +216,10 @@ EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-""" Django Custom Settings"""
+# Django Custom Settings
 # redirect user to index once logged in
 LOGIN_REDIRECT_URL = "/"
 
-""" Crispy Forms """
+# Crispy Forms
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
