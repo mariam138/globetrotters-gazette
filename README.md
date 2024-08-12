@@ -148,6 +148,12 @@ The navigation bar contains the website's name, followed by links to 'Home', 'Ab
 
 When a user logs into the site, the links in the navbar extend to add 'Create Post' and 'My Profile' links. 'Create Post' allows the user to create a post at any point when visiting the site as it is easily accessible in the navigation bar. The 'My Profile' link takes the user to a page which displays their information to them, and how other people will view their information when they visit their profile. The buttons to the right change to show just the 'Sign Out' button instead. On the home page only, some text appears in the bottom right corner displaying to the user that they are logged in, with their corresponding username.
 
+### Footer
+
+![Footer](static/images/footer.png)
+
+The footer is kept basic, with just some icons for social media including Facebook, Instagram and X. Each icon is a link which will open the respective social media site in a new tab.
+
 ### Future Features
 
 1. User Story [#65](https://github.com/mariam138/globetrotters-gazette/issues/65): On top of searching for posts on the blog site, I would like to include being able to search for people's profiles too. This would include making a view for a profile list and creating cards for each person's profile that would include their basic information such as their profile picture, username and name. 
