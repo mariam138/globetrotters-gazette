@@ -182,6 +182,8 @@ If a user clicks or is redirected to the Register page, then a registration form
 
 4. User Story [#48](https://github.com/mariam138/globetrotters-gazette/issues/48): Being able to like a blog post is another feature I would like to incorporate. Then allowing the user to access all their liked posts in one place, much like Instagram's 'like' or 'bookmark' features. This would maybe be implemented using Javascript, so that if a 'like' button was clicked, the blog post could then be added to a list of other liked posts. Then I would create a link on the user's profile or in the Nav bar to access all these liked posts in one place.
 
+5. A feature I would have liked to implement was making a user's name mandatory in the sign up process, allowing the name field in their profile to be automatically filled in alongside the username and e-mail. To do so I would have to add an extra field for the name in Django AllAuth's registration field, and then using signals, make sure this field is pre-populated in the profile. However, I ran out of time to implement this feature.
+
 ## Bugs
 
 1. While writing the code to edit a user's profile, I came across an *Integrity Error* when trying to save the model in the **edit_profile** view. Below is the detailed message of the Integrity error:
