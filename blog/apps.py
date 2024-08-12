@@ -10,4 +10,4 @@ class BlogConfig(AppConfig):
         Overrides ready() from app config to register signals
         created for registration success message.
         """
-        import blog.signals 
+        import blog.signals

@@ -12,7 +12,10 @@ class PostForm(ModelForm):
     class Meta:
         model = Post
         # Excludes the below fields from the form
-        exclude = ["user", "slug", "image_url", "approved", "created_on", "updated_on",]
+        exclude = [
+            "user", "slug", "image_url", "approved", "created_on",
+            "updated_on",
+            ]
 
 
 class CommentForm(ModelForm):
@@ -22,4 +25,4 @@ class CommentForm(ModelForm):
     class Meta:
         model = Comment
         # Only show the text field in the comment form
-        fields = ["body",]
+        fields = ["body", ]
