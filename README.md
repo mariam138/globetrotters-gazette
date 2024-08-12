@@ -451,7 +451,7 @@ All Python code was validated using the [CI Python Linter](https://pep8ci.heroku
 
 ### Accessibility
 
-Accessibility was checked using the [WAVE Webaim](https://wave.webaim.org/) accessibility checker. Initially, there were some contrast errors particularly with links so these link colours were changed for better contrast. Other than that, there are no errors for accessibility on the website.
+Accessibility was checked using the [WAVE Webaim](https://wave.webaim.org/) accessibility checker. Initially, there were some contrast errors particularly with links so these link colours were changed for better contrast. Other than that, there are no errors for accessibility on the website. Link to the report can be found [here](https://wave.webaim.org/report#/https://globe-gazette-28c6be72f0db.herokuapp.com/).
 
 ## Technologies
 
