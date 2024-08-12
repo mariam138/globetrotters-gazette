@@ -140,7 +140,13 @@ For fonts, I started out choosing a font for headings. I used [Fontjoy](https://
 
 On the Home page is a picture of Helsinki Cathedral as the Hero image. Underneath is some welcome text, followed by an image carousel with pictures of different cities from around the world. The pictures cycle automatically after the first click from a user.
 
+### Navigation Bar
 
+The navigation bar contains the website's name, followed by links to 'Home', 'About' and a dropdown list for 'Regions'. There is also a search bar which gets posts related to the query entered by the user. To the right hand side are 'Sign In' and 'Register' buttons if the visiting user is logged out/ not signed up. On smaller screens, the logo text compresses to its initials 'GG' to avoid taking up too much vertical space on the screen. The navigation links are condensed into a drop down menu which appears when clicking on the menu icon.
+
+![Navbar when logged in](static/images/nav-bar-logged-in.png)
+
+When a user logs into the site, the links in the navbar extend to add 'Create Post' and 'My Profile' links. 'Create Post' allows the user to create a post at any point when visiting the site as it is easily accessible in the navigation bar. The 'My Profile' link takes the user to a page which displays their information to them, and how other people will view their information when they visit their profile. The buttons to the right change to show just the 'Sign Out' button instead. On the home page only, some text appears in the bottom right corner displaying to the user that they are logged in, with their corresponding username.
 
 ### Future Features
 
