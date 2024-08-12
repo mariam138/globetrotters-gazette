@@ -5,8 +5,6 @@ Welcome to the Globetrotter's Gazette, a place to share your travel experiences 
 
 This website is made using the Django framework, alongside HTML, CSS, Javascript and Python. This is the 4th project in the Full Stack Software Development Diploma from Code Institute.
 
-## Table of Contents
-
 ## User Experience (UX)
 
 Development of this blog site was done using the five planes of UX as guidance. Below are the details listed for each plane.
@@ -136,7 +134,15 @@ For fonts, I started out choosing a font for headings. I used [Fontjoy](https://
 
 ## Features
 
-## Future Features
+### Future Features
+
+1. User Story [#65](https://github.com/mariam138/globetrotters-gazette/issues/65): On top of searching for posts on the blog site, I would like to include being able to search for people's profiles too. This would include making a view for a profile list and creating cards for each person's profile that would include their basic information such as their profile picture, username and name. 
+
+2. User Story [#66](https://github.com/mariam138/globetrotters-gazette/issues/66): Although a user is able to view all their posts from their profile page, including drafts and unapproved posts, I would like to add a feature for when a user is creating a post, they can quickly access a list of their drafts from that page as well. I would like to introduce it as a drop down list which is prepopulated from the database, and then if a user chooses a draft to continue editing, then the draft information is pre-populated into the 'Create Post' form.
+
+3. User Story [#58](https://github.com/mariam138/globetrotters-gazette/issues/58): An additional feature to be added to the 'About' page would be an interactive map which has pins for all the places I have travelled to. Each pin could maybe then also have links to posts I have written for that area. This could also be extended to the blog site in general where an interactive map could be pinned with each pin linking to all blog posts by all users about that particular place. Using Google Maps API would be how I could implement this feature.
+
+4. User Story [#48](https://github.com/mariam138/globetrotters-gazette/issues/48): Being able to like a blog post is another feature I would like to incorporate. Then allowing the user to access all their liked posts in one place, much like Instagram's 'like' or 'bookmark' features. This would maybe be implemented using Javascript, so that if a 'like' button was clicked, the blog post could then be added to a list of other liked posts. Then I would create a link on the user's profile or in the Nav bar to access all these liked posts in one place.
 
 ## Bugs
 
