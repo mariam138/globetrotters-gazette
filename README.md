@@ -574,4 +574,18 @@ You can clone this repository to create a remote copy on your local machine. Thi
     - **South Africa** photo - Photo by Kiekie & Kie: https://www.pexels.com/photo/brown-bird-perched-on-green-plant-8207371/
     - All other photos are either mine or the author of the post
 
+## Blog Post Credits
+
+- The Shanghai Itinerary post was adapted from [thetravelmomento.com](https://thetravelmomento.com/shanghai-itinerary/)
+- The 'Eating My Way Through Buenos Aires' post was adapted from [Young Adventuress](https://youngadventuress.com/2018/03/what-to-eat-in-buenos-aires.html)
+- The 'Top Things to do in Paris' post was adapted from [The Blonde Abroad](https://www.theblondeabroad.com/top-things-to-do-in-paris/)
+- The 'Looking for Amethysts in Finnish Lapland' post was adapted from [Young Adventuress](https://youngadventuress.com/2017/03/amethyst-finland.html)
+- The 'Stunning City of Stockholm' post was adapted from [I Travel For The Stars](https://itravelforthestars.com/stockholm-travel-guide/)
+- The 'South Africa in the Autumn' post was adapted from [Wanderlust Movement](https://www.wanderlustmovement.org/places-to-visit-in-south-africa-in-autumn/)
+- The 'Canada Travel Guide' post was adapted from [My Wandering Voyage](https://mywanderingvoyage.com/canada-travel-guide/)
+- The 'Why I Loved Indonensia' post was adapted from [FootLooseDev](https://footloosedev.com/why-i-loved-indonesia/)
+- The 'How to spend 48 hours in Manila' post was adapted from [Travel with Meena](https://travelwithmeena.com/48-hours-manila/)
+
+All other posts are original content.
+
 ## Acknowledgments
