@@ -41,6 +41,7 @@ class ProfileForm(ModelForm):
             'width': '250',
             'crop': 'fill',
             'gravity': 'faces',
+            'fetch_format': 'webp',
         }
 
 
