@@ -90,7 +90,8 @@ def post_detail(request, slug):
     :template:`blog/post_detail.html`
     """
 
-    # Gets post using the slug and retrieves the latest version of that post if edited
+    # Gets post using the slug and retrieves the latest version of
+    # that post if edited
     queryset = Post.objects.filter(slug=slug).order_by('-updated_on')
     post = get_object_or_404(queryset)
     # Reverse look up for comments related to specific post
@@ -99,7 +100,7 @@ def post_detail(request, slug):
 
     # Checks if user is logged in before allowing comment form to be created
     if request.user.is_authenticated:
-    # Create instance of a comment form
+        # Create instance of a comment form
         comment_form = CommentForm()
 
         if request.method == "POST":
@@ -164,9 +165,9 @@ def create_post(request):
             post.user = request.user
             # Get the url value from the hidden input field
             post.image_url = request.POST.get('image_url')
-             # Prepopulate the slug field from the title using Django's slugify
-             # Method adapted from:
-             # https://stackoverflow.com/questions/55314246/pre-populate-slug-field-into-a-form-field-of-a-django-site
+            # Prepopulate the slug field from the title using Django's slugify
+            # Method adapted from:
+            # https://stackoverflow.com/questions/55314246/pre-populate-slug-field-into-a-form-field-of-a-django-site
             post.slug = slugify(post.title)
             post.save()
             if post.status == "0":
@@ -174,10 +175,12 @@ def create_post(request):
                     request, 'Your post has been saved as a draft.')
             elif post.status == "1":
                 messages.success(
-                    request, 'Your post has been published and is awaiting approval.')
+                    request,
+                    'Your post has been published and is awaiting approval.')
             else:
                 messages.error(
-                    request, 'There was an error saving your post. Please try again.')
+                    request,
+                    'There was an error saving your post. Please try again.')
 
     # When post is saved, create blank instance of PostForm()
     post_form = PostForm()
@@ -243,7 +246,8 @@ def edit_post(request, slug):
         if post_form.is_valid():
             post = post_form.save(commit=False)
             # If a new image is uploaded, saves that url in a new var
-            # Then this var is checked if it exists before overriding the original url
+            # Then this var is checked if it exists before overriding
+            # the original url
             new_image_url = request.POST.get('image_url')
             if new_image_url:
                 post.image_url = new_image_url
@@ -342,7 +346,8 @@ def user_post_list(request, username):
     """
     # Gets a user instance where it matches the username in the db
     # With the username passed through with the request
-    # 'username' used as the variable to not get confused with 'user' in base.html
+    # 'username' used as the variable to not get confused
+    # with 'user' in base.html
     username = User.objects.get(username=username)
 
     # If the logged in user matches the user from the above instance
@@ -357,15 +362,15 @@ def user_post_list(request, username):
 
     # Applying pagination to a function view
     # Splits posts queryset into subqueries of 6 posts each
-    # Adapted from: https://docs.djangoproject.com/en/4.2/topics/pagination/#using-paginator-in-a-view-function
+    # Adapted from:
+    # https://docs.djangoproject.com/en/4.2/topics/pagination/#using-paginator-in-a-view-function
     paginator = Paginator(posts, 6)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
-
     return render(request, 'blog/view_user_posts.html', {
         "username": username,
-        "page_obj":page_obj
+        "page_obj": page_obj
     })
 
 
@@ -392,7 +397,8 @@ def edit_comment(request, slug, comment_id):
         # Pass the POST data and comment instance into the comment form
         comment_form = CommentForm(data=request.POST, instance=comment)
 
-        # Checks form is valid and only the user who made the comment is editing it
+        # Checks form is valid and only the user who made
+        # the comment is editing it
         if comment_form.is_valid() and request.user == comment.user:
             comment = comment_form.save(commit=False)
             # Change approved back to false for quality
@@ -475,10 +481,12 @@ class SearchPostList(generic.ListView):
 
     def get_queryset(self):
         search_post = self.request.GET.get('search')
-        # Returns posts which contain the search term in either the title or country
+        # Returns posts which contain the search term
+        # in either the title or country
         # Filters posts by showing only approved and published posts
         return Post.objects.filter(
-            Q(title__icontains=search_post) | Q(
-                country__icontains=search_post) | Q(body__icontains=search_post),
-                status='1', approved=True
+            Q(title__icontains=search_post) |
+            Q(country__icontains=search_post) |
+            Q(body__icontains=search_post),
+            status='1', approved=True
         )
