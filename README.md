@@ -172,6 +172,12 @@ When a user clicks the 'Sign Out' button in the top right corner, they are redir
 
 If a user clicks or is redirected to the Register page, then a registration form is loaded. If a user already has an account, they have the option to sign in using the link above the form. The form asks for a username, an e-mail and a password. Some information text about the user's password is displayed below the form. Any errors in the form are displayed at the top of the page, such as a username already being taken or that the passwords do not match. Once registered, the user is redirected to the index page where they get two messages: one telling them they have signed in successfully, and another telling them that a verification e-mail has been sent to them. Although in this project I have made verification optional, in a real world setting this would be mandatory. Upon registering, a simple profile is made for the user from the username and e-mail given.
 
+### Profile Page
+
+![Profile Page](static/images/profile-page.png)
+
+When a user clicks on the 'My Profile' link in the nav bar, they are taken to a page which fully displays their profile information. The profile page includes: a profile picture, name, birthday, e-mail (only visible to the logged in user), a bio, instagram and X link. Upon initial registration, the email field is automatically populated. The user can then click to edit their profile, view all their own posts or delete their account. If a user is viewing a profile other than their own, the only button available to them is the 'View Posts' button. The 'Edit Profile' button takes them to a page which has a profile form allowing them to upload a profile picture and edit some of the fields. Pressing 'Delete Account' will trigger a modal to appear asking them to confirm their action. If the user confirms their action, their profile is deleted and they will no longer be able to sign in. 
+
 ### Future Features
 
 1. User Story [#65](https://github.com/mariam138/globetrotters-gazette/issues/65): On top of searching for posts on the blog site, I would like to include being able to search for people's profiles too. This would include making a view for a profile list and creating cards for each person's profile that would include their basic information such as their profile picture, username and name. 
