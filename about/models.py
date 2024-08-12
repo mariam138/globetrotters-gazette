@@ -4,12 +4,15 @@ from profile_page.models import Profile
 
 # Create your models here.
 
+
 class About(models.Model):
     """
     Creates single instance of an About model in relation to
     :model:`profile_page.Profile`
     """
-    profile = models.OneToOneField(Profile, on_delete=models.CASCADE, related_name="admin_profile")
+    profile = models.OneToOneField(
+        Profile, on_delete=models.CASCADE, related_name="admin_profile"
+        )
     title = models.CharField(max_length=250)
     content = QuillField()
     updated_on = models.DateTimeField(auto_now=True)
