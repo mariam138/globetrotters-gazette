@@ -1,9 +1,0 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
-
-.ql-editor .ql-font-cabin {
-    font-family: Cabin, sans-serif !important;
-}
-
-.ql-snow .ql-picker.ql-font .ql-picker-item[data-value=cabin]::before {
-    font-family: Cabin, sans-serif;
-  }
