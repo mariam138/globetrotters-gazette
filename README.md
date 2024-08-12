@@ -561,7 +561,7 @@ You can clone this repository to create a remote copy on your local machine. Thi
     - **Dubai**: Photo by Nextvoyage: https://www.pexels.com/photo/city-buildings-during-sunset-1470502/
     - **Cairo**: Photo by Dimitra M.K: https://www.pexels.com/photo/cityscape-of-cairo-with-the-nile-in-the-center-20840204/
     - **Osaka**: Photo by Amy Chandra: https://www.pexels.com/photo/low-angle-photography-japan-buildings-1020769/
-- FAVICON
+- Favicon is created by *Icon Pond* on [FlatIcon](https://www.flaticon.com/free-icons/travel)
 - Blog post pictures are taken from Pexels
     - **Paris** photo - Photo by Elina Sazonova: https://www.pexels.com/photo/eiffel-tower-behind-buildings-1850619/
     - **Stockholm** photo - Photo by Eleanore Stohner: https://www.pexels.com/photo/baroque-buildings-in-stockholm-old-town-square-17555989/
