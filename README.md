@@ -186,6 +186,16 @@ Clicking the 'About' link in the navbar takes the user to the page which has a b
 
 ![About Page Buttons](static/images/about-page-btns.png)
 
+### Region Pages
+
+![Regions Dropdown menu](static/images/regions-menu.png)
+
+Clicking on the 'Regions' link displays a drop down menu (on all screen sizes) which has a link to the different regions' related posts, or a link to view all posts which are displayed in chronological order. Each page will then display all posts associated with that region using cards as a summary for each post. Each card then has a link to either view the user's profile or to read the full post.
+
+![Post list page](static/images/post-list-page.png)
+
+If a region has more than 6 posts, pagination is introduced for a better user experience.
+
 ### Future Features
 
 1. User Story [#65](https://github.com/mariam138/globetrotters-gazette/issues/65): On top of searching for posts on the blog site, I would like to include being able to search for people's profiles too. This would include making a view for a profile list and creating cards for each person's profile that would include their basic information such as their profile picture, username and name. 
