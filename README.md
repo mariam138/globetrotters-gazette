@@ -1,6 +1,8 @@
 # The Globetrotter's Gazette
 
+![Responsive](assets/screenshots/responsive-screenshot.png)
 
+Visit the live site [here!](https://globe-gazette-28c6be72f0db.herokuapp.com/)
 
 ## Introduction
 
