@@ -316,6 +316,29 @@ On the full post page, if the logged in user is viewing their own post then they
 
 #### HTML
 
+Validation for HTML was done using the W3Validator using each page's URL.
+
+- [Home page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fglobe-gazette-28c6be72f0db.herokuapp.com%2F) - no errors
+- [About page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fglobe-gazette-28c6be72f0db.herokuapp.com%2Fabout%2F) - 1 error is shown with an unclosed `</p>` tag on line 184. However, looking at the HTML code itself using DevTools, I couldn't see this unclosed tag. However, I believe it to be from the rendering of my about paragraph from the **Django Quill** editor, which would render several unnecessary paragraphs in the HTML code. For this reason, I have chosen to ignore the error as I couldn't fix this rendering issue.
+- [All Posts List](https://validator.w3.org/nu/?doc=https%3A%2F%2Fglobe-gazette-28c6be72f0db.herokuapp.com%2Fall%2F) - no errors
+- [Africa Post List](https://validator.w3.org/nu/?doc=https%3A%2F%2Fglobe-gazette-28c6be72f0db.herokuapp.com%2Fafrica%2F) - no errors
+- [Asia Post List](https://validator.w3.org/nu/?doc=https%3A%2F%2Fglobe-gazette-28c6be72f0db.herokuapp.com%2Fasia%2F) - no errors
+- [Australasia Post List](https://validator.w3.org/nu/?doc=https%3A%2F%2Fglobe-gazette-28c6be72f0db.herokuapp.com%2Faustralasia%2F) - no errors
+- [Europe/UK Post List](https://validator.w3.org/nu/?doc=https%3A%2F%2Fglobe-gazette-28c6be72f0db.herokuapp.com%2Feurope-uk%2F) - no errors
+- [Middle East Post List](https://validator.w3.org/nu/?doc=https%3A%2F%2Fglobe-gazette-28c6be72f0db.herokuapp.com%2Fmiddle-east%2F) - no errors
+- [South America Post List](https://validator.w3.org/nu/?doc=https%3A%2F%2Fglobe-gazette-28c6be72f0db.herokuapp.com%2Fsouth-america%2F) - no errors
+- [USA/Canada Post List](https://validator.w3.org/nu/?doc=https%3A%2F%2Fglobe-gazette-28c6be72f0db.herokuapp.com%2Fnorth-america%2F) - no errors
+- [Search Query Post List](https://validator.w3.org/nu/?doc=https%3A%2F%2Fglobe-gazette-28c6be72f0db.herokuapp.com%2Fsearch%3Fsearch%3Dtokyo) - no errors
+- [Sign In Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fglobe-gazette-28c6be72f0db.herokuapp.com%2Faccounts%2Flogin%2F) - no errors
+- [Create Post Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fglobe-gazette-28c6be72f0db.herokuapp.com%2Fcreate-post%2F) - no errors
+- **Profile Page** - unable to check errors by URL so validation was done by text input instead from the DevTools:
+![Profile Page Validation](assets/screenshots/profile-html-validation.png)
+    The four errors were from `<style>` tags present as a child of the body element. These were from the **FontAwesome** CDN link, which is placed at the bottom of the page before the closing `</body>` tag. Because of this, I have chosen to ignore these errors.
+
+- [Edit Profile Page](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fglobe-gazette-28c6be72f0db.herokuapp.com%2Fprofile%2Fmariam138%2Fedit) - no errors
+
+- [Post Detail Page](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fglobe-gazette-28c6be72f0db.herokuapp.com%2Fpost%2Fsouth-africa-in-the-autumn%2F) - 1 error was shown for a single `</p>` tag which didn't have a matching opening tag. Again this was due to rendering from the **Django Quill** editor and so was chosen to be ignored.
+
 #### CSS
 
 The CSS file was validated using the W3C CSS Validator. No errors were found both with direct upload and URL link. Validation can be found [here](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fglobe-gazette-28c6be72f0db.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
