@@ -152,7 +152,7 @@ When a user logs into the site, the links in the navbar extend to add 'Create Po
 
 ![Footer](static/images/footer.png)
 
-The footer is kept basic, with just some icons for social media including Facebook, Instagram and X. Each icon is a link which will open the respective social media site in a new tab.
+The footer is kept basic, with just some icons for social media including Facebook, Instagram and X. Each icon is a link which will open the respective social media site in a new tab. The footer is a sticky footer, so it is stuck at the bottom of the page but only appears when the user scrolls down to it (if the content on the site is scrollable).
 
 ### Future Features
 
