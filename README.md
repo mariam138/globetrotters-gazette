@@ -449,6 +449,10 @@ All Javascript files were validated using [JSHint](https://jshint.com/), adjusti
 
 All Python code was validated using the [CI Python Linter](https://pep8ci.herokuapp.com/). All files were checked and any errors were fixed. All files now have no errors.
 
+### Accessibility
+
+Accessibility was checked using the [WAVE Webaim](https://wave.webaim.org/) accessibility checker. Initially, there were some contrast errors particularly with links so these link colours were changed for better contrast. Other than that, there are no errors for accessibility on the website.
+
 ## Technologies
 
 Several technologies were used in creating this blog site.
