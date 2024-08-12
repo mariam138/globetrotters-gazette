@@ -206,6 +206,14 @@ Underneath the post is the option to leave a comment. When a comment is submitte
 
 ![Post detail comments section](static/images/post-detail-comments.png)
 
+### Create and Edit Posts
+
+![Create Post Page](static/images/create-post-page.png)
+
+When a user is logged in, they will be shown a link in the navbar to create a post. This takes them to a page which has a form to be able to create a post. They can upload a photo, which triggers the Cloudinary widget to open when clicked. They have the choice to crop the photo as well before being uploaded. Then they have a Title field, which will automatically create the slug for the post to be used in the URL. The title and slug are both fields which are set to be unique so that there are no conflicting post titles. There is then a dropdown list to pick the region for which the post will be based in. This is to help organise posts on the website for easier searching. Then a country field, followed by the body field for the main content. For the editor, I have installed **Django Quill** editor, where the user can customise the font and styling of the post more. The last field in the form is let the user choose whether the post is a draft or is ready to be published. If it is a draft, the post will then be created but be labelled with a 'Draft' badge. If published, the post waits for approval before being visible to everyone on the site, and has a 'Awaiting approval' badge. The 'Save' button will allow the post to be saved regardless of which status is chosen. The 'Cancel' button brings up a modal asking the user to confirm if they want really want to cancel making the post as their changes will not be saved.
+
+On the full post page, if the logged in user is viewing their own post then they have the ability to edit their post. It will bring them to the form page but the form is pre-populated with the content from the post. A 'Delete Post' button is visible this time underneath, which brings up a modal asking the user to confirm their action which cannot be undone. If they confirm the action, the post is deleted regardless of if it's a draft or a published post.
+
 ### Future Features
 
 1. User Story [#65](https://github.com/mariam138/globetrotters-gazette/issues/65): On top of searching for posts on the blog site, I would like to include being able to search for people's profiles too. This would include making a view for a profile list and creating cards for each person's profile that would include their basic information such as their profile picture, username and name. 
