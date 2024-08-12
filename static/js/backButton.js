@@ -2,6 +2,6 @@
 let backButtons = document.getElementsByClassName('back-btn');
 
 // loop through back buttons as they are defined by class name
-for (button of backButtons) {
+for (var button of backButtons) {
     button.addEventListener('click', () => history.back());
 }
