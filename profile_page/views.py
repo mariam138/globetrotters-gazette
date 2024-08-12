@@ -11,6 +11,7 @@ from .forms import ProfileForm
 
 # Create your views here.
 
+
 def profile_page(request, username):
     """
     Displays an individual profile from :model:`profile_page.Profile`
@@ -24,9 +25,11 @@ def profile_page(request, username):
         :template:`profile_page/profile_page.html`
 
     """
-    # use the get_object_or_404 method to return a 404 page if profile is not found
+    # use the get_object_or_404 method to return a 404 page
+    # if profile is not found
     # using the lookup function via relationships -
-    # going into the user field from the Profile model and searching for the username
+    # going into the user field from the Profile model
+    # and searching for the username
     # code adapted from:
     # https://docs.djangoproject.com/en/4.2/topics/db/queries/#lookups-that-span-relationships
     profile_detail = get_object_or_404(Profile, user__username=username)
@@ -38,11 +41,11 @@ def profile_page(request, username):
     return render(request, 'profile_page/profile_page.html', context)
 
 
-
 @login_required
 def edit_save_profile(request, username):
     """
-    Allows editing and saving of an individual profile from :model:`profile_page.Profile`
+    Allows editing and saving of an individual
+    profile from :model:`profile_page.Profile`
 
     ** Context **
 
@@ -61,14 +64,17 @@ def edit_save_profile(request, username):
         # create an instance of the profile model with logged in user's info
         profile = get_object_or_404(
             Profile, user__username=username)
-        # load profile form, pre-populating fields that have already been filled by user
+        # load profile form, pre-populating fields
+        # that have already been filled by user
         profile_form = ProfileForm(instance=profile)
     else:
         raise Http404()
 
     # save profile edit to database
     if request.method == "POST":
-        profile_form = ProfileForm(request.POST, request.FILES, instance=profile)
+        profile_form = ProfileForm(
+            request.POST, request.FILES, instance=profile
+            )
         if profile_form.is_valid() and profile.user == request.user:
             profile.save()
             messages.add_message(
@@ -77,7 +83,9 @@ def edit_save_profile(request, username):
                 'Your profile has been updated.'
             )
             # Redirect user back to profile page after editing
-            return HttpResponseRedirect(reverse('profile_page', args=[username]))
+            return HttpResponseRedirect(
+                reverse('profile_page', args=[username])
+                )
         else:
             messages.add_message(
                 request,
@@ -89,6 +97,7 @@ def edit_save_profile(request, username):
                   {
                       'profile_form': profile_form,
                   })
+
 
 @login_required
 def edit_cancel_profile(request, username):
@@ -106,7 +115,8 @@ def edit_cancel_profile(request, username):
     # create an instance of the profile model with logged in user's info
     profile = get_object_or_404(
         Profile, user__username=username)
-    # load profile form, pre-populating fields that have already been filled by user
+    # load profile form, pre-populating fields that have already
+    # been filled by user
     profile_form = ProfileForm(instance=profile)
     # refreshes the instance with the last saved data from the database
     # code adapted from:
@@ -123,6 +133,7 @@ def edit_cancel_profile(request, username):
     # https://docs.djangoproject.com/en/4.2/ref/urlresolvers/#django.urls.reverse
     return HttpResponseRedirect(reverse('profile_page', args=[username]))
 
+
 @login_required
 def delete_account(request):
     """
@@ -135,13 +146,13 @@ def delete_account(request):
     # Gets current logged in user and it's instance in the db
     user = request.user
     try:
-    # Deletes user from the db
+        # Deletes user from the db
         user.delete()
         messages.success(
             request,
             'Your account has been deleted.'
         )
-    except:
+    except Exception:
         messages.error(
             request,
             "We couldn't handle your request. Please try again later."

@@ -10,11 +10,14 @@ from blog.models import Post
 
 # Create your models here.
 
+
 class Profile(models.Model):
     """
     Stores an instance of a Profile related to :model:`auth.User`
     """
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    user = models.OneToOneField(
+        User, on_delete=models.CASCADE, primary_key=True
+        )
     profile_picture = CloudinaryField('image', blank=True)
     name = models.CharField(blank=True, max_length=250)
     birthday = models.DateField(null=True, blank=True)
@@ -23,7 +26,6 @@ class Profile(models.Model):
     twitter_x = models.URLField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-
 
     # Latest created profile will show first
     class Meta:
