@@ -370,6 +370,10 @@ All Javascript files were validated using [JSHint](https://jshint.com/), adjusti
 ![tooltip Validation](assets/screenshots/tooltip-validation.png)
     The undefined/unused variables were chosen to be ignored as these work insync with the Bootstrap Javascript
 
+#### Python
+
+All Python code was validated using the [CI Python Linter](https://pep8ci.herokuapp.com/). All files were checked and any errors were fixed. All files now have no errors.
+
 ## Technologies
 
 Several technologies were used in creating this blog site.
