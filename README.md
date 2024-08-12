@@ -106,7 +106,14 @@ The ERD diagram was created using [Lucid Charts](https://lucid.co/).
 
 ### The Skeleton Plane
 
-To create the skeleton of the website, I created wireframes using **Balsamiq**. Alternate versions were created in the application, as for some pages I wasn't entirely certain on the final layout. Listed below are the **final** versions of the wireframes used to create the layout of the website on desktop, tablet and mobile.
+To create the skeleton of the website, I created wireframes using **Balsamiq**. Alternate versions were created in the application, as for some pages I wasn't entirely certain on the final layout. Listed below are the final versions of the wireframes used to create the layout of the website on desktop, tablet and mobile. Final project design does vary from the wireframes.
+
+#### Desktop Wireframes
+
+- [Homepage](assets/wireframes/DESKTOP homepage.png)
+
+
+
 
 ### The Surface Plane
 
