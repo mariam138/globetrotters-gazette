@@ -196,6 +196,16 @@ Clicking on the 'Regions' link displays a drop down menu (on all screen sizes) w
 
 If a region has more than 6 posts, pagination is introduced for a better user experience.
 
+### Full Post Page
+
+On the detail page, the picture from the post card will be displayed, followed by the title and the blog post underneath. At the very bottom of the post, the date the post was made (and updated if it applies) is displayed.
+
+![Post detail page](static/images/post-detail-page.png)
+
+Underneath the post is the option to leave a comment. When a comment is submitted, it is not approved. Unapproved comments only show to the logged in user who has made the comment, and is greyed out for visual distinction. Any comments the user makes has options to either edit the comment or delete it. If a user is not logged in, a message is displayed instead asking the user to sign in to be able to leave a comment.
+
+![Post detail comments section](static/images/post-detail-comments.png)
+
 ### Future Features
 
 1. User Story [#65](https://github.com/mariam138/globetrotters-gazette/issues/65): On top of searching for posts on the blog site, I would like to include being able to search for people's profiles too. This would include making a view for a profile list and creating cards for each person's profile that would include their basic information such as their profile picture, username and name. 
