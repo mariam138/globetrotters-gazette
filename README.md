@@ -154,6 +154,12 @@ When a user logs into the site, the links in the navbar extend to add 'Create Po
 
 The footer is kept basic, with just some icons for social media including Facebook, Instagram and X. Each icon is a link which will open the respective social media site in a new tab. The footer is a sticky footer, so it is stuck at the bottom of the page but only appears when the user scrolls down to it (if the content on the site is scrollable).
 
+### Sign In Page
+
+![Sign In Page](static/images/sign-in-page.png)
+
+The Sign In page styling is extended from the base styling of the project, and overwrites the template given by Django AllAuth. If a user hasn't signed up to the website, a link is visible above the form which redirects them to the Register page. The sign in form is kept simple with just a username and password, and a checkbox allowing the user's log in details to be remembered. Once signed in, the user is redirected back to the index page and a message is displayed at the top indicating that the sign in was successful. If incorrect/non-existent credentials are entered, the sign in page reloads and displays an error message at the top, telling the user what the specific error is.
+
 ### Future Features
 
 1. User Story [#65](https://github.com/mariam138/globetrotters-gazette/issues/65): On top of searching for posts on the blog site, I would like to include being able to search for people's profiles too. This would include making a view for a profile list and creating cards for each person's profile that would include their basic information such as their profile picture, username and name. 
