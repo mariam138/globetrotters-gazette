@@ -295,6 +295,8 @@ You can clone this repository to create a remote copy on your local machine. Thi
 - Code to get the profile picture from the Profile model and use it in the About model was adapted from [this post](https://stackoverflow.com/questions/60987626/django-how-to-use-one-field-from-one-model-to-another-model
 ) on Stack Overflow
 - Code to allow emails to be sent for verification upon registering was adapted from [Dorian Szafranski](https://medium.com/@dorianszafranski17/email-register-confirmation-django-django-allauth-299c4427726f) on Medium
+- Code to find the corresponding label of a form input in Javascript is adapted from [this post](https://javascript.plainenglish.io/how-to-find-the-html-label-element-associated-with-a-given-input-with-javascript-486d15710591) on Medium
+- Code to get a specific item in a Node list in Javascript is adapted from the [MDN WebDocs](https://developer.mozilla.org/en-US/docs/Web/API/NodeList/item)
 
 ## Media Credits
 
