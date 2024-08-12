@@ -110,10 +110,33 @@ To create the skeleton of the website, I created wireframes using **Balsamiq**. 
 
 #### Desktop Wireframes
 
-- [Homepage](assets/wireframes/DESKTOP homepage.png)
+- [Homepage](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/DESKTOP%20homepage.png)
+- [User Profile](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/DESKTOP%20User%20Profile.png)
+- [About Page](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/DESKTOP%20about%20page.png)
+- [Paginated Posts](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/DESKTOP%20Paginated%20Posts.png)
+- [Detailed Post](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/DESKTOP%20Detailed%20Post.png)
+- [Detailed Post Scrolled Down](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/DESKTOP%20Detailed%20Post%20Scrolled%20Down.png)
+- [Logged In User Comment](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/DESKTOP%20Logged%20In%20User%20Comment.png)
+- [Awaiting Approval User Comment](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/DESKTOP%20Awaiting%20Approval%20User%20Comment.png)
 
+#### Tablet Wireframes
 
+- [Homepage](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/TABLET%20homepage.png)
+- [Homepage dropdown menu](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/TABLET%20homepage%20dropdown.png)
+- [About Page](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/TABLET%20about%20page%20copy.png)
+- [Paginated Posts](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/TABLET%20Paginated%20Posts.png)
+- [Detailed Post](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/TABLET%20Detailed%20Post.png)
+- [Detailed post scrolled down](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/TABLET%20Detailed%20Post%20Scrolled%20Down.png)
+- [Logged In user comment](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/TABLET%20Logged%20In%20User%20Comment.png)
+-[Awaiting approval comment](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/TABLET%20Awaiting%20Approval%20User%20Comment.png)
 
+#### Mobile Wireframes
+
+- [Homepage](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/MOBILE%20homepage.png)
+- [Paginated Posts](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/MOBILE%20Paginated%20Posts.png)
+- [Detailed Post scrolled down](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/MOBILE%20Detailed%20Post%20Scrolled%20Down.png)
+- [Logged In Comment](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/MOBILE%20Logged%20In%20User%20Comment.png)
+-[Awaiting Approval Comment](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/MOBILE%20Awaiting%20Approval%20User%20Comment.png)
 
 ### The Surface Plane
 
