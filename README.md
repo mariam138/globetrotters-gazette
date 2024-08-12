@@ -160,6 +160,14 @@ The footer is kept basic, with just some icons for social media including Facebo
 
 The Sign In page styling is extended from the base styling of the project, and overwrites the template given by Django AllAuth. If a user hasn't signed up to the website, a link is visible above the form which redirects them to the Register page. The sign in form is kept simple with just a username and password, and a checkbox allowing the user's log in details to be remembered. Once signed in, the user is redirected back to the index page and a message is displayed at the top indicating that the sign in was successful. If incorrect/non-existent credentials are entered, the sign in page reloads and displays an error message at the top, telling the user what the specific error is.
 
+### Sign Out Page
+
+![Sign Out Page](static/images/sign-out-page.png)
+
+When a user clicks the 'Sign Out' button in the top right corner, they are redirected to a page which asks them to confirm their action. They will then click the 'Sign Out' button again which redirects them back to the index page with a message appearing at the top telling them that sign out was successful.
+
+
+
 ### Future Features
 
 1. User Story [#65](https://github.com/mariam138/globetrotters-gazette/issues/65): On top of searching for posts on the blog site, I would like to include being able to search for people's profiles too. This would include making a view for a profile list and creating cards for each person's profile that would include their basic information such as their profile picture, username and name. 
