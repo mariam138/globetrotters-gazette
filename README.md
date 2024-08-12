@@ -180,7 +180,11 @@ When a user clicks on the 'My Profile' link in the nav bar, they are taken to a 
 
 ### About Page
 
+![About page](static/images/about-page.png) 
 
+Clicking the 'About' link in the navbar takes the user to the page which has a brief introduction about me and my experiences with travelling. Underneath the paragraph, there are two buttons. The first is a link to view my most recent post, which automatically updates itself everytime I make a new post. The second button underneath will take the user back to the homepage when clicked.
+
+![About Page Buttons](static/images/about-page-btns.png)
 
 ### Future Features
 
