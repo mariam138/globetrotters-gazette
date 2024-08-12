@@ -178,6 +178,10 @@ If a user clicks or is redirected to the Register page, then a registration form
 
 When a user clicks on the 'My Profile' link in the nav bar, they are taken to a page which fully displays their profile information. The profile page includes: a profile picture, name, birthday, e-mail (only visible to the logged in user), a bio, instagram and X link. Upon initial registration, the email field is automatically populated. The user can then click to edit their profile, view all their own posts or delete their account. If a user is viewing a profile other than their own, the only button available to them is the 'View Posts' button. The 'View Posts' button takes the user to a page which lists the posts that user has written. If the logged in user is viewing their own posts, they will see all posts including drafts and unapproved posts. The 'Edit Profile' button takes them to a page which has a profile form allowing them to upload a profile picture and edit some of the fields. Pressing 'Delete Account' will trigger a modal to appear asking them to confirm their action. If the user confirms their action, their profile is deleted and they will no longer be able to sign in. 
 
+### About Page
+
+
+
 ### Future Features
 
 1. User Story [#65](https://github.com/mariam138/globetrotters-gazette/issues/65): On top of searching for posts on the blog site, I would like to include being able to search for people's profiles too. This would include making a view for a profile list and creating cards for each person's profile that would include their basic information such as their profile picture, username and name. 
