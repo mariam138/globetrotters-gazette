@@ -166,7 +166,11 @@ The Sign In page styling is extended from the base styling of the project, and o
 
 When a user clicks the 'Sign Out' button in the top right corner, they are redirected to a page which asks them to confirm their action. They will then click the 'Sign Out' button again which redirects them back to the index page with a message appearing at the top telling them that sign out was successful.
 
+### Register Page
 
+![Register Page](static/images/register-page.png)
+
+If a user clicks or is redirected to the Register page, then a registration form is loaded. If a user already has an account, they have the option to sign in using the link above the form. The form asks for a username, an e-mail and a password. Some information text about the user's password is displayed below the form. Any errors in the form are displayed at the top of the page, such as a username already being taken or that the passwords do not match. Once registered, the user is redirected to the index page where they get two messages: one telling them they have signed in successfully, and another telling them that a verification e-mail has been sent to them. Although in this project I have made verification optional, in a real world setting this would be mandatory. Upon registering, a simple profile is made for the user from the username and e-mail given.
 
 ### Future Features
 
