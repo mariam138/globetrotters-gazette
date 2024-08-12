@@ -5,6 +5,7 @@ from .models import About
 from blog.models import Post
 from profile_page.models import Profile
 
+
 def about_detail(request):
     """
     Displays a single instance of :model:`about.About`
@@ -22,10 +23,9 @@ def about_detail(request):
     # Create instance of post which gets the latest post admin has published
     post = queryset.order_by("-created_on").first()
 
-
     return render(
         request,
         "about/about.html",
-        {"about_detail":about_detail,
-        "post": post},
+        {"about_detail": about_detail,
+         "post": post},
     )
