@@ -1,4 +1,7 @@
 # The Globetrotter's Gazette
+
+
+
 ## Introduction
 
 Welcome to the Globetrotter's Gazette, a place to share your travel experiences from all around the world. Read posts from all different countries, share these posts, even join in the conversation by leaving a comment! This is a community for globetrotter's alike to come together and share their love of travelling.
@@ -136,7 +139,7 @@ To create the skeleton of the website, I created wireframes using **Balsamiq**. 
 - [Paginated Posts](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/MOBILE%20Paginated%20Posts.png)
 - [Detailed Post scrolled down](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/MOBILE%20Detailed%20Post%20Scrolled%20Down.png)
 - [Logged In Comment](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/MOBILE%20Logged%20In%20User%20Comment.png)
--[Awaiting Approval Comment](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/MOBILE%20Awaiting%20Approval%20User%20Comment.png)
+- [Awaiting Approval Comment](https://github.com/mariam138/globetrotters-gazette/blob/main/assets/wireframes/MOBILE%20Awaiting%20Approval%20User%20Comment.png)
 
 ### The Surface Plane
 

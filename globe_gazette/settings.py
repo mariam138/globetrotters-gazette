@@ -54,6 +54,7 @@ sentry_sdk.init(
 ALLOWED_HOSTS = [
     '8000-mariam138-globetrotters-1mhio5zxo6c.ws.codeinstitute-ide.net',
     '.herokuapp.com',
+    'https://ui.dev/amiresponsive',
 ]
 
 
