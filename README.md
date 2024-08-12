@@ -589,3 +589,5 @@ You can clone this repository to create a remote copy on your local machine. Thi
 All other posts are original content.
 
 ## Acknowledgments
+
+I would like to thank my mentor Matt for helping me to be thorough and being helpful with all my queries throughout this project. I would also like to thank the Code Institute Tutor team, especially John and Rebecca for their kindness and patience with my broken code. A thank you to my friends who made profiles and uploaded posts onto my website. Finally, a massive thank you to my boyfriend Samu who was very patient with me during this project and always cheered me on.
