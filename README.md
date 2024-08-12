@@ -134,6 +134,14 @@ For fonts, I started out choosing a font for headings. I used [Fontjoy](https://
 
 ## Features
 
+### Home Page
+
+![Home page](static/images/home-page-signed-out.png)
+
+On the Home page is a picture of Helsinki Cathedral as the Hero image. Underneath is some welcome text, followed by an image carousel with pictures of different cities from around the world. The pictures cycle automatically after the first click from a user.
+
+
+
 ### Future Features
 
 1. User Story [#65](https://github.com/mariam138/globetrotters-gazette/issues/65): On top of searching for posts on the blog site, I would like to include being able to search for people's profiles too. This would include making a view for a profile list and creating cards for each person's profile that would include their basic information such as their profile picture, username and name. 
