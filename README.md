@@ -105,7 +105,7 @@ For the structure, I briefly created a simple site map. This allowed me to make 
 
 ERD diagrams were created to plan out the models to be used in the project. I settled on 3 models: a **Post** model, a **Comment** model and a **Profile** model. Below shows the database schema and the relationships between the models.
 
-![ERD's for database](static/images/gg-erd.jpeg)
+![ERD's for database](assets/screenshots/gg-erd.jpeg)
 
 The ERD diagram was created using [Lucid Charts](https://lucid.co/).
 
