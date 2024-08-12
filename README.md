@@ -323,11 +323,23 @@ All Javascript files were validated using [JSHint](https://jshint.com/), adjusti
 
 
 - Validation for `carousel.js`:
-![backButton Validation](assets/screenshots/backButton-validation.png)
+![carousel Validation](assets/screenshots/carousel-validation.png)
+    Initially I had missed the semicolons in the script so these were added to remove warnings. The undefined/unused variables were ignored in this case.
+
+- Validation for `cloudinary.js`:
+![cloudinary Validation](assets/screenshots/cloudinary-validation.png)
 
 - Validation for `comments.js`:
 ![Screenshot of comments.js validation](static/images/comments-js-validation.png)
     I chose to ignore the comment about `bootstrap` being an undefined variable due to using Bootstrap's Javascript in my `base.html` template. No other errors were found.
+
+- Validation for `editProfile.js`:
+![editProfile Validation](assets/screenshots/editProfile-validation.png)
+    No errors or warnings were found.
+
+- Validation for `tooltip.js`:
+![tooltip Validation](assets/screenshots/tooltip-validation.png)
+    The undefined/unused variables were chosen to be ignored as these work insync with the Bootstrap Javascript
 
 ## Technologies
 
