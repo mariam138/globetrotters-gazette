@@ -318,6 +318,13 @@ On the full post page, if the logged in user is viewing their own post then they
 
 All Javascript files were validated using [JSHint](https://jshint.com/), adjusting the configuration for ES6 Javascript.
 
+- Validation for `backButton.js`:
+![backButton Validation](assets/screenshots/backButton-validation.png)
+
+
+- Validation for `carousel.js`:
+![backButton Validation](assets/screenshots/backButton-validation.png)
+
 - Validation for `comments.js`:
 ![Screenshot of comments.js validation](static/images/comments-js-validation.png)
     I chose to ignore the comment about `bootstrap` being an undefined variable due to using Bootstrap's Javascript in my `base.html` template. No other errors were found.
