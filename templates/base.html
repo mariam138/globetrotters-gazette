@@ -35,78 +35,102 @@
 </head>
 
 <body>
-  <!-- Bootstrap nav bar with dropdown -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-    <div class="container-fluid navbar-colour">
-      <!-- allow menu button to appear before title on smaller screens -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand navbar-text d-sm-none heading" href="{% url 'index' %}">GG</a>
-      <a class="navbar-brand navbar-text d-none d-sm-inline heading" href="{% url 'index' %}">The Globetrotter's
-        Gazette</a>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav nav-underline">
-          <li class="nav-item">
-            <a class="nav-link navbar-text {% if request.path == index %}active{% endif %}" {% if request.path == index %}aria-current="page"{% endif %} href="{% url 'index' %}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link navbar-text {% if request.path == about %}active{% endif %}" {% if request.path == about %}aria-current="page"{% endif %} href="{% url 'about_page' %}">About</a>
-          </li>
-          <!-- Regions dropdown link -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle navbar-text" href="" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Regions
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item {% if request.path == all_posts %}active{% endif %}" {% if request.path == all_posts %}aria-current="page"{% endif %} href="{% url 'all_posts' %}">All Posts</a></li>
-              <li><a class="dropdown-item {% if request.path == africa %}active{% endif %}" {% if request.path == africa %}aria-current="page"{% endif %} href="{% url 'africa_posts' %}">Africa</a></li>
-              <li><a class="dropdown-item {% if request.path == asia %}active{% endif %}" {% if request.path == asia %}aria-current="page"{% endif %} href="{% url 'asia_posts' %}">Asia</a></li>
-              <li><a class="dropdown-item {% if request.path == oceania %}active{% endif %}" {% if request.path == oceania %}aria-current="page"{% endif %} href="{% url 'australasia_posts' %}">Australasia</a></li>
-              <li><a class="dropdown-item {% if request.path == europe %}active{% endif %}" {% if request.path == europe %}aria-current="page"{% endif %} href="{% url 'europe_posts' %}">Europe / UK</a></li>
-              <li><a class="dropdown-item {% if request.path == mena %}active{% endif %}" {% if request.path == mena %}aria-current="page"{% endif %} href="{% url 'mena_posts' %}">Middle East</a></li>
-              <li><a class="dropdown-item {% if request.path == sa %}active{% endif %}" {% if request.path == sa %}aria-current="page"{% endif %} href="{% url 'sa_posts' %}">South America</a></li>
-              <li><a class="dropdown-item {% if request.path == us %}active{% endif %}"{% if request.path == us %}aria-current="page"{% endif %}  href="{% url 'us_posts' %}">USA / Canada</a></li>
-            </ul>
-          </li>
-          <!-- display link to profile if user is logged in -->
-          {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link navbar-text {% if request.path == create %}active{% endif %}" {% if request.path == create %}aria-current="page"{% endif %} href="{% url 'create_post' %}">Create Post</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link navbar-text {% if request.path == full_profile %}active{% endif %}" {% if request.path == full_profile %}aria-current="page"{% endif %} href="{% url 'profile_page' request.user.username %}">My Profile</a>
-          </li>
-          {% endif %}
-          <!-- Search bar form -->
-          <form class="d-flex align-items-center" role="search" method="get" action="{% url 'search' %}">
-            <input class="form-control me-2" type="search" placeholder="Search posts..." aria-label="Search"
-              name="search">
-            <button class="btn btn-colour btn-text" type="submit">Search</button>
-          </form>
-        </ul>
-      </div>
+  <header>
+    <!-- Bootstrap nav bar with dropdown -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+      <div class="container-fluid navbar-colour">
+        <!-- allow menu button to appear before title on smaller screens -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand navbar-text d-sm-none heading" href="{% url 'index' %}">GG</a>
+        <a class="navbar-brand navbar-text d-none d-sm-inline heading" href="{% url 'index' %}">The Globetrotter's
+          Gazette</a>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav nav-underline">
+            <li class="nav-item">
+              <a class="nav-link navbar-text {% if request.path == index %}active{% endif %}"
+                {% if request.path == index %}aria-current="page" {% endif %} href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navbar-text {% if request.path == about %}active{% endif %}"
+                {% if request.path == about %}aria-current="page" {% endif %} href="{% url 'about_page' %}">About</a>
+            </li>
+            <!-- Regions dropdown link -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle navbar-text" href="" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Regions
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item {% if request.path == all_posts %}active{% endif %}"
+                    {% if request.path == all_posts %}aria-current="page" {% endif %} href="{% url 'all_posts' %}">All
+                    Posts</a></li>
+                <li><a class="dropdown-item {% if request.path == africa %}active{% endif %}"
+                    {% if request.path == africa %}aria-current="page" {% endif %}
+                    href="{% url 'africa_posts' %}">Africa</a></li>
+                <li><a class="dropdown-item {% if request.path == asia %}active{% endif %}"
+                    {% if request.path == asia %}aria-current="page" {% endif %} href="{% url 'asia_posts' %}">Asia</a>
+                </li>
+                <li><a class="dropdown-item {% if request.path == oceania %}active{% endif %}"
+                    {% if request.path == oceania %}aria-current="page" {% endif %}
+                    href="{% url 'australasia_posts' %}">Australasia</a></li>
+                <li><a class="dropdown-item {% if request.path == europe %}active{% endif %}"
+                    {% if request.path == europe %}aria-current="page" {% endif %}
+                    href="{% url 'europe_posts' %}">Europe / UK</a></li>
+                <li><a class="dropdown-item {% if request.path == mena %}active{% endif %}"
+                    {% if request.path == mena %}aria-current="page" {% endif %} href="{% url 'mena_posts' %}">Middle
+                    East</a></li>
+                <li><a class="dropdown-item {% if request.path == sa %}active{% endif %}"
+                    {% if request.path == sa %}aria-current="page" {% endif %} href="{% url 'sa_posts' %}">South
+                    America</a></li>
+                <li><a class="dropdown-item {% if request.path == us %}active{% endif %}"
+                    {% if request.path == us %}aria-current="page" {% endif %} href="{% url 'us_posts' %}">USA /
+                    Canada</a></li>
+              </ul>
+            </li>
+            <!-- display link to profile if user is logged in -->
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link navbar-text {% if request.path == create %}active{% endif %}"
+                {% if request.path == create %}aria-current="page" {% endif %} href="{% url 'create_post' %}">Create
+                Post</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navbar-text {% if request.path == full_profile %}active{% endif %}"
+                {% if request.path == full_profile %}aria-current="page" {% endif %}
+                href="{% url 'profile_page' request.user.username %}">My Profile</a>
+            </li>
+            {% endif %}
+            <!-- Search bar form -->
+            <form class="d-flex align-items-center" role="search" method="get" action="{% url 'search' %}">
+              <input class="form-control me-2" type="search" placeholder="Search posts..." aria-label="Search"
+                name="search">
+              <button class="btn btn-colour btn-text" type="submit">Search</button>
+            </form>
+          </ul>
+        </div>
 
-      <!-- Sign In/ Register buttons -->
-      <div class="gap-2 d-md-flex align-items-center justify-content-md-end">
-        <!-- If the user is logged in, show the sign out button only -->
-        {% if user.is_authenticated %}
-        <!-- Show username when user is logged in -->
-        <a class="btn btn-colour btn-margin btn-text text-nowrap" href="{% url 'account_logout' %}" role="button">Sign
-          Out</a>
-        <!-- otherwise show the signin and register buttons -->
-        {% else %}
-        <a class="btn btn-colour btn-margin btn-text text-nowrap" href="{% url 'account_login' %}" role="button">Sign
-          In</a>
-        <!-- Hide register button on smaller screens -->
-        <a class="btn btn-colour btn-margin btn-text d-none d-sm-inline" href="{% url 'account_signup' %}"
-          role="button">Register</a>
-        {% endif %}
+        <!-- Sign In/ Register buttons -->
+        <div class="gap-2 d-md-flex align-items-center justify-content-md-end">
+          <!-- If the user is logged in, show the sign out button only -->
+          {% if user.is_authenticated %}
+          <!-- Show username when user is logged in -->
+          <a class="btn btn-colour btn-margin btn-text text-nowrap" href="{% url 'account_logout' %}" role="button">Sign
+            Out</a>
+          <!-- otherwise show the signin and register buttons -->
+          {% else %}
+          <a class="btn btn-colour btn-margin btn-text text-nowrap" href="{% url 'account_login' %}" role="button">Sign
+            In</a>
+          <!-- Hide register button on smaller screens -->
+          <a class="btn btn-colour btn-margin btn-text d-none d-sm-inline" href="{% url 'account_signup' %}"
+            role="button">Register</a>
+          {% endif %}
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
   <!-- Display username in top right corner of page -->
   {% if user.is_authenticated %}
@@ -146,7 +170,7 @@
       <P>{{ profile.user.username}}</P>
       <!-- Main content is inserted between these tags -->
       {% block content %}
-      
+
       {% endblock %}
     </div>
   </main>
