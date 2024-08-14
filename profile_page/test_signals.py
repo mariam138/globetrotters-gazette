@@ -20,9 +20,6 @@ class TestProfileSignals(TestCase):
         )
 
     def test_profile_is_created(self):
-        self.assertIsInstance(self.user, Profile)
-
-
-# testing if profile was created once user is registered
-# set up a user with a username, email and password
-# check if the profile instance is created with the username supplied
+        # Get profile object from self.user and check it exists
+        profile = Profile.objects.get(user=self.user)
+        self.assertTrue(profile)
