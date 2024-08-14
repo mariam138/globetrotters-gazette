@@ -10,12 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-import cloudinary.api
-import cloudinary.uploader
+
 import os
 import sys
 import dj_database_url
 import cloudinary
+import cloudinary.api
+import cloudinary.uploader
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 from django.contrib.messages import constants as messages
