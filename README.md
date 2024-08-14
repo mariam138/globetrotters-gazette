@@ -312,7 +312,7 @@ On the full post page, if the logged in user is viewing their own post then they
 
 ## Testing
 
-Manual testing was done on the project throughout, both on the local server and the deployed site. Testing was done mainly using a laptop screen and mobile screen. Other screen sizes were tested by emulating them via Google's DevTools. A full table of testing is listed below.
+Manual testing was done on the project throughout, both on the local server and the deployed site. Testing was done mainly using a laptop screen and mobile screen. Other screen sizes were tested by emulating them via Google's DevTools. A full table of testing is listed below, testing both Python and Javascript functionality.
 
 | Feature                      | Expected Behaviour                                                                                                                            | Pass/Fail  |
 | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
@@ -465,24 +465,24 @@ Several technologies were used in creating this blog site.
 ### Planning
 
 - Balsamiq Wireframes - used to create wireframes for the skeleton plane
-- Lucidchart - used to create the site map for the scope plane
-- (Mockaroo)[mockaroo.com] - used to create my own mock data to use as django fixtures for blog posts
+- Lucidchart - used to create the site map for the scope plane and the ERD diagrams
+- [Mockaroo](mockaroo.com) - used to create my own mock data to use as django fixtures for blog posts
 
 ### Frameworks
 
 - Bootstrap - to help with design of the website
 - Django - the main framework of the website
 
-### Django Libraries
+### Libraries
 
 - AllAuth
 - Gunicorn
 - Psycopg2
-
-### Other Python Libraries
-
 - Cloudinary - for media storage for the website
 - Dj-database-url - to parse database url's in the project settings
+- Crispy Forms - for quick form rendering
+- Django Quill Editor - used as the WYSIWYG editor for the post and profile forms, and in the admin panel for the about form
+- Sentry - used for local error tracking during development
 
 ## Deployment
 
