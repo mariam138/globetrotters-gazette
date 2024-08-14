@@ -392,6 +392,22 @@ Manual testing was done on the project throughout, both on the local server and 
 
 Some automated testing was done on certain apps, however due to a lack of time, they were not completed. These tests can be found in the **blog** app.
 
+### Lighthouse Performance
+
+Lighthouse checks in Chrome's development tools were used to check the performance of the website on both desktop and mobile.
+
+#### Desktop
+
+![Desktop performance](assets/screenshots/desktop-lighthouse.png)
+
+When looking into the 'Best Practices' performance, the main issue was that a lot of third party cookies were being used. Looking more into detail, these were from Cloudinary.
+
+#### Mobile
+
+![First Mobile Performance](assets/screenshots/mobile-performance-1.png)
+
+Initially I had a performance of 67 when testing for mobile. A lot of this performance was due to the welcome paragraph which had the *Largest Contentful Paint*(LCP). Unfortunately there was no obvious solution to this, so no changes were made here. I looked at the render-blocking resources to find that the **Django Quill** editor was taking up time to load. However, following the documentation, the media for the editor needed to be in the `<head>` tag, so this could not be changed. I looked at trying to lazy load the image carousel on the front page but found this wasn't possible with Bootstrap. Trying to reduce the image size could have worked but the savings wouldn't have made a huge difference. In the end, after looking at all posibilities, there wasn't much I could to do improve performance on mobile, and so it was left as is.
+
 ### Code Validation
 
 #### HTML
