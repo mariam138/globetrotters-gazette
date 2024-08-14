@@ -314,76 +314,81 @@ On the full post page, if the logged in user is viewing their own post then they
 
 Manual testing was done on the project throughout, both on the local server and the deployed site. Testing was done mainly using a laptop screen and mobile screen. Other screen sizes were tested by emulating them via Google's DevTools. A full table of testing is listed below.
 
-| Feature                      | Expected Behaviour                                                                                         | Pass/Fail |
-| ---------------------------- | ---------------------------------------------------------------------------------------------------------- | --------- |
-| Navigation Bar               |                                                                                                            |           |
-| Home' link                   | Loads index page                                                                                           | Pass      |
-| About' link                  | Loads about page                                                                                           | Pass      |
-| Regions' link                | Loads drop down menu on click for different regions                                                        | Pass      |
-| Regions' dropdown menu links | Loads page with related posts to region/ All posts                                                         | Pass      |
-| Search bar                   | Loads paginated results of posts when search button is clicked                                             | Pass      |
-| Footer                       |                                                                                                            |           |
-| Facebook link                | Facebook opens in a separate tab when clicked                                                              | Pass      |
-| Instagram link               | Instagram opens in a separate tab when clicked                                                             | Pass      |
-| Twitter/X link               | Twitter/X opens in a separate tab when clicked                                                             | Pass      |
-| Sign In                      |                                                                                                            |           |
-| Sign In' button              | Redirects to sign in page when clicked                                                                     | Pass      |
-| User sign in                 | When details are entered correctly, user is signed in                                                      | Pass      |
-| User sign in                 | If incorrect details are entered, an error message is displayed to inform the user of the error            | Pass      |
-| User sign in                 | When signed in, a message displays on home page telling user that sign in was successful                   | Pass      |
-| Sign Out                     |                                                                                                            |           |
-| Sign Out' button             | Redirects user to sign out page when clicked                                                               | Pass      |
-| Sign Out' page               | Asks user to confirm their sign out action                                                                 | Pass      |
-| User sign out                | When user signs out, a message is displayed telling user they have signed out successfully                 | Pass      |
-| Registration                 |                                                                                                            |           |
-| Register' button             | When clicked, redirects user to sign up form page                                                          | Pass      |
-| Registration                 | When form is filled in, if there are no errors the user is redirected back to the home page and signed in  | Pass      |
-| Registration                 | When registration is successful, a verification e-mail is sent to the user                                 | Pass      |
-| Registration                 | If there is an error with registration, a message is displayed to the user telling them there is an error  | Pass      |
-| User Features                |                                                                                                            |           |
-| Create Post                  | When 'Create Post' is clicked in navbar, user is directed to a 'Create post' form                          | Pass      |
-| My Profile                   | When 'My Profile' is clicked in navbar, user is directed to their profile page                             | Pass      |
-| Comment on Posts             | When signed in, on a post, the user is able to leave a comment                                             | Pass      |
-| Create Post                  |                                                                                                            |           |
-| Upload Photo                 | When 'Upload Photo' is clicked, a widget appears allowing user to add their own photo                      | Pass      |
-| Picking a Region             | When the Region field is clicked, a drop down menu with all the regions is displayed                       | Pass      |
-| Post Body                    | The Django Quill editor is available to the user when writing the body of the post                         | Pass      |
-| Post Status                  | When creating a post, the user has a choice to either publish or draft their post                          | Pass      |
-| Save Post                    | When 'Save' is clicked, the post is saved to the database under the user's username                        | Pass      |
-| Cancel Post                  | If the 'Cancel' button is clicked, a modal to confirm the user's actions is displayed                      | Pass      |
-| Confirm Cancel Post          | If the user confirms cancelling their post, the post is not saved to the database                          | Pass      |
-| Edit Post                    | When a user is logged in, they are able to edit a post they have made                                      | Pass      |
-| Edit Post                    | When 'Edit Post' is clicked, user is directed to edit form post where content is preloaded                 | Pass      |
-| Delete Post                  | When editing a post, if the user clicks 'Delete Post' then a modal appears asking to confirm the action    | Pass      |
-| Delete Post                  | If a user confirms deleting their post, the post is deleted and unable to be viewed anymore                | Pass      |
-| Publish Post                 | When a post is published, it is automatically set to unapproved and only the user is able to view it       | Pass      |
-| Approved Post                | When a post is approved, the post is then widely available on the website                                  | Pass      |
-| Create Comment               |                                                                                                            |           |
-| Create Comment               | On any post, if a user is not signed in, they are asked to sign in to leave a comment                      | Pass      |
-| Create Comment               | When a user is signed in and makes a comment, the comment is set to unapproved automatically               | Pass      |
-| Unapproved Comment           | Unapproved comments are only available to the user who submitted it                                        | Pass      |
-| Approved Comment             | Approved comments are available to everyone to read                                                        | Pass      |
-| Edit Comment                 | When signed in, a user has the ability to edit their comment                                               | Pass      |
-| Edit Comment                 | When the 'Edit' button is clicked, the comment form is repopulated with the comment                        | Pass      |
-| Edit Comment                 | Once the edited comment is saved, the comment is set back to unapproved                                    | Pass      |
-| Delete Comment               | On a user's comment, the option to delete the comment is present                                           | Pass      |
-| Delete Comment               | When 'Delete' is pressed, a modal asking the user to confirm this action is displayed                      | Pass      |
-| Delete Comment               | If the user confirms this action, the comment is deleted and no longer able to be viewed                   | Pass      |
-| Profile                      |                                                                                                            |           |
-| Edit Profile                 | When 'Edit Profile' is clicked, the user is redirected to the profile form                                 | Pass      |
-| Upload Profile Photo         | When 'Choose file' is clicked, the user's local files are opened allowing them to choose a picture         | Pass      |
-| Set Birthday                 | The user is able to set their birthday using a date picker widget                                          | Pass      |
-| Edit Bio                     | The Django Quill editor is available to use when editing the bio                                           | Pass      |
-| Save Profile                 | When 'Save' is clicked, the user's profile is updated                                                      | Pass      |
-| Cancel Profile Edit          | When 'Cancel' is clicked, no changes are saved                                                             | Pass      |
-| Delete Account               | When 'Delete Account' is clicked, the a modal appears asking the user to confirm their actions             | Pass      |
-| Delete Account               | When the user confirms deleting their account, they are logged out and no longer able to log back in       | Pass      |
-| View Posts                   | When 'View Posts' is clicked, the user is directed to a paginated list of their own posts                  | Pass      |
-| Posts                        |                                                                                                            |           |
-| Search for posts             | When a search term is entered, a paginated list of posts related to that search term are displayed         | Pass      |
-| Search for posts             | No results found' is displayed to the user if there are no relevant posts available                        | Pass      |
-| Post Detail                  | When the 'Read here' link is clicked on a post card, the user is redirected to the full post on a new page | Pass      |
-| Link to User                 | The user's profile is linked to the post card and full post detail, which loads the profile when clicked   | Pass      |
+| Feature                      | Expected Behaviour                                                                                                                            | Pass/Fail  |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| Home Page                    |                                                                                                                                               |            |
+| Image Carousel               | Automatically switches between slides after first clicked                                                                                     | Pass       |
+| Navigation Bar               |                                                                                                                                               |            |
+| Home' link                   | Loads index page                                                                                                                              | Pass       |
+| About' link                  | Loads about page                                                                                                                              | Pass       |
+| Regions' link                | Loads drop down menu on click for different regions                                                                                           | Pass       |
+| Regions' dropdown menu links | Loads page with related posts to region/ All posts                                                                                            | Pass       |
+| Search bar                   | Loads paginated results of posts when search button is clicked                                                                                | Pass       |
+| Footer                       |                                                                                                                                               |            |
+| Facebook link                | Facebook opens in a separate tab when clicked                                                                                                 | Pass       |
+| Instagram link               | Instagram opens in a separate tab when clicked                                                                                                | Pass       |
+| Twitter/X link               | Twitter/X opens in a separate tab when clicked                                                                                                | Pass       |
+| Sign In                      |                                                                                                                                               |            |
+| Sign In' button              | Redirects to sign in page when clicked                                                                                                        | Pass       |
+| User sign in                 | When details are entered correctly, user is signed in                                                                                         | Pass       |
+| User sign in                 | If incorrect details are entered, an error message is displayed to inform the user of the error                                               | Pass       |
+| User sign in                 | When signed in, a message displays on home page telling user that sign in was successful                                                      | Pass       |
+| Sign Out                     |                                                                                                                                               |            |
+| Sign Out' button             | Redirects user to sign out page when clicked                                                                                                  | Pass       |
+| Sign Out' page               | Asks user to confirm their sign out action                                                                                                    | Pass       |
+| User sign out                | When user signs out, a message is displayed telling user they have signed out successfully                                                    | Pass       |
+| Registration                 |                                                                                                                                               |            |
+| Register' button             | When clicked, redirects user to sign up form page                                                                                             | Pass       |
+| Registration                 | When form is filled in, if there are no errors the user is redirected back to the home page and signed in                                     | Pass       |
+| Registration                 | When registration is successful, a verification e-mail is sent to the user                                                                    | Pass       |
+| Registration                 | If there is an error with registration, a message is displayed to the user telling them there is an error                                     | Pass       |
+| User Features                |                                                                                                                                               |            |
+| Create Post                  | When 'Create Post' is clicked in navbar, user is directed to a 'Create post' form                                                             | Pass       |
+| My Profile                   | When 'My Profile' is clicked in navbar, user is directed to their profile page                                                                | Pass       |
+| Comment on Posts             | When signed in, on a post, the user is able to leave a comment                                                                                | Pass       |
+| Create Post                  |                                                                                                                                               |            |
+| Upload Photo                 | When 'Upload Photo' is clicked, a widget appears allowing user to add their own photo                                                         | Pass       |
+| Picking a Region             | When the Region field is clicked, a drop down menu with all the regions is displayed                                                          | Pass       |
+| Post Body                    | The Django Quill editor is available to the user when writing the body of the post                                                            | Pass       |
+| Post Status                  | When creating a post, the user has a choice to either publish or draft their post                                                             | Pass       |
+| Save Post                    | When 'Save' is clicked, the post is saved to the database under the user's username                                                           | Pass       |
+| Cancel Post                  | If the 'Cancel' button is clicked, a modal to confirm the user's actions is displayed                                                         | Pass       |
+| Confirm Cancel Post          | If the user confirms cancelling their post, the post is not saved to the database                                                             | Pass       |
+| Edit Post                    | When a user is logged in, they are able to edit a post they have made                                                                         | Pass       |
+| Edit Post                    | When 'Edit Post' is clicked, user is directed to edit form post where content is preloaded                                                    | Pass       |
+| Delete Post                  | When editing a post, if the user clicks 'Delete Post' then a modal appears asking to confirm the action                                       | Pass       |
+| Delete Post                  | If a user confirms deleting their post, the post is deleted and unable to be viewed anymore                                                   | Pass       |
+| Publish Post                 | When a post is published, it is automatically set to unapproved and only the user is able to view it                                          | Pass       |
+| Approved Post                | When a post is approved, the post is then widely available on the website                                                                     | Pass       |
+| Create Comment               |                                                                                                                                               |            |
+| Create Comment               | On any post, if a user is not signed in, they are asked to sign in to leave a comment                                                         | Pass       |
+| Create Comment               | When a user is signed in and makes a comment, the comment is set to unapproved automatically                                                  | Pass       |
+| Unapproved Comment           | Unapproved comments are only available to the user who submitted it                                                                           | Pass       |
+| Approved Comment             | Approved comments are available to everyone to read                                                                                           | Pass       |
+| Edit Comment                 | When signed in, a user has the ability to edit their comment                                                                                  | Pass       |
+| Edit Comment                 | When the 'Edit' button is clicked, the comment form is repopulated with the comment                                                           | Pass       |
+| Edit Comment                 | Once the edited comment is saved, the comment is set back to unapproved                                                                       | Pass       |
+| Delete Comment               | On a user's comment, the option to delete the comment is present                                                                              | Pass       |
+| Delete Comment               | When 'Delete' is pressed, a modal asking the user to confirm this action is displayed                                                         | Pass       |
+| Delete Comment               | If the user confirms this action, the comment is deleted and no longer able to be viewed                                                      | Pass       |
+| Profile                      |                                                                                                                                               |            |
+| Edit Profile                 | When 'Edit Profile' is clicked, the user is redirected to the profile form                                                                    | Pass       |
+| Upload Profile Photo         | When 'Choose file' is clicked, the user's local files are opened allowing them to choose a picture                                            | Pass       |
+| Email Visibility             | When hovering/tapping on the information icon, a tooltip telling the user their email isn’t visible to others appears                         | Pass       |
+| Set Birthday                 | The user is able to set their birthday using a date picker widget                                                                             | Pass       |
+| Edit Bio                     | The Django Quill editor is available to use when editing the bio                                                                              | Pass       |
+| Save Profile                 | When 'Save' is clicked, the user's profile is updated                                                                                         | Pass       |
+| Cancel Profile Edit          | When 'Cancel' is clicked, no changes are saved                                                                                                | Pass       |
+| Delete Account               | When 'Delete Account' is clicked, the a modal appears asking the user to confirm their actions                                                | Pass       |
+| Delete Account               | When the user confirms deleting their account, they are logged out and no longer able to log back in                                          | Pass       |
+| View Posts                   | When 'View Posts' is clicked, the user is directed to a paginated list of their own posts                                                     | Pass       |
+| Posts                        |                                                                                                                                               |            |
+| Search for posts             | When a search term is entered, a paginated list of posts related to that search term are displayed                                            | Pass       |
+| Search for posts             | No results found' is displayed to the user if there are no relevant posts available                                                           | Pass       |
+| Post Detail                  | When the 'Read here' link is clicked on a post card, the user is redirected to the full post on a new page                                    | Pass       |
+| Post Detail                  | When viewing the full post, when the user clicks the ‘Back’ button underneath, they are redirected back to the previous page in their history | Pass       |
+| Link to User                 | The user's profile is linked to the post card and full post detail, which loads the profile when clicked                                      | Pass
+
 
 Some automated testing was done on certain apps, however due to a lack of time, they were not completed. These tests can be found in the **blog** app.
 
