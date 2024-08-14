@@ -26,8 +26,8 @@ def profile_page(request, username):
 
     """
     # use the get_object_or_404 method to return a 404 page
-    # if profile is not found
-    # using the lookup function via relationships -
+    # if profile is not found.
+    # Using the lookup function via relationships -
     # going into the user field from the Profile model
     # and searching for the username
     # code adapted from:
